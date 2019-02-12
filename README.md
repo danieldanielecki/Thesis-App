@@ -4,7 +4,7 @@ The following repository is for a source code of an Angular application develope
 
 ## Description
 
-Focus is to achieve high quality source code by using programming best practices, many testing techniques, and ethical hacking to measure how secure is the application. It contains number of different dependencies, first of all to speed up development, as well provides more opportunities to detect potential source of vulnerable source code during penetration testing phase. The application itself is equippment with CI/CD integration, PWA capabilities, rich front-end,  and state management.
+Focus is to achieve high quality source code by using programming best practices, many testing techniques, and ethical hacking to measure how secure is the application. It contains number of different dependencies, first of all to speed up development, as well provides more opportunities to detect potential source of vulnerable source code during penetration testing phase. The application itself is equipped with CI/CD integration, PWA capabilities, rich front-end,  and state management.
 
 ## Technological stack
 
