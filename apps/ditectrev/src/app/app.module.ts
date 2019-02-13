@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 
+import Agastya from 'agastya';
+
+new Agastya('ditectrev');
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
