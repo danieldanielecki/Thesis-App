@@ -7,6 +7,7 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 import Agastya from 'agastya';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedComponentsModule } from '@thesisapp/shared-components';
 
 new Agastya('ditectrev');
 
@@ -16,6 +17,7 @@ new Agastya('ditectrev');
     BrowserModule,
     BrowserAnimationsModule,
     NxModule.forRoot(),
+    SharedComponentsModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' })
   ],
   providers: [],

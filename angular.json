@@ -83,9 +83,7 @@
               "apps/ditectrev/tsconfig.app.json",
               "apps/ditectrev/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -120,10 +118,39 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/ditectrev-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
+        }
+      }
+    },
+    "shared-components": {
+      "root": "libs/shared-components",
+      "sourceRoot": "libs/shared-components/src",
+      "projectType": "library",
+      "prefix": "thesisapp",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared-components/tsconfig.lib.json",
+              "libs/shared-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared-components/jest.config.js",
+            "tsConfig": "libs/shared-components/tsconfig.spec.json",
+            "setupFile": "libs/shared-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
         }
       }
     }
