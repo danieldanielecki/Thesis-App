@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import Agastya from 'agastya';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedComponentsModule } from '@thesisapp/shared-components';
+import { SharedComponentsModule } from '@app/shared-components';
 
 new Agastya('ditectrev');
 

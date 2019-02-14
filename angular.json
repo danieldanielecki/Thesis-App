@@ -7,7 +7,7 @@
       "root": "apps/ditectrev/",
       "sourceRoot": "apps/ditectrev/src",
       "projectType": "application",
-      "prefix": "thesisapp",
+      "prefix": "app",
       "schematics": {
         "@nrwl/schematics:component": {
           "style": "scss"
@@ -127,7 +127,7 @@
       "root": "libs/shared-components",
       "sourceRoot": "libs/shared-components/src",
       "projectType": "library",
-      "prefix": "thesisapp",
+      "prefix": "app",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",

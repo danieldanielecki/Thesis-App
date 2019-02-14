@@ -4,7 +4,7 @@ import {
   TestBed } 
 from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { SharedComponentsModule } from '@thesisapp/shared-components';
+import { SharedComponentsModule } from '@app/shared-components';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -24,6 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('thesisapp-header')).not.toBeNull();
+    expect(compiled.querySelector('app-header')).not.toBeNull();
   }));
 });

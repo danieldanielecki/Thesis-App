@@ -1,5 +1,5 @@
 {
-  "npmScope": "thesisapp",
+  "npmScope": "app",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
