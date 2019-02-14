@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { 
+  MatButtonModule, 
+  MatIconModule, 
+  MatListModule, 
+  MatSidenavModule, 
+  MatToolbarModule } 
+from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 
@@ -18,6 +23,13 @@ import { HeaderComponent } from './header/header.component';
     NoopAnimationsModule
   ],
   declarations: [HeaderComponent],
-  exports: [HeaderComponent, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule]
+  exports: [
+    HeaderComponent,
+    MatButtonModule, 
+    MatIconModule, 
+    MatListModule, 
+    MatSidenavModule, 
+    MatToolbarModule
+  ]
 })
 export class SharedComponentsModule {}

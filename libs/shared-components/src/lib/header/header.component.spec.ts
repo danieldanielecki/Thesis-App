@@ -1,5 +1,9 @@
 import { LayoutModule } from '@angular/cdk/layout';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { 
+  async, 
+  ComponentFixture, 
+  TestBed } 
+from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
@@ -11,7 +15,6 @@ import {
 
 import { HeaderComponent } from './header.component';
 
-// TODO: Finish tests.
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
