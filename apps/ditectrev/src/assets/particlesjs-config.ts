@@ -2,69 +2,64 @@
 export const ParticlesConfig = {
   "particles": {
     "number": {
-      "value": 150,
+      "value": 70,
       "density": {
         "enable": true,
-        "value_area": 700
+        "value_area": 1400
       }
     },
     "color": {
-      "value": "#9ba7fc"
+      "value": "#283593"
     },
     "shape": {
-      "type": "triangle",
+      "type": "polygon",
       "stroke": {
-        "width": 0,
-        "color": "#000000"
+        "width": 1,
+        "color": "#283593"
       },
       "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
+        "nb_sides": 6
       }
     },
     "opacity": {
       "value": 1,
-      "random": false,
+      "random": true,
       "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
+        "enable": true,
+        "speed": 0.8,
+        "opacity_min": 0.25,
+        "sync": true
       }
     },
     "size": {
-      "value": 3,
-      "random": false,
+      "value": 2,
+      "random": true,
       "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
+        "enable": true,
+        "speed": 10,
+        "size_min": 1.25,
+        "sync": true
       }
     },
     "line_linked": {
       "enable": true,
-      "distance": 128,
-      "color": "#ffffff",
-      "opacity": 0.36,
-      "width": 2
+      "distance": 150,
+      "color": "#283593",
+      "opacity": 1,
+      "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 6,
+      "speed": 8,
       "direction": "none",
       "random": true,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": true,
       "attract": {
-        "enable": false,
-        "rotateX": 4810,
-        "rotateY": 2004
+        "enable": true,
+        "rotateX": 2000,
+        "rotateY": 2000
       }
     }
   },
@@ -83,27 +78,14 @@ export const ParticlesConfig = {
     },
     "modes": {
       "grab": {
-        "distance": 287,
+        "distance": 200,
         "line_linked": {
-          "opacity": 1
+          "opacity": 3
         }
       },
-      "bubble": {
-        "distance": 143,
-        "size": 500,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
       "repulse": {
-        "distance": 303,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
+        "distance": 250,
+        "duration": 2
       }
     }
   },
