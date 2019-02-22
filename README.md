@@ -32,7 +32,7 @@ Focus is to achieve high quality source code by using programming best practices
 + `npm run dep-graph` - run dependency graph.
 + For Angular CLI, and Nx more can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
 + `git log --all --decorate --graph --oneline` - log commits of repository in a human friendly way.
-+ `git diff --color-words` - display difference between commit, and working tree with distinguishing between words colors.
++ `git diff --color-words` - display difference between commit, and working tree with distinguishing between words colors without breaking line where differences occured.
 
 ## Commits convention
 
