@@ -22,6 +22,7 @@ Focus is to achieve high quality source code by using programming best practices
 ## Commands
 
 + `ng generate app myapp` - generate new application, in Nx there can be multiple applications, and libraries in the same workspace.
++ `ng generate lib mylib` - generate new library, in Nx there can be multiple applications, and libraries in the same workspace.
 + `ng serve --project=myapp` - run local server in production environment, navigate to `http://localhost:4200/` in order to access it. Changes are detected automatically, and will server will reload the page once they will be detected.
 + `ng generate component component-name --project=myapp` - generate new component, can be used as `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 + `ng build --project=myapp` - build project.
@@ -29,7 +30,9 @@ Focus is to achieve high quality source code by using programming best practices
 + `ng e2e` - run end-to-end tests.
 + `ng test` - run unit tests.
 + `npm run dep-graph` - run dependency graph.
-+ More can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
++ For Angular CLI, and Nx more can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
++ `git log --all --decorate --graph --oneline` - log commits of repository in a human friendly way.
++ `git diff --color-words` - display difference between commit, and working tree with distinguishing between words colors.
 
 ## Commits convention
 
