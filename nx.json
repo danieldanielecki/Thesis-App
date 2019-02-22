@@ -9,10 +9,10 @@
   },
   "projects": {
     "ditectrev": {
-      "tags": []
+      "tags": ["ditectrev"]
     },
     "ditectrev-e2e": {
-      "tags": []
+      "tags": ["ditectrev-e2e"]
     },
     "shared-components": {
       "tags": ["shared-components"]
