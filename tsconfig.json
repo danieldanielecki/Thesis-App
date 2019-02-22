@@ -13,7 +13,8 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@app/shared-components": ["libs/shared-components/src/index.ts"]
+      "@app/shared-components": ["libs/shared-components/src/index.ts"],
+      "@app/home-components": ["libs/home-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

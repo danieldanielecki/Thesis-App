@@ -30,9 +30,7 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/ditectrev/src/styles.scss"
             ],
-            "scripts": [
-              "./node_modules/particles.js/particles.js"
-            ]
+            "scripts": ["./node_modules/particles.js/particles.js"]
           },
           "configurations": {
             "production": {
@@ -147,6 +145,37 @@
             "jestConfig": "libs/shared-components/jest.config.js",
             "tsConfig": "libs/shared-components/tsconfig.spec.json",
             "setupFile": "libs/shared-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "home-components": {
+      "root": "libs/home-components",
+      "sourceRoot": "libs/home-components/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/home-components/tsconfig.lib.json",
+              "libs/home-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/home-components/jest.config.js",
+            "tsConfig": "libs/home-components/tsconfig.spec.json",
+            "setupFile": "libs/home-components/src/test-setup.ts"
           }
         }
       },

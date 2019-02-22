@@ -16,6 +16,9 @@
     },
     "shared-components": {
       "tags": ["shared-components"]
+    },
+    "home-components": {
+      "tags": ["home-components"]
     }
   }
 }

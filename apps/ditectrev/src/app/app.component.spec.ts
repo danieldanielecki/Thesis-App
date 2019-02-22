@@ -5,12 +5,16 @@ import {
 from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SharedComponentsModule } from '@app/shared-components';
+import { HomeComponentsModule } from '@app/home-components';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      imports: [SharedComponentsModule]
+      imports: [
+        SharedComponentsModule,
+        HomeComponentsModule
+        ]
     }).compileComponents();
   }));
 
@@ -25,5 +29,12 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-header')).not.toBeNull();
+  }));
+
+  it('should have slider component', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-slider')).not.toBeNull();
   }));
 });

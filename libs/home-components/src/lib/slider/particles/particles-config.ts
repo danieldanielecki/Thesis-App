@@ -1,4 +1,3 @@
-// TOOD: Speed up particles. Chrome shows good speed (still need to redesign), Firefox lags a lot.
 export const ParticlesConfig = {
   "particles": {
     "number": {

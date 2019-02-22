@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedComponentsModule } from '@app/shared-components';
+import { HomeComponentsModule } from '@app/home-components';
 import Agastya from 'agastya';
 
 new Agastya('ditectrev');
@@ -14,7 +15,8 @@ new Agastya('ditectrev');
     BrowserModule,
     BrowserAnimationsModule,
     NxModule.forRoot(),
-    SharedComponentsModule
+    SharedComponentsModule,
+    HomeComponentsModule
   ],
   bootstrap: [AppComponent]
 })
