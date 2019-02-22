@@ -12,7 +12,6 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
-
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as particlesJS from 'particles.js';
 import { ParticlesConfig } from './particles/particles-config';
 
-declare var particlesJS: any;
+declare let particlesJS: any;
 
 @Component({
   selector: 'app-slider',
