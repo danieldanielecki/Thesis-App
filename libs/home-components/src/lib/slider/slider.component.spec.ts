@@ -3,7 +3,6 @@ import {
   ComponentFixture, 
   TestBed } 
 from '@angular/core/testing';
-
 import { SliderComponent } from './slider.component';
 
 describe('SliderComponent', () => {
@@ -22,13 +21,11 @@ describe('SliderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the slider', async(() => {
+  it('should create slider', async(() => {
     expect(component).toBeTruthy();
   }));
 
-  it('should have particles div', async(() => {
-    const figure = TestBed.createComponent(SliderComponent);
-    fixture.detectChanges();
+  it('should have div with ID=particles-js', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div#particles-js')).not.toBeNull();
   }));

@@ -40,7 +40,8 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should compile', () => {
+  it('should create header component', () => {
     expect(component).toBeTruthy();
   });
+  // TODO: Expand this once header will be done.
 });

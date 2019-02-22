@@ -8,6 +8,9 @@ import { SharedComponentsModule } from '@app/shared-components';
 import { HomeComponentsModule } from '@app/home-components';
 
 describe('AppComponent', () => {
+  let app: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
@@ -18,22 +21,22 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
+  })
+
+  it('should create app', async(() => {
     expect(app).toBeTruthy();
   }));
 
   it('should have header component', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-header')).not.toBeNull();
   }));
 
   it('should have slider component', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-slider')).not.toBeNull();
   }));
