@@ -1,4 +1,3 @@
-import { LayoutModule } from '@angular/cdk/layout';
 import { 
   async, 
   ComponentFixture, 
@@ -12,6 +11,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -22,13 +23,13 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [
-        NoopAnimationsModule,
+        BrowserAnimationsModule,
         LayoutModule,
         MatButtonModule,
         MatIconModule,
         MatListModule,
         MatSidenavModule,
-        MatToolbarModule,
+        MatToolbarModule
       ]
     }).compileComponents();
   }));

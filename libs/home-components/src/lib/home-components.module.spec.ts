@@ -1,4 +1,7 @@
-import { async, TestBed } from '@angular/core/testing';
+import { 
+  async, 
+  TestBed 
+} from '@angular/core/testing';
 import { HomeComponentsModule } from './home-components.module';
 
 describe('HomeComponentsModule', () => {
@@ -8,7 +11,7 @@ describe('HomeComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create home componenets', () => {
-    expect(HomeComponentsModule).toBeDefined();
-  });
+  it('should create home components module', async(() => {
+    expect(HomeComponentsModule).toBeTruthy();
+  }));
 });
