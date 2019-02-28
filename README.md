@@ -31,8 +31,15 @@ Focus is to achieve high quality source code by using programming best practices
 + `ng test` - run unit tests.
 + `npm run dep-graph` - run dependency graph.
 + For Angular CLI, and Nx more can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
-+ `git log --all --decorate --graph --oneline` - log commits of repository in a human friendly way.
++ `git log --all --decorate --graph --oneline -all` - log commits of repository in a human friendly way.
 + `git diff --color-words` - display difference between commit, and working tree with distinguishing between words colors without breaking line where differences occured.
++ `git add .` - add all changed files in the repository to the index.
++ `git commit -m "commit message"` - create commit with a message.
++ `git push` - push commit to the repository.
++ `git tag` - show tags from the repository.
++ `git tag -a v0.0.0 -m "tag message"` - create tag on current commit with specific version, and message.
++ `git push --tags` - push tags to the repository.
+
 
 ## Commits convention
 
