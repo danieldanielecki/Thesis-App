@@ -47,3 +47,8 @@ Focus is to achieve high quality source code by using programming best practices
 + **Change:** - changes in methods, project setup, variables, etc.
 + **Delete:** - something has been removed.
 + **Fix:** - part of code/functionality has been performed.
+
+## Submitted issues
+
++ [Canvas problems in Jest](https://github.com/hustcc/jest-canvas-mock/issues/2#issuecomment-468600415)
++ [JSDOM mocking canvas](https://github.com/jsdom/jsdom/issues/1782#issuecomment-468602403)
