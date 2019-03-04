@@ -12,7 +12,7 @@ Focus is to achieve high quality source code by using programming best practices
 + Cypress
 + Docker
 + Jest
-+ NgRx/RxJS
+[//]: # (+ NgRx/RxJS TODO: Add this if brief would be build)
 + Node.js
 + npm
 + Nx
@@ -29,6 +29,9 @@ Focus is to achieve high quality source code by using programming best practices
 + `ng serve` - build, and serve project.
 + `ng e2e` - run end-to-end tests.
 + `ng test` - run unit tests.
++ `ng version` - show version of Angular with its core dependencies.
++ `ng lint` - perform static code analysis.
++ `ng help` - show all available commands of the CLI.
 + `npm run dep-graph` - run dependency graph.
 + For Angular CLI, and Nx more can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
 + `git log --all --decorate --graph --oneline -all` - log commits of repository in a human friendly way.
