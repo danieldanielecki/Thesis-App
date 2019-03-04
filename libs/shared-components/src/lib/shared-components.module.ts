@@ -23,10 +23,10 @@ import { HeaderComponent } from './header/header.component';
   declarations: [HeaderComponent],
   exports: [
     HeaderComponent,
-    MatButtonModule, 
-    MatIconModule, 
-    MatListModule, 
-    MatSidenavModule, 
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,
     MatToolbarModule
   ]
 })
