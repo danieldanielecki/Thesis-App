@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc/libs/shared-components",
     "module": "commonjs",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"]  // List of names of type definitions to include.
   },
   "files": ["src/test-setup.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]

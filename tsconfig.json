@@ -1,6 +1,5 @@
 // TODO: Enable stricter type checking, i.e. add typings to Agastya.
 // TODO: Add the comments to different tsconfig files, once all architecture will be done.
-// TODO: Check if 404 from dist folder is not due to options here.
 {
   "compileOnSave": false,
   "compilerOptions": {

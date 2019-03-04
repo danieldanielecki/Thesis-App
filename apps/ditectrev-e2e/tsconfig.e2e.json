@@ -4,7 +4,7 @@
     "sourceMap": false,
     "outDir": "../../dist/out-tsc/apps/ditectrev-e2e/src",
     "lib": ["es2015", "dom"],
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node"] // List of names of type definitions to include.
   },
   "include": ["src/**/*.ts", "../../node_modules/cypress"]
 }
