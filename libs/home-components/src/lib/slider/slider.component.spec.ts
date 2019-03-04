@@ -29,4 +29,6 @@ describe('SliderComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div#particles-js')).not.toBeNull();
   }));
+
+  // TODO: Add partcilesJS() call.
 });
