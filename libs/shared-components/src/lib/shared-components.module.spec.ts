@@ -11,7 +11,7 @@ describe('SharedComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create shared components module', async(() => {
-    expect(SharedComponentsModule).toBeTruthy();
-  }));
+  it('should create shared components module', () => {
+    expect(SharedComponentsModule).toBeDefined();
+  });
 });
