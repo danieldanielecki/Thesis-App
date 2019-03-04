@@ -12,7 +12,10 @@ Focus is to achieve high quality source code by using programming best practices
 + Cypress
 + Docker
 + Jest
-[//]: # (+ NgRx/RxJS TODO: Add this if brief would be build)
+{::comment}
+TODO: Add this if brief would be build
++ NgRx/RxJS
+{:/comment}
 + Node.js
 + npm
 + Nx
