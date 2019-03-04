@@ -14,6 +14,7 @@
     "types": [], // List of names of type definitions to include.
     "lib": ["dom", "es2018"] // List of library files to be included in the compilation.
   },
+  // TODO: Check Angular compiler options.
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "skipTemplateCodegen": true,
