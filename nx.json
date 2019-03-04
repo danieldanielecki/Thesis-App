@@ -19,6 +19,9 @@
     },
     "home-components": {
       "tags": ["home-components"]
+    },
+    "services-components": {
+      "tags": ["services-components"]
     }
   }
 }
