@@ -21,7 +21,6 @@
     "pretty": true, // Stylize errors and messages using color and context.
     "removeComments": true, // Remove all comments except copy-right header comments beginning with /*!.
     "resolveJsonModule": false, // Include modules imported with .json extension.
-    "rootDir": ".", // Specifies the root directory of input files.
     "showConfig": true, // Rather than actually execute a build with the other input options and config files, show the final implied config file in the output.
     "sourceMap": true, // Generates corresponding '.map' file.
     "target": "es5",  // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
