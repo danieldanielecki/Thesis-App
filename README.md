@@ -12,15 +12,15 @@ Focus is to achieve high quality source code by using programming best practices
 + Cypress
 + Docker
 + Jest
-<!--
-TODO: Add this if brief would be build
-+ NgRx/RxJS
--->
 + Node.js
 + npm
 + Nx
 + TypeScript
 + Webpack
+<!--
+TODO: Add this if brief would be build
++ NgRx/RxJS
+-->
 
 ## Commands
 
