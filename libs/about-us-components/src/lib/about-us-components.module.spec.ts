@@ -11,7 +11,7 @@ describe('AboutUsComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create about us components', () => {
+  it('should create about us components module', () => {
     expect(AboutUsComponentsModule).toBeDefined();
   });
 });

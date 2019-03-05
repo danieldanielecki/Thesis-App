@@ -11,7 +11,7 @@ describe('ServicesComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create services components', () => {
+  it('should create services components module', () => {
     expect(ServicesComponentsModule).toBeDefined();
   });
 });

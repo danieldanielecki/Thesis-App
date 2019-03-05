@@ -11,7 +11,7 @@ describe('HomeComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create home components module', () => {
+  it('should create home components module module', () => {
     expect(HomeComponentsModule).toBeDefined();
   });
 });

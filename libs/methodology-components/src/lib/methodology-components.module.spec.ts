@@ -11,7 +11,7 @@ describe('MethodologyComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create methodology components', () => {
+  it('should create methodology components module', () => {
     expect(MethodologyComponentsModule).toBeDefined();
   });
 });

@@ -11,7 +11,7 @@ describe('ContactComponentsModule', () => {
     }).compileComponents();
   }));
 
-  it('should create contact components', () => {
+  it('should create contact components module', () => {
     expect(ContactComponentsModule).toBeDefined();
   });
 });
