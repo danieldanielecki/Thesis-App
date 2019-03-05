@@ -51,7 +51,8 @@
     // List of path mapping entries for module names to locations relative to the baseUrl.
     "paths": {
       "@app/shared-components": ["libs/shared-components/src/index.ts"],
-      "@app/home-components": ["libs/home-components/src/index.ts"]
+      "@app/home-components": ["libs/home-components/src/index.ts"],
+      "@app/about-us-components": ["libs/about-us-components/src/index.ts"]
     },
     "traceResolution": false, // Report module resolution log messages.
     "typeRoots": ["node_modules/@types"], // List of folders to include type definitions from.

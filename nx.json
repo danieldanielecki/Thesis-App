@@ -25,6 +25,9 @@
     },
     "methodology-components": {
       "tags": ["methodology-components"]
+    },
+    "about-us-components": {
+      "tags": ["about-us-components"]
     }
   }
 }
