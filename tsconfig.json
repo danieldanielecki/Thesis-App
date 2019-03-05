@@ -50,6 +50,7 @@
     // List of path mapping entries for module names to locations relative to the baseUrl.
     "paths": {
       "@app/about-us-components": ["libs/about-us-components/src/index.ts"],
+      "@app/contact-components": ["libs/contact-components/src/index.ts"],
       "@app/home-components": ["libs/home-components/src/index.ts"],
       "@app/methodology-components": ["libs/methodology-components/src/index.ts"],
       "@app/services-components": ["libs/services-components/src/index.ts"],

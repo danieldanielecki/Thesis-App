@@ -277,6 +277,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "contact-components": {
+      "root": "libs/contact-components",
+      "sourceRoot": "libs/contact-components/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/contact-components/tsconfig.lib.json",
+              "libs/contact-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/contact-components/jest.config.js",
+            "tsConfig": "libs/contact-components/tsconfig.spec.json",
+            "setupFile": "libs/contact-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -28,6 +28,9 @@
     },
     "about-us-components": {
       "tags": ["about-us-components"]
+    },
+    "contact-components": {
+      "tags": ["contact-components"]
     }
   }
 }
