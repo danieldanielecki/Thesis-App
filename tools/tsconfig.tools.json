@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "../dist/out-tsc/tools", // Redirect output structure to the directory.
     "rootDir": ".", // Specifies the root directory of input files. Only use to control the output directory structure with --outDir.
-    "module": "commonjs", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
     "target": "es5", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
     "types": ["jasmine", "node"]  // List of names of type definitions to include.
   },
