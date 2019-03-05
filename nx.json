@@ -22,6 +22,9 @@
     },
     "services-components": {
       "tags": ["services-components"]
+    },
+    "methodology-components": {
+      "tags": ["methodology-components"]
     }
   }
 }

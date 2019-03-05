@@ -215,6 +215,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "methodology-components": {
+      "root": "libs/methodology-components",
+      "sourceRoot": "libs/methodology-components/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/methodology-components/tsconfig.lib.json",
+              "libs/methodology-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/methodology-components/jest.config.js",
+            "tsConfig": "libs/methodology-components/tsconfig.spec.json",
+            "setupFile": "libs/methodology-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
