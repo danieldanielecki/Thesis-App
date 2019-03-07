@@ -1,4 +1,6 @@
 // TODO: Enable stricter type checking, i.e. add typings to Agastya.
+// TODO: Check if repated rules in tsconfig files, which inherit couldn't be dropped.
+// TODO: Check if angularCompilerOptions couldn't be defined in 1 global file (here).
 {
   "compileOnSave": false,
   "compilerOptions": {
