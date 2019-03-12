@@ -40,4 +40,9 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-slider')).not.toBeNull();
   }));
+
+  it('should have footer component', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-footer')).not.toBeNull();
+  }));
 });
