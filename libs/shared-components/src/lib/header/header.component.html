@@ -1,17 +1,46 @@
-<!-- TODO: Make this horizontal menu. -->
+<!-- TODO: Remove sidebar by default in large screens. -->
+
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Home</a>
-      <a mat-list-item href="#">Services</a>
-      <a mat-list-item href="#">Methodology</a>
-      <a mat-list-item href="#">About us</a>
-      <a mat-list-item href="#">Blog</a>
-      <a mat-list-item href="#">Contact</a>
+    <mat-nav-list (sidenavClose)="drawer.close()">
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon>
+        <span class="nav-caption">Services</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon>
+        <span class="nav-caption">Methodology</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon>
+        <span class="nav-caption">About us</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Blog</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Contact</span>
+      </a>
+      <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Services</a>
+      </mat-list-item>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Cyber Security</button>
+        <button mat-menu-item>Digital Strategy</button>
+        <button mat-menu-item>Software Development</button>
+      </mat-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,10 +50,22 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="(isHandset$ | async)"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ditectrev</span>
+      <!-- TODO: Put logo here. -->
+      <span>Software Company</span>
+      <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+          <li><a mat-list-item href="#">Home</a></li>
+          <li><a mat-list-item href="#">Services</a></li>
+          <li><a mat-list-item href="#">Methodology</a></li>
+          <li><a mat-list-item href="#">About us</a></li>
+          <li><a mat-list-item href="#">Blog</a></li>
+          <li><a mat-list-item href="#">Contact</a></li>
+        </ul>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
