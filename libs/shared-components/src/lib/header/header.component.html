@@ -1,69 +1,109 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list (sidenavClose)="drawer.close()">
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
-      </a>
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon>
-        <span class="nav-caption">Services</span>
-      </a>
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon>
-        <span class="nav-caption">Methodology</span>
-      </a>
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon>
-        <span class="nav-caption">About us</span>
-      </a>
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon> <span class="nav-caption">Blog</span>
-      </a>
-      <a mat-list-item href="#">
-        <mat-icon>home</mat-icon> <span class="nav-caption">Contact</span>
-      </a>
-      <mat-list-item [matMenuTriggerFor]="menu">
-        <mat-icon>unfold_more</mat-icon>
-        <a matline>Services</a>
-      </mat-list-item>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Cyber Security</button>
-        <button mat-menu-item>Digital Strategy</button>
-        <button mat-menu-item>Software Development</button>
-      </mat-menu>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="(isHandset$ | async)"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <!-- TODO: Put logo here. -->
-      <span>Software Company</span>
-      <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-          <li><a mat-list-item href="#">Home</a></li>
-          <li><a mat-list-item href="#">Services</a></li>
-          <li><a mat-list-item href="#">Methodology</a></li>
-          <li><a mat-list-item href="#">About us</a></li>
-          <li><a mat-list-item href="#">Blog</a></li>
-          <li><a mat-list-item href="#">Contact</a></li>
-        </ul>
-      </div>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!-- TODO: Improve in terms of Agastya. -->
+<!-- TODO: Improve desktop version in terms of animations. -->
+<!-- TODO: Improve in terms of accessibility. -->
+<!-- TODO: Click anywhere on mobile to close menu with giving darker background on whole screen. -->
+<!-- TODO: Hide menu icon (for mobile) on screens larger than mobile. -->
+<header>
+  <mat-sidenav-container class="container">
+    <mat-sidenav
+      #sidenav
+      fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="#" role="link">
+          <mat-icon>home</mat-icon>
+          <span>&nbsp;Home</span>
+        </a>
+        <a mat-list-item [matMenuTriggerFor]="menuMobile" role="link">
+          <mat-icon>playlist_add_check</mat-icon>
+          <a href="#" role="link">&nbsp;Services</a>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </a>
+        <mat-menu #menuMobile="matMenu">
+          <a mat-menu-item href="#" role="link">
+            <mat-icon>security</mat-icon>
+            <span>Cyber Security</span>
+          </a>
+          <a mat-menu-item href="#" role="link">
+            <mat-icon>star</mat-icon>
+            <span>Digital Strategy</span>
+          </a>
+          <a mat-menu-item href="#" role="link">
+            <mat-icon>code</mat-icon>
+            <span>Software Development</span>
+          </a>
+        </mat-menu>
+        <a mat-list-item href="#" role="link">
+          <mat-icon>fingerprint</mat-icon>
+          <span>&nbsp;Methodology</span>
+        </a>
+        <a mat-list-item href="#" role="link">
+          <mat-icon>sentiment_satisfied_alt</mat-icon>
+          <span>&nbsp;About us</span>
+        </a>
+        <!-- TODO: Uncomment it if blog will be done. -->
+        <a mat-list-item href="#" role="link">
+          <mat-icon>format_quote</mat-icon>
+          <span>&nbsp;Blog</span>
+        </a>
+        <a mat-list-item href="#" role="link">
+          <mat-icon>alternate_email</mat-icon>
+          <span>&nbsp;Contact</span>
+        </a>
+        <hr />
+        <a mat-list-item href="#" (click)="sidenav.close()" role="link">
+          <mat-icon>close</mat-icon>
+          <span>&nbsp;Close</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="sidenav.toggle()"
+          *ngIf="(isHandset$ | async)"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <!-- TODO: Put logo here. -->
+        <span>Software Company</span>
+        <!-- Show this list only on devices greater than mobile. -->
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide fxShow.gt-sm>
+          <mat-list fxLayout fxLayoutGap="15px" class="horizontal-items">
+            <a mat-list-item href="#" role="link">Home</a>
+            <a mat-list-item href="#" role="link"
+              >Services<mat-icon
+                #menuTrigger="matMenuTrigger"
+                [matMenuTriggerFor]="menuDesktop"
+                (mouseover)="menuTrigger.openMenu()"
+                >arrow_drop_down</mat-icon
+              ></a
+            >
+            <mat-menu #menuDesktop="matMenu" [overlapTrigger]="false">
+              <!--  -->
+              <ng-template matMenuContent>
+                <span (mouseleave)="menuTrigger.closeMenu()">
+                  <a mat-menu-item href="#" role="link">Cyber Security</a>
+                  <a mat-menu-item href="#" role="link">Digital Strategy</a>
+                  <a mat-menu-item href="#" role="link">Software Development</a>
+                </span>
+              </ng-template>
+            </mat-menu>
+            <a mat-list-item href="#" role="link">Methodology</a>
+            <a mat-list-item href="#" role="link">About us</a>
+            <!-- TODO: Uncomment it if blog will be done. -->
+            <a mat-list-item href="#" role="link">Blog</a>
+            <a mat-list-item href="#" role="link">Contact</a>
+          </mat-list>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>
