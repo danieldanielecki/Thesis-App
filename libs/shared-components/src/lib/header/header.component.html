@@ -4,6 +4,8 @@
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
+<!-- TODO: Move lists to ngFor. -->
+<!-- TODO: Write just 1 list and play with ngIf/flexbox. -->
 <header>
   <mat-sidenav-container class="container">
     <mat-sidenav #sidenav fixedInViewport="true" role="navigation">
@@ -66,7 +68,6 @@
           aria-label="Toggle sidenav"
           mat-icon-button
           (click)="sidenav.toggle()"
-          fxShow
           fxHide.gt-sm
         >
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
