@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   // TODO: Change blog to external URL.
-  // TODO: Add this to HTML.
   // TODO: Think about close button.
+  // TODO: Blog might be dropped later.
+  // TODO: Change url to path.
   menuItems: { icon: string; name: string; url: string }[] = [
     { icon: 'home', name: 'Home', url: '/' },
     { icon: 'arrow_drop_down', name: 'Services', url: '/services' },
