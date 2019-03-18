@@ -7,23 +7,20 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   // TODO: Change blog to external URL.
-  // TODO: Think about close button.
-  // TODO: Blog might be dropped later.
-  // TODO: Change url to path.
-  menuItems: { icon: string; name: string; url: string }[] = [
-    { icon: 'home', name: 'Home', url: '/' },
-    { icon: 'arrow_drop_down', name: 'Services', url: '/services' },
-    { icon: 'fingerprint', name: 'Methodology', url: '/methodology' },
-    { icon: 'sentiment_satisfied_alt', name: 'About us', url: '/about-us' },
-    { icon: 'format_quote', name: 'Blog', url: '/blog' },
-    { icon: 'alternate_email', name: 'Contact', url: '/contact' },
-    { icon: 'close', name: 'Close', url: '/' }
+  menuItems: { icon: string; name: string; path: string }[] = [
+    { icon: 'home', name: 'Home', path: '/' },
+    { icon: 'playlist_add_check', name: 'Services', path: '/services' },
+    { icon: 'fingerprint', name: 'Methodology', path: '/methodology' },
+    { icon: 'sentiment_satisfied_alt', name: 'About us', path: '/about-us' },
+    { icon: 'format_quote', name: 'Blog', path: '/blog' },
+    { icon: 'alternate_email', name: 'Contact', path: '/contact' },
+    { icon: 'close', name: 'Close', path: '/' }
   ];
 
-  // Change this as a subroute of services.
-  servicesItems: { icon: string; name: string; url: string }[] = [
-    { icon: 'security', name: 'Cyber Security', url: 'cyber-security' },
-    { icon: 'star', name: 'Digital Strategy', url: 'digital-strategy' },
-    { icon: 'code', name: 'Software Development', url: 'software-development' }
+  // Change this as a subroute (not child) of services.
+  servicesItems: { icon: string; name: string; path: string }[] = [
+    { icon: 'security', name: 'Cyber Security', path: 'cyber-security' },
+    { icon: 'star', name: 'Digital Strategy', path: 'digital-strategy' },
+    { icon: 'code', name: 'Software Development', path: 'software-development' }
   ];
 }

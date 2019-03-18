@@ -1,97 +1,156 @@
 <!-- TODO: Improve in terms of Agastya. -->
-<!-- TODO: Improve desktop version in terms of animations. -->
 <!-- TODO: Improve in terms of accessibility. -->
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
 <!-- TODO: Write just 1 list and play with ngIf/flexbox. -->
+<!-- TODO: Finish accessibility. -->
 <header>
-  <mat-sidenav-container class="container">
-    <mat-sidenav #sidenav fixedInViewport="true" role="navigation">
-      <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list>
+  <mat-sidenav-container class="container" aria-label="Sidenav">
+    <!-- Desktop header main menu (toolbar). -->
+    <mat-toolbar color="primary" aria-label="Toolbar">
+      <!--
+        Show the button by default, and will be hidden only on devices with min-width: 960px.
+      -->
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+        fxHide.gt-sm
+        aria-label="Toggle sidenav"
+        role="button"
+        type="button"
+      >
+        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+      </button>
+      <!-- TODO: Put logo here. -->
+      <span aria-label="Company name">Software Company</span>
+      <!--
+        The below element is hidden by default, and will be shown only on devices with min-width: 960px.
+      -->
+      <div fxFlex fxLayoutAlign="end" fxHide fxShow.gt-sm>
         <!-- Grouping element for list of menu items. -->
-        <ng-container *ngFor="let menuItem of menuItems; let i = index">
-          <a mat-list-item href="#" role="link">
-            <mat-icon>{{ menuItem.icon }}</mat-icon>
-            <span>&nbsp;{{ menuItem.name }}</span>
-            <mat-menu #menuMobile="matMenu" *ngIf="i === 1">
-              <!-- Lazy loading menu. -->
-              <ng-template matMenuContent>
+        <ng-container
+          *ngFor="let menuItem of menuItems; let j = index; let lastItem = last"
+        >
+          <!-- Desktop main menu elements. -->
+          <a
+            mat-button
+            *ngIf="!lastItem"
+            attr.aria-label="{{ menuItem.name }}"
+            href="#"
+            role="link"
+            title="{{ menuItem.name }}"
+            >{{ menuItem.name }}
+            <mat-icon
+              *ngIf="j === 1"
+              #menuTrigger="matMenuTrigger"
+              [matMenuTriggerFor]="menuDesktop"
+              (mouseenter)="menuTrigger.openMenu()"
+              attr.aria-label="{{ menuItem.name }}"
+              >arrow_drop_down
+            </mat-icon></a
+          >
+          <!-- Menu of services. -->
+          <mat-menu
+            #menuDesktop="matMenu"
+            [overlapTrigger]="false"
+            (mouseleave)="menuTrigger.closeMenu()"
+          >
+            <!-- Lazy loaded menu of services. -->
+            <ng-template matMenuContent>
+              <!-- Grouping element for list of menu items for services. -->
+              <ng-container *ngFor="let serviceItem of servicesItems">
+                <!-- Services elements. -->
                 <a
                   mat-menu-item
+                  attr.aria-label="{{ serviceItem.name }}"
                   href="#"
                   role="link"
-                  *ngFor="let serviceItem of servicesItems"
+                  title="{{ serviceItem.name }}"
+                  >{{ serviceItem.name }}</a
+                ></ng-container
+              >
+            </ng-template>
+          </mat-menu>
+        </ng-container>
+      </div>
+    </mat-toolbar>
+    <!-- Mobile header main menu (sidenav). -->
+    <mat-sidenav #sidenav fixedInViewport="true" role="navigation">
+      <mat-toolbar>Menu</mat-toolbar>
+      <!-- Navbar list. -->
+      <mat-nav-list>
+        <!-- Grouping element for list of menu items. -->
+        <ng-container
+          *ngFor="let menuItem of menuItems; let i = index; let lastItem = last"
+        >
+          <!-- TODO: Change to matline. -->
+          <hr *ngIf="lastItem" role="separator" />
+          <!-- Mobile main menu elements. -->
+          <a
+            mat-list-item
+            *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
+            attr.aria-label="{{ menuItem.name }}"
+            href="#"
+            role="link"
+            title="{{ menuItem.name }}"
+          >
+            <mat-icon>{{ menuItem.icon }}</mat-icon>
+            <span>&nbsp;{{ menuItem.name }}</span>
+          </a>
+          <!-- Template element for menu of services. -->
+          <ng-template #servicesTemplate>
+            <!-- Services element in main menu. -->
+            <a
+              mat-list-item
+              *ngIf="!lastItem; else: closeTemplate"
+              [matMenuTriggerFor]="menuMobile"
+              attr.aria-label="{{ menuItem.name }}"
+              href="#"
+              role="link"
+              title="{{ menuItem.name }}"
+            >
+              <mat-icon>{{ menuItem.icon }}</mat-icon>
+              <span>&nbsp;{{ menuItem.name }}</span>
+              <mat-icon>arrow_drop_down</mat-icon>
+            </a>
+            <!-- Template element for close button. -->
+            <ng-template #closeTemplate>
+              <!-- Close button element in main menu. -->
+              <a
+                mat-list-item
+                (click)="sidenav.close()"
+                attr.aria-label="{{ menuItem.name }}"
+                href="#"
+                role="link"
+                title="{{ menuItem.name }}"
+              >
+                <mat-icon>{{ menuItem.icon }}</mat-icon>
+                <span>&nbsp;{{ menuItem.name }}</span>
+              </a>
+            </ng-template>
+          </ng-template>
+          <!-- Menu of services. -->
+          <mat-menu #menuMobile="matMenu">
+            <!-- Lazy loaded menu of services. -->
+            <ng-template matMenuContent>
+              <!-- Grouping element for list of menu items for services. -->
+              <ng-container *ngFor="let serviceItem of servicesItems">
+                <!-- Services elements. -->
+                <a
+                  mat-menu-item
+                  attr.aria-label="{{ serviceItem.name }}"
+                  href="#"
+                  role="link"
+                  title="{{ serviceItem.name }}"
                 >
-                  <mat-icon>{{ serviceItem.icon }}</mat-icon>
                   <span>{{ serviceItem.name }}</span>
                 </a>
-              </ng-template>
-            </mat-menu>
-          </a>
+              </ng-container>
+            </ng-template>
+          </mat-menu>
         </ng-container>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <!--
-          Show the button by default, and will be hidden only on devices greater than mobile.
-        -->
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="sidenav.toggle()"
-          fxHide.gt-sm
-        >
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <!-- TODO: Put logo here. -->
-        <span>Software Company</span>
-        <!--
-          The below element is hidden by default, and will be shown only on devices greater than mobile.
-        -->
-        <div fxFlex fxLayout fxLayoutAlign="end" fxHide fxShow.gt-sm>
-          <mat-list fxLayout fxLayoutGap="10px" class="horizontal-items">
-            <!-- Grouping element for list of menu items. -->
-            <ng-container
-              *ngFor="
-                let menuItem of menuItems;
-                let j = index;
-                let lastItem = last
-              "
-            >
-              <a mat-list-item href="#" role="link" *ngIf="!lastItem"
-                >{{ menuItem.name }}
-                <mat-icon
-                  #menuTrigger="matMenuTrigger"
-                  [matMenuTriggerFor]="menuDesktop"
-                  (mouseover)="menuTrigger.openMenu()"
-                  *ngIf="j === 1"
-                  >arrow_drop_down
-                </mat-icon>
-                <mat-menu
-                  #menuDesktop="matMenu"
-                  [overlapTrigger]="false"
-                  (mouseleave)="menuTrigger.closeMenu()"
-                >
-                  <!-- Lazy loading menu. -->
-                  <ng-template matMenuContent>
-                    <a
-                      mat-menu-item
-                      href="#"
-                      role="link"
-                      *ngFor="let serviceItem of servicesItems"
-                      >{{ serviceItem.name }}</a
-                    >
-                  </ng-template>
-                </mat-menu>
-              </a>
-            </ng-container>
-          </mat-list>
-        </div>
-      </mat-toolbar>
-    </mat-sidenav-content>
   </mat-sidenav-container>
 </header>

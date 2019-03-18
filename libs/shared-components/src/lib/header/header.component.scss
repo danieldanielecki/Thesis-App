@@ -12,8 +12,13 @@ mat-menu a {
   display: block;
 }
 
-.horizontal-items {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.mat-menu-content {
+  &.cdk-focused,
+  &.cdk-program-focused {
+    background-color: none !important;
+
+    .mat-button-focus-overlay {
+      display: none !important;
+    }
+  }
 }
