@@ -45,5 +45,11 @@ describe('HeaderComponent', () => {
   it('should create header component', () => {
     expect(component).toBeTruthy();
   });
-  // TODO: Expand this once header will be done.
+
+  it('should have clickable button to toggle sidenav', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    compiled.querySelector('button').click();
+  });
+
+  // TODO: Add routing tests.
 });
