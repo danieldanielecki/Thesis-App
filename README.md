@@ -38,7 +38,7 @@ TODO: Add this if brief would be build
 + `npm run dep-graph` - run dependency graph.
 + `npx jest --clearCache` - clear cache for Jest.
 + For Angular CLI, and Nx more can be found on [Nx official project website](https://nrwl.io/nx/guide-nx-workspace), or [Angular CLI documentation](https://angular.io/cli). To simplify management of these commands Angular Console, as an extension to Visual Studio Code is used for more sophisticated scenarios.
-+ `git log --all --decorate --graph --oneline -all` - log commits of repository in a human friendly way.
++ `git log --all --decorate --graph --oneline` - log commits of repository in a human friendly way.
 + `git diff --color-words` - display difference between commit, and working tree with distinguishing between words colors without breaking line where differences occured.
 + `git status` - display differences between the index file, and the current HEAD commit.
 + `git status -sb` - same as `git status`, but in shorter version, and showing current branch.
