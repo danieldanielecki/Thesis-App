@@ -1,14 +1,11 @@
 <!-- TODO: Improve in terms of Agastya. -->
-<!-- TODO: Improve in terms of accessibility. -->
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
-<!-- TODO: Write just 1 list and play with ngIf/flexbox. -->
-<!-- TODO: Finish accessibility. -->
 <header>
-  <mat-sidenav-container class="container" aria-label="Sidenav">
+  <mat-sidenav-container class="container" aria-label="Sidenav" role="region">
     <!-- Desktop header main menu (toolbar). -->
-    <mat-toolbar color="primary" aria-label="Toolbar">
+    <mat-toolbar color="primary" aria-label="Toolbar" role="navigation">
       <!--
         Show the button by default, and will be hidden only on devices with min-width: 960px.
       -->
@@ -20,10 +17,12 @@
         role="button"
         type="button"
       >
-        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+        <mat-icon aria-label="Sidenav toggle icon" role="img">menu</mat-icon>
       </button>
-      <!-- TODO: Put logo here. -->
-      <span aria-label="Company name">Software Company</span>
+      <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
+      <span attr.aria-label="Company name" title="Software Company" role="text"
+        >Software Company</span
+      >
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
@@ -46,7 +45,7 @@
               #menuTrigger="matMenuTrigger"
               [matMenuTriggerFor]="menuDesktop"
               (mouseenter)="menuTrigger.openMenu()"
-              attr.aria-label="{{ menuItem.name }}"
+              role="img"
               >arrow_drop_down
             </mat-icon></a
           >
@@ -55,6 +54,7 @@
             #menuDesktop="matMenu"
             [overlapTrigger]="false"
             (mouseleave)="menuTrigger.closeMenu()"
+            role="menu"
           >
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
@@ -76,10 +76,10 @@
       </div>
     </mat-toolbar>
     <!-- Mobile header main menu (sidenav). -->
-    <mat-sidenav #sidenav fixedInViewport="true" role="navigation">
-      <mat-toolbar>Menu</mat-toolbar>
+    <mat-sidenav #sidenav fixedInViewport="true" role="sidenav">
+      <mat-toolbar role="text">Menu</mat-toolbar>
       <!-- Navbar list. -->
-      <mat-nav-list>
+      <mat-nav-list role="navigation">
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let i = index; let lastItem = last"
@@ -95,8 +95,12 @@
             role="link"
             title="{{ menuItem.name }}"
           >
-            <mat-icon>{{ menuItem.icon }}</mat-icon>
-            <span>&nbsp;{{ menuItem.name }}</span>
+            <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
+              menuItem.icon
+            }}</mat-icon>
+            <span attr.aria-label="{{ menuItem.name }}" role="text"
+              >&nbsp;{{ menuItem.name }}</span
+            >
           </a>
           <!-- Template element for menu of services. -->
           <ng-template #servicesTemplate>
@@ -110,9 +114,15 @@
               role="link"
               title="{{ menuItem.name }}"
             >
-              <mat-icon>{{ menuItem.icon }}</mat-icon>
-              <span>&nbsp;{{ menuItem.name }}</span>
-              <mat-icon>arrow_drop_down</mat-icon>
+              <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
+                menuItem.icon
+              }}</mat-icon>
+              <span attr.aria-label="{{ menuItem.name }}" role="text"
+                >&nbsp;{{ menuItem.name }}</span
+              >
+              <mat-icon attr.aria-label="{{ menuItem.name }}" role="img"
+                >arrow_drop_down</mat-icon
+              >
             </a>
             <!-- Template element for close button. -->
             <ng-template #closeTemplate>
@@ -125,13 +135,17 @@
                 role="link"
                 title="{{ menuItem.name }}"
               >
-                <mat-icon>{{ menuItem.icon }}</mat-icon>
-                <span>&nbsp;{{ menuItem.name }}</span>
+                <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
+                  menuItem.icon
+                }}</mat-icon>
+                <span attr.aria-label="{{ menuItem.name }}" role="text"
+                  >&nbsp;{{ menuItem.name }}</span
+                >
               </a>
             </ng-template>
           </ng-template>
           <!-- Menu of services. -->
-          <mat-menu #menuMobile="matMenu">
+          <mat-menu #menuMobile="matMenu" role="menu">
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
               <!-- Grouping element for list of menu items for services. -->
@@ -144,7 +158,14 @@
                   role="link"
                   title="{{ serviceItem.name }}"
                 >
-                  <span>{{ serviceItem.name }}</span>
+                  <mat-icon
+                    attr.aria-label="{{ serviceItem.name }}"
+                    role="img"
+                    >{{ serviceItem.icon }}</mat-icon
+                  >
+                  <span attr.aria-label="{{ serviceItem.name }}" role="text">{{
+                    serviceItem.name
+                  }}</span>
                 </a>
               </ng-container>
             </ng-template>
