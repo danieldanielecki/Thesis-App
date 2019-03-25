@@ -4,7 +4,6 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatTabsModule,
   MatToolbarModule }
 from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
-    MatTabsModule,
     MatToolbarModule
   ],
   declarations: [HeaderComponent, FooterComponent],

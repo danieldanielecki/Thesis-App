@@ -21,6 +21,15 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+  // Jest uses JSDOM to create browser environment. JSDOM doesn't support window.matchMedia, so it's required to create it on our own in the tests.
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => { return {
+        matches: true
+      }})
+    });
+  });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.debugElement.componentInstance;
