@@ -36,8 +36,8 @@
             mat-button
             *ngIf="!lastItem"
             attr.aria-label="{{ menuItem.name }}"
-            href="#"
             role="link"
+            routerLink="{{ menuItem.path }}"
             title="{{ menuItem.name }}"
             >{{ menuItem.name }}
             <mat-icon
@@ -65,8 +65,8 @@
                 <a
                   mat-menu-item
                   attr.aria-label="{{ serviceItem.name }}"
-                  href="#"
                   role="link"
+                  routerLink="{{ serviceItem.path }}"
                   title="{{ serviceItem.name }}"
                   >{{ serviceItem.name }}</a
                 ></ng-container
@@ -91,8 +91,8 @@
             mat-list-item
             *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
             attr.aria-label="{{ menuItem.name }}"
-            href="#"
             role="link"
+            routerLink="{{ menuItem.path }}"
             title="{{ menuItem.name }}"
           >
             <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -110,8 +110,8 @@
               *ngIf="!lastItem; else: closeTemplate"
               [matMenuTriggerFor]="menuMobile"
               attr.aria-label="{{ menuItem.name }}"
-              href="#"
               role="link"
+              routerLink="{{ menuItem.path }}"
               title="{{ menuItem.name }}"
             >
               <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -131,8 +131,8 @@
                 mat-list-item
                 (click)="sidenav.close()"
                 attr.aria-label="{{ menuItem.name }}"
-                href="#"
                 role="link"
+                routerLink="{{ menuItem.path }}"
                 title="{{ menuItem.name }}"
               >
                 <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -154,8 +154,8 @@
                 <a
                   mat-menu-item
                   attr.aria-label="{{ serviceItem.name }}"
-                  href="#"
                   role="link"
+                  routerLink="{{ serviceItem.path }}"
                   title="{{ serviceItem.name }}"
                 >
                   <mat-icon

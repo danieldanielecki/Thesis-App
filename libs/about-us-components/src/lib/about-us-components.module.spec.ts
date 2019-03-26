@@ -1,7 +1,4 @@
-import {
-  async,
-  TestBed
-} from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AboutUsComponentsModule } from './about-us-components.module';
 
 describe('AboutUsComponentsModule', () => {

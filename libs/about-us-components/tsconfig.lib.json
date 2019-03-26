@@ -20,7 +20,7 @@
     "annotateForClosureCompiler": true, // Use Tsickle to annotate the emitted JavaScript with JSDoc comments needed by the Closure Compiler.
     "disableExpressionLowering": false, // Disable metadata rewriting, requiring the rewriting to be done manually.
     "disableTypeScriptVersionCheck": false, // Disable not to check TypeScript version, if would be set to true then unsupported versions wouldn't throw an error.
-    "enableLegacyTemplate":false, // Enable using deprecated <template>, it can be required by some third-party Angular libraries.
+    "enableLegacyTemplate": false, // Enable using deprecated <template>, it can be required by some third-party Angular libraries.
     "enableResourceInlining": true, // Replace all templateUrl and styleUrls properties in @Component with template/styles. Better debug error messaging with NgIf when it uses non-template elements.
     "fullTemplateTypeCheck": true, // Enable the binding expression validation phase of the template compiler which uses TypeScript to validate binding expressions.
     "generateCodeForLibraries": true, // Generate factory files (.ngfactory.js and .ngstyle.js) for .d.ts files with a corresponding .metadata.json file.

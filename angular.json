@@ -308,6 +308,99 @@
           "styleext": "scss"
         }
       }
+    },
+    "cyber-security": {
+      "root": "libs/cyber-security",
+      "sourceRoot": "libs/cyber-security/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cyber-security/tsconfig.lib.json",
+              "libs/cyber-security/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/cyber-security/jest.config.js",
+            "tsConfig": "libs/cyber-security/tsconfig.spec.json",
+            "setupFile": "libs/cyber-security/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "digital-strategy": {
+      "root": "libs/digital-strategy",
+      "sourceRoot": "libs/digital-strategy/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/digital-strategy/tsconfig.lib.json",
+              "libs/digital-strategy/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/digital-strategy/jest.config.js",
+            "tsConfig": "libs/digital-strategy/tsconfig.spec.json",
+            "setupFile": "libs/digital-strategy/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "software-development": {
+      "root": "libs/software-development",
+      "sourceRoot": "libs/software-development/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/software-development/tsconfig.lib.json",
+              "libs/software-development/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/software-development/jest.config.js",
+            "tsConfig": "libs/software-development/tsconfig.spec.json",
+            "setupFile": "libs/software-development/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

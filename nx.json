@@ -31,6 +31,15 @@
     },
     "contact-components": {
       "tags": ["contact-components"]
+    },
+    "cyber-security": {
+      "tags": ["cyber-security"]
+    },
+    "digital-strategy": {
+      "tags": ["digital-strategy"]
+    },
+    "software-development": {
+      "tags": ["software-development"]
     }
   }
 }
