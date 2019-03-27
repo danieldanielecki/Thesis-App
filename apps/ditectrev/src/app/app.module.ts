@@ -4,11 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 // Main modules.
-import { AboutUsComponentsModule } from '@app/about-us-components';
-import { ContactComponentsModule } from '@app/contact-components';
-import { HomeComponentsModule } from '@app/home-components';
-import { MethodologyComponentsModule } from '@app/methodology-components';
-import { ServicesComponentsModule } from '@app/services-components';
+import { AboutUsModule } from '@app/about-us';
+import { ContactModule } from '@app/contact';
+import { HomeModule } from '@app/home';
+import { MethodologyModule } from '@app/methodology';
+import { ServicesModule } from '@app/services';
 import { SharedComponentsModule } from '@app/shared-components';
 
 // Services modules.
@@ -31,11 +31,11 @@ new Agastya('ditectrev');
     BrowserAnimationsModule,
 
     // Main modules.
-    AboutUsComponentsModule,
-    ContactComponentsModule,
-    HomeComponentsModule,
-    MethodologyComponentsModule,
-    ServicesComponentsModule,
+    AboutUsModule,
+    ContactModule,
+    HomeModule,
+    MethodologyModule,
+    ServicesModule,
     SharedComponentsModule,
 
     // Services modules.

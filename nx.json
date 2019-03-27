@@ -17,20 +17,20 @@
     "shared-components": {
       "tags": ["shared-components"]
     },
-    "home-components": {
-      "tags": ["home-components"]
+    "home": {
+      "tags": ["home"]
     },
-    "services-components": {
-      "tags": ["services-components"]
+    "services": {
+      "tags": ["services"]
     },
-    "methodology-components": {
-      "tags": ["methodology-components"]
+    "methodology": {
+      "tags": ["methodology"]
     },
-    "about-us-components": {
-      "tags": ["about-us-components"]
+    "about-us": {
+      "tags": ["about-us"]
     },
-    "contact-components": {
-      "tags": ["contact-components"]
+    "contact": {
+      "tags": ["contact"]
     },
     "cyber-security": {
       "tags": ["cyber-security"]

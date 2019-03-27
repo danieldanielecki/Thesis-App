@@ -40,19 +40,19 @@
     "paths": {
       // Main components.
       "@app/about-us-component": [
-        "libs/about-us-components/src/lib/about-us/about-us.component.ts"
+        "libs/about-us/src/lib/about-us/about-us.component.ts"
       ],
       "@app/contact-component": [
-        "libs/contact-components/src/lib/contact/contact.component.ts"
+        "libs/contact/src/lib/contact/contact.component.ts"
       ],
       "@app/home-component": [
-        "libs/home-components/src/lib/home/home.component.ts"
+        "libs/home/src/lib/home/home.component.ts"
       ],
       "@app/methodology-component": [
-        "libs/methodology-components/src/lib/methodology/methodology.component.ts"
+        "libs/methodology/src/lib/methodology/methodology.component.ts"
       ],
       "@app/services-component": [
-        "libs/services-components/src/lib/services/services.component.ts"
+        "libs/services/src/lib/services/services.component.ts"
       ],
 
       // Services components.
@@ -62,13 +62,13 @@
 
       // Main modules.
       // TODO: Remove "components" from name.
-      "@app/about-us-components": ["libs/about-us-components/src/index.ts"],
-      "@app/contact-components": ["libs/contact-components/src/index.ts"],
-      "@app/home-components": ["libs/home-components/src/index.ts"],
-      "@app/methodology-components": [
-        "libs/methodology-components/src/index.ts"
+      "@app/about-us": ["libs/about-us/src/index.ts"],
+      "@app/contact": ["libs/contact/src/index.ts"],
+      "@app/home": ["libs/home/src/index.ts"],
+      "@app/methodology": [
+        "libs/methodology/src/index.ts"
       ],
-      "@app/services-components": ["libs/services-components/src/index.ts"],
+      "@app/services": ["libs/services/src/index.ts"],
       "@app/shared-components": ["libs/shared-components/src/index.ts"],
 
       // Services modules.
