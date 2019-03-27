@@ -48,6 +48,9 @@ TODO: Add this if brief would be build
 + `git tag` - show tags from the repository.
 + `git tag -a v0.0.0 -m "tag message"` - create tag on current commit with specific version, and message.
 + `git push --tags` - push tags to the repository.
++ `git tag -d v0.0.0` - delete local tag.
++ `git push --delete origin v0.0.0` - delete remote tag.
++ `git tag -a v0.0.0 123abcde -m "Message here"` - add tag to certain commit.
 
 
 ## Commits convention
@@ -56,6 +59,7 @@ TODO: Add this if brief would be build
 + **Change:** - changes in methods, project setup, variables, etc.
 + **Delete:** - something has been removed.
 + **Fix:** - part of code/functionality has been performed.
++ **Tags to commits** - First commit, then add appropriate tag to the new commit. Otherwise the tag will be placed on an old commit.
 
 ## Submitted issues
 
