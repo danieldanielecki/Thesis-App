@@ -61,7 +61,6 @@
       "@app/software-development-component": ["libs/software-development/src/lib/software-development/software-development.component.ts"],
 
       // Main modules.
-      // TODO: Remove "components" from name.
       "@app/about-us": ["libs/about-us/src/index.ts"],
       "@app/contact": ["libs/contact/src/index.ts"],
       "@app/home": ["libs/home/src/index.ts"],
@@ -74,7 +73,10 @@
       // Services modules.
       "@app/cyber-security": ["libs/cyber-security/src/index.ts"],
       "@app/digital-strategy": ["libs/digital-strategy/src/index.ts"],
-      "@app/software-development": ["libs/software-development/src/index.ts"]
+      "@app/software-development": ["libs/software-development/src/index.ts"],
+
+      // Others, self-defined.
+      "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"]
     },
     "traceResolution": false,
     "typeRoots": ["node_modules/@types"],
