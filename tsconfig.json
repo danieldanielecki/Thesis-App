@@ -76,7 +76,8 @@
       "@app/software-development": ["libs/software-development/src/index.ts"],
 
       // Others, self-defined.
-      "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"]
+      "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"],
+      "@app/not-found-component": ["libs/shared-components/src/lib/not-found/not-found.component.ts"]
     },
     "traceResolution": false,
     "typeRoots": ["node_modules/@types"],

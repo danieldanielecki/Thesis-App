@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
 
-new Agastya('ditectrev');
+new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, plus add as an environmental variable.
 
 @NgModule({
   declarations: [AppComponent],

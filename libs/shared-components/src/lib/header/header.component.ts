@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  menuItems: { icon: string; name: string; path: string }[] = [
+  public menuItems: { icon: string; name: string; path: string }[] = [
     { icon: 'home', name: 'Home', path: '/' },
     { icon: 'playlist_add_check', name: 'Services', path: '/services' },
     { icon: 'fingerprint', name: 'Methodology', path: '/methodology' },
@@ -17,7 +17,7 @@ export class HeaderComponent {
   ];
 
   // Change this as a subroute (not child) of services.
-  servicesItems: { icon: string; name: string; path: string }[] = [
+  public servicesItems: { icon: string; name: string; path: string }[] = [
     {
       icon: 'security',
       name: 'Cyber Security',

@@ -14,10 +14,11 @@ import { CyberSecurityComponent } from '@app/cyber-security-component';
 import { DigitalStrategyComponent } from '@app/digital-strategy-component';
 import { SoftwareDevelopmentComponent } from '@app/software-development-component';
 
-// TODO: Change all these modules to component.
+// Others.
+import { NotFoundComponent } from '@app/not-found-component';
+
 // TODO: Add animations.
 // TODO: Add lazy routing.
-// TODO: Add 404 page.
 // TODO: Add smooth scroll to top if after changing route it would leave the user on the bottom of the page.
 // TODO: Add nested routes for services.
 // TODO: Think about routing on mobile, if the sidebar should be not closed after click.
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: ServicesComponent,
     data: { animation: 'services' }
   },
+  // TODO: Define subservices in services component.
   {
     path: 'cyber-security',
     component: CyberSecurityComponent,
@@ -65,10 +67,15 @@ const routes: Routes = [
     component: ContactComponent,
     data: { animation: 'contact' }
   },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+    data: { animation: 'not-found' }
+  },
   // It's important that wildcard route has to be the last element in array of routes, because routes parses from top to bottom.
   {
     path: '**', // Wildcard path, which means to catch all other routes, not specified above.
-    redirectTo: '/not-found' // Alternative to component in routes, which redirects to specific path.
+    redirectTo: 'not-found' // Alternative to component in routes, which redirects to specific path.
   }
 ];
 

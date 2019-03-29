@@ -15,6 +15,7 @@ Focus is to achieve high quality source code by using programming best practices
 + Node.js
 + npm
 + Nx
++ Three.js
 + TypeScript
 + Webpack
 <!--

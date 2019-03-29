@@ -33,7 +33,7 @@ describe('RoutingModule', () => {
         DigitalStrategyComponent,
         SoftwareDevelopmentComponent
       ],
-      imports: [RouterTestingModule, RoutingModule]
+      imports: [RouterTestingModule, RoutingModule, SharedComponentsModule]
     }).compileComponents();
   }));
 
@@ -42,4 +42,4 @@ describe('RoutingModule', () => {
   });
 });
 
-// TODO: Make unit tests working with other errors after adding routing.
+// TODO: add path unit testing after all routes will be done (incl. footer).
