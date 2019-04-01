@@ -1,31 +1,25 @@
-// TODO: Justify it.
 .mini {
-  font-size: 1em;
-  color: #000;
   line-height: 9em;
-  text-indent: 2.5em;
   position: absolute;
-  left: 50%;
+  text-indent: 2.5em;
   top: 50%;
 }
-.mega,
-#renderIcosahedron {
-  line-height: 1.05em;
-  font-weight: bold;
+.mega {
   font-size: 12rem;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-  width: 450px;
+  font-weight: bold;
+  margin: -150px 0 0 -150px;
+
+ &, #renderIcosahedron {
   height: 450px;
-  position: absolute;
   left: 50%;
+  position: absolute;
   top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  width: 450px;
+ }
 }
 #renderIcosahedron {
   margin-left: -280px;
-  margin-top: -350px;
+  margin-top: -340px;
 }
 .boom {
   color: white; // TODO: Change it when color of background will change.
