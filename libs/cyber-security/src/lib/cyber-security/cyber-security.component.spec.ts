@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CyberSecurityComponent } from './cyber-security.component';
 
 describe('CyberSecurityComponent', () => {
@@ -21,6 +20,4 @@ describe('CyberSecurityComponent', () => {
   it('should create cyber security component', () => {
     expect(component).toBeTruthy();
   });
-
-  // TODO: Add next unit tests once this component will grow.
 });

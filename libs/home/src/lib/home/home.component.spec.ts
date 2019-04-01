@@ -26,6 +26,4 @@ describe('HomeComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-slider')).not.toBeNull();
   }));
-
-  // TODO: Add next unit tests once this component will grow.
 });

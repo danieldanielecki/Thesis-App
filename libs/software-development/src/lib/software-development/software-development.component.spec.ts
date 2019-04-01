@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SoftwareDevelopmentComponent } from './software-development.component';
 
 describe('SoftwareDevelopmentComponent', () => {
@@ -21,6 +20,4 @@ describe('SoftwareDevelopmentComponent', () => {
   it('should create software development component', () => {
     expect(component).toBeTruthy();
   });
-
-  // TODO: Add next unit tests once this component will grow.
 });

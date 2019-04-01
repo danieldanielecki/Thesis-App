@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DigitalStrategyComponent } from './digital-strategy.component';
 
 describe('DigitalStrategyComponent', () => {
@@ -21,6 +20,4 @@ describe('DigitalStrategyComponent', () => {
   it('should create digital strategy component', () => {
     expect(component).toBeTruthy();
   });
-
-  // TODO: Add next unit tests once this component will grow.
 });

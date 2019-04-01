@@ -1,4 +1,3 @@
-// TODO: Think about other *config.json duplicated files.
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -60,24 +59,25 @@
       "@app/digital-strategy-component": ["libs/digital-strategy/src/lib/digital-strategy/digital-strategy.component.ts"],
       "@app/software-development-component": ["libs/software-development/src/lib/software-development/software-development.component.ts"],
 
-      // Main modules.
-      "@app/about-us": ["libs/about-us/src/index.ts"],
-      "@app/contact": ["libs/contact/src/index.ts"],
-      "@app/home": ["libs/home/src/index.ts"],
-      "@app/methodology": [
-        "libs/methodology/src/index.ts"
-      ],
-      "@app/services": ["libs/services/src/index.ts"],
-      "@app/shared-components": ["libs/shared-components/src/index.ts"],
+       // Main modules.
+       "@app/about-us": ["libs/about-us/src/index.ts"],
+       "@app/contact": ["libs/contact/src/index.ts"],
+       "@app/home": ["libs/home/src/index.ts"],
+       "@app/methodology": [
+         "libs/methodology/src/index.ts"
+       ],
+       "@app/services": ["libs/services/src/index.ts"],
+       "@app/shared-components": ["libs/shared-components/src/index.ts"],
 
       // Services modules.
       "@app/cyber-security": ["libs/cyber-security/src/index.ts"],
       "@app/digital-strategy": ["libs/digital-strategy/src/index.ts"],
       "@app/software-development": ["libs/software-development/src/index.ts"],
 
-      // Others, self-defined.
+      // Others.
       "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"],
-      "@app/not-found-component": ["libs/shared-components/src/lib/not-found/not-found.component.ts"]
+      "@app/not-found": ["libs/not-found/src/index.ts"],
+      "@app/not-found-component": ["libs/not-found/src/lib/not-found/not-found.component.ts"]
     },
     "traceResolution": false,
     "typeRoots": ["node_modules/@types"],

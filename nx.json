@@ -40,6 +40,9 @@
     },
     "software-development": {
       "tags": ["software-development"]
+    },
+    "not-found": {
+      "tags": ["not-found"]
     }
   }
 }

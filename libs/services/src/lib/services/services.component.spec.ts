@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ServicesComponent } from './services.component';
 
 describe('ServicesComponent', () => {
@@ -21,6 +20,4 @@ describe('ServicesComponent', () => {
   it('should create services component', () => {
     expect(component).toBeTruthy();
   });
-
-  // TODO: Add next unit tests once this component will grow.
 });

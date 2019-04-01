@@ -13,7 +13,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -28,7 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatToolbarModule,
     RouterModule
   ],
-  declarations: [FooterComponent, HeaderComponent, NotFoundComponent],
-  exports: [FooterComponent, HeaderComponent, NotFoundComponent]
+  declarations: [FooterComponent, HeaderComponent],
+  exports: [FooterComponent, HeaderComponent]
 })
 export class SharedComponentsModule {}

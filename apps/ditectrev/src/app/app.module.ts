@@ -19,6 +19,7 @@ import { SoftwareDevelopmentModule } from '@app/software-development';
 // Others.
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
+import { NotFoundModule } from '@app/not-found';
 import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
 
@@ -44,6 +45,7 @@ new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, pl
     SoftwareDevelopmentModule,
 
     // Others.
+    NotFoundModule,
     NxModule.forRoot(),
     RoutingModule
   ],

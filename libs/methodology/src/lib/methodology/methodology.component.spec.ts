@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MethodologyComponent } from './methodology.component';
 
 describe('MethodologyComponent', () => {
@@ -21,6 +20,4 @@ describe('MethodologyComponent', () => {
   it('should create methodology component', () => {
     expect(component).toBeTruthy();
   });
-
-  // TODO: Add next unit tests once this component will grow.
 });
