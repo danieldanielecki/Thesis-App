@@ -16,6 +16,9 @@ import { DigitalStrategyComponent } from '@app/digital-strategy-component';
 import { SoftwareDevelopmentComponent } from '@app/software-development-component';
 import { SliderComponent } from '@app/slider-component';
 
+// Others.
+import { NotFoundComponent } from '@app/not-found-component';
+
 describe('RoutingModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,7 +34,10 @@ describe('RoutingModule', () => {
         // Services components.
         CyberSecurityComponent,
         DigitalStrategyComponent,
-        SoftwareDevelopmentComponent
+        SoftwareDevelopmentComponent,
+
+        // Others.
+        NotFoundComponent
       ],
       imports: [RouterTestingModule, RoutingModule, SharedComponentsModule]
     }).compileComponents();

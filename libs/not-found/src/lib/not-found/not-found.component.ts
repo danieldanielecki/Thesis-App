@@ -6,14 +6,14 @@
 
 import { Component, Renderer2 } from '@angular/core';
 import {
-  Scene,
-  PerspectiveCamera,
-  WebGLRenderer,
-  Mesh,
   Color,
-  IcosahedronGeometry,
   HemisphereLight,
-  MeshStandardMaterial
+  IcosahedronGeometry,
+  Mesh,
+  MeshStandardMaterial,
+  PerspectiveCamera,
+  Scene,
+  WebGLRenderer
 } from 'three';
 
 @Component({
@@ -23,7 +23,6 @@ import {
 })
 // TODO: Explicit type declarations (like here) with public/private everywhere.
 // TODO: Documentation (like here) everywhere.
-// TODO: Move this to 404 module.
 export class NotFoundComponent {
   private camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera
 
