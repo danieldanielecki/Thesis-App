@@ -46,7 +46,7 @@ export class NotFoundComponent {
    *
    * @returns {void}
    */
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const icosahedron = document.getElementById('renderIcosahedron'); // Get reference of div element from HTML element to render Three.js.
     const icosphere = this.createScene(this.renderer); // Return the icosahedron geometry object from after creating scene.
 
@@ -60,7 +60,7 @@ export class NotFoundComponent {
    * @param {renderer} - the renderer object to display scenes using WebGL.
    * @returns {Mesh}
    */
-  createScene(renderer): Mesh {
+  private createScene(renderer): Mesh {
     this.scene.add(this.camera); // Add camera to the scene.
     renderer.setSize(450, 450); // Set up size of the scene.
     this.camera.position.set(1, -1, 100); // Set up position of the camera.
@@ -90,7 +90,7 @@ export class NotFoundComponent {
    * @param  {renderer} - the renderer object to display scenes using WebGL.
    * @returns {void}
    */
-  renderScene(icosphere, renderer): void {
+  private renderScene(icosphere, renderer): void {
     // Create animation.
     requestAnimationFrame(() => {
       this.renderScene(icosphere, renderer);
@@ -106,7 +106,7 @@ export class NotFoundComponent {
    * @param {icosphere} - the icosahedron geometry object.
    * @returns {void}
    */
-  updateScene(icosphere): void {
+  private updateScene(icosphere): void {
     icosphere.rotation.x += 0.1;
     icosphere.rotation.y += 0.1;
   }

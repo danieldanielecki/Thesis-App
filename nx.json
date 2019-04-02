@@ -64,6 +64,9 @@
     },
     "terms-of-use": {
       "tags": ["terms-of-use"]
+    },
+    "utils": {
+      "tags": ["utils"]
     }
   }
 }

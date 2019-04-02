@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { fadeAnimation } from '@app/utils-fade-animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AppComponent {
-  // TODO: edit when fade animation will be done.
+  public getRouterOutletState(routerOutlet: RouterOutlet): RouterOutlet {
+    const routeData = routerOutlet.activatedRouteData['animation'];
+    return routeData ? routeData : 'rootPage';
+  }
+  public onActivate(): void {
+    const scrollToTop = window.setInterval(() => {
+      const pos = window.pageYOffset;
+      if (pos > 0) {
+        window.scrollTo(0, pos - 5); // Scrolling up step.
+      } else {
+        window.clearInterval(scrollToTop);
+      }
+    }, 20); // Interval of scrolling up step.
+  }
 }

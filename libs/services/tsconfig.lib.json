@@ -5,7 +5,6 @@
     "target": "es2015", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
     "module": "es2015", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
     "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
-    "declaration": true, // Generates corresponding '.d.ts' file.
     "sourceMap": true, // Generates corresponding '.map' file.
     "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires --inlineSourceMap or --sourceMap to be set.
     "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.

@@ -1,14 +1,12 @@
-// TODO: All .json files alphabetically, and remove repeated .json files.
 {
   "compileOnSave": false,
   "compilerOptions": {
     "charset": "utf8",
-    "declaration": true,
     "diagnostics": true,
     "disableSizeLimit": true,
     "downlevelIteration": true,
     "extendedDiagnostics": true,
-    "importHelpers": true,
+    "importHelpers": true, // Import emit helpers (e.g. __extends, __rest, etc..) from tslib.
     "lib": ["es2017", "dom"],
     "listEmittedFiles": true,
     "listFiles": true,
@@ -99,7 +97,8 @@
       "@app/terms-of-use": ["libs/terms-of-use/src/index.ts"],
       "@app/terms-of-use-component": [
         "libs/terms-of-use/src/lib/terms-of-use/terms-of-use.component.ts"
-      ]
+      ],
+      "@app/utils-fade-animation": ["libs/utils/src/lib/fade-animation/fade.animation.ts"]
     },
     "traceResolution": false,
     "typeRoots": ["node_modules/@types"],
