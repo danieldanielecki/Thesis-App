@@ -3,14 +3,6 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc/libs/sitemap", // Redirect output structure to the directory.
     "target": "es2015", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
-    "module": "es2015", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
-    "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
-    "sourceMap": true, // Generates corresponding '.map' file.
-    "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires --inlineSourceMap or --sourceMap to be set.
-    "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.
-    "experimentalDecorators": true, // Enables experimental support for ES decorators.
-    "importHelpers": true, // Import emit helpers (e.g. __extends, __rest, etc..) from tslib.
-    "types": [], // List of names of type definitions to include.
     "lib": ["dom", "es2018"] // List of library files to be included in the compilation.
   },
   "angularCompilerOptions": {

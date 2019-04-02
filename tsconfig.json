@@ -1,40 +1,54 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "charset": "utf8",
-    "diagnostics": true,
-    "disableSizeLimit": true,
-    "downlevelIteration": true,
-    "extendedDiagnostics": true,
+    /* Basic options. */
+    "charset": "utf8", // The character set of the input files.
+    "declaration": false, // Don't generate corresponding '.d.ts' file (Visual Studio Code threw errors about symlinks type resolution in animation).
+    "diagnostics": true, // Show diagnostic information.
+    "disableSizeLimit": true, // Disable size limitation on JavaScript project.
+    "downlevelIteration": true, // Provide full support for iterables in for..of, spread and destructuring when targeting ES5 or ES3.
+    "extendedDiagnostics": true, // Show verbose diagnostic information.
     "importHelpers": true, // Import emit helpers (e.g. __extends, __rest, etc..) from tslib.
-    "lib": ["es2017", "dom"],
-    "listEmittedFiles": true,
-    "listFiles": true,
-    "module": "es2015",
-    "noEmit": false,
-    "outDir": "dist",
-    "pretty": true,
-    "removeComments": true,
-    "resolveJsonModule": false,
-    "showConfig": true,
-    "sourceMap": true,
-    "target": "es5",
-    "alwaysStrict": true,
-    "noImplicitThis": true,
-    "skipLibCheck": false,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "suppressExcessPropertyErrors": false,
-    "suppressImplicitAnyIndexErrors": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "moduleResolution": "node",
+    "lib": ["es2017", "dom"], // List of library files to be included in the compilation.
+    "listEmittedFiles": true, // Print names of generated files part of the compilation.
+    "listFiles": true, // Print names of files part of the compilation.
+    "module": "es2015", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
+    "noEmit": false, // Do not emit outputs.
+    "outDir": "dist", // Redirect output structure to the directory.
+    "pretty": true, // Stylize errors and messages using color and context.
+    "removeComments": true, // Remove all comments except copy-right header comments beginning with /*!.
+    "resolveJsonModule": false, // Include modules imported with .json extension.
+    "showConfig": true, // Rather than actually execute a build with the other input options and config files, show the final implied config file in the output.
+    "sourceMap": true, // Generates corresponding '.map' file.
+    "target": "es5",  // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
+
+    /* Strict type-checking options. */
+    // "strict": true, // Enable all strict type checking options. Enabling --strict enables: '--alwaysStrict', '--noImplicitAny', '--noImplicitThis', '--strictBindCallApply', '--strictFunctionTypes', '--strictNullChecks', and '--strictPropertyInitialization'.
+    // Even though most of these rules below are enabled by setting strict to true, it's a good informational source what exactly it does.
+    "alwaysStrict": true, // Parse in strict mode and emit 'use strict' for each source file.
+    // "noImplicitAny": true, // Raise error on expressions and declarations with an implied any type.
+    "noImplicitThis": true, // Raise error on this expressions with an implied any type.
+    "skipLibCheck": false, // Skip type checking of all declaration files (*.d.ts).
+    "strictBindCallApply": true, // Enable stricter checking of of the bind, call, and apply methods on functions.
+    "strictFunctionTypes": true, // Disable bivariant parameter checking for function types.
+    "strictNullChecks": true, // In strict null checking mode, the null and undefined values are not in the domain of every type and are only assignable to themselves and any (the one exception being that undefined is also assignable to void).
+    "strictPropertyInitialization": true, // Ensure non-undefined class properties are initialized in the constructor. This option requires --strictNullChecks be enabled in order to take effect.
+    "suppressExcessPropertyErrors": false, // Suppress excess property checks for object literals.
+    "suppressImplicitAnyIndexErrors": false, // Suppress --noImplicitAny errors for indexing objects lacking index signatures.
+
+    /* Additional checks. */
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement.
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value.
+    "noUnusedLocals": true, // Report errors on unused locals.
+    "noUnusedParameters": true, // Report errors on unused parameters.
+
+    /* Module resolution options. */
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+    "baseUrl": ".", // Base directory to resolve non-relative module names.
+    "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
+
+    // List of path mapping entries for module names to locations relative to the baseUrl.
+    // TODO: Think about dropping components if index.ts imports all.
     "paths": {
       "@app/about-us": ["libs/about-us/src/index.ts"],
       "@app/about-us-component": [
@@ -100,13 +114,17 @@
       ],
       "@app/utils-fade-animation": ["libs/utils/src/lib/fade-animation/fade.animation.ts"]
     },
-    "traceResolution": false,
-    "typeRoots": ["node_modules/@types"],
-    "inlineSources": true,
-    "inlineSourceMap": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "stripInternal": false
+    "traceResolution": false, // Report module resolution log messages.
+    "typeRoots": ["node_modules/@types"], // List of folders to include type definitions from.
+
+    /* Source map options. */
+    "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires --inlineSourceMap or --sourceMap to be set.
+    "inlineSourceMap":  true, // Emit a single file with source maps instead of having a separate file.
+
+    /* Experimental options. */
+    "experimentalDecorators": true, // Enables experimental support for ES decorators.
+    "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.
+    "stripInternal": false // Do not emit declarations for code that has an /** @internal */ JSDoc annotation.
   },
   "exclude": ["node_modules", "tmp"]
 }

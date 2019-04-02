@@ -8,6 +8,7 @@ import { fadeAnimation } from '@app/utils-fade-animation';
   styleUrls: ['./app.component.scss'],
   animations: [fadeAnimation]
 })
+// TODO: Add unit tests for these methods.
 export class AppComponent {
   public getRouterOutletState(routerOutlet: RouterOutlet): RouterOutlet {
     const routeData = routerOutlet.activatedRouteData['animation'];
