@@ -1,10 +1,21 @@
 <!-- TODO: Implement correctly Angular Flex Layout. -->
-<!-- TODO: Add semantics. -->
-<div fxLayout="row" fxLayoutAlign="center center">
-  <p class="mega">
-    4<span class="boom">0</span>4<span id="renderIcosahedron"></span>
+<div fxLayout="row" fxLayoutAlign="center center" role="region">
+  <p class="mega" attr.aria-label="Error" role="text" title="Error">
+    4<span class="boom" attr.aria-label="Error 404" role="text" title="Error 404">0</span
+    >4<span
+      id="renderIcosahedron"
+      attr.aria-label="Error animation"
+      role="presentation"
+      title="Error animation"
+    ></span>
   </p>
-  <p class="mini" fxFlexFill>
+  <p
+    fxFlexFill
+    class="mini"
+    attr.aria-label="Page not found"
+    role="text"
+    title="Page not found"
+  >
     Page not found. That's an error &ndash; please try again.
   </p>
 </div>
