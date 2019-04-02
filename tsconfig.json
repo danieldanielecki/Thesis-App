@@ -59,9 +59,7 @@
         "libs/digital-strategy/src/lib/digital-strategy/digital-strategy.component.ts"
       ],
       "@app/faq": ["libs/faq/src/index.ts"],
-      "@app/faq-component": [
-        "libs/faq/src/lib/faq/faq.component.ts"
-      ],
+      "@app/faq-component": ["libs/faq/src/lib/faq/faq.component.ts"],
       "@app/glossary": ["libs/glossary/src/index.ts"],
       "@app/glossary-component": [
         "libs/glossary/src/lib/glossary/glossary.component.ts"
@@ -101,7 +99,7 @@
       "@app/terms-of-use": ["libs/terms-of-use/src/index.ts"],
       "@app/terms-of-use-component": [
         "libs/terms-of-use/src/lib/terms-of-use/terms-of-use.component.ts"
-      ],
+      ]
     },
     "traceResolution": false,
     "typeRoots": ["node_modules/@types"],

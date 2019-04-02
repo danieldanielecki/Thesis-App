@@ -14,23 +14,14 @@
     "ditectrev-e2e": {
       "tags": ["ditectrev-e2e"]
     },
-    "shared-components": {
-      "tags": ["shared-components"]
-    },
-    "home": {
-      "tags": ["home"]
-    },
-    "services": {
-      "tags": ["services"]
-    },
-    "methodology": {
-      "tags": ["methodology"]
-    },
     "about-us": {
       "tags": ["about-us"]
     },
     "contact": {
       "tags": ["contact"]
+    },
+    "copyrights": {
+      "tags": ["copyrights"]
     },
     "cyber-security": {
       "tags": ["cyber-security"]
@@ -38,32 +29,41 @@
     "digital-strategy": {
       "tags": ["digital-strategy"]
     },
-    "software-development": {
-      "tags": ["software-development"]
-    },
-    "not-found": {
-      "tags": ["not-found"]
-    },
-    "copyrights": {
-      "tags": ["copyrights"]
-    },
-    "privacy-and-security": {
-      "tags": ["privacy-and-security"]
-    },
-    "sitemap": {
-      "tags": ["sitemap"]
-    },
-    "terms-of-use": {
-      "tags": ["terms-of-use"]
-    },
     "faq": {
       "tags": ["faq"]
     },
     "glossary": {
       "tags": ["glossary"]
     },
+    "home": {
+      "tags": ["home"]
+    },
+    "methodology": {
+      "tags": ["methodology"]
+    },
+    "not-found": {
+      "tags": ["not-found"]
+    },
     "partnerships": {
       "tags": ["partnerships"]
+    },
+    "privacy-and-security": {
+      "tags": ["privacy-and-security"]
+    },
+    "services": {
+      "tags": ["services"]
+    },
+    "shared-components": {
+      "tags": ["shared-components"]
+    },
+    "sitemap": {
+      "tags": ["sitemap"]
+    },
+    "software-development": {
+      "tags": ["software-development"]
+    },
+    "terms-of-use": {
+      "tags": ["terms-of-use"]
     }
   }
 }
