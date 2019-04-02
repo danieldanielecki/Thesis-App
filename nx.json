@@ -43,6 +43,27 @@
     },
     "not-found": {
       "tags": ["not-found"]
+    },
+    "copyrights": {
+      "tags": ["copyrights"]
+    },
+    "privacy-and-security": {
+      "tags": ["privacy-and-security"]
+    },
+    "sitemap": {
+      "tags": ["sitemap"]
+    },
+    "terms-of-use": {
+      "tags": ["terms-of-use"]
+    },
+    "faq": {
+      "tags": ["faq"]
+    },
+    "glossary": {
+      "tags": ["glossary"]
+    },
+    "partnerships": {
+      "tags": ["partnerships"]
     }
   }
 }

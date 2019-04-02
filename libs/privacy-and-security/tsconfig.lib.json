@@ -1,0 +1,35 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/libs/privacy-and-security", // Redirect output structure to the directory.
+    "target": "es2015", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
+    "module": "es2015", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
+    "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
+    "declaration": true, // Generates corresponding '.d.ts' file.
+    "sourceMap": true, // Generates corresponding '.map' file.
+    "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires --inlineSourceMap or --sourceMap to be set.
+    "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.
+    "experimentalDecorators": true, // Enables experimental support for ES decorators.
+    "importHelpers": true, // Import emit helpers (e.g. __extends, __rest, etc..) from tslib.
+    "types": [], // List of names of type definitions to include.
+    "lib": ["dom", "es2018"] // List of library files to be included in the compilation.
+  },
+  "angularCompilerOptions": {
+    "allowEmptyCodegenFiles": false, // Generate all the possible generated files even if they are empty.
+    "annotationsAs": "static fields", // Replace decorators with a static field in the class. Allows advanced tree-shakers like Closure compiler to remove unused classes.
+    "annotateForClosureCompiler": true, // Use Tsickle to annotate the emitted JavaScript with JSDoc comments needed by the Closure Compiler.
+    "disableExpressionLowering": false, // Disable metadata rewriting, requiring the rewriting to be done manually.
+    "disableTypeScriptVersionCheck": false, // Disable not to check TypeScript version, if would be set to true then unsupported versions wouldn't throw an error.
+    "enableLegacyTemplate": false, // Enable using deprecated <template>, it can be required by some third-party Angular libraries.
+    "enableResourceInlining": true, // Replace all templateUrl and styleUrls properties in @Component with template/styles. Better debug error messaging with NgIf when it uses non-template elements.
+    "fullTemplateTypeCheck": true, // Enable the binding expression validation phase of the template compiler which uses TypeScript to validate binding expressions.
+    "generateCodeForLibraries": true, // Generate factory files (.ngfactory.js and .ngstyle.js) for .d.ts files with a corresponding .metadata.json file.
+    "preserveWhitespaces": false, // Remove blank text nodes from compiled templates.
+    "skipMetadataEmit": false, // Not to produce .metadata.json files.
+    "skipTemplateCodegen": true, // Suppress emitting .ngfactory.js and .ngstyle.js files. Turns off most of the template compiler and disables reporting template diagnostics.
+    "strictInjectionParameters": true, // Report an error for a parameter supplied whose injection type cannot be determined.
+    "strictMetadataEmit": true, // Emit errors for metadata that would never produce an error when used by the template compiler. This should only be used when "skipMetadataEmit" is false and "skipTemplateCodeGen" is true.
+    "trace": true // Print extra information while compiling templates.
+  },
+  "exclude": ["src/test.ts", "**/*.spec.ts"]
+}
