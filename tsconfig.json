@@ -20,7 +20,7 @@
     "resolveJsonModule": false, // Include modules imported with .json extension.
     "showConfig": true, // Rather than actually execute a build with the other input options and config files, show the final implied config file in the output.
     "sourceMap": true, // Generates corresponding '.map' file.
-    "target": "es5",  // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
+    "target": "es5", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
 
     /* Strict type-checking options. */
     // "strict": true, // Enable all strict type checking options. Enabling --strict enables: '--alwaysStrict', '--noImplicitAny', '--noImplicitThis', '--strictBindCallApply', '--strictFunctionTypes', '--strictNullChecks', and '--strictPropertyInitialization'.
@@ -50,76 +50,64 @@
     // List of path mapping entries for module names to locations relative to the baseUrl.
     // TODO: Think about dropping components if index.ts imports all.
     "paths": {
-      "@app/about-us": ["libs/about-us/src/index.ts"],
+      "@ditectrev-libs/*": ["libs/*"],
       "@app/about-us-component": [
         "libs/about-us/src/lib/about-us/about-us.component.ts"
       ],
-      "@app/contact": ["libs/contact/src/index.ts"],
       "@app/contact-component": [
         "libs/contact/src/lib/contact/contact.component.ts"
       ],
-      "@app/copyrights": ["libs/copyrights/src/index.ts"],
       "@app/copyrights-component": [
         "libs/copyrights/src/lib/copyrights/copyrights.component.ts"
       ],
-      "@app/cyber-security": ["libs/cyber-security/src/index.ts"],
       "@app/cyber-security-component": [
         "libs/cyber-security/src/lib/cyber-security/cyber-security.component.ts"
       ],
-      "@app/digital-strategy": ["libs/digital-strategy/src/index.ts"],
       "@app/digital-strategy-component": [
         "libs/digital-strategy/src/lib/digital-strategy/digital-strategy.component.ts"
       ],
-      "@app/faq": ["libs/faq/src/index.ts"],
       "@app/faq-component": ["libs/faq/src/lib/faq/faq.component.ts"],
-      "@app/glossary": ["libs/glossary/src/index.ts"],
       "@app/glossary-component": [
         "libs/glossary/src/lib/glossary/glossary.component.ts"
       ],
       "@app/home": ["libs/home/src/index.ts"],
       "@app/home-component": ["libs/home/src/lib/home/home.component.ts"],
-      "@app/methodology": ["libs/methodology/src/index.ts"],
       "@app/methodology-component": [
         "libs/methodology/src/lib/methodology/methodology.component.ts"
       ],
-      "@app/not-found": ["libs/not-found/src/index.ts"],
       "@app/not-found-component": [
         "libs/not-found/src/lib/not-found/not-found.component.ts"
       ],
-      "@app/partnerships": ["libs/partnerships/src/index.ts"],
       "@app/partnerships-component": [
         "libs/partnerships/src/lib/partnerships/partnerships.component.ts"
       ],
-      "@app/privacy-and-security": ["libs/privacy-and-security/src/index.ts"],
       "@app/privacy-and-security-component": [
         "libs/privacy-and-security/src/lib/privacy-and-security/privacy-and-security.component.ts"
       ],
-      "@app/services": ["libs/services/src/index.ts"],
       "@app/services-component": [
         "libs/services/src/lib/services/services.component.ts"
       ],
       "@app/shared-components": ["libs/shared-components/src/index.ts"],
-      "@app/sitemap": ["libs/sitemap/src/index.ts"],
       "@app/sitemap-component": [
         "libs/sitemap/src/lib/sitemap/sitemap.component.ts"
       ],
       "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"],
-      "@app/software-development": ["libs/software-development/src/index.ts"],
       "@app/software-development-component": [
         "libs/software-development/src/lib/software-development/software-development.component.ts"
       ],
-      "@app/terms-of-use": ["libs/terms-of-use/src/index.ts"],
       "@app/terms-of-use-component": [
         "libs/terms-of-use/src/lib/terms-of-use/terms-of-use.component.ts"
       ],
-      "@app/utils-fade-animation": ["libs/utils/src/lib/fade-animation/fade.animation.ts"]
+      "@app/utils-fade-animation": [
+        "libs/utils/src/lib/fade-animation/fade.animation.ts"
+      ]
     },
     "traceResolution": false, // Report module resolution log messages.
     "typeRoots": ["node_modules/@types"], // List of folders to include type definitions from.
 
     /* Source map options. */
     "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires --inlineSourceMap or --sourceMap to be set.
-    "inlineSourceMap":  true, // Emit a single file with source maps instead of having a separate file.
+    "inlineSourceMap": true, // Emit a single file with source maps instead of having a separate file.
 
     /* Experimental options. */
     "experimentalDecorators": true, // Enables experimental support for ES decorators.

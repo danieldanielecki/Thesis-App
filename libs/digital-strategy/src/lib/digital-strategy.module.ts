@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { DigitalStrategyComponent } from './digital-strategy/digital-strategy.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [DigitalStrategyComponent]
+  declarations: [DigitalStrategyComponent],
+  imports: [
+    RouterModule.forChild([{ path: '', component: DigitalStrategyComponent }])
+  ]
 })
 export class DigitalStrategyModule {}

@@ -57,3 +57,4 @@ describe('RoutingModule', () => {
 });
 
 // TODO: add path unit testing after all routes will be done (incl. footer).
+// TODO: Test lazy loading here, and in child modules.

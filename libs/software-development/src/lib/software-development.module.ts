@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { SoftwareDevelopmentComponent } from './software-development/software-development.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [SoftwareDevelopmentComponent]
+  declarations: [SoftwareDevelopmentComponent],
+  imports: [
+    RouterModule.forChild([
+      { path: '', component: SoftwareDevelopmentComponent }
+    ])
+  ]
 })
 export class SoftwareDevelopmentModule {}

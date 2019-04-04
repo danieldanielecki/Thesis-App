@@ -1,28 +1,9 @@
 // Angular imports.
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-// Application components imports.
-import { AboutUsComponent } from '@app/about-us-component';
-import { ContactComponent } from '@app/contact-component';
-import { CopyrightsComponent } from '@app/copyrights-component';
-import { CyberSecurityComponent } from '@app/cyber-security-component';
-import { DigitalStrategyComponent } from '@app/digital-strategy-component';
-import { FaqComponent } from '@app/faq-component';
-import { GlossaryComponent } from '@app/glossary-component';
 import { HomeComponent } from '@app/home-component';
-import { MethodologyComponent } from '@app/methodology-component';
-import { NotFoundComponent } from '@app/not-found-component';
-import { PartnershipsComponent } from '@app/partnerships-component';
-import { PrivacyAndSecurityComponent } from '@app/privacy-and-security-component';
-import { ServicesComponent } from '@app/services-component';
-import { SitemapComponent } from '@app/sitemap-component';
-import { SoftwareDevelopmentComponent } from '@app/software-development-component';
-import { TermsOfUseComponent } from '@app/terms-of-use-component';
 
-// TODO: Add animations.
-// TODO: Add lazy routing.
-// TODO: Add smooth scroll to top if after changing route it would leave the user on the bottom of the page.
+// TODO: lazy routing in such a way is a workaround, at the point of time writing this code there was a bug with Angular CLI (Issue #6373).
 // TODO: Add nested routes for services.
 // TODO: Think about routing on mobile, if the sidebar should be not closed after click.
 // TODO: Up - but what if user clicks servies, what should happen? The menu should stay open with sidebar open only for that case, or always sidenav should be open/closed? Think about it.
@@ -32,88 +13,97 @@ const routes: Routes = [
   //   path: 'blog',
   //   component: HomeComponent,
   //   data: { animation: 'blog' }
-  // },
-  { path: '', component: HomeComponent, data: { animation: 'home' } },
+  // }
   {
-    path: 'about-us',
-    component: AboutUsComponent,
-    data: { animation: 'about-us' }
+    path: '',
+    component: HomeComponent,
+    data: { animation: 'home' },
+    pathMatch: 'full'
   },
   {
-    path: 'contact',
-    component: ContactComponent,
-    data: { animation: 'contact' }
+    data: { animation: 'about-us' },
+    loadChildren: './lazy/about-us.lazy.module#AboutUsLazyModule',
+    path: 'about-us'
   },
   {
-    path: 'copyrights',
-    component: CopyrightsComponent,
-    data: { animation: 'copyrights' }
+    data: { animation: 'contact' },
+    loadChildren: './lazy/contact.lazy.module#ContactLazyModule',
+    path: 'contact'
+  },
+  {
+    data: { animation: 'copyrights' },
+    loadChildren: './lazy/copyrights.lazy.module#CopyrightsLazyModule',
+    path: 'copyrights'
   },
   // TODO: Define subservices in services component.
   {
-    path: 'cyber-security',
-    component: CyberSecurityComponent,
-    data: { animation: 'cyber-security' }
+    data: { animation: 'cyber-security' },
+    loadChildren: './lazy/cyber-security.lazy.module#CybeSecurityLazyModule',
+    path: 'cyber-security'
   },
   {
-    path: 'digital-strategy',
-    component: DigitalStrategyComponent,
-    data: { animation: 'digital-strategy' }
+    data: { animation: 'digital-strategy' },
+    loadChildren:
+      './lazy/digital-strategy.lazy.module#DigitalStrategyLazyModule',
+    path: 'digital-strategy'
   },
   {
-    path: 'faq',
-    component: FaqComponent,
-    data: { animation: 'faq' }
+    data: { animation: 'faq' },
+    loadChildren: './lazy/faq.lazy.module#FaqLazyModule',
+    path: 'faq'
   },
   {
-    path: 'glossary',
-    component: GlossaryComponent,
-    data: { animation: 'glossary' }
+    data: { animation: 'glossary' },
+    loadChildren: './lazy/glossary.lazy.module#GlossaryLazyModule',
+    path: 'glossary'
   },
   {
-    path: 'methodology',
-    component: MethodologyComponent,
-    data: { animation: 'methodology' }
+    data: { animation: 'methodology' },
+    loadChildren: './lazy/methodology.lazy.module#MethodologyLazyModule',
+    path: 'methodology'
   },
   {
-    path: 'not-found',
-    component: NotFoundComponent,
-    data: { animation: 'not-found' }
+    data: { animation: 'partnerships' },
+    loadChildren: './lazy/partnerships.lazy.module#PartnershipsLazyModule',
+    path: 'partnerships'
   },
   {
-    path: 'partnerships',
-    component: PartnershipsComponent,
-    data: { animation: 'partnerships' }
+    data: { animation: 'privacy-and-security' },
+    loadChildren:
+      './lazy/privacy-and-security.lazy.module#PrivacyAndSecurityLazyModule',
+    path: 'privacy-and-security'
   },
   {
-    path: 'privacy-and-security',
-    component: PrivacyAndSecurityComponent,
-    data: { animation: 'privacy-and-security' }
+    data: { animation: 'services' },
+    loadChildren: './lazy/services.lazy.module#ServicesLazyModule',
+    path: 'services'
   },
   {
-    path: 'services',
-    component: ServicesComponent,
-    data: { animation: 'services' }
+    data: { animation: 'sitemap' },
+    loadChildren: './lazy/sitemap.lazy.module#SitemapLazyModule',
+    path: 'sitemap'
   },
   {
-    path: 'sitemap',
-    component: SitemapComponent,
-    data: { animation: 'sitemap' }
+    data: { animation: 'software-development' },
+    loadChildren:
+      './lazy/software-development.lazy.module#SoftwareDevelopmentLazyModule',
+    path: 'software-development'
   },
   {
-    path: 'software-development',
-    component: SoftwareDevelopmentComponent,
-    data: { animation: 'software-development' }
+    data: { animation: 'terms-of-use' },
+    loadChildren: './lazy/terms-of-use.lazy.module#TermsOfUseLazyModule',
+    path: 'terms-of-use'
   },
   {
-    path: 'terms-of-use',
-    component: TermsOfUseComponent,
-    data: { animation: 'terms-of-use' }
+    data: { animation: 'not-found' },
+    loadChildren: './lazy/not-found.lazy.module#NotFoundLazyModule',
+    path: 'not-found'
   },
   // It's important that wildcard route has to be the last element in array of routes, because routes parses from top to bottom.
   {
     path: '**', // Wildcard path, which means to catch all other routes, not specified above.
-    redirectTo: 'not-found' // Alternative to component in routes, which redirects to specific path.
+    redirectTo: 'not-found', // Alternative to component in routes, which redirects to specific path.
+    pathMatch: 'full'
   }
 ];
 

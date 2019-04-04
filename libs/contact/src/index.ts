@@ -1,1 +1,2 @@
-export * from './lib/contact.module';
+export { ContactComponent } from './lib/contact/contact.component';
+export { ContactModule } from './lib/contact.module';
