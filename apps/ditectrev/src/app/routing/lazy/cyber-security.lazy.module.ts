@@ -13,4 +13,4 @@ import {
     ])
   ]
 })
-export class CybeSecurityLazyModule {}
+export class CyberSecurityLazyModule {}

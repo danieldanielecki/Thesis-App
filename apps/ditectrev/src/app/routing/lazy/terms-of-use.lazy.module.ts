@@ -13,4 +13,4 @@ import {
     ])
   ]
 })
-export class TermsOfServiceLazyModule {}
+export class TermsOfUseLazyModule {}
