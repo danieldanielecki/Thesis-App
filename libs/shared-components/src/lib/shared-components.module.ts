@@ -7,7 +7,6 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -17,7 +16,6 @@ import { HeaderComponent } from './header/header.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    CommonModule,
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,

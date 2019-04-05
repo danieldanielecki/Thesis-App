@@ -26,7 +26,7 @@
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
-      <div fxFlex fxLayoutAlign="end" fxHide fxShow.gt-sm>
+      <div fxFlex="row" fxLayoutAlign="end" fxHide fxShow.gt-sm>
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let j = index; let lastItem = last"
@@ -49,7 +49,9 @@
               >arrow_drop_down
             </mat-icon></a
           >
-          <!-- TODO: Once mouse leaves (focus, not only click) the mat-menu element hide it. -->
+          <!--
+            TODO: Once mouse leaves (focus, not only click) the mat-menu element hide it.
+          -->
           <!-- Menu of services. -->
           <mat-menu
             #menuDesktop="matMenu"

@@ -1,28 +1,4 @@
-// TODO: Implement correctly Angular Flex Layout.
-.mini {
-  line-height: 9em;
-  position: absolute;
-  left: 20%;
-  top: 50%;
-}
-
 .mega {
-  font-size: 12rem;
-  font-weight: bold;
-  margin: -150px 0 0 -150px;
-
- &, #renderIcosahedron {
-  height: 450px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  width: 450px;
- }
-}
-#renderIcosahedron {
-  margin-left: -280px;
-  margin-top: -340px;
-}
-.boom {
-  color: white; // TODO: Change it when color of background will change.
+  font-size: 12em;
+  margin: 0 -150px;
 }
