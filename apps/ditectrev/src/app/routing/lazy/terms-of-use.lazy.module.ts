@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   TermsOfUseComponent,
   TermsOfUseModule
-} from '@ditectrev-libs/terms-of-use/src/index';
+} from '@libs/terms-of-use/src/index';
 
 @NgModule({
   imports: [

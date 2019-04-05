@@ -48,59 +48,8 @@
     "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
 
     // List of path mapping entries for module names to locations relative to the baseUrl.
-    // TODO: Think about dropping components if index.ts imports all.
     "paths": {
-      "@ditectrev-libs/*": ["libs/*"],
-      "@app/about-us-component": [
-        "libs/about-us/src/lib/about-us/about-us.component.ts"
-      ],
-      "@app/contact-component": [
-        "libs/contact/src/lib/contact/contact.component.ts"
-      ],
-      "@app/copyrights-component": [
-        "libs/copyrights/src/lib/copyrights/copyrights.component.ts"
-      ],
-      "@app/cyber-security-component": [
-        "libs/cyber-security/src/lib/cyber-security/cyber-security.component.ts"
-      ],
-      "@app/digital-strategy-component": [
-        "libs/digital-strategy/src/lib/digital-strategy/digital-strategy.component.ts"
-      ],
-      "@app/faq-component": ["libs/faq/src/lib/faq/faq.component.ts"],
-      "@app/glossary-component": [
-        "libs/glossary/src/lib/glossary/glossary.component.ts"
-      ],
-      "@app/home": ["libs/home/src/index.ts"],
-      "@app/home-component": ["libs/home/src/lib/home/home.component.ts"],
-      "@app/methodology-component": [
-        "libs/methodology/src/lib/methodology/methodology.component.ts"
-      ],
-      "@app/not-found-component": [
-        "libs/not-found/src/lib/not-found/not-found.component.ts"
-      ],
-      "@app/partnerships-component": [
-        "libs/partnerships/src/lib/partnerships/partnerships.component.ts"
-      ],
-      "@app/privacy-and-security-component": [
-        "libs/privacy-and-security/src/lib/privacy-and-security/privacy-and-security.component.ts"
-      ],
-      "@app/services-component": [
-        "libs/services/src/lib/services/services.component.ts"
-      ],
-      "@app/shared-components": ["libs/shared-components/src/index.ts"],
-      "@app/sitemap-component": [
-        "libs/sitemap/src/lib/sitemap/sitemap.component.ts"
-      ],
-      "@app/slider-component": ["libs/home/src/lib/slider/slider.component.ts"],
-      "@app/software-development-component": [
-        "libs/software-development/src/lib/software-development/software-development.component.ts"
-      ],
-      "@app/terms-of-use-component": [
-        "libs/terms-of-use/src/lib/terms-of-use/terms-of-use.component.ts"
-      ],
-      "@app/utils-fade-animation": [
-        "libs/utils/src/lib/fade-animation/fade.animation.ts"
-      ]
+      "@libs/*": ["libs/*"]
     },
     "traceResolution": false, // Report module resolution log messages.
     "typeRoots": ["node_modules/@types"], // List of folders to include type definitions from.

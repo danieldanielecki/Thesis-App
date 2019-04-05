@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   DigitalStrategyComponent,
   DigitalStrategyModule
-} from '@ditectrev-libs/digital-strategy/src/index';
+} from '@libs/digital-strategy/src/index';
 
 @NgModule({
   imports: [

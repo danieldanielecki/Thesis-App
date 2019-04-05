@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  GlossaryComponent,
-  GlossaryModule
-} from '@ditectrev-libs/glossary/src/index';
+import { GlossaryComponent, GlossaryModule } from '@libs/glossary/src/index';
 
 @NgModule({
   imports: [

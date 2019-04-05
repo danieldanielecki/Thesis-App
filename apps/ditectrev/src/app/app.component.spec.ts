@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { HomeModule } from '@app/home';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
+import { HomeModule } from '@libs/home/src/index';
 import { SharedComponentsModule } from '@app/shared-components';
 
 describe('AppComponent', () => {

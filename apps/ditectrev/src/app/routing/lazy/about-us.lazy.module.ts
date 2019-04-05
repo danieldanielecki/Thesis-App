@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AboutUsComponent, AboutUsModule } from '@ditectrev-libs/about-us/src/index';
+import { AboutUsComponent, AboutUsModule } from '@libs/about-us/src/index';
 
 @NgModule({
   imports: [
@@ -10,4 +10,4 @@ import { AboutUsComponent, AboutUsModule } from '@ditectrev-libs/about-us/src/in
     ])
   ]
 })
-export class AboutUsLazyModule { }
+export class AboutUsLazyModule {}

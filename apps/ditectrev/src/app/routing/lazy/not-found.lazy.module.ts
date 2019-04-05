@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  NotFoundComponent,
-  NotFoundModule
-} from '@ditectrev-libs/not-found/src/index';
+import { NotFoundComponent, NotFoundModule } from '@libs/not-found/src/index';
 
 @NgModule({
   imports: [

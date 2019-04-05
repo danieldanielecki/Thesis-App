@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   PartnershipsComponent,
   PartnershipsModule
-} from '@ditectrev-libs/partnerships/src/index';
+} from '@libs/partnerships/src/index';
 
 @NgModule({
   imports: [

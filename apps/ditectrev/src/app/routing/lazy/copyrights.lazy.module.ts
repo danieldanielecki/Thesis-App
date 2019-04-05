@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   CopyrightsComponent,
   CopyrightsModule
-} from '@ditectrev-libs/copyrights/src/index';
+} from '@libs/copyrights/src/index';
 
 @NgModule({
   imports: [

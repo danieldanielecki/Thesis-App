@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   CyberSecurityComponent,
   CyberSecurityModule
-} from '@ditectrev-libs/cyber-security/src/index';
+} from '@libs/cyber-security/src/index';
 
 @NgModule({
   imports: [

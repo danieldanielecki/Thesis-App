@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   MethodologyComponent,
   MethodologyModule
-} from '@ditectrev-libs/methodology/src/index';
+} from '@libs/methodology/src/index';
 
 @NgModule({
   imports: [

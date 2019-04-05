@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   SoftwareDevelopmentComponent,
   SoftwareDevelopmentModule
-} from '@ditectrev-libs/software-development/src/index';
+} from '@libs/software-development/src/index';
 
 @NgModule({
   imports: [

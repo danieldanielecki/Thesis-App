@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import {
   PrivacyAndSecurityComponent,
   PrivacyAndSecurityModule
-} from '@ditectrev-libs/privacy-and-security/src/index';
+} from '@libs/privacy-and-security/src/index';
 
 @NgModule({
   imports: [

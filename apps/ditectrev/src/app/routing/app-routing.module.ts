@@ -1,7 +1,7 @@
 // Angular imports.
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '@app/home-component';
+import { HomeComponent } from '@libs/home/src/index';
 
 // TODO: lazy routing in such a way is a workaround, at the point of time writing this code there was a bug with Angular CLI (Issue #6373).
 // TODO: Add nested routes for services.

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FaqComponent, FaqModule } from '@ditectrev-libs/faq/src/index';
+import { FaqComponent, FaqModule } from '@libs/faq/src/index';
 
 @NgModule({
   imports: [
