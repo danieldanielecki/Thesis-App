@@ -1,4 +1,4 @@
-<!-- TODO: Improve in terms of Agastya. -->
+<!-- TODO: Add sticky heder. -->
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
@@ -9,6 +9,7 @@
       <!--
         Show the button by default, and will be hidden only on devices with min-width: 960px.
       -->
+      <!-- TODO: Check if Flexbox has been implemented correctly. -->
       <button
         mat-icon-button
         (click)="sidenav.toggle()"
@@ -20,12 +21,11 @@
         <mat-icon aria-label="Sidenav toggle icon" role="img">menu</mat-icon>
       </button>
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
-      <span attr.aria-label="Company name" title="Software Company" role="text"
-        >Software Company</span
-      >
+      <p attr.aria-label="Company name" title="Software Company">Software Company</p>
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
+      <!-- TODO: Check if Flexbox has been implemented correctly. -->
       <div fxFlex="row" fxLayoutAlign="end" fxHide fxShow.gt-sm>
         <!-- Grouping element for list of menu items. -->
         <ng-container

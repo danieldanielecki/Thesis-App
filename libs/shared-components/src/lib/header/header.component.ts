@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   public menuItems: { icon: string; name: string; path: string }[] = [
+    // TODO: Check if '/' is required.
     { icon: 'home', name: 'Home', path: '/' },
     { icon: 'playlist_add_check', name: 'Services', path: '/services' },
     { icon: 'fingerprint', name: 'Methodology', path: '/methodology' },

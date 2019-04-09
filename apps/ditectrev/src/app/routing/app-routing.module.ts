@@ -38,7 +38,7 @@ const routes: Routes = [
   // TODO: Define subservices in services component.
   {
     data: { animation: 'cyber-security' },
-    loadChildren: './lazy/cyber-security.lazy.module#CybeSecurityLazyModule',
+    loadChildren: './lazy/cyber-security.lazy.module#CyberSecurityLazyModule',
     path: 'cyber-security'
   },
   {

@@ -37,7 +37,7 @@ export class NotFoundComponent {
    * Creates a new instance of this component.
    *
    * @constructor
-   * @param  {Renderer2} - an abstraction class object to manipulate elements without accessing DOM directly.
+   * @param {Renderer2} - an abstraction class object to manipulate elements without accessing DOM directly.
    */
   constructor(private renderer2: Renderer2) {}
 

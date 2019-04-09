@@ -1,0 +1,110 @@
+<!-- TODO: Check gdColumn/gdRow. -->
+<!-- TODO: Try to make it purely on grid layout. -->
+<footer>
+  <div
+    gdAreas="information information email email right_menu right_menu | bottom_menu bottom_menu bottom_menu social social social | copyrights copyrights copyrights copyrights copyrights copyrights"
+    gdAreas.lt-md="information | email | right_menu | bottom_menu | social | copyrights"
+    gdRows.lt-md="auto auto auto auto auto auto"
+    gdAlignRows="space-around center"
+    gdAlignColumns="space-around center"
+  >
+    <div gdArea="information" gdGridAlign="center start">
+      <!--
+        <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+      -->
+      <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
+      <h4>Software Company</h4>
+      <!-- Footer's menu items located on the left side. -->
+      <ng-container *ngFor="let informationItem of informationItems">
+        <p
+          attr.aria-label="{{ informationItem.name }}"
+          title="{{ informationItem.name }}"
+        >
+          <i
+            class="icon ion-ios-{{ informationItem.icon }}"
+            attr.aria-label="{{ informationItem.name }}"
+            role="img"
+          ></i
+          >&nbsp;{{ informationItem.name }}
+        </p>
+      </ng-container>
+      <!-- </div> -->
+    </div>
+    <div gdArea="email" gdGridAlign="center start">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Stay Informed</h4>
+        <p>Text</p>
+        <input type="email" /> <button>Join</button>
+      </div>
+    </div>
+    <div gdArea="right_menu" gdGridAlign="center start">
+      <!-- Footer's menu items located on the right side. -->
+      <div fxLayout="column" fxLayoutAlign="start center">
+        <h4>Information</h4>
+        <ng-container *ngFor="let rightMenuItem of rightMenuItems">
+          <a
+            attr.aria-label="{{ rightMenuItem.name }}"
+            role="link"
+            routerLink="{{ rightMenuItem.path }}"
+            title="{{ rightMenuItem.name }}"
+            >{{ rightMenuItem.name }}</a
+          ><br />
+        </ng-container>
+      </div>
+    </div>
+    <div
+      gdArea="bottom_menu"
+      gdGridAlign="start center"
+      gdGridAlign.lt-md="center center"
+    >
+      <!-- Footer's menu items located in the bottom. -->
+      <hr style="color: white;" fxHide.gt-sm />
+      <!-- TODO: Check why on small fxLayoutAlign is not working. -->
+      <!--
+        <div
+          fxLayout="row"
+          fxLayout.lt-md="column"
+          fxLayoutAlign="start center"
+          fxLayoutAlign.lt-md="center center"
+        >
+      -->
+      <ng-container *ngFor="let bottomMenuItem of bottomMenuItems">
+        <a
+          attr.aria-label="{{ bottomMenuItem.name }}"
+          role="link"
+          routerLink="{{ bottomMenuItem.path }}"
+          title="{{ bottomMenuItem.name }}"
+          >{{ bottomMenuItem.name }}</a
+        >
+      </ng-container>
+      <!-- </div> -->
+    </div>
+    <div
+      gdArea="social"
+      gdGridAlign="end center"
+      gdGridAlign.lt-md="center center"
+    >
+      <hr style="color: white;" fxHide.gt-sm />
+      <!-- <div fxLayout="row" fxLayoutAlign="start center"> -->
+      <!-- Social icons located in the bottom of the footer. -->
+      <ng-container *ngFor="let socialItem of socialItems">
+        <a
+          attr.aria-label="{{ socialItem.name }}"
+          role="link"
+          href="{{ socialItem.url }}"
+          title="{{ socialItem.name }}"
+          target="_blank"
+          ><i
+            class="fa fa-{{ socialItem.icon }}"
+            attr.aria-label="{{ socialItem.name }}"
+          ></i
+        ></a>
+      </ng-container>
+      <!-- </div> -->
+    </div>
+    <!-- TODO: Add name & year. -->
+    <div gdArea="copyrights" gdGridAlign="center center">
+      <p>Copyrights &copy; Software Company</p>
+    </div>
+  </div>
+</footer>

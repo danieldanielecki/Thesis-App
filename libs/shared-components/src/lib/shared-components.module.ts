@@ -1,5 +1,6 @@
 import {
   MatButtonModule,
+  MatGridListModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
@@ -18,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,

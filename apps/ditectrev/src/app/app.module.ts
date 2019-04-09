@@ -7,7 +7,7 @@ import { HomeModule } from '@libs/home/src/index';
 import { SharedComponentsModule } from '@libs/shared-components/src/index';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing/app-routing.module';
-import Agastya from 'agastya';
+import Agastya from 'agastya'; // TODO: Check for new version of Agastya to fix Night & Dyslexia modes (submitted issue).
 
 new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, plus add as an environmental variable.
 
