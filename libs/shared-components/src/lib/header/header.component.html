@@ -1,4 +1,4 @@
-<!-- TODO: Add sticky heder. -->
+<!-- TODO: Add sticky header. -->
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
@@ -9,7 +9,6 @@
       <!--
         Show the button by default, and will be hidden only on devices with min-width: 960px.
       -->
-      <!-- TODO: Check if Flexbox has been implemented correctly. -->
       <button
         mat-icon-button
         (click)="sidenav.toggle()"
@@ -21,12 +20,13 @@
         <mat-icon aria-label="Sidenav toggle icon" role="img">menu</mat-icon>
       </button>
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
-      <p attr.aria-label="Company name" title="Software Company">Software Company</p>
+      <p attr.aria-label="IT Consulting Company" title="IT Consulting Company">
+        IT Consulting Company
+      </p>
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
-      <!-- TODO: Check if Flexbox has been implemented correctly. -->
-      <div fxFlex="row" fxLayoutAlign="end" fxHide fxShow.gt-sm>
+      <div fxFlex="row" fxLayoutAlign="end" fxHide.lt-md>
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let j = index; let lastItem = last"
@@ -35,9 +35,9 @@
           <a
             mat-button
             *ngIf="!lastItem"
+            routerLink="{{ menuItem.path }}"
             attr.aria-label="{{ menuItem.name }}"
             role="link"
-            routerLink="{{ menuItem.path }}"
             title="{{ menuItem.name }}"
             >{{ menuItem.name }}
             <mat-icon
@@ -66,9 +66,9 @@
                 <!-- Services elements. -->
                 <a
                   mat-menu-item
+                  routerLink="{{ serviceItem.path }}"
                   attr.aria-label="{{ serviceItem.name }}"
                   role="link"
-                  routerLink="{{ serviceItem.path }}"
                   title="{{ serviceItem.name }}"
                   >{{ serviceItem.name }}</a
                 ></ng-container
@@ -92,9 +92,9 @@
           <a
             mat-list-item
             *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
+            routerLink="{{ menuItem.path }}"
             attr.aria-label="{{ menuItem.name }}"
             role="link"
-            routerLink="{{ menuItem.path }}"
             title="{{ menuItem.name }}"
           >
             <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -111,9 +111,9 @@
               mat-list-item
               *ngIf="!lastItem; else: closeTemplate"
               [matMenuTriggerFor]="menuMobile"
+              routerLink="{{ menuItem.path }}"
               attr.aria-label="{{ menuItem.name }}"
               role="link"
-              routerLink="{{ menuItem.path }}"
               title="{{ menuItem.name }}"
             >
               <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -132,9 +132,9 @@
               <a
                 mat-list-item
                 (click)="sidenav.close()"
+                routerLink="{{ menuItem.path }}"
                 attr.aria-label="{{ menuItem.name }}"
                 role="link"
-                routerLink="{{ menuItem.path }}"
                 title="{{ menuItem.name }}"
               >
                 <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
@@ -155,9 +155,9 @@
                 <!-- Services elements. -->
                 <a
                   mat-menu-item
+                  routerLink="{{ serviceItem.path }}"
                   attr.aria-label="{{ serviceItem.name }}"
                   role="link"
-                  routerLink="{{ serviceItem.path }}"
                   title="{{ serviceItem.name }}"
                 >
                   <mat-icon

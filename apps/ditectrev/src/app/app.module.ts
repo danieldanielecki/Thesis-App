@@ -11,7 +11,7 @@ import Agastya from 'agastya'; // TODO: Check for new version of Agastya to fix 
 
 new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, plus add as an environmental variable.
 
-// TODO: Think about shared/core module if it's needed.
+// TODO: It might change if SharedModule, FeatureModule, CoreModule, UtilityModule will be implemented.
 @NgModule({
   declarations: [AppComponent],
   imports: [
