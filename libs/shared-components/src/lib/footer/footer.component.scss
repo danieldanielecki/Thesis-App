@@ -1,10 +1,44 @@
 footer {
-  background-color: black;
+  background-color: #222222;
 }
 
-a, p, h3 {
+a {
+  text-transform: uppercase;
+  transition: 1s;
+  &:hover {
+    color: white;
+  }
+}
+
+h3 {
   color: white;
 }
 
-// TODO: Make links without text-decorations, style everything.
-// TODO: Style a bit footer.
+a, p {
+  color: #ced2d3;
+}
+
+.fa {
+  color: white;
+  transition: 1s;
+  &.fa-behance:hover {
+    color: #1769ff;
+  }
+  &.fa-dribbble:hover {
+    color: #ea4c89;
+  }
+  &.fa-facebook:hover {
+    color: #3b5998;
+  }
+  &.fa-instagram:hover {
+    color: #e1306c;
+  }
+  &.fa-linkedin:hover {
+    color: #0077b5;
+  }
+  &.fa-twitter:hover {
+    color: #1da1f2;
+  }
+}
+
+// TODO: style newsletter input.
