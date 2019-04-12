@@ -1,45 +1,95 @@
-<footer>
+<footer aria-label="This is a footer.">
   <!-- TODO: Make it different names. -->
-  <div
-    gdAreas="information information newsletter newsletter right_menu right_menu | bottom_menu bottom_menu bottom_menu social social social | copyrights copyrights copyrights copyrights copyrights copyrights"
-    gdAreas.lt-md="information | right_menu | bottom_menu | newsletter | social | copyrights"
+  <aside
+    gdAreas="address address newsletter newsletter right_menu right_menu | bottom_menu bottom_menu bottom_menu social social social | copyrights copyrights copyrights copyrights copyrights copyrights"
+    gdAreas.lt-md="address | right_menu | bottom_menu | newsletter | social | copyrights"
     gdAlignColumns="center space-evenly"
     gdAlignRows="space-evenly start"
     gdAlignRows.lt-md="space-evenly center"
+    aria-label="These are footer elements."
   >
-    <div gdArea="information" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start center">
+    <address
+      gdArea="address"
+      fxLayout.lt-md="column"
+      fxLayoutAlign.lt-md="start center"
+      aria-labelledby="addressHeading"
+      role="menu"
+    >
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
-      <h3>IT Consulting Company</h3>
+      <h3
+        id="addressHeading"
+        aria-label="These are details about IT Consulting Company."
+        title="IT Consulting Company"
+      >
+        IT Consulting Company
+      </h3>
       <!-- Footer's menu items located on the left side. -->
       <ng-container *ngFor="let informationItem of informationItems">
         <p
-          attr.aria-label="{{ informationItem.name }}"
+          attr.aria-label="{{ informationItem.name }}. Click here to read more about {{ informationItem.name }}."
           title="{{ informationItem.name }}"
         >
           <i
             class="icon ion-ios-{{ informationItem.icon }}"
-            attr.aria-label="{{ informationItem.name }}"
-            role="img"
+            aria-hidden="true"
           ></i
           >&nbsp;{{ informationItem.name }}
         </p>
       </ng-container>
-    </div>
+    </address>
     <!-- TODO: Add margin-bottom for tablets and below. -->
-    <div gdArea="newsletter" fxLayout="column" fxLayoutAlign="start center">
-      <h3>Stay Informed</h3>
-      <p>Text</p>
-      <input type="email" />
-      <button>Join</button>
+    <div
+      gdArea="newsletter"
+      fxLayout="column"
+      fxLayoutAlign="start center"
+      aria-labelledby="newsletterHeading"
+      role="region"
+    >
+      <h3
+        id="newsletterHeading"
+        aria-label="Click here to stay informed about company updates."
+        title="Stay informed"
+      >
+        Stay informed
+      </h3>
+      <p
+        aria-label="Here you can subscribe for a newsletter."
+        title="Subscribe"
+      >
+        Subscribe
+      </p>
+      <input
+        type="email"
+        aria-label="Here provide your e-mail address in order to subscribe for a newsletter."
+        title="Your e-mail"
+      />
+      <button
+        aria-label="Click here to opt in for a newsletter."
+        title="Opt in"
+      >
+        Opt in
+      </button>
     </div>
-    <div gdArea="right_menu" fxLayout="column" fxLayoutAlign="start center">
+    <div
+      gdArea="right_menu"
+      fxLayout="column"
+      fxLayoutAlign="start center"
+      aria-labelledby="informationHeading"
+      role="navigation"
+    >
       <!-- Footer's menu items located on the right side. -->
-      <h3>Information</h3>
+      <h3
+        id="informationHeading"
+        aria-label="These are information about IT Consulting Company."
+        title="Information"
+      >
+        Information
+      </h3>
       <ng-container *ngFor="let rightMenuItem of rightMenuItems">
         <a
           routerLink="{{ rightMenuItem.path }}"
-          attr.aria-label="{{ rightMenuItem.name }}"
-          role="link"
+          attr.aria-label="{{ rightMenuItem.name }}. Click here to read more about {{ rightMenuItem.name }}."
+          role="menuitem"
           title="{{ rightMenuItem.name }}"
           >{{ rightMenuItem.name }}</a
         ><br />
@@ -48,15 +98,24 @@
     <!-- TODO: Add margin-bottom for tablets and below. -->
     <div
       gdArea="bottom_menu"
-      fxLayout.lt-md="column" fxLayoutAlign.lt-md="start center"
+      fxLayout.lt-md="column"
+      fxLayoutAlign.lt-md="start center"
       fxLayoutGap="20px"
+      aria-labelledby="resourcesHeading"
+      role="navigation"
     >
-    <h3>Resources</h3>
+      <h3
+        id="resourcesHeading"
+        aria-label="These are resources about IT Consulting Company."
+        title="Resources"
+      >
+        Resources
+      </h3>
       <ng-container *ngFor="let bottomMenuItem of bottomMenuItems">
         <a
           routerLink="{{ bottomMenuItem.path }}"
-          attr.aria-label="{{ bottomMenuItem.name }}"
-          role="link"
+          attr.aria-label="{{ bottomMenuItem.name }}. Click here to read more about {{ bottomMenuItem.name }}."
+          role="menuitem"
           title="{{ bottomMenuItem.name }}"
           >{{ bottomMenuItem.name }}</a
         >
@@ -67,24 +126,34 @@
       gdGridAlign="end center"
       gdGridAlign.lt-md="center center"
       fxLayoutGap="20px"
+      aria-label="These are our social media profiles."
+      role="navigation"
     >
       <ng-container *ngFor="let socialItem of socialItems">
         <a
           href="{{ socialItem.url }}"
           target="_blank"
-          attr.aria-label="{{ socialItem.name }}"
-          role="link"
+          attr.aria-label="{{ socialItem.name }}. Click here to check our {{ socialItem.name }}."
+          role="menuitem"
           title="{{ socialItem.name }}"
-          ><i
-            class="fa fa-{{ socialItem.icon }} fa-2x"
-            attr.aria-label="{{ socialItem.name }}"
-          ></i
+          ><i class="fa fa-{{ socialItem.icon }} fa-2x"></i
         ></a>
       </ng-container>
     </div>
     <!-- TODO: Add name & year. -->
-    <div gdArea="copyrights" gdGridAlign="center center">
-      <p>Copyrights &copy; IT Consulting Company</p>
+    <div
+      gdArea="copyrights"
+      gdGridAlign="center center"
+      aria-labelledby="copyrightsText"
+      role="region"
+    >
+      <p
+        id="copyrightsText"
+        aria-label="These are copyrights."
+        title="Copyrights &copy; IT Consulting Company"
+      >
+        Copyrights &copy; IT Consulting Company
+      </p>
     </div>
-  </div>
+  </aside>
 </footer>

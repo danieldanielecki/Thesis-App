@@ -2,10 +2,14 @@
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
-<header>
-  <mat-sidenav-container class="container" aria-label="Sidenav" role="region">
+<header aria-label="This is a header.">
+  <mat-sidenav-container
+    class="container"
+    aria-label="These are header elements."
+    role="region"
+  >
     <!-- Desktop header main menu (toolbar). -->
-    <mat-toolbar color="primary" aria-label="Toolbar" role="navigation">
+    <mat-toolbar color="primary">
       <!--
         Show the button by default, and will be hidden only on devices with min-width: 960px.
       -->
@@ -13,20 +17,28 @@
         mat-icon-button
         (click)="sidenav.toggle()"
         fxHide.gt-sm
-        aria-label="Toggle sidenav"
-        role="button"
-        type="button"
+        aria-label="Click here to toggle sidenav."
+        title="Toggle sidenav"
       >
-        <mat-icon aria-label="Sidenav toggle icon" role="img">menu</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
-      <p attr.aria-label="IT Consulting Company" title="IT Consulting Company">
+      <p
+        aria-label="Name of our company is IT Consulting Company."
+        title="IT Consulting Company"
+      >
         IT Consulting Company
       </p>
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
-      <div fxFlex="row" fxLayoutAlign="end" fxHide.lt-md>
+      <div
+        fxFlex="row"
+        fxLayoutAlign="end"
+        fxHide.lt-md
+        aria-label="This is a list of menu elements."
+        role="navigation"
+      >
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let j = index; let lastItem = last"
@@ -36,8 +48,8 @@
             mat-button
             *ngIf="!lastItem"
             routerLink="{{ menuItem.path }}"
-            attr.aria-label="{{ menuItem.name }}"
-            role="link"
+            attr.aria-label="{{ menuItem.name }}. Click here to read more about {{ menuItem.name }}."
+            role="menuitem"
             title="{{ menuItem.name }}"
             >{{ menuItem.name }}
             <mat-icon
@@ -45,8 +57,9 @@
               #menuTrigger="matMenuTrigger"
               [matMenuTriggerFor]="menuDesktop"
               (mouseenter)="menuTrigger.openMenu()"
-              role="img"
-              >arrow_drop_down
+              >arrow_drop_down<span class="cdk-visually-hidden"
+                >Click here to read about available services.</span
+              >
             </mat-icon></a
           >
           <!--
@@ -57,7 +70,8 @@
             #menuDesktop="matMenu"
             [overlapTrigger]="false"
             (mouseleave)="menuTrigger.closeMenu()"
-            role="menu"
+            aria-label="This is a list of available services."
+            role="navigation"
           >
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
@@ -67,8 +81,8 @@
                 <a
                   mat-menu-item
                   routerLink="{{ serviceItem.path }}"
-                  attr.aria-label="{{ serviceItem.name }}"
-                  role="link"
+                  attr.aria-label="{{ serviceItem.name }}. Click here to read more about {{ serviceItem.name }}."
+                  role="menuitem"
                   title="{{ serviceItem.name }}"
                   >{{ serviceItem.name }}</a
                 ></ng-container
@@ -79,51 +93,60 @@
       </div>
     </mat-toolbar>
     <!-- Mobile header main menu (sidenav). -->
-    <mat-sidenav #sidenav fixedInViewport="true" role="sidenav">
-      <mat-toolbar role="text">Menu</mat-toolbar>
+    <mat-sidenav
+      #sidenav
+      fixedInViewport="true"
+      aria-label="This is a sidenav with menu elements for mobile devices."
+      role="sidenav"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
       <!-- Navbar list. -->
-      <mat-nav-list role="navigation">
+      <mat-nav-list
+        aria-label="This is a list of menu elements."
+        role="navigation"
+      >
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let i = index; let lastItem = last"
         >
-          <hr *ngIf="lastItem" role="separator" />
+          <hr
+            *ngIf="lastItem"
+            aria-label="This is a separator between sidenav elements and close button for the sidenav."
+            role="separator"
+          />
           <!-- Mobile main menu elements. -->
           <a
             mat-list-item
             *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
             routerLink="{{ menuItem.path }}"
-            attr.aria-label="{{ menuItem.name }}"
-            role="link"
+            attr.aria-label="{{ menuItem.name }}. Click here to read more about {{ menuItem.name }}."
+            role="menuitem"
             title="{{ menuItem.name }}"
           >
-            <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
-              menuItem.icon
-            }}</mat-icon>
-            <span attr.aria-label="{{ menuItem.name }}" role="text"
-              >&nbsp;{{ menuItem.name }}</span
-            >
+            <mat-icon aria-hidden="true">{{ menuItem.icon }}</mat-icon
+            >&nbsp;{{ menuItem.name }}
           </a>
           <!-- Template element for menu of services. -->
           <ng-template #servicesTemplate>
             <!-- Services element in main menu. -->
+            <!--
+              TODO: Make the list of services with small margin from the left.
+            -->
             <a
               mat-list-item
               *ngIf="!lastItem; else: closeTemplate"
               [matMenuTriggerFor]="menuMobile"
               routerLink="{{ menuItem.path }}"
-              attr.aria-label="{{ menuItem.name }}"
-              role="link"
+              attr.aria-label="{{ menuItem.name }}. Click to read more about {{ menuItem.name }}."
+              role="menuitem"
               title="{{ menuItem.name }}"
             >
-              <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
-                menuItem.icon
-              }}</mat-icon>
-              <span attr.aria-label="{{ menuItem.name }}" role="text"
-                >&nbsp;{{ menuItem.name }}</span
-              >
-              <mat-icon attr.aria-label="{{ menuItem.name }}" role="img"
-                >arrow_drop_down</mat-icon
+              <mat-icon aria-hidden="true">{{ menuItem.icon }}</mat-icon>
+              &nbsp;{{ menuItem.name }}
+              <mat-icon
+                >arrow_drop_down<span class="cdk-visually-hidden"
+                  >Click to check available services</span
+                ></mat-icon
               >
             </a>
             <!-- Template element for close button. -->
@@ -133,21 +156,17 @@
                 mat-list-item
                 (click)="sidenav.close()"
                 routerLink="{{ menuItem.path }}"
-                attr.aria-label="{{ menuItem.name }}"
-                role="link"
+                attr.aria-label="{{ menuItem.name }}. Click here to close the sidenav."
+                role="menuitem"
                 title="{{ menuItem.name }}"
               >
-                <mat-icon attr.aria-label="{{ menuItem.name }}" role="img">{{
-                  menuItem.icon
-                }}</mat-icon>
-                <span attr.aria-label="{{ menuItem.name }}" role="text"
-                  >&nbsp;{{ menuItem.name }}</span
-                >
+                <mat-icon aria-hidden="true">{{ menuItem.icon }}</mat-icon>
+                &nbsp;{{ menuItem.name }}
               </a>
             </ng-template>
           </ng-template>
           <!-- Menu of services. -->
-          <mat-menu #menuMobile="matMenu" role="menu">
+          <mat-menu #menuMobile="matMenu" role="navigation">
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
               <!-- Grouping element for list of menu items for services. -->
@@ -156,18 +175,12 @@
                 <a
                   mat-menu-item
                   routerLink="{{ serviceItem.path }}"
-                  attr.aria-label="{{ serviceItem.name }}"
-                  role="link"
+                  attr.aria-label="{{ serviceItem.name }}. Click here to read more about {{ serviceItem.name }}."
+                  role="menuitem"
                   title="{{ serviceItem.name }}"
                 >
-                  <mat-icon
-                    attr.aria-label="{{ serviceItem.name }}"
-                    role="img"
-                    >{{ serviceItem.icon }}</mat-icon
-                  >
-                  <span attr.aria-label="{{ serviceItem.name }}" role="text">{{
-                    serviceItem.name
-                  }}</span>
+                  <mat-icon aria-hidden="true">{{ serviceItem.icon }}</mat-icon>
+                  {{ serviceItem.name }}
                 </a>
               </ng-container>
             </ng-template>

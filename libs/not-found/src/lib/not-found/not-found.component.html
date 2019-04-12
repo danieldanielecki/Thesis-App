@@ -1,33 +1,21 @@
-<p
-  fxLayout="row"
-  fxLayoutAlign="center center"
-  attr.aria-label="Error 404"
-  title="Error 404"
->
-  <strong
-    class="mega"
-    attr.aria-label="Error 404 text part one"
-    title="Error 404 text part one"
-    >4</strong
-  ><span
-    id="renderIcosahedron"
-    attr.aria-label="Error animation"
-    role="presentation"
-    title="Error animation"
-  ></span
-  ><strong
-    class="mega"
-    attr.aria-label="Error 404 text part two"
-    title="Error 404 text part two"
-    >4</strong
+<section aria-label="This is an error page.">
+  <p
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    aria-label="This is an error with a number of 404."
+    title="Error 404"
   >
-</p>
-<p
-  fxLayout="row"
-  fxLayoutAlign="center center"
-  id="mini"
-  attr.aria-label="Page not found"
-  title="Page not found"
->
-  Page not found. That's an error &ndash; please try again.
-</p>
+    <strong class="mega" aria-hidden="true">4</strong
+    ><span id="renderIcosahedron" aria-hidden="true"></span
+    ><strong class="mega" aria-hidden="true">4</strong>
+  </p>
+  <p
+    id="mini"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    aria-label="Page has not been found."
+    title="Page not found"
+  >
+    Page not found. That's an error &ndash; please try again.
+  </p>
+</section>
