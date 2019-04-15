@@ -1,15 +1,17 @@
 <!-- TODO: Add sticky header. -->
 <!--
+  TODO: If time permits polish a bit roles & aria-labels for menu elements, especially for desktop.
+-->
+<!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
-<header aria-label="This is a header.">
-  <mat-sidenav-container
-    class="container"
-    aria-label="These are header elements."
-    role="region"
-  >
+<header>
+  <mat-sidenav-container class="container">
     <!-- Desktop header main menu (toolbar). -->
     <mat-toolbar color="primary">
+      <span class="cdk-visually-hidden"
+        >This is a toolbar with menu elements for large screen devices.</span
+      >
       <!--
         Show the button by default, and will be hidden only on devices with min-width: 960px.
       -->
@@ -32,13 +34,7 @@
       <!--
         The below element is hidden by default, and will be shown only on devices with min-width: 960px.
       -->
-      <div
-        fxFlex="row"
-        fxLayoutAlign="end"
-        fxHide.lt-md
-        aria-label="This is a list of menu elements."
-        role="navigation"
-      >
+      <div fxFlex="row" fxLayoutAlign="end" fxHide.lt-md role="navigation">
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let j = index; let lastItem = last"
@@ -57,9 +53,10 @@
               #menuTrigger="matMenuTrigger"
               [matMenuTriggerFor]="menuDesktop"
               (mouseenter)="menuTrigger.openMenu()"
-              >arrow_drop_down<span class="cdk-visually-hidden"
-                >Click here to read about available services.</span
-              >
+              aria-label="Click here to read about available services."
+              aria-haspopup="true"
+              aria-controls="menuServices"
+              >arrow_drop_down
             </mat-icon></a
           >
           <!--
@@ -67,11 +64,11 @@
           -->
           <!-- Menu of services. -->
           <mat-menu
+            id="menuServices"
             #menuDesktop="matMenu"
             [overlapTrigger]="false"
             (mouseleave)="menuTrigger.closeMenu()"
-            aria-label="This is a list of available services."
-            role="navigation"
+            aria-label="This is a list of our services."
           >
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
@@ -93,18 +90,13 @@
       </div>
     </mat-toolbar>
     <!-- Mobile header main menu (sidenav). -->
-    <mat-sidenav
-      #sidenav
-      fixedInViewport="true"
-      aria-label="This is a sidenav with menu elements for mobile devices."
-      role="sidenav"
-    >
-      <mat-toolbar>Menu</mat-toolbar>
-      <!-- Navbar list. -->
-      <mat-nav-list
-        aria-label="This is a list of menu elements."
-        role="navigation"
+    <mat-sidenav #sidenav fixedInViewport="true">
+      <mat-toolbar
+        aria-label="This is a sidenav with menu elements for mobile devices."
+        >Menu</mat-toolbar
       >
+      <!-- Navbar list. -->
+      <mat-nav-list role="navigation">
         <!-- Grouping element for list of menu items. -->
         <ng-container
           *ngFor="let menuItem of menuItems; let i = index; let lastItem = last"
@@ -145,7 +137,7 @@
               &nbsp;{{ menuItem.name }}
               <mat-icon
                 >arrow_drop_down<span class="cdk-visually-hidden"
-                  >Click to check available services</span
+                  >Click to check available services.</span
                 ></mat-icon
               >
             </a>

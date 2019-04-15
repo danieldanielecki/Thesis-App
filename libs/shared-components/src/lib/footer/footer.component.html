@@ -1,4 +1,4 @@
-<footer aria-label="This is a footer.">
+<footer>
   <!-- TODO: Make it different names. -->
   <aside
     gdAreas="address address newsletter newsletter information information | resources resources resources social social social | copyrights copyrights copyrights copyrights copyrights copyrights"
@@ -6,14 +6,16 @@
     gdAlignColumns="center space-evenly"
     gdAlignRows="space-evenly start"
     gdAlignRows.lt-md="space-evenly center"
-    aria-label="These are footer elements."
+    role="region"
   >
+    <span class="cdk-visually-hidden"
+      >This is a footer. These are footer elements.</span
+    >
     <address
       gdArea="address"
       fxLayout.lt-md="column"
       fxLayoutAlign.lt-md="start center"
-      aria-labelledby="addressHeading"
-      role="menu"
+      role="region"
     >
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
       <h3
@@ -26,14 +28,14 @@
       <!-- Footer's menu items located on the left side. -->
       <ng-container *ngFor="let informationItem of informationItems">
         <p
-          attr.aria-label="{{ informationItem.name }}. Click here to read more about {{ informationItem.name }}."
-          title="{{ informationItem.name }}"
+          attr.aria-label="This is our {{ informationItem.name }}. {{ informationItem.content }}."
+          title="{{ informationItem.content }}"
         >
           <i
             class="icon ion-ios-{{ informationItem.icon }}"
             aria-hidden="true"
           ></i
-          >&nbsp;{{ informationItem.name }}
+          >&nbsp;{{ informationItem.content }}
         </p>
       </ng-container>
     </address>
@@ -42,12 +44,11 @@
       gdArea="newsletter"
       fxLayout="column"
       fxLayoutAlign="start center"
-      aria-labelledby="newsletterHeading"
       role="region"
     >
       <h3
         id="newsletterHeading"
-        aria-label="Click here to stay informed about company updates."
+        aria-label="Here you can stay informed about company updates."
         title="Stay informed"
       >
         Stay informed
@@ -74,7 +75,6 @@
       gdArea="information"
       fxLayout="column"
       fxLayoutAlign="start center"
-      aria-labelledby="informationHeading"
       role="navigation"
     >
       <!-- Footer's menu items located on the right side. -->
@@ -101,7 +101,6 @@
       fxLayout.lt-md="column"
       fxLayoutAlign.lt-md="start center"
       fxLayoutGap="20px"
-      aria-labelledby="resourcesHeading"
       role="navigation"
     >
       <h3
@@ -126,9 +125,11 @@
       gdGridAlign="end center"
       gdGridAlign.lt-md="center center"
       fxLayoutGap="20px"
-      aria-label="These are our social media profiles."
       role="navigation"
     >
+      <span class="cdk-visually-hidden"
+        >These are our social media profiles.</span
+      >
       <ng-container *ngFor="let socialItem of socialItems">
         <a
           href="{{ socialItem.url }}"
@@ -141,18 +142,13 @@
       </ng-container>
     </div>
     <!-- TODO: Add name & year. -->
-    <div
-      gdArea="copyrights"
-      gdGridAlign="center center"
-      aria-labelledby="copyrightsText"
-      role="region"
-    >
+    <div gdArea="copyrights" gdGridAlign="center center" role="region">
       <p
         id="copyrightsText"
         aria-label="These are copyrights."
-        title="Copyrights &copy; IT Consulting Company"
+        title="Copyright &copy; IT Consulting Company"
       >
-        Copyrights &copy; IT Consulting Company
+        Copyright &copy; IT Consulting Company
       </p>
     </div>
   </aside>

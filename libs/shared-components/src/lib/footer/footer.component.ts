@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   // TODO: Add content to display.
-  public informationItems: { icon: string; name: string }[] = [
-    { icon: 'home', name: 'Address' },
-    { icon: 'call', name: 'Phone number' },
-    { icon: 'mail-open', name: 'E-mail' },
-    { icon: 'information-circle-outline', name: 'Information' }
+  public informationItems: { content: string; icon: string; name: string }[] = [
+    { content: 'Oxford Street 12', icon: 'home', name: 'Address' },
+    { content: '+123456789', icon: 'call', name: 'Phone number' },
+    { content: 'contact@mail.com', icon: 'mail-open', name: 'E-mail' },
+    {
+      content: 'Tax ID: 554433',
+      icon: 'information-circle-outline',
+      name: 'Legal information'
+    }
   ];
 
   public bottomMenuItems: { name: string; path: string }[] = [
