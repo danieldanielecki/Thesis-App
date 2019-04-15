@@ -19,8 +19,8 @@ new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, pl
     BrowserAnimationsModule,
     HomeModule,
     NxModule.forRoot(),
-    RoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    RoutingModule
   ],
   bootstrap: [AppComponent]
 })

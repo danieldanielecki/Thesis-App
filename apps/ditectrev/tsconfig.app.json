@@ -2,8 +2,25 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc/apps/ditectrev", // Redirect output structure to the directory.
-    "types": []  // List of names of type definitions to include.
+    "types": [] // List of names of type definitions to include.
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
-  "include": ["**/*.ts"]
+  "include": [
+    "**/*.ts",
+    "./../../libs/about-us/src/index.ts",
+    "./../../libs/contact/src/index.ts",
+    "./../../libs/copyrights/src/index.ts",
+    "./../../libs/cyber-security/src/index.ts",
+    "./../../libs/digital-strategy/src/index.ts",
+    "./../../libs/faq/src/index.ts",
+    "./../../libs/glossary/src/index.ts",
+    "./../../libs/methodology/src/index.ts",
+    "./../../libs/not-found/src/index.ts",
+    "./../../libs/partnerships/src/index.ts",
+    "./../../libs/privacy-and-security/src/index.ts",
+    "./../../libs/services/src/index.ts",
+    "./../../libs/sitemap/src/index.ts",
+    "./../../libs/software-development/src/index.ts",
+    "./../../libs/terms-of-use/src/index.ts"
+  ]
 }

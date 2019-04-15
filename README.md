@@ -62,6 +62,7 @@ TODO: Add this if brief would be build
 + **Change:** - changes in methods, project setup, variables, etc.
 + **Delete:** - something has been removed.
 + **Fix:** - part of code/functionality has been performed.
++ **Refactor:** - signifcant enough change in the logic, which required refactoring.
 + **Tags to commits** - First commit, then add appropriate tag to the new commit. Otherwise the tag will be placed on an old commit.
 
 ## Submitted issues
