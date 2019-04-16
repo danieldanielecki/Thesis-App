@@ -1,5 +1,4 @@
 <footer>
-  <!-- TODO: Make it different names. -->
   <aside
     gdAreas="address address newsletter newsletter information information | resources resources resources social social social | copyrights copyrights copyrights copyrights copyrights copyrights"
     gdAreas.lt-md="address | information | resources | newsletter | social | copyrights"
@@ -39,11 +38,11 @@
         </p>
       </ng-container>
     </address>
-    <!-- TODO: Add margin-bottom for tablets and below. -->
     <div
       gdArea="newsletter"
       fxLayout="column"
       fxLayoutAlign="start center"
+      [ngStyle.lt-md]="{'margin-bottom.px': 50}"
       role="region"
     >
       <h3
@@ -59,12 +58,27 @@
       >
         Subscribe
       </p>
-      <input
-        type="email"
-        aria-label="Here provide your e-mail address in order to subscribe for a newsletter."
-        title="Your e-mail"
-      />
+      <!-- TODO: Add integration with MailChimps or something similar. -->
+      <form>
+        <mat-form-field>
+          <input
+            matInput
+            [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher"
+            aria-label="Here provide your email address in order to subscribe for a newsletter."
+            title="Your email"
+          />
+          <mat-placeholder class="placeholder">Your email</mat-placeholder>
+          <!-- TODO: center it, issue #15831. -->
+          <mat-hint>Email for a newsletter</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">This is an <strong>invalid</strong> email address.</mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')"
+            >Email is <strong>required</strong>.</mat-error
+          >
+        </mat-form-field>
+      </form>
       <button
+        mat-raised-button
         aria-label="Click here to opt in for a newsletter."
         title="Opt in"
       >
@@ -101,6 +115,7 @@
       fxLayout.lt-md="column"
       fxLayoutAlign.lt-md="start center"
       fxLayoutGap="20px"
+      [ngStyle.lt-md]="{'margin-bottom.px': 20}"
       role="navigation"
     >
       <h3

@@ -13,3 +13,16 @@ body {
 a {
   text-decoration: none;
 }
+
+// Required to put it here in order to override Angular Material's styles used in a footer.
+footer {
+  mat-hint {
+    color: white !important;
+  }
+  .mat-form-field-hint-spacer {
+    display: none;
+  }
+  .mat-form-field-underline {
+    background-color: white !important;
+  }
+}

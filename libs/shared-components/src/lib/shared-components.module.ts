@@ -5,11 +5,14 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,14 +21,18 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserAnimationsModule,
     FlexLayoutModule,
+    FormsModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
-    RouterModule
+    ReactiveFormsModule,
+    RouterModule,
+    MatInputModule
   ],
   declarations: [FooterComponent, HeaderComponent],
   exports: [FooterComponent, HeaderComponent]

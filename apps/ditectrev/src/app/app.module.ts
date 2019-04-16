@@ -1,4 +1,3 @@
-// Angular imports.
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -19,8 +18,8 @@ new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, pl
     BrowserAnimationsModule,
     HomeModule,
     NxModule.forRoot(),
-    SharedComponentsModule,
-    RoutingModule
+    RoutingModule,
+    SharedComponentsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,9 @@
+$backgroundColor: #222222;
+$borderAnimationColor: #039be5;
+$textColor: #ced2d3;
+
 footer {
-  background-color: #222222;
+  background-color: $backgroundColor;
 }
 
 a {
@@ -16,7 +20,34 @@ h3 {
 
 a,
 p {
-  color: #ced2d3;
+  color: $textColor;
+}
+
+button {
+  margin-top: 10px;
+  border-radius: 100px;
+}
+
+form {
+  animation: animateBorder 6s ease-in-out infinite;
+  border: 2px solid $backgroundColor;
+  border-radius: 10px;
+  padding: 20px 25px 40px;
+}
+
+mat-form-field {
+  text-align: center;
+}
+
+mat-hint {
+  width: 100%;
+}
+
+input,
+mat-hint,
+.placeholder,
+.mat-form-field-label {
+  color: white;
 }
 
 .fa {
@@ -42,4 +73,20 @@ p {
   }
 }
 
-// TODO: style newsletter input.
+@keyframes animateBorder {
+  0%,
+  100% {
+    border-color: $backgroundColor $backgroundColor $borderAnimationColor
+      $borderAnimationColor;
+    left: 0%;
+    top: 0%;
+    transition: border-color 2s ease-in-out 1s;
+  }
+  50% {
+    border-color: $borderAnimationColor $borderAnimationColor $backgroundColor
+    $backgroundColor;
+    right: 100%;
+    top: 100%;
+    transition: border-color 2s ease-in-out 1s;
+  }
+}
