@@ -22,6 +22,7 @@ export class FooterComponent {
     { name: 'Sitemap', path: 'sitemap' },
     { name: 'Terms of Use', path: 'terms-of-use' }
   ];
+  public currentDate: Date = new Date();
   public emailFormControl: FormControl = new FormControl('', [
     Validators.email,
     Validators.required

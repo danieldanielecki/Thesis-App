@@ -1,18 +1,19 @@
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule,
-  MatFormFieldModule,
-  MatInputModule
+  MatToolbarModule
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MomentModule } from 'ngx-moment';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,13 +27,14 @@ import { HeaderComponent } from './header/header.component';
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
+    MomentModule,
     ReactiveFormsModule,
-    RouterModule,
-    MatInputModule
+    RouterModule
   ],
   declarations: [FooterComponent, HeaderComponent],
   exports: [FooterComponent, HeaderComponent]
