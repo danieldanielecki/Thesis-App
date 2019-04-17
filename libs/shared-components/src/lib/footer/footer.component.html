@@ -42,7 +42,7 @@
       gdArea="newsletter"
       fxLayout="column"
       fxLayoutAlign="start center"
-      [ngStyle.lt-md]="{'margin-bottom.px': 50}"
+      [ngStyle.lt-md]="{ 'margin-bottom.px': 50 }"
       role="region"
     >
       <h3
@@ -59,7 +59,7 @@
         Subscribe
       </p>
       <!-- TODO: Add integration with MailChimps or something similar. -->
-      <form>
+      <form aria-label="This is a form to subscribe for a newsletter.">
         <mat-form-field>
           <input
             matInput
@@ -67,11 +67,18 @@
             [errorStateMatcher]="matcher"
             aria-label="Here provide your email address in order to subscribe for a newsletter."
             title="Your email"
+            type="email"
           />
           <mat-placeholder class="placeholder">Your email</mat-placeholder>
           <!-- TODO: center it, issue #15831. -->
           <mat-hint>Email for a newsletter</mat-hint>
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">This is an <strong>invalid</strong> email address.</mat-error>
+          <mat-error
+            *ngIf="
+              emailFormControl.hasError('email') &&
+              !emailFormControl.hasError('required')
+            "
+            >This is an <strong>invalid</strong> email address.</mat-error
+          >
           <mat-error *ngIf="emailFormControl.hasError('required')"
             >Email is <strong>required</strong>.</mat-error
           >
@@ -115,7 +122,7 @@
       fxLayout.lt-md="column"
       fxLayoutAlign.lt-md="start center"
       fxLayoutGap="20px"
-      [ngStyle.lt-md]="{'margin-bottom.px': 20}"
+      [ngStyle.lt-md]="{ 'margin-bottom.px': 20 }"
       role="navigation"
     >
       <h3
