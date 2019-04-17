@@ -5,7 +5,9 @@
 <!--
   TODO: Click anywhere on mobile to close menu with giving darker background on whole screen.
 -->
-<!-- TODO: Add something like time/date in your local time zone is... using Angular2 Moment.-->
+<!--
+  TODO: Add something like time/date in your local time zone is... using Angular2 Moment.
+-->
 <header>
   <mat-sidenav-container class="container">
     <!-- Desktop header main menu (toolbar). -->
@@ -54,9 +56,9 @@
               #menuTrigger="matMenuTrigger"
               [matMenuTriggerFor]="menuDesktop"
               (mouseenter)="menuTrigger.openMenu()"
-              aria-label="Click here to read about available services."
-              aria-haspopup="true"
               aria-controls="menuServices"
+              aria-haspopup="true"
+              aria-label="Click here to read about available services."
               >arrow_drop_down
             </mat-icon></a
           >

@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
-import { Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import {
+  FormControl,
+  FormGroupDirective,
+  NgForm,
+  Validators
+} from '@angular/forms';
 
+// Class to display messages instantly.
+// TODO: Move this class.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted: boolean | null = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }
 
@@ -14,7 +28,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-
 export class FooterComponent {
   public bottomMenuItems: { name: string; path: string }[] = [
     { name: 'Copyrights', path: 'copyrights' },
@@ -28,13 +41,17 @@ export class FooterComponent {
     Validators.required
   ]);
   // TODO: Add content to display.
-  public informationItems: { content: string; icon: string; name: string }[] = [
-    { content: 'Oxford Street 12', icon: 'home', name: 'Address' },
-    { content: '+123456789', icon: 'call', name: 'Phone number' },
-    { content: 'contact@mail.com', icon: 'mail-open', name: 'Email' },
+  public informationItems: {
+    content: string;
+    icon: [string, string];
+    name: string;
+  }[] = [
+    { content: 'Oxford Street 12', icon: ['fas', 'home'], name: 'Address' },
+    { content: '+123456789', icon: ['fas', 'phone'], name: 'Phone number' },
+    { content: 'contact@mail.com', icon: ['fas', 'at'], name: 'Email' },
     {
       content: 'Tax ID: 554433',
-      icon: 'information-circle-outline',
+      icon: ['fas', 'info-circle'],
       name: 'Legal information'
     }
   ];
@@ -45,37 +62,37 @@ export class FooterComponent {
   ];
   // TODO: Add links to social profiles.
   public socialItems: {
-    icon: string;
+    icon: [string, string];
     name: string;
     url: string;
   }[] = [
     {
-      icon: 'behance',
+      icon: ['fab', 'behance'],
       name: 'Behance',
       url: 'https://behance.net'
     },
     {
-      icon: 'dribbble',
+      icon: ['fab', 'dribbble'],
       name: 'Dribbble',
       url: 'https://dribbble.com/'
     },
     {
-      icon: 'facebook',
+      icon: ['fab', 'facebook-f'],
       name: 'Facebook',
       url: 'https://www.facebook.com/'
     },
     {
-      icon: 'instagram',
+      icon: ['fab', 'instagram'],
       name: 'Instagram',
       url: 'https://www.instagram.com/'
     },
     {
-      icon: 'linkedin',
+      icon: ['fab', 'linkedin-in'],
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/'
     },
     {
-      icon: 'twitter',
+      icon: ['fab', 'twitter'],
       name: 'Twitter',
       url: 'https://twitter.com/'
     }

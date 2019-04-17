@@ -18,7 +18,6 @@
     >
       <!-- TODO: Put logo here (in SVG preferable - convert from AI). -->
       <h3
-        id="addressHeading"
         aria-label="These are details about IT Consulting Company."
         title="IT Consulting Company"
       >
@@ -30,10 +29,7 @@
           attr.aria-label="This is our {{ informationItem.name }}. {{ informationItem.content }}."
           title="{{ informationItem.content }}"
         >
-          <i
-            class="icon ion-ios-{{ informationItem.icon }}"
-            aria-hidden="true"
-          ></i
+          <fa-icon [icon]="informationItem.icon" aria-hidden="true"></fa-icon
           >&nbsp;{{ informationItem.content }}
         </p>
       </ng-container>
@@ -46,7 +42,6 @@
       role="region"
     >
       <h3
-        id="newsletterHeading"
         aria-label="Here you can stay informed about company updates."
         title="Stay informed"
       >
@@ -100,7 +95,6 @@
     >
       <!-- Footer's menu items located on the right side. -->
       <h3
-        id="informationHeading"
         aria-label="These are information about IT Consulting Company."
         title="Information"
       >
@@ -116,7 +110,6 @@
         ><br />
       </ng-container>
     </div>
-    <!-- TODO: Add margin-bottom for tablets and below. -->
     <div
       gdArea="resources"
       fxLayout.lt-md="column"
@@ -126,7 +119,6 @@
       role="navigation"
     >
       <h3
-        id="resourcesHeading"
         aria-label="These are resources about IT Consulting Company."
         title="Resources"
       >
@@ -159,14 +151,13 @@
           attr.aria-label="{{ socialItem.name }}. Click here to check our {{ socialItem.name }}."
           role="menuitem"
           title="{{ socialItem.name }}"
-          ><i class="fa fa-{{ socialItem.icon }} fa-2x"></i
-        ></a>
+          ><fa-icon [icon]="socialItem.icon"></fa-icon>
+        </a>
       </ng-container>
     </div>
     <!-- TODO: Add name & year. -->
     <div gdArea="copyrights" gdGridAlign="center center" role="region">
       <p
-        id="copyrightsText"
         aria-label="These are copyrights."
         title="Copyright &copy; IT Consulting Company"
       >

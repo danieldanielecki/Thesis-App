@@ -12,6 +12,46 @@ body {
 
 a {
   text-decoration: none;
+  &:hover {
+    svg {
+      &.fa-behance {
+        path {
+          transition: 1s;
+          fill: #1769ff;
+        }
+      }
+      &.fa-dribbble {
+        path {
+          transition: 1s;
+          fill: #ea4c89;
+        }
+      }
+      &.fa-facebook-f {
+        path {
+          transition: 1s;
+          fill: #3b5998;
+        }
+      }
+      &.fa-instagram {
+        path {
+          transition: 1s;
+          fill: #e1306c;
+        }
+      }
+      &.fa-linkedin-in {
+        path {
+          transition: 1s;
+          fill: #0077b5;
+        }
+      }
+      &.fa-twitter {
+        path {
+          transition: 1s;
+          fill: #1da1f2;
+        }
+      }
+    }
+  }
 }
 
 // Required to put it here in order to override Angular Material's styles used in a footer.
