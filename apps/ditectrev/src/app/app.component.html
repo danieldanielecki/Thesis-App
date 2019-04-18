@@ -1,6 +1,6 @@
 <app-header></app-header>
 <!-- Here display routes content. -->
 <main [@routeState]="getRouterOutletState(routerOutlet)">
-  <router-outlet #routerOutlet="outlet" (activate)="onActivate()"></router-outlet>
+  <router-outlet #routerOutlet="outlet"></router-outlet>
 </main>
 <app-footer></app-footer>

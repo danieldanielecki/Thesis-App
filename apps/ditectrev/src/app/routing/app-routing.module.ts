@@ -36,14 +36,12 @@ const routes: Routes = [
   // TODO: Define subservices in services component.
   {
     data: { animation: 'cyber-security' },
-    loadChildren:
-      '@libs/cyber-security/src/index#CyberSecurityModule',
+    loadChildren: '@libs/cyber-security/src/index#CyberSecurityModule',
     path: 'cyber-security'
   },
   {
     data: { animation: 'digital-strategy' },
-    loadChildren:
-      '@libs/digital-strategy/src/index#DigitalStrategyModule',
+    loadChildren: '@libs/digital-strategy/src/index#DigitalStrategyModule',
     path: 'digital-strategy'
   },
   {
@@ -58,14 +56,12 @@ const routes: Routes = [
   },
   {
     data: { animation: 'methodology' },
-    loadChildren:
-      '@libs/methodology/src/index#MethodologyModule',
+    loadChildren: '@libs/methodology/src/index#MethodologyModule',
     path: 'methodology'
   },
   {
     data: { animation: 'partnerships' },
-    loadChildren:
-      '@libs/partnerships/src/index#PartnershipsModule',
+    loadChildren: '@libs/partnerships/src/index#PartnershipsModule',
     path: 'partnerships'
   },
   {
@@ -92,8 +88,7 @@ const routes: Routes = [
   },
   {
     data: { animation: 'terms-of-use' },
-    loadChildren:
-      '@libs/terms-of-use/src/index#TermsOfUseModule',
+    loadChildren: '@libs/terms-of-use/src/index#TermsOfUseModule',
     path: 'terms-of-use'
   },
   {
@@ -110,7 +105,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
+  ], // On changing route keep user on the top of the page.
   exports: [RouterModule]
 })
 export class RoutingModule {}
