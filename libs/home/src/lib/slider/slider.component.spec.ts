@@ -17,14 +17,14 @@ describe('SliderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create slider', async(() => {
+  it('should create slider', () => {
     expect(component).toBeTruthy();
-  }));
+  });
 
-  it('should have div with ID=particles-js', async(() => {
+  it('should have div with ID=particles-js', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div#particles-js')).not.toBeNull();
-  }));
+  });
 
   // TODO: Add partcilesJS() call.
 });

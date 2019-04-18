@@ -32,17 +32,17 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create app', async(() => {
+  it('should create app', () => {
     expect(app).toBeTruthy();
-  }));
+  });
 
-  it('should have header component', async(() => {
+  it('should have header component', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-header')).not.toBeNull();
-  }));
+  });
 
-  it('should have footer component', async(() => {
+  it('should have footer component', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-footer')).not.toBeNull();
-  }));
+  });
 });

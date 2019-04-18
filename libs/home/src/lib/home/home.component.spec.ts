@@ -22,8 +22,8 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have slider component', async(() => {
+  it('should have slider component', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-slider')).not.toBeNull();
-  }));
+  });
 });
