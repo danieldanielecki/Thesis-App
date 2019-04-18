@@ -6,9 +6,24 @@ import {
   NgForm,
   Validators
 } from '@angular/forms';
+import {
+  faBehance,
+  faDribbble,
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faAt,
+  faHome,
+  faInfoCircle,
+  faPhone
+} from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 // Class to display messages instantly.
-// TODO: Move this class.
+// TODO: Move this class, rename, and comment logic.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
@@ -29,17 +44,32 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  public constructor() {
+    library.add(faAt);
+    library.add(faBehance);
+    library.add(faDribbble);
+    library.add(faFacebookF);
+    library.add(faHome);
+    library.add(faInstagram);
+    library.add(faInfoCircle);
+    library.add(faLinkedinIn);
+    library.add(faPhone);
+    library.add(faTwitter);
+  }
+
+  public currentDate: Date = new Date();
+  public emailFormControl: FormControl = new FormControl('', [
+    Validators.email,
+    Validators.required
+  ]);
+  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
+
   public bottomMenuItems: { name: string; path: string }[] = [
     { name: 'Copyrights', path: 'copyrights' },
     { name: 'Privacy & Security', path: 'privacy-and-security' },
     { name: 'Sitemap', path: 'sitemap' },
     { name: 'Terms of Use', path: 'terms-of-use' }
   ];
-  public currentDate: Date = new Date();
-  public emailFormControl: FormControl = new FormControl('', [
-    Validators.email,
-    Validators.required
-  ]);
   // TODO: Add content to display.
   public informationItems: {
     content: string;
@@ -97,6 +127,4 @@ export class FooterComponent {
       url: 'https://twitter.com/'
     }
   ];
-
-  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 }

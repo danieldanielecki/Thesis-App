@@ -18,21 +18,6 @@ import { MomentModule } from 'ngx-moment';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import {
-  faBehance,
-  faDribbble,
-  faFacebookF,
-  faInstagram,
-  faLinkedinIn,
-  faTwitter
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faAt,
-  faHome,
-  faInfoCircle,
-  faPhone
-} from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 
 @NgModule({
   imports: [
@@ -57,16 +42,4 @@ import { library } from '@fortawesome/fontawesome-svg-core';
   exports: [FooterComponent, HeaderComponent]
 })
 export class SharedComponentsModule {
-  public constructor() {
-    library.add(faAt);
-    library.add(faBehance);
-    library.add(faDribbble);
-    library.add(faFacebookF);
-    library.add(faHome);
-    library.add(faInstagram);
-    library.add(faInfoCircle);
-    library.add(faLinkedinIn);
-    library.add(faPhone);
-    library.add(faTwitter);
-  }
 }

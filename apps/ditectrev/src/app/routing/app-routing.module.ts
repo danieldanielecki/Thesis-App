@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '@libs/home/src/index';
 
-// TODO: Check if it doesn't break anymore with the lazy loading.
 // TODO: Add nested routes for services.
 // TODO: Think about routing on mobile, if the sidebar should be not closed after click.
 // TODO: Up - but what if user clicks servies, what should happen? The menu should stay open with sidebar open only for that case, or always sidenav should be open/closed? Think about it.
