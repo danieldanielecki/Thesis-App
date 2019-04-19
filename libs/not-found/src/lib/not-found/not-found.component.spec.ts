@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NotFoundComponent } from './not-found.component';
 
+// TODO: Make unit tests, currently it's problematic.
 jest.mock('three'); // Mock Three.js module.
 
 describe('NotFoundComponent', () => {
