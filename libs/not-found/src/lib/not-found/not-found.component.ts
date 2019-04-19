@@ -21,8 +21,7 @@ import {
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
-// TODO: Explicit type declarations (like here) with public/private everywhere.
-// TODO: Documentation (like here) everywhere.
+
 export class NotFoundComponent {
   private camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera
 

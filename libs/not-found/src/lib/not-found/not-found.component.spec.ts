@@ -3,8 +3,6 @@ import { NotFoundComponent } from './not-found.component';
 
 jest.mock('three'); // Mock Three.js module.
 
-// TODO: Improve the code coverage.
-
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
   let fixture: ComponentFixture<NotFoundComponent>;

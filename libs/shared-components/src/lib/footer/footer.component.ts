@@ -23,7 +23,7 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // Class to display messages instantly.
-// TODO: Move this class, rename, and comment logic.
+// TODO: Move this class to utilities, rename, and comment logic.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
