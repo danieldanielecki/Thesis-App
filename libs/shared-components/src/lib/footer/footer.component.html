@@ -58,26 +58,27 @@
         <mat-form-field>
           <input
             matInput
-            [formControl]="emailFormControl"
+            [formControl]="formControlEmail"
             [errorStateMatcher]="matcher"
             aria-label="Here provide your email address in order to subscribe for a newsletter."
             title="Your email"
             type="email"
           />
           <mat-placeholder class="placeholder">Your email</mat-placeholder>
-          <mat-hint>Email for a newsletter</mat-hint>
+          <mat-hint>Email for a newsletter.</mat-hint>
           <mat-error
             *ngIf="
-              emailFormControl.hasError('email') &&
-              !emailFormControl.hasError('required')
+              formControlEmail.hasError('email') &&
+              !formControlEmail.hasError('required')
             "
             >This is an <strong>invalid</strong> email address.</mat-error
           >
-          <mat-error *ngIf="emailFormControl.hasError('required')"
+          <mat-error *ngIf="formControlEmail.hasError('required')"
             >Email is <strong>required</strong>.</mat-error
           >
         </mat-form-field>
       </form>
+      <!-- TODO: Change color of a button on hover. -->
       <button
         mat-raised-button
         aria-label="Click here to opt in for a newsletter."

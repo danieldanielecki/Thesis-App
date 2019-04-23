@@ -21,9 +21,8 @@ import {
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
-
 export class NotFoundComponent {
-  private camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera
+  private camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 
   // Create renderer to display scene.
   private renderer: WebGLRenderer = new WebGLRenderer({
@@ -36,7 +35,7 @@ export class NotFoundComponent {
    * Creates a new instance of this component.
    *
    * @constructor
-   * @param {Renderer2} - an abstraction class object to manipulate elements without accessing DOM directly.
+   * @param {renderer2} - an abstraction class object to manipulate elements without accessing DOM directly.
    */
   constructor(private renderer2: Renderer2) {}
 

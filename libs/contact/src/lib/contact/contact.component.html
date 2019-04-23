@@ -1,1 +1,129 @@
-<p>contact works!</p>
+<!-- Card container that binds all togather -->
+<mat-card>
+  <!-- Title of an Card -->
+  <mat-card-title> Contact </mat-card-title>
+
+  <!-- Actual content starts from here -->
+  <mat-card-content>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+      <mat-form-field class="full-width">
+        <input
+          formControlName="fromControlName"
+          matInput
+          placeholder="Your name"
+        />
+        <mat-hint>Here write your name.</mat-hint>
+        <mat-error
+          *ngIf="
+            !contactForm.get('fromControlName').valid &&
+            contactForm.get('fromControlName').touched
+          "
+          >Please write your name.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          formControlName="formControlDescription"
+          matInput
+          placeholder="Project description"
+          matTextareaAutosize
+          matAutosizeMinRows="2"
+          matAutosizeMaxRows="5"
+        ></textarea>
+        <mat-hint>Here write description for your project.</mat-hint>
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlDescription').valid &&
+            contactForm.get('formControlDescription').touched
+          "
+          >Description of the project must be between 30 and 5000 characters.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          formControlName="formControlDeadline"
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Project deadline"
+        />
+        <mat-hint
+          >Specify when at latest you would like to have the project done.
+          done</mat-hint
+        >
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlDeadline').valid &&
+            contactForm.get('formControlDeadline').touched
+          "
+          >This is an <strong>invalid</strong> date.
+        </mat-error>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+      </mat-form-field>
+      <span>Preferred contact</span> <br />
+      <mat-radio-group formControlName="formControlFirst">
+        <mat-radio-button value="Email">Email</mat-radio-button>
+        <mat-radio-button value="Phone">Phone</mat-radio-button>
+      </mat-radio-group>
+      <mat-error
+        *ngIf="
+          !contactForm.get('formControlFirst').valid &&
+          contactForm.get('formControlFirst').touched
+        "
+        >Please provide preferrable form of contact.
+      </mat-error>
+      <mat-checkbox>Cyber Security</mat-checkbox>
+      <mat-checkbox>Digital Strategy</mat-checkbox>
+      <mat-checkbox>Software Development</mat-checkbox>
+      <mat-form-field>
+        <mat-select
+          formControlName="formControlService"
+          placeholder="Select service"
+        >
+          <mat-option>--- Select any ---</mat-option>
+          <mat-option value="Cyber Security">Cyber Security</mat-option>
+          <mat-option value="Digital Strategy">Digital Strategy</mat-option>
+          <mat-option value="Software Development"
+            >Software Development</mat-option
+          >
+          <mat-option value="None">None</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlService').valid &&
+            contactForm.get('formControlService').touched
+          "
+          >You didn't select any service.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          formControlName="formControlEmail"
+          matInput
+          placeholder="Your email"
+        />
+        <mat-hint>example : test@myemail.com</mat-hint>
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlEmail').valid &&
+            contactForm.get('formControlEmail').touched
+          "
+          >This is an <strong>invalid</strong> email address.
+        </mat-error>
+      </mat-form-field>
+      <mat-slide-toggle
+        formControlName="acceptedTerms"
+        (change)="handleTerms()"
+        >Accept terms</mat-slide-toggle
+      >
+      <!-- TODO: Change color of a button on hover. -->
+      <button
+        color="primary"
+        mat-raised-button
+        [disabled]="!contactForm.valid || acceptedTerms === false"
+      >
+        Submit
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

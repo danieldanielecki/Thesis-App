@@ -58,7 +58,7 @@ export class FooterComponent {
   }
 
   public currentDate: Date = new Date();
-  public emailFormControl: FormControl = new FormControl('', [
+  public formControlEmail: FormControl = new FormControl(null, [
     Validators.email,
     Validators.required
   ]);
