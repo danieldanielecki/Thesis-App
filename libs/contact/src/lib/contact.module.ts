@@ -9,6 +9,7 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
   MatDatepickerModule,
   MatNativeDateModule,
@@ -19,6 +20,7 @@ import {
   ShowOnDirtyErrorStateMatcher,
   MatSlideToggleModule
 } from '@angular/material';
+import {Ng2TelInputModule} from 'ng2-tel-input';
 
 @NgModule({
   declarations: [ContactComponent],
@@ -31,13 +33,15 @@ import {
     MatCardModule,
     MatCheckboxModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    Ng2TelInputModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }

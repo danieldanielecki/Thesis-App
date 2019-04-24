@@ -72,6 +72,7 @@
         "
         >Please provide preferrable form of contact.
       </mat-error>
+      <span>Select service</span>
       <mat-checkbox>Cyber Security</mat-checkbox>
       <mat-checkbox>Digital Strategy</mat-checkbox>
       <mat-checkbox>Software Development</mat-checkbox>
@@ -102,7 +103,7 @@
           matInput
           placeholder="Your email"
         />
-        <mat-hint>example : test@myemail.com</mat-hint>
+        <mat-hint>Here write your email address.</mat-hint>
         <mat-error
           *ngIf="
             !contactForm.get('formControlEmail').valid &&
@@ -111,9 +112,19 @@
           >This is an <strong>invalid</strong> email address.
         </mat-error>
       </mat-form-field>
-      <mat-slide-toggle
-        formControlName="acceptedTerms"
-        (change)="handleTerms()"
+      <mat-form-field appearance="outline" class="full-width">
+        <input matInput ng2TelInput [ng2TelInputOptions]="{initialCountry: 'us', preferredCountries: ['au', 'ca', 'de', 'ie', 'nl', 'no', 'pl', 'uk', 'us']}" formControlName="formControlPhone" (hasError)="hasError($event)" />
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Here write your phone number.</mat-hint>
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlPhone').valid &&
+            contactForm.get('formControlPhone').touched
+          "
+          >This is an <strong>invalid</strong> phone number.
+        </mat-error>
+      </mat-form-field>
+      <mat-slide-toggle formControlName="acceptedTerms" (change)="handleTerms()"
         >Accept terms</mat-slide-toggle
       >
       <!-- TODO: Change color of a button on hover. -->

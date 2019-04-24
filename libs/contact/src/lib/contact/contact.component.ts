@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -29,11 +30,15 @@ export class ContactComponent {
       formControlDeadline: ['', Validators.required],
       formControlFirst: ['', Validators.required],
       formControlService: ['', Validators.required],
+      formControlPhone: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]*$')]
+      ],
       formControlEmail: [
         '',
         Validators.compose([Validators.required, Validators.email])
       ],
-      acceptedTerms: ['']
+      acceptedTerms: ['', Validators.required]
     });
   }
 
@@ -48,5 +53,15 @@ export class ContactComponent {
   onSubmit(form: NgForm) {
     // TODO: Send en e-mail.
     console.log(form);
+    // TODO: Reset the form.
+  }
+
+  // TODO: Check it, on first compilation it doesn't compile, only uncommenting it after compilation makes it workins. Problem with error TS2531: Object is possibly 'null' (Fix using non-null assertion operator).
+  hasError(event: any): void {
+    if (!event && this.contactForm.value.formControlPhone !== '') {
+      this.contactForm
+        .get('formControlPhone')
+        .setErrors(['invalid_cell_phone', true]);
+    }
   }
 }
