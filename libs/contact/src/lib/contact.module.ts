@@ -18,7 +18,8 @@ import {
   MatOptionModule,
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatListModule
 } from '@angular/material';
 import {Ng2TelInputModule} from 'ng2-tel-input';
 
@@ -41,7 +42,8 @@ import {Ng2TelInputModule} from 'ng2-tel-input';
     MatSelectModule,
     MatOptionModule,
     MatSlideToggleModule,
-    Ng2TelInputModule
+    Ng2TelInputModule,
+    MatListModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }

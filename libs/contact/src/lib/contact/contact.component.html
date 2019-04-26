@@ -1,7 +1,7 @@
 <!-- Card container that binds all togather -->
 <mat-card>
-  <!-- Title of an Card -->
-  <mat-card-title> Contact </mat-card-title>
+  <!-- Title of a Card -->
+  <mat-card-title>Contact</mat-card-title>
 
   <!-- Actual content starts from here -->
   <mat-card-content>
@@ -61,42 +61,26 @@
         <mat-datepicker touchUi="true" #picker></mat-datepicker>
       </mat-form-field>
       <span>Preferred contact</span> <br />
-      <mat-radio-group formControlName="formControlFirst">
+      <mat-radio-group formControlName="formControlFirst" class="full-width">
         <mat-radio-button value="Email">Email</mat-radio-button>
         <mat-radio-button value="Phone">Phone</mat-radio-button>
       </mat-radio-group>
+      <mat-selection-list
+        formControlName="formControlService"
+        placeholder="Select service"
+        class="full-width"
+      >
+        <mat-list-option *ngFor="let servicesItem of servicesItems" value="{{ servicesItem }}">{{
+          servicesItem
+        }}</mat-list-option>
+      </mat-selection-list>
       <mat-error
         *ngIf="
-          !contactForm.get('formControlFirst').valid &&
-          contactForm.get('formControlFirst').touched
+          !contactForm.get('formControlService').valid &&
+          contactForm.get('formControlService').touched
         "
-        >Please provide preferrable form of contact.
+        >You didn't select any service.
       </mat-error>
-      <span>Select service</span>
-      <mat-checkbox>Cyber Security</mat-checkbox>
-      <mat-checkbox>Digital Strategy</mat-checkbox>
-      <mat-checkbox>Software Development</mat-checkbox>
-      <mat-form-field>
-        <mat-select
-          formControlName="formControlService"
-          placeholder="Select service"
-        >
-          <mat-option>--- Select any ---</mat-option>
-          <mat-option value="Cyber Security">Cyber Security</mat-option>
-          <mat-option value="Digital Strategy">Digital Strategy</mat-option>
-          <mat-option value="Software Development"
-            >Software Development</mat-option
-          >
-          <mat-option value="None">None</mat-option>
-        </mat-select>
-        <mat-error
-          *ngIf="
-            !contactForm.get('formControlService').valid &&
-            contactForm.get('formControlService').touched
-          "
-          >You didn't select any service.
-        </mat-error>
-      </mat-form-field>
       <mat-form-field class="full-width">
         <input
           formControlName="formControlEmail"
@@ -113,7 +97,26 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline" class="full-width">
-        <input matInput ng2TelInput [ng2TelInputOptions]="{initialCountry: 'us', preferredCountries: ['au', 'ca', 'de', 'ie', 'nl', 'no', 'pl', 'uk', 'us']}" formControlName="formControlPhone" (hasError)="hasError($event)" />
+        <input
+          matInput
+          ng2TelInput
+          [ng2TelInputOptions]="{
+            initialCountry: 'us',
+            preferredCountries: [
+              'au',
+              'ca',
+              'de',
+              'ie',
+              'nl',
+              'no',
+              'pl',
+              'uk',
+              'us'
+            ]
+          }"
+          formControlName="formControlPhone"
+          (hasError)="hasError($event)"
+        />
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Here write your phone number.</mat-hint>
         <mat-error
@@ -127,7 +130,6 @@
       <mat-slide-toggle formControlName="acceptedTerms" (change)="handleTerms()"
         >Accept terms</mat-slide-toggle
       >
-      <!-- TODO: Change color of a button on hover. -->
       <button
         color="primary"
         mat-raised-button

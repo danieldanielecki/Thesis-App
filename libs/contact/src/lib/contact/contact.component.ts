@@ -7,8 +7,13 @@ import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  public contactForm: FormGroup;
   public acceptedTerms: boolean = false;
+  public contactForm: FormGroup;
+  public servicesItems: string[] = [
+    'Cyber Security',
+    'Digital Strategy',
+    'Software Development'
+  ];
 
   /**
    * Creates a new instance of this component.
@@ -57,11 +62,11 @@ export class ContactComponent {
   }
 
   // TODO: Check it, on first compilation it doesn't compile, only uncommenting it after compilation makes it workins. Problem with error TS2531: Object is possibly 'null' (Fix using non-null assertion operator).
-  hasError(event: any): void {
-    if (!event && this.contactForm.value.formControlPhone !== '') {
-      this.contactForm
-        .get('formControlPhone')
-        .setErrors(['invalid_cell_phone', true]);
-    }
-  }
+  // hasError(event: any): void {
+  //   if (!event && this.contactForm.value.formControlPhone !== '') {
+  //     this.contactForm
+  //       .get('formControlPhone')
+  //       .setErrors(['invalid_cell_phone', true]);
+  //   }
+  // }
 }

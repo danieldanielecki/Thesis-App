@@ -1,4 +1,3 @@
-<!-- TODO: Add sticky header. -->
 <!--
   TODO: If time permits polish a bit roles & aria-labels for menu elements, especially for desktop.
 -->
@@ -76,15 +75,15 @@
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
               <!-- Grouping element for list of menu items for services. -->
-              <ng-container *ngFor="let serviceItem of servicesItems">
+              <ng-container *ngFor="let servicesItem of servicesItems">
                 <!-- Services elements. -->
                 <a
                   mat-menu-item
-                  routerLink="{{ serviceItem.path }}"
-                  attr.aria-label="{{ serviceItem.name }}. Click here to read more about {{ serviceItem.name }}."
+                  routerLink="{{ servicesItem.path }}"
+                  attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
                   role="menuitem"
-                  title="{{ serviceItem.name }}"
-                  >{{ serviceItem.name }}</a
+                  title="{{ servicesItem.name }}"
+                  >{{ servicesItem.name }}</a
                 ></ng-container
               >
             </ng-template>
@@ -165,17 +164,17 @@
             <!-- Lazy loaded menu of services. -->
             <ng-template matMenuContent>
               <!-- Grouping element for list of menu items for services. -->
-              <ng-container *ngFor="let serviceItem of servicesItems">
+              <ng-container *ngFor="let servicesItem of servicesItems">
                 <!-- Services elements. -->
                 <a
                   mat-menu-item
-                  routerLink="{{ serviceItem.path }}"
-                  attr.aria-label="{{ serviceItem.name }}. Click here to read more about {{ serviceItem.name }}."
+                  routerLink="{{ servicesItem.path }}"
+                  attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
                   role="menuitem"
-                  title="{{ serviceItem.name }}"
+                  title="{{ servicesItem.name }}"
                 >
-                  <mat-icon aria-hidden="true">{{ serviceItem.icon }}</mat-icon>
-                  {{ serviceItem.name }}
+                  <mat-icon aria-hidden="true">{{ servicesItem.icon }}</mat-icon>
+                  {{ servicesItem.name }}
                 </a>
               </ng-container>
             </ng-template>
