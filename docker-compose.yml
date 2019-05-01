@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  node:
+    build: .
+    command: bash -c "ng serve --host 0.0.0.0 --poll"
+    environment:
+      - NODE_END=dev # Useless?
+    image: 'thesisapp' # Useless?
+    ports:
+      - '8089:4200' # Localhost port.
+      - '49153:49153' # Webpack's port to live reload.
+    volumes:
+      - .:/home/node # Useless?
