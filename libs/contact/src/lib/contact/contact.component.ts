@@ -61,12 +61,12 @@ export class ContactComponent {
     // TODO: Reset the form.
   }
 
-  // TODO: Check it, on first compilation it doesn't compile, only uncommenting it after compilation makes it workins. Problem with error TS2531: Object is possibly 'null' (Fix using non-null assertion operator).
-  // hasError(event: any): void {
-  //   if (!event && this.contactForm.value.formControlPhone !== '') {
-  //     this.contactForm
-  //       .get('formControlPhone')
-  //       .setErrors(['invalid_cell_phone', true]);
-  //   }
-  // }
+  // Non-null assertion operator is required in .ts as well as .html file to compile into AOT.
+  hasError(event: any): void {
+    if (!event && this.contactForm.value.formControlPhone !== '') {
+      this.contactForm
+        .get('formControlPhone')!
+        .setErrors(['invalid_cell_phone', true]);
+    }
+  }
 }
