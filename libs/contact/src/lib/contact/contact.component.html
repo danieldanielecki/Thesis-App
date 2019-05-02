@@ -84,6 +84,7 @@
           ">This is an <strong>invalid</strong> phone number.
         </mat-error>
       </mat-form-field>
+      <re-captcha formControlName="recaptchaCheck"></re-captcha>
       <mat-slide-toggle formControlName="acceptedTerms" (change)="handleTerms()">Accept terms</mat-slide-toggle>
       <button color="primary" mat-raised-button [disabled]="!contactForm.valid || acceptedTerms === false">
         Submit

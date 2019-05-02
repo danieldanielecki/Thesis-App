@@ -1,5 +1,6 @@
 {
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "jest.runAllTestsFirst": false,
-    "jest.autoEnable": false
+    "jest.autoEnable": false,
+    "editor.tabSize": 2
 }

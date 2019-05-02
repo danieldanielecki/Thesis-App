@@ -43,7 +43,8 @@ export class ContactComponent {
         '',
         Validators.compose([Validators.required, Validators.email])
       ],
-      acceptedTerms: ['', Validators.required]
+      acceptedTerms: ['', Validators.required],
+      recaptchaCheck: ['', Validators.required]
     });
   }
 
