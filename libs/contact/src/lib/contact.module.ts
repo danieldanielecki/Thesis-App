@@ -24,6 +24,7 @@ import {
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { RecaptchaModule, RECAPTCHA_SETTINGS, RECAPTCHA_NONCE, RecaptchaSettings } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 @NgModule({
 	declarations: [ContactComponent],
@@ -47,7 +48,8 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 		Ng2TelInputModule,
 		MatListModule,
 		RecaptchaModule,
-		RecaptchaFormsModule
+		RecaptchaFormsModule,
+		MaterialFileInputModule
 	],
 	// TODO: Change the sample API key to a real one (as env variable).
 	providers: [

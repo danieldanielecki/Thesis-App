@@ -56,6 +56,7 @@
     "moment": "^2.24.0",
     "ng-recaptcha": "^4.2.1",
     "ng2-tel-input": "^2.0.1",
+    "ngx-material-file-input": "^1.1.1",
     "ngx-moment": "^3.4.0",
     "particles.js": "^2.0.0",
     "rxjs": "~6.4.0",

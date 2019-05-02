@@ -37,3 +37,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Others
+.config
+.npm
+.npm-global
+.vscode
+

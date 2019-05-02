@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { FileValidator } from 'ngx-material-file-input';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,7 @@ export class ContactComponent {
     'Digital Strategy',
     'Software Development'
   ];
+  public maxSize: number = 20971520;
 
   /**
    * Creates a new instance of this component.
@@ -44,7 +46,8 @@ export class ContactComponent {
         Validators.compose([Validators.required, Validators.email])
       ],
       acceptedTerms: ['', Validators.required],
-      recaptchaCheck: ['', Validators.required]
+      recaptchaCheck: ['', Validators.required],
+      fileUploader: ['', FileValidator.maxContentSize(this.maxSize)]
     });
   }
 

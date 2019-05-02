@@ -12,13 +12,13 @@
         <mat-error *ngIf="
             !contactForm.get('fromControlName')!.valid &&
             contactForm.get('fromControlName')!.touched
-          ">Please write your name.
+          ">Your full name.
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width">
         <textarea formControlName="formControlDescription" matInput placeholder="Project description"
           matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
-        <mat-hint>Here write description for your project.</mat-hint>
+        <mat-hint>Description for your project.</mat-hint>
         <mat-error *ngIf="
             !contactForm.get('formControlDescription')!.valid &&
             contactForm.get('formControlDescription')!.touched
@@ -27,8 +27,7 @@
       </mat-form-field>
       <mat-form-field class="full-width">
         <input formControlName="formControlDeadline" matInput [matDatepicker]="picker" placeholder="Project deadline" />
-        <mat-hint>Specify when at latest you would like to have the project done.
-          done</mat-hint>
+        <mat-hint>Specify when at latest you would like to have the project done.</mat-hint>
         <mat-error *ngIf="
             !contactForm.get('formControlDeadline')!.valid &&
             contactForm.get('formControlDeadline')!.touched
@@ -54,7 +53,7 @@
       </mat-error>
       <mat-form-field class="full-width">
         <input formControlName="formControlEmail" matInput placeholder="Your email" />
-        <mat-hint>Here write your email address.</mat-hint>
+        <mat-hint>Valid email address.</mat-hint>
         <mat-error *ngIf="
             !contactForm.get('formControlEmail')!.valid &&
             contactForm.get('formControlEmail')!.touched
@@ -77,7 +76,7 @@
             ]
           }" formControlName="formControlPhone" (hasError)="hasError($event)" />
         <mat-icon matSuffix>phone</mat-icon>
-        <mat-hint>Here write your phone number.</mat-hint>
+        <mat-hint>Your phone number with country prefix.</mat-hint>
         <mat-error *ngIf="
             !contactForm.get('formControlPhone')!.valid &&
             contactForm.get('formControlPhone')!.touched
@@ -85,6 +84,20 @@
         </mat-error>
       </mat-form-field>
       <re-captcha formControlName="recaptchaCheck"></re-captcha>
+      <mat-form-field class="full-width">
+        <ngx-mat-file-input formControlName="fileUploader"
+          [accept]="['.doc', '.docx', '.jpg', '.jpeg', '.pdf', '.png', '.xls', '.xlsx']"
+          placeholder="Accepted formats: DOC, DOCX, JPG, JPEG, PDF, PNG, XLS and XLSX, max files upload size: 20 MB."
+          multiple>
+        </ngx-mat-file-input>
+        <mat-icon matSuffix>folder</mat-icon>
+        <mat-hint>Optionally additional files.</mat-hint>
+        <mat-error *ngIf="contactForm.get('fileUploader').hasError('maxContentSize')">
+          This size is too large, maximum upload is
+          {{contactForm.get('fileUploader')?.getError('maxContentSize').maxSize | byteFormat}} (uploaded size: {{contactForm.get('fileUploader')?.getError('maxContentSize').actualSize
+          | byteFormat}}).
+        </mat-error>
+      </mat-form-field>
       <mat-slide-toggle formControlName="acceptedTerms" (change)="handleTerms()">Accept terms</mat-slide-toggle>
       <button color="primary" mat-raised-button [disabled]="!contactForm.valid || acceptedTerms === false">
         Submit
