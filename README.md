@@ -59,6 +59,7 @@ TODO: Add this if brief would be build
 + `docker ps` - show Docker container status.
 + `docker run -p 4200:4200 IMAGE_NAME` - run Docker image with a specific image name.
 + `docker stop CONTAINER_ID` - stop running container with specific ID.
++ `docker exec -it CONTAINER_NAMES sh` - enter the container.
 
 
 ## Commits convention

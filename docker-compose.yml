@@ -1,14 +1,18 @@
-version: '2.1'
+# This file is used for orchestrating and running Docker environment defined in the Dockerfile. It's an alternative to Kubernetus. Simply use it to make more than 1 container, i.e. development and production environment.
+# TODO: production mode has to be tested.
+version: '3.7'
 
 services:
   node:
-    build: .
-    command: bash -c "ng serve --host 0.0.0.0 --poll"
+    build: . # Made build by Dockerfile.
     environment:
-      - NODE_END=dev # Useless?
-    image: 'thesisapp' # Useless?
+      - NODE_ENV=development # This will install all npm dependencies (for development).
+      #- NODE_ENV=production # This will install npm dependencies without devDependencies (for production).
+    # Set up name of the Docker image.
+    image: 'thesisapp' # Set up name of the docker repository.
     ports:
-      - '8089:4200' # Localhost port.
-      - '49153:49153' # Webpack's port to live reload.
+      - '4200:4200' # Casting localhost port to display the application in the browser in a development machine.
+      - '49153:49153' # Casting webpack port to live reload on the development machine.
     volumes:
-      - .:/home/node # Useless?
+      - .:/home/node # Mount application folder to the container.
+      - /home/node/node_modules # Mount node_modules installed during the build to the container.
