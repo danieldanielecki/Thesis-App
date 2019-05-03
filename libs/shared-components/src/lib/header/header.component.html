@@ -140,8 +140,8 @@
               <mat-icon
                 >arrow_drop_down<span class="cdk-visually-hidden"
                   >Click to check available services.</span
-                ></mat-icon
-              >
+                >
+              </mat-icon>
             </a>
             <!-- Template element for close button. -->
             <ng-template #closeTemplate>
@@ -173,7 +173,9 @@
                   role="menuitem"
                   title="{{ servicesItem.name }}"
                 >
-                  <mat-icon aria-hidden="true">{{ servicesItem.icon }}</mat-icon>
+                  <mat-icon aria-hidden="true">{{
+                    servicesItem.icon
+                  }}</mat-icon>
                   {{ servicesItem.name }}
                 </a>
               </ng-container>

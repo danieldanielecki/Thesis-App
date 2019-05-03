@@ -1,67 +1,59 @@
 <!-- Card container that binds all togather -->
-<mat-card>
+<mat-card
+  fxFlex="50"
+  fxFlex.md="80"
+  fxFlex.lt-md="90"
+  fxFlexOffset="25"
+  fxFlexOffset.md="10"
+  fxFlexOffset.lt-md="5"
+>
   <!-- Title of a Card -->
-  <mat-card-title>Contact</mat-card-title>
+  <mat-card-title fxFlexAlign="center">Contact</mat-card-title>
 
   <!-- Actual content starts from here -->
   <mat-card-content>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-      <mat-form-field class="full-width">
-        <input formControlName="fromControlName" matInput placeholder="Your name" />
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit(contactForm.value)"
+      fxLayout="column"
+      fxLayoutAlign="space-between stretch"
+      fxLayoutGap="20px"
+    >
+      <mat-form-field>
+        <input
+          formControlName="fromControlName"
+          matInput
+          placeholder="Your name"
+        />
         <mat-hint>Here write your name.</mat-hint>
-        <mat-error *ngIf="
+        <mat-error
+          *ngIf="
             !contactForm.get('fromControlName')!.valid &&
             contactForm.get('fromControlName')!.touched
-          ">Your full name.
+          "
+          >Your full name.
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="full-width">
-        <textarea formControlName="formControlDescription" matInput placeholder="Project description"
-          matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
-        <mat-hint>Description for your project.</mat-hint>
-        <mat-error *ngIf="
-            !contactForm.get('formControlDescription')!.valid &&
-            contactForm.get('formControlDescription')!.touched
-          ">Description of the project must be between 30 and 5000 characters.
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input formControlName="formControlDeadline" matInput [matDatepicker]="picker" placeholder="Project deadline" />
-        <mat-hint>Specify when at latest you would like to have the project done.</mat-hint>
-        <mat-error *ngIf="
-            !contactForm.get('formControlDeadline')!.valid &&
-            contactForm.get('formControlDeadline')!.touched
-          ">This is an <strong>invalid</strong> date.
-        </mat-error>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi="true" #picker></mat-datepicker>
-      </mat-form-field>
-      <span>Preferred contact</span> <br />
-      <mat-radio-group formControlName="formControlFirst" class="full-width">
-        <mat-radio-button value="Email">Email</mat-radio-button>
-        <mat-radio-button value="Phone">Phone</mat-radio-button>
-      </mat-radio-group>
-      <mat-selection-list formControlName="formControlService" placeholder="Select service" class="full-width">
-        <mat-list-option *ngFor="let servicesItem of servicesItems" value="{{ servicesItem }}">{{
-          servicesItem
-        }}</mat-list-option>
-      </mat-selection-list>
-      <mat-error *ngIf="
-          !contactForm.get('formControlService')!.valid &&
-          contactForm.get('formControlService')!.touched
-        ">You didn't select any service.
-      </mat-error>
-      <mat-form-field class="full-width">
-        <input formControlName="formControlEmail" matInput placeholder="Your email" />
+      <mat-form-field>
+        <input
+          formControlName="formControlEmail"
+          matInput
+          placeholder="Your email"
+        />
         <mat-hint>Valid email address.</mat-hint>
-        <mat-error *ngIf="
+        <mat-error
+          *ngIf="
             !contactForm.get('formControlEmail')!.valid &&
             contactForm.get('formControlEmail')!.touched
-          ">This is an <strong>invalid</strong> email address.
+          "
+          >This is an <strong>invalid</strong> email address.
         </mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="full-width">
-        <input matInput ng2TelInput [ng2TelInputOptions]="{
+      <mat-form-field appearance="outline" fxFlex="40">
+        <input
+          matInput
+          ng2TelInput
+          [ng2TelInputOptions]="{
             initialCountry: 'us',
             preferredCountries: [
               'au',
@@ -71,36 +63,138 @@
               'nl',
               'no',
               'pl',
+              'ch',
               'uk',
               'us'
             ]
-          }" formControlName="formControlPhone" (hasError)="hasError($event)" />
+          }"
+          formControlName="formControlPhone"
+          (hasError)="hasError($event)"
+        />
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Your phone number with country prefix.</mat-hint>
-        <mat-error *ngIf="
+        <mat-error
+          *ngIf="
             !contactForm.get('formControlPhone')!.valid &&
             contactForm.get('formControlPhone')!.touched
-          ">This is an <strong>invalid</strong> phone number.
+          "
+          >This is an <strong>invalid</strong> phone number.
         </mat-error>
       </mat-form-field>
-      <re-captcha formControlName="recaptchaCheck"></re-captcha>
-      <mat-form-field class="full-width">
-        <ngx-mat-file-input formControlName="fileUploader"
-          [accept]="['.doc', '.docx', '.jpg', '.jpeg', '.pdf', '.png', '.xls', '.xlsx']"
-          placeholder="Accepted formats: DOC, DOCX, JPG, JPEG, PDF, PNG, XLS and XLSX, max files upload size: 20 MB."
-          multiple>
+      <mat-form-field>
+        <input
+          formControlName="formControlDeadline"
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Project deadline"
+        />
+        <mat-hint
+          >Specify when at latest you would like to have the project
+          done.</mat-hint
+        >
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlDeadline')!.valid &&
+            contactForm.get('formControlDeadline')!.touched
+          "
+          >This is an <strong>invalid</strong> date.
+        </mat-error>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          formControlName="formControlDescription"
+          matInput
+          placeholder="Project description"
+          matTextareaAutosize
+          matAutosizeMinRows="5"
+          matAutosizeMaxRows="20"
+        ></textarea>
+        <mat-hint>Description for your project.</mat-hint>
+        <mat-error
+          *ngIf="
+            !contactForm.get('formControlDescription')!.valid &&
+            contactForm.get('formControlDescription')!.touched
+          "
+          >Description of the project must be between 30 and 5000 characters.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <ngx-mat-file-input
+          formControlName="fileUploader"
+          [accept]="[
+            '.doc',
+            '.docx',
+            '.jpg',
+            '.jpeg',
+            '.pdf',
+            '.png',
+            '.xls',
+            '.xlsx'
+          ]"
+          placeholder="Optionally additional files"
+          multiple
+        >
         </ngx-mat-file-input>
         <mat-icon matSuffix>folder</mat-icon>
-        <mat-hint>Optionally additional files.</mat-hint>
-        <mat-error *ngIf="contactForm.get('fileUploader').hasError('maxContentSize')">
+        <mat-hint
+          >Accepted formats: DOC, DOCX, JPG, JPEG, PDF, PNG, XLS and XLSX,
+          maximum files upload size: 20 MB.
+        </mat-hint>
+        <mat-error
+          *ngIf="contactForm.get('fileUploader').hasError('maxContentSize')"
+        >
           This size is too large, maximum upload is
-          {{contactForm.get('fileUploader')?.getError('maxContentSize').maxSize | byteFormat}} (uploaded size: {{contactForm.get('fileUploader')?.getError('maxContentSize').actualSize
-          | byteFormat}}).
+          {{
+            contactForm.get('fileUploader')?.getError('maxContentSize').maxSize
+              | byteFormat
+          }}
+          (uploaded size:
+          {{
+            contactForm.get('fileUploader')?.getError('maxContentSize')
+              .actualSize | byteFormat
+          }}).
         </mat-error>
       </mat-form-field>
-      <mat-slide-toggle formControlName="acceptedTerms" (change)="handleTerms()">Accept terms</mat-slide-toggle>
-      <button color="primary" mat-raised-button [disabled]="!contactForm.valid || acceptedTerms === false">
-        Submit
+      <h4 fxFlexAlign="center">Choose preferred form of contact</h4>
+      <mat-radio-group formControlName="formControlFirst" fxFlexAlign="center">
+        <mat-radio-button value="Email">Email</mat-radio-button>
+        <mat-radio-button value="Phone">Phone</mat-radio-button>
+      </mat-radio-group>
+      <h4 fxFlexAlign="center">
+        Select in which services are you interested in
+      </h4>
+      <mat-selection-list formControlName="formControlService">
+        <mat-list-option
+          *ngFor="let servicesItem of servicesItems"
+          value="{{ servicesItem }}"
+          >{{ servicesItem }}</mat-list-option
+        >
+      </mat-selection-list>
+      <mat-error
+        *ngIf="
+          !contactForm.get('formControlService')!.valid &&
+          contactForm.get('formControlService')!.touched
+        "
+        >You didn't select any service.
+      </mat-error>
+      <re-captcha
+        formControlName="recaptchaCheck"
+        fxFlexAlign="center"
+      ></re-captcha>
+      <mat-slide-toggle
+        formControlName="acceptedTerms"
+        (change)="handleTerms()"
+        fxFlexAlign="center"
+        >Accept terms
+      </mat-slide-toggle>
+      <button
+        color="primary"
+        mat-raised-button
+        [disabled]="!contactForm.valid || acceptedTerms === false"
+      >
+        Send message
       </button>
     </form>
   </mat-card-content>

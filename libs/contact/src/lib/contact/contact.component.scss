@@ -1,12 +1,10 @@
-// TODO: Style it a bit, and add Flexbox/Grid.
-
 mat-card {
-  max-width: 80%;
   margin: 2rem auto;
-  padding: 20px 30px;
-  text-align: center;
-}
 
-.full-width {
-  width: 100%;
+  mat-radio-button {
+    margin: 0 20px;
+  }
+  mat-card-title {
+    text-align: center;
+  }
 }

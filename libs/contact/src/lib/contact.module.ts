@@ -25,6 +25,7 @@ import { Ng2TelInputModule } from 'ng2-tel-input';
 import { RecaptchaModule, RECAPTCHA_SETTINGS, RECAPTCHA_NONCE, RecaptchaSettings } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [ContactComponent],
@@ -49,7 +50,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 		MatListModule,
 		RecaptchaModule,
 		RecaptchaFormsModule,
-		MaterialFileInputModule
+		MaterialFileInputModule,
+		FlexLayoutModule
 	],
 	// TODO: Change the sample API key to a real one (as env variable).
 	providers: [
@@ -61,9 +63,9 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 			} as RecaptchaSettings,
 		},
 		{
-      provide: RECAPTCHA_NONCE,
-      useValue: '<YOUR_NONCE_VALUE>', // TODO: Add nonce for CSP here (as env variable).
-    },
+			provide: RECAPTCHA_NONCE,
+			useValue: '<YOUR_NONCE_VALUE>', // TODO: Add nonce for CSP here (as env variable).
+		},
 	]
 })
 export class ContactModule { }
