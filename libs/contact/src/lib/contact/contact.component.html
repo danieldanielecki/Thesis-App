@@ -6,9 +6,15 @@
   fxFlexOffset="25"
   fxFlexOffset.md="10"
   fxFlexOffset.lt-md="5"
+  role="region"
 >
-  <!-- Title of a Card -->
-  <mat-card-title fxFlexAlign="center" title="Contact">Contact</mat-card-title>
+  <!-- Title of a card. -->
+  <mat-card-title
+    fxFlexAlign="center"
+    aria-label="This is a contact page to contact with us."
+    title="Contact"
+    >Contact</mat-card-title
+  >
 
   <!-- Actual content starts from here -->
   <mat-card-content>
@@ -23,8 +29,10 @@
         <input
           matInput
           formControlName="fromControlName"
+          aria-label="Here provide your full name."
           placeholder="Your name"
           title="Your name"
+          type="text"
         />
         <mat-hint>Write your name.</mat-hint>
         <mat-error
@@ -32,15 +40,17 @@
             !contactForm.get('fromControlName')!.valid &&
             contactForm.get('fromControlName')!.touched
           "
-          >Your full name.
+          >Your full name is required.
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           formControlName="formControlEmail"
+          aria-label="Here provide your valid email address."
           placeholder="Your email"
           title="Your email"
+          type="email"
         />
         <mat-hint>Provide valid email address.</mat-hint>
         <mat-error
@@ -51,6 +61,7 @@
           >This is an <strong>invalid</strong> email address.
         </mat-error>
       </mat-form-field>
+      <!-- TODO: Fix getting the dial code on user input, issue #42. -->
       <mat-form-field appearance="outline" fxFlex="40">
         <input
           matInput
@@ -72,8 +83,10 @@
           }"
           formControlName="formControlPhone"
           (hasError)="hasError($event)"
+          aria-label="Here provide your phone number according to your country of origin."
           placeholder="Your phone number"
           title="Your phone number"
+          type="tel"
         />
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Your phone number with country prefix.</mat-hint>
@@ -90,6 +103,7 @@
           matInput
           [matDatepicker]="picker"
           formControlName="formControlDeadline"
+          aria-label="Click here to choose a deadline for your project."
           placeholder="Project deadline"
           title="Project deadline"
         />
@@ -114,6 +128,7 @@
           matAutosizeMinRows="5"
           matAutosizeMaxRows="20"
           formControlName="formControlDescription"
+          aria-label="Here describe what is your project about."
           placeholder="Project description"
           title="Project description"
         ></textarea>
@@ -140,8 +155,10 @@
             '.xlsx'
           ]"
           formControlName="fileUploader"
+          aria-label="Here you can optionally add additional files about your project, which can be helpeful for us."
           placeholder="Optionally additional files"
           title="Optionally additional files"
+          type="file"
         >
         </ngx-mat-file-input>
         <mat-icon matSuffix>folder</mat-icon>
@@ -164,26 +181,50 @@
           }}).
         </mat-error>
       </mat-form-field>
-      <h4 fxFlexAlign="center" title="Choose preferred form of contact">
+      <h4
+        fxFlexAlign="center"
+        aria-label="Here choose preferred form of contact with you."
+        title="Choose preferred form of contact"
+      >
         Choose preferred form of contact
       </h4>
-      <mat-radio-group formControlName="formControlFirst" fxFlexAlign="center">
-        <mat-radio-button title="Email" value="Email">Email</mat-radio-button>
-        <mat-radio-button title="Phone" value="Phone">Phone</mat-radio-button>
+      <mat-radio-group
+        formControlName="formControlFirst"
+        fxFlexAlign="center"
+        aria-label="You can choose between email or phone as a preferred form of contact with you."
+      >
+        <mat-radio-button
+          aria-label="Email is my preferred form of contact."
+          title="Email"
+          value="Email"
+          >Email</mat-radio-button
+        >
+        <mat-radio-button
+          aria-label="Phone is my preferred form of contact."
+          title="Phone"
+          value="Phone"
+          >Phone</mat-radio-button
+        >
       </mat-radio-group>
       <h4
         fxFlexAlign="center"
+        aria-label="Here you can choose in which services are you interested in."
         title="Select in which services are you interested in"
       >
         Select in which services are you interested in
       </h4>
-      <mat-selection-list formControlName="formControlService">
-        <mat-list-option
-          *ngFor="let servicesItem of servicesItems"
-          title="{{ servicesItem }}"
-          value="{{ servicesItem }}"
-          >{{ servicesItem }}</mat-list-option
-        >
+      <mat-selection-list
+        formControlName="formControlService"
+        aria-label="Here choose in which services are you interested in."
+      >
+        <ng-container *ngFor="let servicesItem of servicesItems">
+          <mat-list-option
+            attr.aria-label="Service of {{ servicesItem }}."
+            title="{{ servicesItem }}"
+            value="{{ servicesItem }}"
+            >{{ servicesItem }}</mat-list-option
+          >
+        </ng-container>
       </mat-selection-list>
       <mat-error
         *ngIf="
@@ -195,12 +236,14 @@
       <re-captcha
         formControlName="recaptchaCheck"
         fxFlexAlign="center"
+        aria-label="This is a security check. In order to send a message to use please follow what is mentioned in the pop up window."
         title="Security check"
       ></re-captcha>
       <mat-slide-toggle
         (change)="handleTerms()"
         formControlName="acceptedTerms"
         fxFlexAlign="center"
+        aria-label="You have to accept terms if you want to send a message to us. Please click here in order to accept terms."
         title="Accept terms"
         >Accept terms
       </mat-slide-toggle>
@@ -208,6 +251,7 @@
         mat-raised-button
         color="primary"
         [disabled]="!contactForm.valid || acceptedTerms === false"
+        aria-label="Click here to send a message."
         title="Send message"
       >
         Send message
