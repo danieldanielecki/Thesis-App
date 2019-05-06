@@ -103,6 +103,9 @@
         <input
           matInput
           [matDatepicker]="picker"
+          [matDatepickerFilter]="filterAvailableDays"
+          [max]="maxDate"
+          [min]="currentDate"
           formControlName="formControlDeadline"
           aria-label="Click here to choose a deadline for your project."
           placeholder="Project deadline"

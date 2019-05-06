@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { FileValidator } from 'ngx-material-file-input';
 
+// TODO: Add verbose datepicker with custom formats.
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -16,6 +17,13 @@ export class ContactComponent {
     'Software Development'
   ];
   public maxSize: number = 20971520;
+  public currentDate: Date = new Date();
+
+  // Create max deadline dynamically 5 years from now.
+  public day: number = this.currentDate.getDate();
+  public month: number = this.currentDate.getMonth();
+  public year: number = this.currentDate.getFullYear();
+  public maxDate: Date = new Date(this.year + 5, this.month, this.day);
 
   /**
    * Creates a new instance of this component.
@@ -73,4 +81,10 @@ export class ContactComponent {
         .setErrors(['invalid_cell_phone', true]);
     }
   }
+
+  /* Filter available days in the datepicker to choose. */
+  public filterAvailableDays = (d: Date): boolean => {
+    const day = d.getDay();
+    return day !== 0 && day !== 6; // Prevent Saturday and Sunday from being selected.
+  };
 }
