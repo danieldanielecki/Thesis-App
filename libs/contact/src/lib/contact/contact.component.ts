@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { FileValidator } from 'ngx-material-file-input';
 
+// TODO: Move this class to utilities, rename, and comment logic.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
