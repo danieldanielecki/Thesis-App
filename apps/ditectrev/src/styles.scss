@@ -54,3 +54,10 @@ footer {
     background-color: white !important;
   }
 }
+
+// Contact Angukar Material's styles overwriting.
+mat-card {
+  .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+  }
+}
