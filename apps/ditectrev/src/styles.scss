@@ -42,7 +42,12 @@ a {
   }
 }
 
-// Required to put it here in order to override Angular Material's styles used in a footer.
+// Required to put it here in order overwrite Angular Material's styles for global behaviours.
+.mat-drawer-backdrop {
+  position: fixed !important;
+}
+
+// Required to put it here in order to overwrite Angular Material's styles used in a footer.
 footer {
   mat-hint {
     color: white !important;
@@ -55,7 +60,7 @@ footer {
   }
 }
 
-// Contact Angular Material's styles overwriting.
+// Required to put it here in order to overwrite Angular Material's styles used in a contact.
 mat-card {
   .mat-form-field-subscript-wrapper {
     padding: 0 !important;
