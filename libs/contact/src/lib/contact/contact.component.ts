@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FileValidator } from 'ngx-material-file-input';
 import {
   FormBuilder,
   FormControl,
@@ -7,7 +8,6 @@ import {
   Validators,
   NgForm
 } from '@angular/forms';
-import { FileValidator } from 'ngx-material-file-input';
 
 // TODO: Move this class to utilities, rename, and comment logic.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -23,6 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     );
   }
 }
+
 // TODO: Add verbose datepicker with custom formats.
 @Component({
   selector: 'app-contact',
@@ -32,13 +33,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class ContactComponent {
   public acceptedTerms: boolean = false;
   public contactForm: FormBuilder;
+  public currentDate: Date = new Date();
+  public maxSize: number = 20971520;
   public servicesItems: string[] = [
     'Cyber Security',
     'Digital Strategy',
     'Software Development'
   ];
-  public maxSize: number = 20971520;
-  public currentDate: Date = new Date();
 
   // Create max deadline dynamically 5 years from now.
   public day: number = this.currentDate.getDate();
@@ -49,12 +50,15 @@ export class ContactComponent {
   /**
    * Creates a new instance of this component.
    *
+   * @constructor
    * @param  {formBuilder} - an abstraction class object to create a form group control for the contact form.
    */
   constructor(private formBuilder: FormBuilder) {
     // Create contact form with all required validators.
     this.contactForm = this.formBuilder.group({
-      fromControlName: ['', Validators.required],
+      acceptedTerms: ['', Validators.required],
+      fileUploader: ['', FileValidator.maxContentSize(this.maxSize)],
+      formControlDeadline: ['', Validators.required],
       formControlDescription: [
         '',
         Validators.compose([
@@ -63,39 +67,49 @@ export class ContactComponent {
           Validators.maxLength(5000)
         ])
       ],
-      formControlDeadline: ['', Validators.required],
-      formControlFirst: ['', Validators.required],
-      formControlService: ['', Validators.required],
-      formControlPhone: [
-        '',
-        [Validators.required, Validators.pattern('^[0-9]*$')]
-      ],
       formControlEmail: [
         '',
         Validators.compose([Validators.required, Validators.email])
       ],
-      acceptedTerms: ['', Validators.required],
-      recaptchaCheck: ['', Validators.required],
-      fileUploader: ['', FileValidator.maxContentSize(this.maxSize)]
+      formControlFirst: ['', Validators.required],
+      fromControlName: ['', Validators.required],
+      formControlPhone: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]*$')]
+      ],
+      formControlService: ['', Validators.required],
+      recaptchaCheck: ['', Validators.required]
     });
   }
 
-  /* Handle state of accepted terms. */
-  handleTerms() {
+  /*  */
+  /**
+   * Filter available days in the datepicker to choose.
+   *
+   * @param {d} - instance of date.
+   * @returns {boolean}
+   */
+  public filterAvailableDays = (d: Date): boolean => {
+    const day = d.getDay();
+    return day !== 0 && day !== 6; // Prevent Saturday and Sunday from being selected.
+  };
+
+  /**
+   * Handle state of accepted terms.
+   *
+   * @returns {void}
+   */
+  public handleTerms(): void {
     this.acceptedTerms = !this.acceptedTerms;
   }
 
   /**
-   * @param  {NgForm} form
+   * Check if phone in contact form has an error.
+   *
+   * @param {event} - event for handling the error.
+   * @returns {void}
    */
-  onSubmit(form: NgForm) {
-    // TODO: Send en e-mail.
-    console.log(form);
-    // TODO: Reset the form.
-  }
-
-  /* Check if phone in contact form has an error. */
-  hasError(event: any): void {
+  public hasError(event: any): void {
     if (!event && this.contactForm.value.formControlPhone !== '') {
       this.contactForm
         .get('formControlPhone')! // Non-null assertion operator is required in .ts as well as .html file to compile into AOT.
@@ -103,9 +117,14 @@ export class ContactComponent {
     }
   }
 
-  /* Filter available days in the datepicker to choose. */
-  public filterAvailableDays = (d: Date): boolean => {
-    const day = d.getDay();
-    return day !== 0 && day !== 6; // Prevent Saturday and Sunday from being selected.
-  };
+  /**
+   * Perform certain behaviours on button submit of the contact form.
+   *
+   * @param {form} - object of submitted contact form.
+   */
+  public onSubmit(form: NgForm): void {
+    // TODO: Send en e-mail.
+    console.log(form);
+    // TODO: Reset the form.
+  }
 }

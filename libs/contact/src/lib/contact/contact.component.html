@@ -101,7 +101,7 @@
       <mat-form-field>
         <input
           matInput
-          [matDatepicker]="picker"
+          [matDatepicker]="deadlineDatepicker"
           [matDatepickerFilter]="filterAvailableDays"
           [max]="maxDate"
           [min]="currentDate"
@@ -121,8 +121,11 @@
           "
           >This is an <strong>invalid</strong> date.
         </mat-error>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="deadlineDatepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker touchUi="true" #deadlineDatepicker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <textarea
@@ -197,13 +200,13 @@
         aria-label="You can choose between email or phone as a preferred form of contact with you."
       >
         <mat-radio-button
-          aria-label="Email is my preferred form of contact."
+          aria-label="Email is your preferred form of contact."
           title="Email"
           value="Email"
           >Email</mat-radio-button
         >
         <mat-radio-button
-          aria-label="Phone is my preferred form of contact."
+          aria-label="Phone is your preferred form of contact."
           title="Phone"
           value="Phone"
           >Phone</mat-radio-button
