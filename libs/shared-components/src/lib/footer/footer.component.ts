@@ -7,8 +7,6 @@ import {
   Validators
 } from '@angular/forms';
 import {
-  faBehance,
-  faDribbble,
   faFacebookF,
   faInstagram,
   faLinkedinIn,
@@ -46,8 +44,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class FooterComponent {
   public constructor() {
     library.add(faAt);
-    library.add(faBehance);
-    library.add(faDribbble);
     library.add(faFacebookF);
     library.add(faHome);
     library.add(faInstagram);
@@ -96,16 +92,6 @@ export class FooterComponent {
     name: string;
     url: string;
   }[] = [
-    {
-      icon: ['fab', 'behance'],
-      name: 'Behance',
-      url: 'https://behance.net'
-    },
-    {
-      icon: ['fab', 'dribbble'],
-      name: 'Dribbble',
-      url: 'https://dribbble.com/'
-    },
     {
       icon: ['fab', 'facebook-f'],
       name: 'Facebook',

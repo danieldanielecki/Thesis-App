@@ -14,18 +14,6 @@ a {
   text-decoration: none;
   &:hover {
     svg {
-      &.fa-behance {
-        path {
-          transition: 1s;
-          fill: #1769ff;
-        }
-      }
-      &.fa-dribbble {
-        path {
-          transition: 1s;
-          fill: #ea4c89;
-        }
-      }
       &.fa-facebook-f {
         path {
           transition: 1s;
