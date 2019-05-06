@@ -57,7 +57,7 @@ export class FooterComponent {
   public formControlEmail: FormControl = new FormControl(null, [
     Validators.email,
     Validators.required
-  ]);
+  ]); // TODO: Check if not unify it to reactive forms like in contact, but only if it'll be doable to implement error state matcher into reactive forms.
   public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
   public bottomMenuItems: { name: string; path: string }[] = [
