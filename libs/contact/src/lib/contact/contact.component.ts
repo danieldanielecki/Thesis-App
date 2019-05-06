@@ -1,7 +1,27 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroupDirective,
+  FormGroup,
+  Validators,
+  NgForm
+} from '@angular/forms';
 import { FileValidator } from 'ngx-material-file-input';
 
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
+    const isSubmitted: boolean | null = form && form.submitted;
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
+  }
+}
 // TODO: Add verbose datepicker with custom formats.
 @Component({
   selector: 'app-contact',
@@ -10,7 +30,7 @@ import { FileValidator } from 'ngx-material-file-input';
 })
 export class ContactComponent {
   public acceptedTerms: boolean = false;
-  public contactForm: FormGroup;
+  public contactForm: FormBuilder;
   public servicesItems: string[] = [
     'Cyber Security',
     'Digital Strategy',
