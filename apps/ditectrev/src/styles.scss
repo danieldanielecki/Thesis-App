@@ -55,9 +55,12 @@ footer {
   }
 }
 
-// Contact Angukar Material's styles overwriting.
+// Contact Angular Material's styles overwriting.
 mat-card {
   .mat-form-field-subscript-wrapper {
     padding: 0 !important;
+  }
+  .selected-flag {
+    z-index: 0 !important;
   }
 }
