@@ -65,11 +65,11 @@ export class ContactComponent {
     // TODO: Reset the form.
   }
 
-  // Non-null assertion operator is required in .ts as well as .html file to compile into AOT.
+  /* Check if phone in contact form has an error. */
   hasError(event: any): void {
     if (!event && this.contactForm.value.formControlPhone !== '') {
       this.contactForm
-        .get('formControlPhone')!
+        .get('formControlPhone')! // Non-null assertion operator is required in .ts as well as .html file to compile into AOT.
         .setErrors(['invalid_cell_phone', true]);
     }
   }
