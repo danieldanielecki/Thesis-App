@@ -58,7 +58,8 @@ export class ContactComponent {
     this.contactForm = this.formBuilder.group({
       acceptedTerms: ['', Validators.required],
       fileUploader: ['', FileValidator.maxContentSize(this.maxSize)],
-      formControlDeadline: ['', Validators.required],
+      formControlContactPreference: '',
+      formControlDeadline: '',
       formControlDescription: [
         '',
         Validators.compose([
@@ -71,7 +72,6 @@ export class ContactComponent {
         '',
         Validators.compose([Validators.required, Validators.email])
       ],
-      formControlFirst: ['', Validators.required],
       formControlName: [
         '',
         Validators.compose([
@@ -83,13 +83,12 @@ export class ContactComponent {
       formControlPhone: [
         '',
         [
-          Validators.required,
           Validators.minLength(4),
           Validators.maxLength(14),
           Validators.pattern('^[0-9]*$')
         ]
       ],
-      formControlService: ['', Validators.required],
+      formControlService: '',
       recaptchaCheck: ['', Validators.required]
     });
   }

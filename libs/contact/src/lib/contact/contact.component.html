@@ -29,6 +29,7 @@
         <input
           matInput
           formControlName="formControlName"
+          required
           aria-label="Here provide your full name."
           placeholder="Your name"
           title="Your name"
@@ -43,6 +44,7 @@
         <input
           matInput
           formControlName="formControlEmail"
+          required
           aria-label="Here provide your valid email address."
           placeholder="Your email"
           title="Your email"
@@ -118,6 +120,7 @@
           matAutosizeMinRows="5"
           matAutosizeMaxRows="20"
           formControlName="formControlDescription"
+          required
           aria-label="Here describe what is your project about."
           placeholder="Project description"
           title="Project description"
@@ -130,7 +133,6 @@
       </mat-form-field>
       <mat-form-field>
         <ngx-mat-file-input
-          multiple
           [accept]="[
             '.doc',
             '.docx',
@@ -142,6 +144,7 @@
             '.xlsx'
           ]"
           formControlName="fileUploader"
+          multiple
           aria-label="Here you can optionally add additional files about your project, which can be helpeful for us."
           placeholder="Optionally additional files"
           title="Optionally additional files"
@@ -179,8 +182,9 @@
         Choose preferred form of contact
       </h4>
       <mat-radio-group
-        formControlName="formControlFirst"
+        formControlName="formControlContactPreference"
         fxFlexAlign="center"
+        multiple
         aria-label="You can choose between email or phone as a preferred form of contact with you."
       >
         <mat-radio-button
@@ -205,6 +209,7 @@
       </h4>
       <mat-selection-list
         formControlName="formControlService"
+        multiple
         aria-label="Here choose in which services are you interested in."
       >
         <ng-container *ngFor="let servicesItem of servicesItems">
