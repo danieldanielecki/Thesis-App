@@ -35,7 +35,6 @@ export class ContactComponent {
   public acceptedTerms: boolean = false;
   public contactForm: FormBuilder;
   public currentDate: Date = new Date();
-  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
   public maxSize: number = 20971520;
   public servicesItems: string[] = [
     'Cyber Security',

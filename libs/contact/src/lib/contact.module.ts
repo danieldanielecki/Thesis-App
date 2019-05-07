@@ -15,6 +15,8 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatOptionModule,
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher,
   MatSlideToggleModule,
   MatListModule
 } from '@angular/material';
@@ -57,6 +59,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   // TODO: Change the sample API key to a real one (as env variable).
   providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {

@@ -28,7 +28,6 @@
       <mat-form-field>
         <input
           matInput
-          [errorStateMatcher]="matcher"
           formControlName="fromControlName"
           aria-label="Here provide your full name."
           placeholder="Your name"
@@ -44,7 +43,6 @@
         <input
           matInput
           formControlName="formControlEmail"
-          [errorStateMatcher]="matcher"
           aria-label="Here provide your valid email address."
           placeholder="Your email"
           title="Your email"
@@ -59,7 +57,6 @@
       <mat-form-field appearance="outline">
         <input
           matInput
-          [errorStateMatcher]="matcher"
           ng2TelInput
           [ng2TelInputOptions]="{
             initialCountry: 'us',
@@ -92,7 +89,6 @@
       <mat-form-field>
         <input
           matInput
-          [errorStateMatcher]="matcher"
           [matDatepicker]="deadlineDatepicker"
           [matDatepickerFilter]="filterAvailableDays"
           [max]="maxDate"
@@ -122,7 +118,6 @@
           matAutosizeMinRows="5"
           matAutosizeMaxRows="20"
           formControlName="formControlDescription"
-          [errorStateMatcher]="matcher"
           aria-label="Here describe what is your project about."
           placeholder="Project description"
           title="Project description"
