@@ -5,7 +5,6 @@ import {
   FormBuilder,
   FormControl,
   FormGroupDirective,
-  FormGroup,
   Validators,
   NgForm
 } from '@angular/forms';
