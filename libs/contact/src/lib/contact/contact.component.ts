@@ -73,7 +73,7 @@ export class ContactComponent {
         Validators.compose([Validators.required, Validators.email])
       ],
       formControlFirst: ['', Validators.required],
-      fromControlName: ['', Validators.required],
+      formControlName: ['', Validators.required],
       formControlPhone: [
         '',
         [Validators.required, Validators.pattern('^[0-9]*$')]

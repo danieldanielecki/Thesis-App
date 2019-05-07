@@ -28,14 +28,14 @@
       <mat-form-field>
         <input
           matInput
-          formControlName="fromControlName"
+          formControlName="formControlName"
           aria-label="Here provide your full name."
           placeholder="Your name"
           title="Your name"
           type="text"
         />
         <mat-hint>Write your name.</mat-hint>
-        <mat-error *ngIf="!contactForm.get('fromControlName')!.valid"
+        <mat-error *ngIf="!contactForm.get('formControlName')!.valid"
           >Your <strong>full name</strong> is required.
         </mat-error>
       </mat-form-field>
