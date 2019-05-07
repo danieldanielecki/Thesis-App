@@ -2,7 +2,7 @@
   "author": "Daniel Danielecki",
   "name": "app",
   "version": "0.2.6",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --poll 1",
