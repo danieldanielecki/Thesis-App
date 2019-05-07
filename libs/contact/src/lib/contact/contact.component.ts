@@ -138,5 +138,6 @@ export class ContactComponent {
     // TODO: Send en e-mail.
     console.log(form);
     // TODO: Reset the form.
+    // TODO: Add back-end validation, especially with accepted files format.
   }
 }
