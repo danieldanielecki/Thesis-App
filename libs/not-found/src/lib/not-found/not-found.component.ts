@@ -1,9 +1,3 @@
-/**
- * @author Daniel Danielecki
- * @copyright 2019 Daniel Danielecki
- * @license MIT License
- */
-
 import { Component, Renderer2 } from '@angular/core';
 import {
   Color,
@@ -32,16 +26,14 @@ export class NotFoundComponent {
   private scene: Scene = new Scene(); // Create the scene.
 
   /**
-   * Creates a new instance of this component.
-   *
    * @constructor
+   * @description Create a new instance of this component.
    * @param {renderer2} - an abstraction class object to manipulate elements without accessing DOM directly.
    */
   constructor(private renderer2: Renderer2) {}
 
   /**
-   * Initialize the component - lifecycle hook.
-   *
+   * @description Initialize the component - lifecycle hook.
    * @returns {void}
    */
   public ngOnInit(): void {
@@ -53,8 +45,7 @@ export class NotFoundComponent {
   }
 
   /**
-   * Create scene of this animation.
-   *
+   * @description Create scene of this animation.
    * @param {renderer} - the renderer object to display scenes using WebGL.
    * @returns {Mesh}
    */
@@ -82,8 +73,7 @@ export class NotFoundComponent {
   }
 
   /**
-   * Render icosahedron geometry in the 404 animation.
-   *
+   * @description Render icosahedron geometry in the 404 animation.
    * @param  {icosphere} - the icosahedron geometry object.
    * @param  {renderer} - the renderer object to display scenes using WebGL.
    * @returns {void}
@@ -99,8 +89,7 @@ export class NotFoundComponent {
   }
 
   /**
-   * Update rotation of the icosahedron geometry in the 404 animation.
-   *
+   * @description Update rotation of the icosahedron geometry in the 404 animation.
    * @param {icosphere} - the icosahedron geometry object.
    * @returns {void}
    */

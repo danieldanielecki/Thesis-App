@@ -9,7 +9,7 @@ import {
   NgForm
 } from '@angular/forms';
 
-/** Error when invalid control is dirty, touched, or submitted. */
+/* Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
@@ -48,9 +48,8 @@ export class ContactComponent {
   public maxDate: Date = new Date(this.year + 5, this.month, this.day);
 
   /**
-   * Creates a new instance of this component.
-   *
    * @constructor
+   * @description Creates a new instance of this component.
    * @param  {formBuilder} - an abstraction class object to create a form group control for the contact form.
    */
   constructor(private formBuilder: FormBuilder) {
@@ -93,10 +92,8 @@ export class ContactComponent {
     });
   }
 
-  /*  */
   /**
-   * Filter available days in the datepicker to choose.
-   *
+   * @description Filter available days in the datepicker to choose.
    * @param {d} - instance of date.
    * @returns {boolean}
    */
@@ -106,8 +103,7 @@ export class ContactComponent {
   };
 
   /**
-   * Handle state of accepted terms.
-   *
+   * @description Handle state of accepted terms.
    * @returns {void}
    */
   public handleTerms(): void {
@@ -115,8 +111,7 @@ export class ContactComponent {
   }
 
   /**
-   * Check if phone in contact form has an error.
-   *
+   * @description Check if phone in contact form has an error.
    * @param {event} - event for handling the error.
    * @returns {void}
    */
@@ -129,8 +124,7 @@ export class ContactComponent {
   }
 
   /**
-   * Perform certain behaviours on button submit of the contact form.
-   *
+   * @description Perform certain behaviours on button submit of the contact form.
    * @param {form} - object of submitted contact form.
    */
   public onSubmit(form: NgForm): void {
