@@ -61,12 +61,10 @@ footer {
 }
 
 // Required to put it here in order to overwrite Angular Material's styles used in a contact.
+// TODO: Fix displaying .selected-flag on mobile devices. It should be behind sidenav, not upfront.
 mat-card {
   .mat-form-field-subscript-wrapper {
     padding: 0 !important;
-  }
-  .selected-flag {
-    z-index: 0 !important;
   }
   .mat-datepicker-toggle-default-icon {
     font-size: 2rem;
