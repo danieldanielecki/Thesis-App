@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { FileValidator } from 'ngx-material-file-input';
 import {
   FormBuilder,
@@ -9,13 +10,13 @@ import {
   NgForm
 } from '@angular/forms';
 
-// TODO: Move this class to utilities, rename, and comment logic.
+/** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
     form: FormGroupDirective | NgForm | null
   ): boolean {
-    const isSubmitted: boolean | null = form && form.submitted;
+    const isSubmitted = form && form.submitted;
     return !!(
       control &&
       control.invalid &&
@@ -34,6 +35,7 @@ export class ContactComponent {
   public acceptedTerms: boolean = false;
   public contactForm: FormBuilder;
   public currentDate: Date = new Date();
+  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
   public maxSize: number = 20971520;
   public servicesItems: string[] = [
     'Cyber Security',
