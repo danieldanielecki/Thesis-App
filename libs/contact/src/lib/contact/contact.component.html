@@ -36,7 +36,7 @@
         />
         <mat-hint>Write your name.</mat-hint>
         <mat-error *ngIf="!contactForm.get('formControlName')!.valid"
-          >Your <strong>full name</strong> is required.
+          >This is <strong>definitely not</strong> a full name.
         </mat-error>
       </mat-form-field>
       <mat-form-field>
@@ -103,7 +103,7 @@
           done.</mat-hint
         >
         <mat-error *ngIf="!contactForm.get('formControlDeadline')!.valid"
-          >This is an <strong>invalid</strong> date.
+          >This date is <strong>out of our scope</strong>.
         </mat-error>
         <mat-datepicker-toggle
           matSuffix
@@ -156,11 +156,14 @@
         <mat-error
           *ngIf="contactForm.get('fileUploader').hasError('maxContentSize')"
         >
-          This size is too large, maximum upload is
-          {{
-            contactForm.get('fileUploader')?.getError('maxContentSize').maxSize
-              | byteFormat
-          }}
+          This size is too large,
+          <strong
+            >maximum upload is
+            {{
+              contactForm.get('fileUploader')?.getError('maxContentSize')
+                .maxSize | byteFormat
+            }}</strong
+          >
           (uploaded size:
           {{
             contactForm.get('fileUploader')?.getError('maxContentSize')
@@ -218,7 +221,7 @@
           !contactForm.get('formControlService')!.valid &&
           contactForm.get('formControlService')!.touched
         "
-        >You didn't select any service.
+        >You have to select <strong>at least 1</strong> service.
       </mat-error>
       <re-captcha
         formControlName="recaptchaCheck"

@@ -73,10 +73,22 @@ export class ContactComponent {
         Validators.compose([Validators.required, Validators.email])
       ],
       formControlFirst: ['', Validators.required],
-      formControlName: ['', Validators.required],
+      formControlName: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(64)
+        ])
+      ],
       formControlPhone: [
         '',
-        [Validators.required, Validators.pattern('^[0-9]*$')]
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(14),
+          Validators.pattern('^[0-9]*$')
+        ]
       ],
       formControlService: ['', Validators.required],
       recaptchaCheck: ['', Validators.required]
