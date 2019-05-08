@@ -62,9 +62,9 @@ export class ContactComponent {
       formControlDescription: [
         '',
         Validators.compose([
-          Validators.required,
+          Validators.maxLength(5000),
           Validators.minLength(30),
-          Validators.maxLength(5000)
+          Validators.required
         ])
       ],
       formControlEmail: [
@@ -74,16 +74,16 @@ export class ContactComponent {
       formControlName: [
         '',
         Validators.compose([
-          Validators.required,
+          Validators.maxLength(64),
           Validators.minLength(2),
-          Validators.maxLength(64)
+          Validators.required
         ])
       ],
       formControlPhone: [
         '',
         [
-          Validators.minLength(4),
           Validators.maxLength(14),
+          Validators.minLength(4),
           Validators.pattern('^[0-9]*$')
         ]
       ],
