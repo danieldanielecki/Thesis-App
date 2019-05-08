@@ -36,6 +36,7 @@ Focus is to achieve high quality source code by using programming best practices
 - `ng version` - show version of Angular with its core dependencies.
 - `ng lint` - perform static code analysis.
 - `ng help` - show all available commands of the CLI.
+- `npm outdated` - show outdated dependencies.
 - `npm run dep-graph` - run dependency graph.
 - `npm test -t "test-name"` - run only single test.
 - `npx jest --clearCache` - clear cache for Jest.
