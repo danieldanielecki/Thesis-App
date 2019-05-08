@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+  ErrorStateMatcher,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
@@ -15,9 +16,8 @@ import {
   MatOptionModule,
   MatRadioModule,
   MatSelectModule,
-  ErrorStateMatcher,
-  ShowOnDirtyErrorStateMatcher,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
