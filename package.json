@@ -72,7 +72,6 @@
     "@nrwl/builders": "7.5.1",
     "@nrwl/schematics": "7.5.1",
     "@types/jest": "^23.0.0",
-    "@types/jquery": "3.3.6",
     "@types/node": "~8.9.4",
     "@types/three": "^0.93.30",
     "codelyzer": "~4.5.0",
