@@ -8,7 +8,7 @@ import {
   PerspectiveCamera,
   Scene,
   WebGLRenderer
-} from 'three';
+} from 'three'; // TODO: Check why it takes from src, instead of build. It can be reason why unit test fails.
 
 @Component({
   selector: 'app-not-found',
@@ -16,14 +16,14 @@ import {
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
-  private camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
+  public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 
   // Create renderer to display scene.
-  private renderer: WebGLRenderer = new WebGLRenderer({
+  public renderer: WebGLRenderer = new WebGLRenderer({
     alpha: true, // Transparent background.
     antialias: true // Smooth edges.
   });
-  private scene: Scene = new Scene(); // Create the scene.
+  public scene: Scene = new Scene(); // Create the scene.
 
   /**
    * @constructor
@@ -49,7 +49,7 @@ export class NotFoundComponent {
    * @param {renderer} - the renderer object to display scenes using WebGL.
    * @returns {Mesh}
    */
-  private createScene(renderer: WebGLRenderer): Mesh {
+  public createScene(renderer: WebGLRenderer): Mesh {
     this.scene.add(this.camera); // Add camera to the scene.
     renderer.setSize(450, 450); // Set up size of the scene.
     this.camera.position.set(1, -1, 100); // Set up position of the camera.
@@ -78,7 +78,7 @@ export class NotFoundComponent {
    * @param  {renderer} - the renderer object to display scenes using WebGL.
    * @returns {void}
    */
-  private renderScene(icosphere: Mesh, renderer: WebGLRenderer): void {
+  public renderScene(icosphere: Mesh, renderer: WebGLRenderer): void {
     // Create animation.
     requestAnimationFrame(() => {
       this.renderScene(icosphere, renderer);
@@ -93,7 +93,7 @@ export class NotFoundComponent {
    * @param {icosphere} - the icosahedron geometry object.
    * @returns {void}
    */
-  private updateScene(icosphere: Mesh): void {
+  public updateScene(icosphere: Mesh): void {
     icosphere.rotation.x += 0.1;
     icosphere.rotation.y += 0.1;
   }
