@@ -56,6 +56,7 @@ Focus is to achieve high quality source code by using programming best practices
 - `git tag -d v0.0.0` - delete local tag.
 - `git push --delete origin v0.0.0` - delete remote tag.
 - `git tag -a v0.0.0 123abcde -m "Message here"` - add tag to certain commit.
+- `git rm -r --cached ."` - remove completely, sometimes if .gitignore will be not updated just run it before git add.
 - `docker build -t IMAGE_NAME .` - build Docker image.
 - `docker images` - list Docker images.
 - `docker ps` - show Docker container status.
