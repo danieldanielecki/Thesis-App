@@ -23,7 +23,7 @@ import {
   ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
-jest.mock('ng2-tel-input');
+import { Ng2TelInputModule } from 'ng2-tel-input';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -56,6 +56,7 @@ describe('ContactComponent', () => {
         MatSelectModule,
         MatSlideToggleModule,
         MaterialFileInputModule,
+        Ng2TelInputModule,
         RecaptchaModule,
         RecaptchaFormsModule,
         RouterTestingModule
@@ -69,6 +70,17 @@ describe('ContactComponent', () => {
   // Jest uses JSDOM to create browser environment. JSDOM doesn't support window.matchMedia, so it's required to create it on our own in the tests.
   beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true
+        };
+      })
+    });
+  });
+
+  // Jest uses JSDOM to create browser environment. JSDOM doesn't support window.intlTelInput, so it's required to create it on our own in the tests.
+  beforeAll(() => {
+    Object.defineProperty(window, 'intlTelInput', {
       value: jest.fn(() => {
         return {
           matches: true
