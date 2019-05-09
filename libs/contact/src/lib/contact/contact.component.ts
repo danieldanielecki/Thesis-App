@@ -56,7 +56,14 @@ export class ContactComponent {
     // Create contact form with all required validators.
     this.contactForm = this.formBuilder.group({
       acceptedTerms: ['', Validators.required],
-      fileUploader: ['', FileValidator.maxContentSize(this.maxSize)],
+      fileUploader: [
+        '',
+        Validators.compose([
+          FileValidator.maxContentSize(this.maxSize),
+          Validators.maxLength(512),
+          Validators.minLength(2)
+        ])
+      ],
       formControlContactPreference: '',
       formControlDeadline: '',
       formControlDescription: [
@@ -69,23 +76,29 @@ export class ContactComponent {
       ],
       formControlEmail: [
         '',
-        Validators.compose([Validators.required, Validators.email])
+        Validators.compose([
+          Validators.email,
+          Validators.maxLength(512),
+          Validators.minLength(6),
+          Validators.required
+        ])
       ],
       formControlName: [
         '',
         Validators.compose([
           Validators.maxLength(64),
           Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z ]*$'),
           Validators.required
         ])
       ],
       formControlPhone: [
         '',
-        [
+        Validators.compose([
           Validators.maxLength(14),
           Validators.minLength(4),
           Validators.pattern('^[0-9]*$')
-        ]
+        ])
       ],
       formControlService: '',
       recaptchaCheck: ['', Validators.required]
