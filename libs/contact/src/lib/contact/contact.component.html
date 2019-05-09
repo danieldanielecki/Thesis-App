@@ -37,7 +37,7 @@
         />
         <mat-hint>Write your name.</mat-hint>
         <mat-error *ngIf="!contactForm.get('formControlName')!.valid"
-          >This is <strong>definitely not</strong> a full name.
+          >This is an <strong>invalid</strong> a full name.
         </mat-error>
       </mat-form-field>
       <mat-form-field>
@@ -105,7 +105,7 @@
           done.</mat-hint
         >
         <mat-error *ngIf="!contactForm.get('formControlDeadline')!.valid"
-          >This date is <strong>out of our scope</strong>.
+          >This date is an <strong>invalid</strong> project deadline date.
         </mat-error>
         <mat-datepicker-toggle
           matSuffix
