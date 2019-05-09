@@ -141,9 +141,11 @@ export class ContactComponent {
    * @param {form} - object of submitted contact form.
    */
   public onSubmit(form: NgForm): void {
+    this.contactForm.reset();
     // TODO: Send en e-mail.
     console.log(form);
-    // TODO: Reset the form.
+    // TODO: Add SweetAlerts on form reset, control behaviour of the form with errors .
     // TODO: Add back-end validation, especially with accepted files format, issue #31.
+    // TODO: After moving ErrorsStateMatcher try to resetForm of contactForm in order to clear validators after submit.
   }
 }
