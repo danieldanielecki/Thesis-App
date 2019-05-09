@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 import {
+  ErrorStateMatcher,
   MatButtonModule,
   MatFormFieldModule,
   MatGridListModule,
@@ -12,14 +14,16 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import { MomentModule } from 'ngx-moment';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
+  declarations: [FooterComponent, HeaderComponent],
+  exports: [FooterComponent, HeaderComponent],
   imports: [
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -38,8 +42,8 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     RouterModule
   ],
-  declarations: [FooterComponent, HeaderComponent],
-  exports: [FooterComponent, HeaderComponent]
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+  ]
 })
-export class SharedComponentsModule {
-}
+export class SharedComponentsModule {}

@@ -58,7 +58,6 @@ export class FooterComponent {
     Validators.email,
     Validators.required
   ]); // TODO: Check if not unify it to reactive forms like in contact, but only if it'll be doable to implement error state matcher into reactive forms.
-  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
   public bottomMenuItems: { name: string; path: string }[] = [
     { name: 'Copyrights', path: 'copyrights' },
@@ -66,6 +65,7 @@ export class FooterComponent {
     { name: 'Sitemap', path: 'sitemap' },
     { name: 'Terms of Use', path: 'terms-of-use' }
   ];
+
   // TODO: Add content to display.
   public informationItems: {
     content: string;
@@ -86,6 +86,7 @@ export class FooterComponent {
     { name: 'Glossary', path: 'glossary' },
     { name: 'Partnerships', path: 'partnerships' }
   ];
+
   // TODO: Add links to social profiles.
   public socialItems: {
     icon: [string, string];
