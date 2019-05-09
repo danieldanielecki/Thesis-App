@@ -1,9 +1,5 @@
+import { ApplicationErrorStateMatcher } from '@libs/utils/src/index';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FooterComponent } from './footer/footer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
 import {
   ErrorStateMatcher,
   MatButtonModule,
@@ -17,6 +13,11 @@ import {
   MatToolbarModule,
   ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 import { MomentModule } from 'ngx-moment';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -43,6 +44,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   providers: [
+    ApplicationErrorStateMatcher,
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
   ]
 })

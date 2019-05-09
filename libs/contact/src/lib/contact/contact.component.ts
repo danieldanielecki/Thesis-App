@@ -1,28 +1,6 @@
 import { Component } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { FileValidator } from 'ngx-material-file-input';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroupDirective,
-  Validators,
-  NgForm
-} from '@angular/forms';
-
-/* Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
-  }
-}
+import { FormBuilder, Validators, NgForm } from '@angular/forms';
 
 // TODO: Add verbose datepicker with custom formats.
 @Component({

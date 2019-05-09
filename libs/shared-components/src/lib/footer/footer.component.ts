@@ -1,40 +1,18 @@
 import { Component } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
-import {
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators
-} from '@angular/forms';
-import {
-  faFacebookF,
-  faInstagram,
-  faLinkedinIn,
-  faTwitter
-} from '@fortawesome/free-brands-svg-icons';
 import {
   faAt,
   faHome,
   faInfoCircle,
   faPhone
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+import { FormControl, Validators } from '@angular/forms';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Class to display messages instantly.
-// TODO: Move this class to utilities, rename, and comment logic.
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
-    const isSubmitted: boolean | null = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
-  }
-}
 
 @Component({
   selector: 'app-footer',

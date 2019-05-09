@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ApplicationErrorStateMatcher } from '@libs/utils/src/index';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
 import {
   ErrorStateMatcher,
   MatButtonModule,
@@ -19,8 +18,11 @@ import {
   MatSlideToggleModule,
   ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
+import { NgModule } from '@angular/core';
 import {
   RecaptchaModule,
   RECAPTCHA_SETTINGS,
@@ -29,16 +31,13 @@ import {
 } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RouterModule } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [ContactComponent],
   imports: [
-    RouterModule.forChild([{ path: '', component: ContactComponent }]),
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -54,11 +53,14 @@ import { ContactComponent } from './contact/contact.component';
     MatSlideToggleModule,
     MaterialFileInputModule,
     Ng2TelInputModule,
+    ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    RouterModule.forChild([{ path: '', component: ContactComponent }])
   ],
   // TODO: Change the sample API key to a real one (as env variable).
   providers: [
+    ApplicationErrorStateMatcher,
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
     {
       provide: RECAPTCHA_NONCE,
