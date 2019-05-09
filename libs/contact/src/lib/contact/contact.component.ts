@@ -119,6 +119,7 @@ export class ContactComponent {
    * @param {form} - object of submitted contact form.
    */
   public onSubmit(form: NgForm): void {
+    this.acceptedTerms = false;
     this.contactForm.reset();
     // TODO: Send en e-mail.
     console.log(form);
