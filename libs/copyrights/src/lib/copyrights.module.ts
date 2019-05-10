@@ -1,6 +1,6 @@
+import { CopyrightsComponent } from './copyrights/copyrights.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CopyrightsComponent } from './copyrights/copyrights.component';
 
 @NgModule({
   declarations: [CopyrightsComponent],

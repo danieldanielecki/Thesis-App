@@ -1,6 +1,6 @@
+import { MethodologyComponent } from './methodology/methodology.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MethodologyComponent } from './methodology/methodology.component';
 
 @NgModule({
   declarations: [MethodologyComponent],

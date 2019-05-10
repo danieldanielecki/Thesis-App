@@ -53,8 +53,8 @@
     "services": {
       "tags": ["services"]
     },
-    "shared-components": {
-      "tags": ["shared-components"]
+    "shared": {
+      "tags": ["shared"]
     },
     "sitemap": {
       "tags": ["sitemap"]
@@ -65,8 +65,11 @@
     "terms-of-use": {
       "tags": ["terms-of-use"]
     },
-    "utils": {
-      "tags": ["utils"]
+    "utilities": {
+      "tags": ["utilities"]
+    },
+    "core": {
+      "tags": ["core"]
     }
   }
 }

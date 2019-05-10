@@ -1,5 +1,6 @@
 import { trigger, animate, transition, style } from '@angular/animations';
 
+// TODO: Make constants folder and put it there.
 export const fadeAnimation =
   // Trigger name, needed to attach in HTML.
   trigger('routeState', [

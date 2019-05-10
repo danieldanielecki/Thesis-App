@@ -1,6 +1,6 @@
+import { AboutUsComponent } from './about-us/about-us.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [AboutUsComponent],

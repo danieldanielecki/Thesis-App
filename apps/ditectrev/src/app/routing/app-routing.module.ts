@@ -1,6 +1,6 @@
+import { HomeComponent } from '@libs/home/src/index';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '@libs/home/src/index';
 
 // TODO: Add nested routes for services.
 // TODO: Think about routing on mobile, if the sidebar should be not closed after click.

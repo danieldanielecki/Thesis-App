@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { PrivacyAndSecurityComponent } from './privacy-and-security/privacy-and-security.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [PrivacyAndSecurityComponent],

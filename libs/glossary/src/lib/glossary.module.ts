@@ -1,6 +1,6 @@
+import { GlossaryComponent } from './glossary/glossary.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { GlossaryComponent } from './glossary/glossary.component';
 
 @NgModule({
   declarations: [GlossaryComponent],

@@ -1,25 +1,4 @@
-import { ApplicationErrorStateMatcher } from '@libs/utils/src/index';
-import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
-import {
-  ErrorStateMatcher,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatNativeDateModule,
-  MatOptionModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSlideToggleModule,
-  ShowOnDirtyErrorStateMatcher
-} from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { NgModule } from '@angular/core';
@@ -31,37 +10,20 @@ import {
 } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '@libs/shared/src/index';
 
 @NgModule({
   declarations: [ContactComponent],
   imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatNativeDateModule,
-    MatOptionModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSlideToggleModule,
     MaterialFileInputModule,
     Ng2TelInputModule,
-    ReactiveFormsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-    RouterModule.forChild([{ path: '', component: ContactComponent }])
+    RouterModule.forChild([{ path: '', component: ContactComponent }]),
+    SharedModule
   ],
   // TODO: Change the sample API key to a real one (as env variable).
   providers: [
-    ApplicationErrorStateMatcher,
-    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
     {
       provide: RECAPTCHA_NONCE,
       useValue: '<YOUR_NONCE_VALUE>' // TODO: Add nonce for CSP here (as env variable).

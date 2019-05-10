@@ -1,4 +1,3 @@
-import { Component, Renderer2 } from '@angular/core';
 import {
   Color,
   HemisphereLight,
@@ -9,6 +8,7 @@ import {
   Scene,
   WebGLRenderer
 } from 'three'; // TODO: Check why it takes from src, instead of build. It can be reason why unit test fails.
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-not-found',

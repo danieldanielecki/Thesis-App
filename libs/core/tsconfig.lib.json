@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/libs/utils", // Redirect output structure to the directory.
+    "outDir": "../../dist/out-tsc/libs/core", // Redirect output structure to the directory.
     "target": "es2015", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
     "lib": ["dom", "es2018"] // List of library files to be included in the compilation.
   },

@@ -536,9 +536,9 @@
         }
       }
     },
-    "shared-components": {
-      "root": "libs/shared-components",
-      "sourceRoot": "libs/shared-components/src",
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
       "projectType": "library",
       "prefix": "app",
       "architect": {
@@ -546,8 +546,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/shared-components/tsconfig.lib.json",
-              "libs/shared-components/tsconfig.spec.json"
+              "libs/shared/tsconfig.lib.json",
+              "libs/shared/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -555,9 +555,9 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "libs/shared-components/jest.config.js",
-            "tsConfig": "libs/shared-components/tsconfig.spec.json",
-            "setupFile": "libs/shared-components/src/test-setup.ts"
+            "jestConfig": "libs/shared/jest.config.js",
+            "tsConfig": "libs/shared/tsconfig.spec.json",
+            "setupFile": "libs/shared/src/test-setup.ts"
           }
         }
       },
@@ -660,9 +660,9 @@
         }
       }
     },
-    "utils": {
-      "root": "libs/utils",
-      "sourceRoot": "libs/utils/src",
+    "utilities": {
+      "root": "libs/utilities",
+      "sourceRoot": "libs/utilities/src",
       "projectType": "library",
       "prefix": "app",
       "architect": {
@@ -670,8 +670,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/utils/tsconfig.lib.json",
-              "libs/utils/tsconfig.spec.json"
+              "libs/utilities/tsconfig.lib.json",
+              "libs/utilities/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -679,8 +679,39 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "libs/utils/jest.config.js",
-            "tsConfig": "libs/utils/tsconfig.spec.json"
+            "jestConfig": "libs/utilities/jest.config.js",
+            "tsConfig": "libs/utilities/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "core": {
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core/tsconfig.lib.json",
+              "libs/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "tsConfig": "libs/core/tsconfig.spec.json",
+            "setupFile": "libs/core/src/test-setup.ts"
           }
         }
       },

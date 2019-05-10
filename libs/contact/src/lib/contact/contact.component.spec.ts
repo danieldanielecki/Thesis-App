@@ -3,30 +3,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  ErrorStateMatcher,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatNativeDateModule,
-  MatOptionModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSlideToggleModule,
-  ShowOnDirtyErrorStateMatcher
-} from '@angular/material';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from '@libs/shared/src/index';
 
 // TODO: Make unit tests of methods, currently it's problematic.
 describe('ContactComponent', () => {
@@ -39,30 +21,12 @@ describe('ContactComponent', () => {
       imports: [
         BrowserAnimationsModule,
         CommonModule,
-        FlexLayoutModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatDatepickerModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        MatNativeDateModule,
-        MatOptionModule,
-        MatRadioModule,
-        MatSelectModule,
-        MatSlideToggleModule,
         MaterialFileInputModule,
         Ng2TelInputModule,
         RecaptchaModule,
         RecaptchaFormsModule,
-        RouterTestingModule
-      ],
-      providers: [
-        { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+        RouterTestingModule,
+        SharedModule
       ]
     }).compileComponents();
   }));

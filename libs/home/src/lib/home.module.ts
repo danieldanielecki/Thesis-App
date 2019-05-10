@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { NgModule } from '@angular/core';
 import { SliderComponent } from './slider/slider.component';
 
 @NgModule({

@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
+import Agastya from 'agastya'; // TODO: Check for new version of Agastya to fix Night & Dyslexia modes (submitted issue).
+import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NxModule } from '@nrwl/nx';
+import { CoreModule } from '@libs/core/src/index';
 import { HomeModule } from '@libs/home/src/index';
+import { NgModule } from '@angular/core';
+import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
-import { SharedComponentsModule } from '@libs/shared-components/src/index';
-import { AppComponent } from './app.component';
-import Agastya from 'agastya'; // TODO: Check for new version of Agastya to fix Night & Dyslexia modes (submitted issue).
+import { SharedModule } from '@libs/shared/src/index';
 
 new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, plus add as an environmental variable.
 
@@ -16,10 +17,11 @@ new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, pl
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NxModule.forRoot(),
+    CoreModule,
     HomeModule,
+    NxModule.forRoot(),
     RoutingModule,
-    SharedComponentsModule
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })

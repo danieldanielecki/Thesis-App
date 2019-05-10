@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { PartnershipsComponent } from './partnerships/partnerships.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [PartnershipsComponent],
