@@ -1,9 +1,12 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { UtilitiesModule } from '@libs/utilities/src/index';
+// TODO: providers from UtilitiesModules doesn't work, fix it.
+// import { UtilitiesModule } from '@libs/utilities/src/index';
 
 @NgModule({
-  imports: [UtilitiesModule],
-  exports: [UtilitiesModule]
+  exports: [BrowserModule, BrowserAnimationsModule],
+  imports: [BrowserModule, BrowserAnimationsModule]
 })
 export class CoreModule {
   // Throw an error once CoreModule will be imported somewhere else in order to prevent from importing it more than once in the whole application.

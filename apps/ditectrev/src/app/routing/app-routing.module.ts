@@ -105,9 +105,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  exports: [RouterModule],
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
-  ], // On changing route keep user on the top of the page.
-  exports: [RouterModule]
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }) // On changing route keep user on the top of the page.
+  ]
 })
 export class RoutingModule {}
