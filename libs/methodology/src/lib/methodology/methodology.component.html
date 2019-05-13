@@ -1,1 +1,110 @@
-<p>methodology works!</p>
+<section fxLayoutAlign="center center" fxLayout="column">
+  <mat-vertical-stepper>
+    <ng-template matStepperIcon="edit">
+      <mat-icon>thumb_up</mat-icon>
+    </ng-template>
+    <mat-step label="Business Analysis">
+      <p>Phase of listening and asking question. Here we do the following:</p>
+      <mat-list dense>
+        <mat-list-item
+          ><mat-icon matListIcon>looks_one</mat-icon> Learn about your project,
+          try to understand its business needs and ask questions.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_two</mat-icon>Find your differentiators
+          and unique value proposition.</mat-list-item
+        >
+      </mat-list>
+      <button mat-stroked-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Research">
+      <p>
+        Phase of researching business and technical capabilities. Here we do the
+        following:
+      </p>
+      <mat-list dense>
+        <mat-list-item
+          ><mat-icon matListIcon>looks_one</mat-icon>Investigate your business
+          needs and combine them with a technical realities.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_two</mat-icon>Find a golden ratio for
+          those.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_3</mat-icon>Provide you a feedback what
+          we can do.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_4</mat-icon>Estimate range of the project
+          in terms of budget and deadline.</mat-list-item
+        >
+      </mat-list>
+      <button mat-stroked-button matStepperPrevious>Back</button>
+      <button mat-stroked-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Technical Assessment">
+      <p>
+        Phase of evaluation technical possibilities with certain budget. Here we
+        do the following:
+      </p>
+      <mat-list dense>
+        <mat-list-item
+          ><mat-icon matListIcon>looks_one</mat-icon>Determine the
+          budget.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_two</mat-icon>Analysis what kind of
+          technologies and/or tools to use.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_3</mat-icon>Propose a solution according
+          to your needs and budget.</mat-list-item
+        >
+      </mat-list>
+      <button mat-stroked-button matStepperPrevious>Back</button>
+      <button mat-stroked-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Realization">
+      <p>Phase of execution for the project. Here we do the following:</p>
+      <mat-list dense>
+        <mat-list-item
+          ><mat-icon matListIcon>looks_one</mat-icon>Start with small part of
+          the project.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_two</mat-icon>Finish the small part of
+          the project.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_3</mat-icon>Ask you for a
+          feedback.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_4</mat-icon>Apply your
+          remarks.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_5</mat-icon>Iterate this for yet another
+          parts of the project.</mat-list-item
+        >
+      </mat-list>
+      <button mat-stroked-button matStepperPrevious>Back</button>
+      <button mat-stroked-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Further Cooperation">
+      <p>Phase of long term partnership. Here we do the following:</p>
+      <mat-list dense>
+        <mat-list-item
+          ><mat-icon matListIcon>looks_one</mat-icon>Support you with what we
+          delivered.</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>looks_two</mat-icon>Further
+          improvements.</mat-list-item
+        >
+      </mat-list>
+      <button mat-stroked-button matStepperPrevious>Back</button>
+    </mat-step>
+  </mat-vertical-stepper>
+</section>
