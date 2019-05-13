@@ -17,7 +17,7 @@ new Agastya('ditectrev'); // TODO: Check the documentation to make it proper, pl
     HomeModule,
     NxModule.forRoot(),
     RoutingModule,
-    SharedModule
+    SharedModule // TODO: Check if shared modules shouldn't be loaded only in feature modules. Problem is how to fix footer/header to be available - put it to core?
   ]
 })
 export class AppModule {}
