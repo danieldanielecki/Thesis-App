@@ -1,5 +1,4 @@
 <!-- TODO: Make ngFor for list. -->
-<!-- TODO: Finish semantics. -->
 <section aria-label="This is a methodology page to show you how we work.">
   <!-- Card container that binds all together. -->
   <mat-card
@@ -10,176 +9,253 @@
     fxFlexOffset="25"
     fxFlexOffset.md="10"
     fxFlexOffset.lt-md="5"
-    role="region"
   >
     <!-- Title of the card. -->
     <mat-card-title fxFlexAlign="center" title="Methodology"
       >Methodology</mat-card-title
     >
     <mat-card-subtitle fxFlexAlign="center"
-      >Each project is different. Each client has different expectations. In order
-      to avoid deplete your budget, deliver high quality services, as well as
-      simply makes you happy we work with agile approach. Client satisfaction,
-      communication and flexibility are our core values. We are able to make it
-      due to mdoern project management methodologies such as
+      >Each project is different. Each client has different expectations. In
+      order to avoid deplete your budget, deliver high quality services, as well
+      as simply makes you happy we work with agile approach. Client
+      satisfaction, communication and flexibility are our core values. We are
+      able to make it due to mdoern project management methodologies such as
       Scrum.</mat-card-subtitle
     >
 
     <!-- Actual content starts from here. -->
     <mat-card-content>
-      <mat-vertical-stepper>
+      <mat-vertical-stepper aria-label="This is our methodology.">
         <ng-template matStepperIcon="edit">
           <mat-icon aria-hidden="true">thumb_up</mat-icon>
         </ng-template>
-        <mat-step label="Business Analysis">
+        <mat-step
+          aria-label="First stage is a Business Analysis."
+          label="Business Analysis"
+        >
           <p
-            aria-label="Business Analysis is a phase of listening and asking question. Here we do the following."
+            aria-label="Business Analysis is the stage of listening and asking question. Here we do the following."
           >
-            Phase of listening and asking question. Here we do the following:
+            Stage of listening and asking question. Here we do the following:
           </p>
-          <mat-list dense>
+          <mat-list dense role="list">
             <mat-list-item
-              aria-label="This is first step of Business Analysis stage. Learn about your project, try to understand its business needs and
-              ask questions."
+              aria-label="This is first step of Business Analysis stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_one</mat-icon>
               Learn about your project, try to understand its business needs and
               ask questions.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is second step of Business Analysis stage. Find
-              your differentiators and unique value proposition."
+              aria-label="This is second step of Business Analysis stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_two</mat-icon>Find
               your differentiators and unique value proposition.</mat-list-item
             >
           </mat-list>
-          <button mat-stroked-button matStepperNext>Next</button>
+          <button
+            aria-label="Click here to see second stage of our methodology."
+            mat-stroked-button
+            matStepperNext
+            title="Next"
+          >
+            Next
+          </button>
         </mat-step>
-        <mat-step label="Research">
+        <mat-step aria-label="Second stage is a Research." label="Research">
           <p
-            aria-label="Research is a phase of researching business and technical capabilities. Here we do
+            aria-label="Research is the stage of researching business and technical capabilities. Here we do
           the following."
           >
-            Phase of researching business and technical capabilities. Here we do
+            Stage of researching business and technical capabilities. Here we do
             the following:
           </p>
-          <mat-list dense>
+          <mat-list dense role="list">
             <mat-list-item
-              aria-label="This is first step of Research stage. Investigate your business needs and combine them with a technical
-            realities."
+              aria-label="This is first step of a Research stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_one</mat-icon
               >Investigate your business needs and combine them with a technical
               realities.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is second step of Research stage. Find a golden ratio for business needs and technical
-              realities."
+              aria-label="This is second step of the Research stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_two</mat-icon>Find
-              a golden ratio for those.</mat-list-item
+              a golden ratio for business needs and technical
+              realities.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is third step of Research stage. Provide you a feedback what we can do."
+              aria-label="This is third step of the Research stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_3</mat-icon
               >Provide you a feedback what we can do.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is fourth step of Research stage. Estimate range of the project in terms of budget and
-            deadline."
+              aria-label="This is fourth step of the Research stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_4</mat-icon
               >Estimate range of the project in terms of budget and
               deadline.</mat-list-item
             >
           </mat-list>
-          <button mat-stroked-button matStepperPrevious>Back</button>
-          <button mat-stroked-button matStepperNext>Next</button>
+          <button
+            aria-label="Click here to see first stage of our methodology."
+            mat-stroked-button
+            matStepperPrevious
+            title="Back"
+          >
+            Back
+          </button>
+          <button
+            aria-label="Click here to see third stage of our methodology."
+            mat-stroked-button
+            matStepperNext
+            title="Next"
+          >
+            Next
+          </button>
         </mat-step>
-        <mat-step label="Technical Assessment">
+        <mat-step
+          aria-label="Third stage is a Technical Assessment."
+          label="Technical Assessment"
+        >
           <p
-            aria-label="Technical Assessment is a phase of evaluation technical possibilities with certain budget.
+            aria-label="Technical Assessment is the stage of evaluation technical possibilities with certain budget.
           Here we do the following."
           >
-            Phase of evaluation technical possibilities with certain budget.
+            Stage of evaluation technical possibilities with certain budget.
             Here we do the following:
           </p>
-          <mat-list dense>
+          <mat-list dense role="list">
             <mat-list-item
-              aria-label="This is first step of Technical Assessment stage. Determine the budget."
+              aria-label="This is first step of the Technical Assessment stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_one</mat-icon
               >Determine the budget.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is second step of Technical Assessment stage. Analysis what kind of technologies and/or tools to
-            use."
+              aria-label="This is second step of the Technical Assessment stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_two</mat-icon
-              >Analysis what kind of technologies and/or tools to
+              >Analysis what kind of technologies and tools to
               use.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is third of Technical Assessment stage. Propose a solution according to your needs and
-            budget."
+              aria-label="This is third step of the Technical Assessment stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_3</mat-icon
               >Propose a solution according to your needs and
               budget.</mat-list-item
             >
           </mat-list>
-          <button mat-stroked-button matStepperPrevious>Back</button>
-          <button mat-stroked-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step label="Realization">
-          <p
-            aria-label="Realization is a phase of execution for the project. Here we do the following."
+          <button
+            aria-label="Click here to see second stage of our methodology."
+            title="Back"
+            mat-stroked-button
+            matStepperPrevious
           >
-            Phase of execution for the project. Here we do the following:
+            Back
+          </button>
+          <button
+            aria-label="Click here to see fourth stage of our methodology."
+            title="Next"
+            mat-stroked-button
+            matStepperNext
+          >
+            Next
+          </button>
+        </mat-step>
+        <mat-step
+          aria-label="Fourth stage is a Realization."
+          label="Realization"
+        >
+          <p
+            aria-label="Realization is the stage of execution for the project. Here we do the following."
+          >
+            Stage of execution for the project. Here we do the following:
           </p>
-          <mat-list dense>
+          <mat-list dense role="list">
             <mat-list-item
-              aria-label="This is first step of Realization stage. Start with small part of the project."
+              aria-label="This is first step of the Realization stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_one</mat-icon
               >Start with small part of the project.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is second step of Realization stage. Finish the small part of the project."
+              aria-label="This is second step of the Realization stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_two></mat-icon
               >Finish the small part of the project.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is third of Realization stage. Ask you for a feedback."
+              aria-label="This is third step of the Realization stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_3</mat-icon>Ask
               you for a feedback.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is fourth step of Realization stage. Apply your remarks."
+              aria-label="This is fourth step of the Realization stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_4</mat-icon>Apply
               your remarks.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is fifth step of Realization stage. Iterate these steps for yet another parts of the project."
+              aria-label="This is fifth step of the Realization stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_5</mat-icon
               >Iterate these steps for yet another parts of the
               project.</mat-list-item
             >
           </mat-list>
-          <button mat-stroked-button matStepperPrevious>Back</button>
-          <button mat-stroked-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step label="Further Cooperation">
-          <p
-            aria-label="Further Cooperation is a phase of long term partnership. Here we do the following."
+          <button
+            aria-label="Click here to see third stage of our methodology."
+            mat-stroked-button
+            matStepperPrevious
+            title="Back"
           >
-            Phase of long term partnership. Here we do the following:
+            Back
+          </button>
+          <button
+            aria-label="Click here to see fifth stage of our methodology."
+            mat-stroked-button
+            matStepperNext
+            title="Next"
+          >
+            Next
+          </button>
+        </mat-step>
+        <mat-step
+          aria-label="Fifth stage is a Further Cooperation."
+          label="Further Cooperation"
+        >
+          <p
+            aria-label="Further Cooperation is the stage of long term partnership. Here we do the following."
+          >
+            Stage of long term partnership. Here we do the following:
           </p>
-          <mat-list dense>
+          <mat-list dense role="list">
             <mat-list-item
-              aria-label="This is first step of Further Cooperation stage. Support you with what we delivered."
+              aria-label="This is first step of the Further Cooperation stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_one</mat-icon
               >Support you with what we delivered.</mat-list-item
             >
             <mat-list-item
-              aria-label="This is second step of Further Cooperation stage. Further improvements."
+              aria-label="This is second step of the Further Cooperation stage."
+              role="listitem"
               ><mat-icon aria-hidden="true" matListIcon>looks_two</mat-icon
               >Further improvements.</mat-list-item
             >
           </mat-list>
-          <button mat-stroked-button matStepperPrevious>Back</button>
+          <button
+            aria-label="Click here to see fourth stage of our methodology."
+            mat-stroked-button
+            matStepperPrevious
+            title="Back"
+          >
+            Back
+          </button>
         </mat-step>
       </mat-vertical-stepper>
     </mat-card-content>
