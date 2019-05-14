@@ -1,1 +1,71 @@
-<p>faq works!</p>
+<section>
+  <!-- Card container that binds all together. -->
+  <mat-card
+    fxFlex="70"
+    fxFlex.md="80"
+    fxFlex.lt-md="90"
+    fxFlexOffset="15"
+    fxFlexOffset.md="10"
+    fxFlexOffset.lt-md="5"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title fxFlexAlign="center" title="FAQ">FAQ</mat-card-title>
+    <mat-card-subtitle fxFlexAlign="center"
+      >Below you can find basic questions regarding cooperations, our company
+      and services. If you still cannot find an answer on your question do not
+      hesitate to contact us.</mat-card-subtitle
+    >
+    <!-- Actual content starts from here. -->
+    <mat-card-content>
+      <mat-tree
+        [dataSource]="dataSource"
+        [treeControl]="treeControl"
+        class="example-tree"
+      >
+        <!-- This is the tree node template for leaf nodes. -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+          <li class="mat-tree-node">
+            <!-- Use a disabled button to provide padding for tree leaf. -->
+            <button disabled mat-icon-button></button>
+            <!-- Display questions and answers for each category. -->
+            <p>
+              <strong>{{ node.question }}</strong
+              ><br /><br />{{ node.answer }}
+            </p>
+            <mat-divider></mat-divider>
+          </li>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes. -->
+        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+          <li>
+            <div class="mat-tree-node">
+              <button
+                [attr.aria-label]="'toggle ' + node.category"
+                mat-icon-button
+                matTreeNodeToggle
+              >
+                <mat-icon class="mat-icon-rtl-mirror">
+                  <!--
+                    Display appropriate icon depending by that if the list is expanded or not.
+                  -->
+                  {{ treeControl.isExpanded(node) ? 'remove' : 'add' }}
+                </mat-icon>
+              </button>
+              {{ node.category }}&nbsp;<span
+                matBadge="{{ node.questions.length }}"
+                matBadgeOverlap="false"
+              ></span>
+            </div>
+            <!--
+              List of questions, by default it's hidden (panel is not expanded).
+            -->
+            <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+              <!-- Render FAQ questions. -->
+              <ng-container matTreeNodeOutlet></ng-container>
+            </ul>
+          </li>
+        </mat-nested-tree-node>
+      </mat-tree>
+    </mat-card-content>
+  </mat-card>
+</section>

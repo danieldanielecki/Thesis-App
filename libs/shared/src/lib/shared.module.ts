@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import {
+  MatBadgeModule,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
@@ -27,7 +28,8 @@ import {
   MatSlideToggleModule,
   MatStepperModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTreeModule
 } from '@angular/material';
 import { MomentModule } from 'ngx-moment';
 import { NgModule } from '@angular/core';
@@ -42,6 +44,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     FormsModule,
     HeaderComponent,
+    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -61,6 +64,7 @@ import { RouterModule } from '@angular/router';
     MatStepperModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatTreeModule,
     MomentModule,
     ReactiveFormsModule,
     RouterModule
@@ -70,6 +74,7 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     FontAwesomeModule,
     FormsModule,
+    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -89,6 +94,7 @@ import { RouterModule } from '@angular/router';
     MatStepperModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatTreeModule,
     MomentModule,
     ReactiveFormsModule,
     RouterModule

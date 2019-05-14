@@ -8,6 +8,7 @@ export class ApplicationErrorStateMatcher implements ErrorStateMatcher {
     form: FormGroupDirective | NgForm | null
   ): boolean {
     const isSubmitted = form && form.submitted;
+    // '!!' is truthiness (represented as a boolean) - it's simply casting. It gives the ability to check the truthiness of multiple variables against each other in a repeatable, standardized (and JSLint friendly) fashion.
     return !!(
       control &&
       control.invalid &&

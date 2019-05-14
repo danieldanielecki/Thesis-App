@@ -1,0 +1,28 @@
+mat-card {
+  margin: 2rem auto;
+
+  .example-tree {
+    ul,
+    li {
+      list-style-type: none;
+    }
+  }
+  // Hide expandable panel of questions.
+  .example-tree-invisible {
+    display: none;
+  }
+
+  mat-card-subtitle {
+    margin-top: 30px;
+    text-align: center;
+  }
+  mat-card-title {
+    text-align: center;
+  }
+  mat-nested-tree-node ul {
+    margin-bottom: 60px;
+  }
+  mat-tree-node {
+    margin-bottom: 20px;
+  }
+}

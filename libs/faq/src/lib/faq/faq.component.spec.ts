@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FaqComponent } from './faq.component';
+import { SharedModule } from '@libs/shared/src/index';
 
 describe('FaqComponent', () => {
   let component: FaqComponent;
@@ -7,7 +9,8 @@ describe('FaqComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FaqComponent]
+      declarations: [FaqComponent],
+      imports: [BrowserAnimationsModule, SharedModule]
     }).compileComponents();
   }));
 
