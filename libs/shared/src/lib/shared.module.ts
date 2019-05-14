@@ -26,7 +26,8 @@ import {
   MatSidenavModule,
   MatSlideToggleModule,
   MatStepperModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import { MomentModule } from 'ngx-moment';
 import { NgModule } from '@angular/core';
@@ -59,6 +60,7 @@ import { RouterModule } from '@angular/router';
     MatSlideToggleModule,
     MatStepperModule,
     MatToolbarModule,
+    MatTooltipModule,
     MomentModule,
     ReactiveFormsModule,
     RouterModule
@@ -86,6 +88,7 @@ import { RouterModule } from '@angular/router';
     MatSlideToggleModule,
     MatStepperModule,
     MatToolbarModule,
+    MatTooltipModule,
     MomentModule,
     ReactiveFormsModule,
     RouterModule
