@@ -70,3 +70,13 @@ mat-card {
     font-size: 2rem;
   }
 }
+
+// Required to put it here in order to overwrite Angular Material's styles used in a footer.
+footer {
+  input,
+  mat-hint,
+  .placeholder,
+  .mat-form-field-label {
+    color: white !important;
+  }
+}
