@@ -5,10 +5,10 @@
   <!-- Card container that binds all together. -->
   <mat-card
     aria-label="These are Frequently Asked Questions grouped on categories."
-    fxFlex="70"
+    fxFlex="50"
     fxFlex.md="80"
     fxFlex.lt-md="90"
-    fxFlexOffset="15"
+    fxFlexOffset="25"
     fxFlexOffset.md="10"
     fxFlexOffset.lt-md="5"
     role="region"
@@ -33,6 +33,7 @@
             <!-- Use a disabled button to provide padding for tree leaf. -->
             <button disabled mat-icon-button></button>
             <!-- Display questions and answers for each category. -->
+            <!-- TODO: Long text doesn't wraps, fix it. -->
             <p>
               <strong>{{ node.question }}</strong
               ><br /><br />{{ node.answer }}
