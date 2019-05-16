@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PrivacyAndSecurityComponent } from './privacy-and-security.component';
+import { SharedModule } from '@libs/shared/src/index';
 
 describe('PrivacyAndSecurityComponent', () => {
   let component: PrivacyAndSecurityComponent;
@@ -7,7 +8,8 @@ describe('PrivacyAndSecurityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PrivacyAndSecurityComponent]
+      declarations: [PrivacyAndSecurityComponent],
+      imports: [SharedModule]
     }).compileComponents();
   }));
 
