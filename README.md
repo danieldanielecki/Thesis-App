@@ -54,9 +54,11 @@ Focus is to achieve high quality source code by using programming best practices
 - `git tag -a v0.0.0 -m "tag message"` - create tag on current commit with specific version, and message.
 - `git push --tags` - push tags to the repository.
 - `git tag -d v0.0.0` - delete local tag.
+- `git tag v0.0.0 v0.0.0^{} -f -m "new name here"` - change tag message of some specific tag.
 - `git push --delete origin v0.0.0` - delete remote tag.
 - `git tag -a v0.0.0 123abcde -m "Message here"` - add tag to certain commit.
 - `git rm -r --cached ."` - remove completely, sometimes if .gitignore will be not updated just run it before git add.
+- `git reset HEAD~1` - remove unpushed commit.
 - `docker build -t IMAGE_NAME .` - build Docker image.
 - `docker images` - list Docker images.
 - `docker ps` - show Docker container status.
