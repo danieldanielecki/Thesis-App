@@ -1,6 +1,10 @@
-<section>
+<!-- TODO: Improve ARIA. -->
+<section
+  aria-label="This is a Frequently Asked Questions (FAQ) page to answer typical doubts."
+>
   <!-- Card container that binds all together. -->
   <mat-card
+    aria-label="These are Frequently Asked Questions grouped on categories."
     fxFlex="70"
     fxFlex.md="80"
     fxFlex.lt-md="90"
@@ -38,9 +42,12 @@
         <!-- This is the tree node template for expandable nodes. -->
         <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
           <li>
-            <div class="mat-tree-node">
+            <div
+              attr.aria-label="This is category of {{ node.category }} with its Frequently Asked Questions. This category has {{ node.questions.length }} Frequently Asked Questions."
+              class="mat-tree-node"
+            >
               <button
-                [attr.aria-label]="'toggle ' + node.category"
+                attr.aria-label="'toggle ' + node.category"
                 mat-icon-button
                 matTreeNodeToggle
               >
