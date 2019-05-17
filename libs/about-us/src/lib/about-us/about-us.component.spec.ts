@@ -1,5 +1,8 @@
 import { AboutUsComponent } from './about-us.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SharedModule } from '@libs/shared/src/index';
+// TODO: Make it passing.
 
 describe('AboutUsComponent', () => {
   let component: AboutUsComponent;
@@ -7,7 +10,8 @@ describe('AboutUsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutUsComponent]
+      declarations: [AboutUsComponent],
+      imports: [NgCircleProgressModule, SharedModule]
     }).compileComponents();
   }));
 

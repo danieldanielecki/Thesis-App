@@ -1,1 +1,57 @@
-<p>about-us works!</p>
+<section aria-label="This is an about us page to introduce you to us.">
+  <!-- Card container that binds all together. -->
+  <mat-card
+    aria-label="These are about us details."
+    fxFlex="50"
+    fxFlex.md="80"
+    fxFlex.lt-md="90"
+    fxFlexOffset="25"
+    fxFlexOffset.md="10"
+    fxFlexOffset.lt-md="5"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title fxFlexAlign="center" title="About us"
+      >About us</mat-card-title
+    >
+    <mat-card-subtitle fxFlexAlign="center"
+      >Each project is different. Each client has different expectations. In
+      order to avoid deplete your budget, deliver high quality services, as well
+      as simply makes you happy we work with agile approach. Client
+      satisfaction, communication and flexibility are our core values. We are
+      able to make it due to mdoern project management methodologies such as
+      Scrum.</mat-card-subtitle
+    >
+    <!-- Actual content starts from here. -->
+    <mat-card-content fxLayoutAlign="center center" fxLayout.lt-md="column">
+      <circle-progress
+        [innerStrokeColor]="'transparent'"
+        [percent]="100"
+        [maxPercent]="25"
+        [outerStrokeColor]="'transparent'"
+        [subtitle]="'Technologies used'"
+      ></circle-progress>
+      <circle-progress
+        [innerStrokeColor]="'#37474F'"
+        [innerStrokeWidth]="4"
+        [maxPercent]="99"
+        [outerStrokeColor]="'#3f51b5'"
+        [outerStrokeGradient]="true"
+        [outerStrokeGradientStopColor]="'#64B5F6'"
+        [outerStrokeWidth]="8"
+        [percent]="96"
+        [showUnits]="true"
+        [subtitle]="'Happy clients'"
+        [unitsColor]="'#000000'"
+        [unitsFontSize]="20"
+      ></circle-progress>
+      <circle-progress
+        [innerStrokeColor]="'transparent'"
+        [percent]="100"
+        [maxPercent]="30"
+        [outerStrokeColor]="'transparent'"
+        [subtitle]="'Delivered projects'"
+      ></circle-progress>
+    </mat-card-content>
+  </mat-card>
+</section>
