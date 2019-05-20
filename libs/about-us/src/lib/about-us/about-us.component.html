@@ -26,13 +26,19 @@
     <mat-card-content fxLayoutAlign="center center" fxLayout.lt-md="column">
       <!-- TODO: Remove extra space after text, issue #80. -->
       <circle-progress
+        [animationDuration]="4000"
         [innerStrokeColor]="'transparent'"
         [percent]="100"
         [maxPercent]="25"
         [outerStrokeColor]="'transparent'"
+        [responsive]="true"
+        [showUnits]="false"
         [subtitle]="'Technologies used'"
+        [subtitleColor]="'#0d47a1'"
+        [titleColor]="'#212121'"
       ></circle-progress>
       <circle-progress
+        [animationDuration]="4000"
         [innerStrokeColor]="'#212121'"
         [innerStrokeWidth]="3"
         [maxPercent]="99"
@@ -41,17 +47,27 @@
         [outerStrokeGradientStopColor]="'#bbdefb'"
         [outerStrokeWidth]="6"
         [percent]="96"
+        [radius]="45"
+        [responsive]="true"
         [showUnits]="true"
+        [space]="0"
         [subtitle]="'Happy clients'"
+        [subtitleColor]="'#0d47a1'"
+        [titleColor]="'#212121'"
         [unitsColor]="'#212121'"
         [unitsFontSize]="20"
       ></circle-progress>
       <circle-progress
+        [animationDuration]="4000"
         [innerStrokeColor]="'transparent'"
         [percent]="100"
         [maxPercent]="30"
         [outerStrokeColor]="'transparent'"
+        [responsive]="true"
+        [showUnits]="false"
         [subtitle]="'Delivered projects'"
+        [subtitleColor]="'#0d47a1'"
+        [titleColor]="'#212121'"
       ></circle-progress>
     </mat-card-content>
   </mat-card>

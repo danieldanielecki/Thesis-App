@@ -27,15 +27,16 @@
               "apps/ditectrev/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "./node_modules/intl-tel-input/build/css/intlTelInput.min.css",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/intl-tel-input/build/css/intlTelInput.min.css",
               "apps/ditectrev/src/styles.scss"
             ],
             "scripts": [
               "node_modules/intl-tel-input/build/js/intlTelInput.min.js",
               "node_modules/intl-tel-input/build/js/utils.js",
-              "./node_modules/particles.js/particles.js",
-              "./node_modules/three/build/three.min.js"
+              "node_modules/ng-circle-progress/index.js",
+              "node_modules/particles.js/particles.js",
+              "node_modules/three/build/three.min.js"
             ]
           },
           "configurations": {

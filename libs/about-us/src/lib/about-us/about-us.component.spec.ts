@@ -2,7 +2,10 @@ import { AboutUsComponent } from './about-us.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SharedModule } from '@libs/shared/src/index';
-// TODO: Make it passing.
+
+jest.mock('ng-circle-progress'); // Mock ng-circle-progress module.
+
+// TODO: Don't know why it throws an error with importing NgCircleProgressModule as a module (which it actually is). Fix it.
 
 describe('AboutUsComponent', () => {
   let component: AboutUsComponent;
@@ -11,7 +14,7 @@ describe('AboutUsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AboutUsComponent],
-      imports: [NgCircleProgressModule, SharedModule]
+      imports: [NgCircleProgressModule.forRoot({}), SharedModule]
     }).compileComponents();
   }));
 

@@ -7,15 +7,7 @@ import { SharedModule } from '@libs/shared/src/index';
 @NgModule({
   declarations: [AboutUsComponent],
   imports: [
-    NgCircleProgressModule.forRoot({
-      animationDuration: 4000,
-      radius: 45,
-      responsive: true,
-      showUnits: false,
-      space: 0,
-      subtitleColor: '#0d47a1',
-      titleColor: '#212121'
-    }),
+    NgCircleProgressModule.forRoot(),
     RouterModule.forChild([{ path: '', component: AboutUsComponent }]),
     SharedModule
   ]
