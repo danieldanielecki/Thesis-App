@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FileValidator } from 'ngx-material-file-input';
-import { FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormBuilder, Validators, NgForm, FormGroup } from '@angular/forms';
 
 // TODO: Add verbose datepicker with custom formats.
 @Component({
@@ -10,7 +10,6 @@ import { FormBuilder, Validators, NgForm } from '@angular/forms';
 })
 export class ContactComponent {
   public acceptedTerms: boolean = false;
-  public contactForm: FormBuilder;
   public currentDate: Date = new Date();
   public maxSize: number = 20971520;
   public servicesItems: string[] = [
@@ -30,58 +29,58 @@ export class ContactComponent {
    * @description Creates a new instance of this component.
    * @param  {formBuilder} - an abstraction class object to create a form group control for the contact form.
    */
-  constructor(private formBuilder: FormBuilder) {
-    // Create contact form with all required validators.
-    this.contactForm = this.formBuilder.group({
-      acceptedTerms: ['', Validators.required],
-      fileUploader: [
-        '',
-        Validators.compose([
-          FileValidator.maxContentSize(this.maxSize),
-          Validators.maxLength(512),
-          Validators.minLength(2)
-        ])
-      ],
-      formControlContactPreference: '',
-      formControlDeadline: '',
-      formControlDescription: [
-        '',
-        Validators.compose([
-          Validators.maxLength(5000),
-          Validators.minLength(30),
-          Validators.required
-        ])
-      ],
-      formControlEmail: [
-        '',
-        Validators.compose([
-          Validators.email,
-          Validators.maxLength(512),
-          Validators.minLength(6),
-          Validators.required
-        ])
-      ],
-      formControlName: [
-        '',
-        Validators.compose([
-          Validators.maxLength(64),
-          Validators.minLength(2),
-          Validators.pattern('^[a-zA-Z ]*$'),
-          Validators.required
-        ])
-      ],
-      formControlPhone: [
-        '',
-        Validators.compose([
-          Validators.maxLength(14),
-          Validators.minLength(4),
-          Validators.pattern('^[0-9]*$')
-        ])
-      ],
-      formControlService: '',
-      recaptchaCheck: ['', Validators.required]
-    });
-  }
+  constructor(private formBuilder: FormBuilder) {}
+
+  // Create contact form with all required validators.
+  public contactForm: FormGroup = this.formBuilder.group({
+    acceptedTerms: ['', Validators.required],
+    fileUploader: [
+      '',
+      Validators.compose([
+        FileValidator.maxContentSize(this.maxSize),
+        Validators.maxLength(512),
+        Validators.minLength(2)
+      ])
+    ],
+    formControlContactPreference: '',
+    formControlDeadline: '',
+    formControlDescription: [
+      '',
+      Validators.compose([
+        Validators.maxLength(5000),
+        Validators.minLength(30),
+        Validators.required
+      ])
+    ],
+    formControlEmail: [
+      '',
+      Validators.compose([
+        Validators.email,
+        Validators.maxLength(512),
+        Validators.minLength(6),
+        Validators.required
+      ])
+    ],
+    formControlName: [
+      '',
+      Validators.compose([
+        Validators.maxLength(64),
+        Validators.minLength(2),
+        Validators.pattern('^[a-zA-Z ]*$'),
+        Validators.required
+      ])
+    ],
+    formControlPhone: [
+      '',
+      Validators.compose([
+        Validators.maxLength(14),
+        Validators.minLength(4),
+        Validators.pattern('^[0-9]*$')
+      ])
+    ],
+    formControlService: '',
+    recaptchaCheck: ['', Validators.required]
+  });
 
   /**
    * @description Filter available days in the datepicker to choose.

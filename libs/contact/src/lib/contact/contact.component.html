@@ -162,7 +162,7 @@
           maximum files upload size: 20 MB.
         </mat-hint>
         <mat-error
-          *ngIf="contactForm.get('fileUploader').hasError('maxContentSize')"
+          *ngIf="contactForm.get('fileUploader')!.hasError('maxContentSize')"
         >
           This size is too large,
           <strong
