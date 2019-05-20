@@ -1,7 +1,6 @@
+import 'hammerjs';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@libs/shared/src/index';
@@ -12,13 +11,7 @@ describe('FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        BrowserAnimationsModule,
-        FlexLayoutModule,
-        FontAwesomeModule,
-        RouterTestingModule,
-        SharedModule
-      ]
+      imports: [BrowserAnimationsModule, RouterTestingModule, SharedModule]
     }).compileComponents();
   }));
 
