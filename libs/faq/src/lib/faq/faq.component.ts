@@ -6,9 +6,11 @@ import { NestedTreeControl } from '@angular/cdk/tree';
  * List of FAQ items.
  * Each FAQ item has category and optional list of questions.
  */
-// TODO: Move this interface to utilities.
+// TODO: Move this interface to utilities. Is this solution ok with all optional parameters and there shouldn't be extend another interface?
 interface FaqQuestions {
-  category: string;
+  answer?: string;
+  category?: string;
+  question?: string;
   questions?: FaqQuestions[];
 }
 
@@ -113,13 +115,13 @@ export const FAQ_QUESTIONS: FaqQuestions[] = [
 })
 export class FaqComponent {
   // Control the expand/collapse state of FAQ items.
-  public treeControl: NestedTreeControl = new NestedTreeControl<FaqQuestions>(
-    node => node.questions
-  );
-  // Data source for nested FAQ items.
-  public dataSource: MatTreeNestedDataSource = new MatTreeNestedDataSource<
+  public treeControl: NestedTreeControl<FaqQuestions> = new NestedTreeControl<
     FaqQuestions
-  >();
+  >(node => node.questions);
+  // Data source for nested FAQ items.
+  public dataSource: MatTreeNestedDataSource<
+    FaqQuestions
+  > = new MatTreeNestedDataSource<FaqQuestions>();
 
   /**
    * @constructor
