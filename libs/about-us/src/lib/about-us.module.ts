@@ -9,11 +9,12 @@ import { SharedModule } from '@libs/shared/src/index';
   imports: [
     NgCircleProgressModule.forRoot({
       animationDuration: 4000,
-      radius: 50,
+      radius: 45,
       responsive: true,
       showUnits: false,
       space: 0,
-      titleColor: '#000000'
+      subtitleColor: '#0d47a1',
+      titleColor: '#212121'
     }),
     RouterModule.forChild([{ path: '', component: AboutUsComponent }]),
     SharedModule
