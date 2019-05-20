@@ -2,20 +2,12 @@ $backgroundColor: #212121;
 $borderAnimationColor: #039be5;
 $textColor: #ced2d3;
 
-footer {
-  background-color: $backgroundColor;
-}
-
 a {
   text-transform: uppercase;
   transition: 1s;
   &:hover {
     color: white;
   }
-}
-
-h3 {
-  color: white;
 }
 
 a,
@@ -28,43 +20,8 @@ button {
   border-radius: 100px;
 }
 
-form {
-  animation: animateBorder 6s ease-in-out infinite;
-  border: 2px solid $backgroundColor;
-  border-radius: 10px;
-  padding: 20px 25px 40px;
-}
-
-mat-form-field {
-  text-align: center;
-}
-
-mat-hint {
-  width: 100%;
-}
-
-[gdArea='social'] {
-  fa-icon {
-    font-size: 2rem;
-  }
-}
-
-@keyframes animateBorder {
-  0%,
-  100% {
-    border-color: transparent transparent $borderAnimationColor
-      $borderAnimationColor;
-    left: 0%;
-    top: 0%;
-    transition: border-color 2s ease-in-out 1s;
-  }
-  50% {
-    border-color: $borderAnimationColor $borderAnimationColor transparent
-      transparent;
-    right: 100%;
-    top: 100%;
-    transition: border-color 2s ease-in-out 1s;
-  }
+h3 {
+  color: white;
 }
 
 footer {
@@ -123,4 +80,43 @@ footer {
       rgba(2, 2, 2, 0.4) 70%,
       rgba(2, 2, 2, 0.5) 70%
     );
+}
+
+form {
+  animation: animateBorder 6s ease-in-out infinite;
+  border: 2px solid $backgroundColor;
+  border-radius: 10px;
+  padding: 20px 25px 40px;
+}
+
+mat-form-field {
+  text-align: center;
+}
+
+mat-hint {
+  width: 100%;
+}
+
+[gdArea='social'] {
+  fa-icon {
+    font-size: 2rem;
+  }
+}
+
+@keyframes animateBorder {
+  0%,
+  100% {
+    border-color: transparent transparent $borderAnimationColor
+      $borderAnimationColor;
+    left: 0%;
+    top: 0%;
+    transition: border-color 2s ease-in-out 1s;
+  }
+  50% {
+    border-color: $borderAnimationColor $borderAnimationColor transparent
+      transparent;
+    right: 100%;
+    top: 100%;
+    transition: border-color 2s ease-in-out 1s;
+  }
 }
