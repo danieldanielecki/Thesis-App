@@ -1,12 +1,10 @@
-# Get Node image, install dependencies and cache node_modules.
-.node: &node
-  image: node:latest
-  before_script:
-    - npm install
-  cache:
-    key: '$CI_COMMIT_REF_NAME' # Set by the Runner an environment variable.
-    paths:
-      - node_modules/
+# Get Node image, install dependencies and .
+image: node:latest
+
+# Cache node_modules.
+cache:
+  paths:
+    - node_modules/
 
 # Define a deployment stage.
 stages:
@@ -14,29 +12,15 @@ stages:
 
 # Deployment settings.
 deploy:
-  # Deployment staage with 'development' environmental variable.
   stage: deploy
   environment:
-    name: development
-
-  <<: *node # Job definition.
+    name: development # Deployment stage for development environment.
+    # name: production # Deployment stage for development environment.
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG # Will use 'development' as a $CI_ENVIRONMENT_SLUG environmental variable.
-    - npm run deploy # Deploy to Firebase hosting.
+    - npm install
+    - npm run build
+    - npm run deploy
   only:
-    - master # Corresponding to the production environment and only the master branch. The project could have separated branch for development.
+    - master # Corresponding only to the master branch.
 
-# Production settings.
-production:
-  # Deployment stage with 'production' environmental variable.
-  stage: deploy
-  environment:
-    name: production
-
-  <<: *node # Job definition.
-  script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG # Will use 'production' as a $CI_ENVIRONMENT_SLUG environmental variable.
-    - npm run deploy # Deploy to Firebase hosting.
-  only:
-    - master # Corresponding to the production environment and only the master branch.
 # TODO: Add test stage.
