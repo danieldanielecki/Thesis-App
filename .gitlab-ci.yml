@@ -1,10 +1,11 @@
-# Get Node image, install dependencies and .
-image: node:latest
+# Get Docker image containing Firebase CLI for deployments to Firebase.
+image: devillex/docker-firebase
 
 # Cache node_modules.
 cache:
   paths:
     - node_modules/
+  key: '$CI_BUILD_REPO'
 
 # Define a deployment stage.
 stages:

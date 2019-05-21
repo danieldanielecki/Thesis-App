@@ -11,7 +11,7 @@
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
     "predeploy": "firebase use --token $FIREBASE_DEPLOY_KEY $CI_ENVIRONMENT_SLUG",
-    "deploy": "firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY",
+    "deploy": "firebase deploy --only hosting -m 'Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID' --token $FIREBASE_DEPLOY_KEY",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
     "affected:libs": "./node_modules/.bin/nx affected:libs",
     "affected:build": "./node_modules/.bin/nx affected:build",
