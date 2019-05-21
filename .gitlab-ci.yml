@@ -1,10 +1,11 @@
 # Get container with "firebase-tools" pre-installed for deployment (CD) to Firebase Hosting.
-image: rambabusaravanan/firebase
+image: node:latest
 
 # Cache node_modules.
 cache:
   paths:
     - node_modules/
+  key: '$CI_BUILD_REPO'
 
 # Define a deployment stage.
 stages:
@@ -19,7 +20,7 @@ deploy:
   script:
     - npm install
     - npm run build
-    - npm run deploy -m "Build $CI_BUILD_ID"
+    - npm run deploy -m "Build $CI_BUILD_ID @ Commit $CI_COMMIT_SHORT_SHA"
   only:
     - master # Corresponding only to the master branch.
 
