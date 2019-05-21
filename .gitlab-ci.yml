@@ -1,5 +1,5 @@
-# Get Docker image containing Firebase CLI for deployments to Firebase.
-image: devillex/docker-firebase
+# Get container with "firebase-tools" pre-installed for deployment (CD) to Firebase Hosting.
+image: rambabusaravanan/firebase
 
 # Cache node_modules.
 cache:
