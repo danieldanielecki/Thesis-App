@@ -14,8 +14,8 @@ stages:
 deploy:
   stage: deploy
   environment:
-    name: development # Deployment stage for development environment.
-    # name: production # Deployment stage for development environment.
+    #name: development # Deployment stage for development environment.
+    name: production # Deployment stage for development environment.
   script:
     - npm install
     - npm run build
