@@ -18,10 +18,6 @@ Focus is to achieve high quality source code by using programming best practices
 - Three.js
 - TypeScript
 - Webpack
-  <!--
-  TODO: Add this if brief would be build
-- NgRx/RxJS
-  -->
 
 ## Commands
 
