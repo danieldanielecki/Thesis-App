@@ -1,3 +1,5 @@
+declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
+
 import Agastya from 'agastya'; // TODO: Check for new version of Agastya to fix Night & Dyslexia modes (submitted issue).
 import { AppComponent } from './app.component';
 import { CoreModule } from '@libs/core/src/index';
@@ -7,7 +9,7 @@ import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
 import { SharedModule } from '@libs/shared/src/index';
 
-new Agastya(process.env.AGASTYA_API_KEY); // TODO: Check the documentation to make it proper. On top of this, there's no development key.
+new Agastya(AGASTYA_API_KEY); // TODO: Check the documentation to make it proper.
 
 @NgModule({
   bootstrap: [AppComponent],
