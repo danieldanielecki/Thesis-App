@@ -7,7 +7,7 @@ import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
 import { SharedModule } from '@libs/shared/src/index';
 
-new Agastya('$AGASTYA_API_KEY'); // TODO: Check the documentation to make it proper. On top of this, there's no development key.
+new Agastya(process.env.AGASTYA_API_KEY); // TODO: Check the documentation to make it proper. On top of this, there's no development key.
 
 @NgModule({
   bootstrap: [AppComponent],

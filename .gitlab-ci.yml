@@ -9,7 +9,6 @@ before_script:
 cache:
   paths:
     - node_modules/
-#  key: '$CI_BUILD_REPO'
 
 # Define a deployment stage.
 stages:
