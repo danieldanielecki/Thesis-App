@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc/apps/ditectrev", // Redirect output structure to the directory.
-    "types": [] // List of names of type definitions to include.
+    "types": ["node"] // List of names of type definitions to include.
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
   "include": [
