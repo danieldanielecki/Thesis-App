@@ -80,7 +80,7 @@
     "@types/node": "~8.9.4",
     "@types/three": "^0.93.30",
     "codelyzer": "~4.5.0",
-    "cypress": "^3.2.0",
+    "cypress": "^3.3.1",
     "firebase-tools": "^6.10.0",
     "jest": "^23.0.0",
     "jest-canvas-mock": "^2.0.0-beta.1",

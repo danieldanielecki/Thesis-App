@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": ["cypress"]  // List of names of type definitions to include.
+    "types": ["cypress"] // List of names of type definitions to include.
   },
   "include": ["**/*.ts"]
 }

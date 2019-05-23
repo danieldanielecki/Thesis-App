@@ -2,9 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "sourceMap": false,
-    "outDir": "../../dist/out-tsc/apps/ditectrev-e2e/src", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'.
-    "lib": ["es2015", "dom"], // List of library files to be included in the compilation.
-    "types": ["cypress", "node"] // List of names of type definitions to include.
+    "outDir": "../../dist/out-tsc/apps/ditectrev-e2e/src",
+    "lib": ["es2015", "dom"],
+    "types": ["cypress", "node"]
   },
   "include": ["src/**/*.ts", "../../node_modules/cypress"]
 }
