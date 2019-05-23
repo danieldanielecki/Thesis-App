@@ -101,8 +101,8 @@ unit-tests:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
-    - npm run test
-  stage: test:ci
+    - npm run test:ci
+  stage: test
 
 # Deployment settings for development environment.
 deploy-development:
