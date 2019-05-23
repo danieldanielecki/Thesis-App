@@ -60,7 +60,7 @@ describe('ContactComponent', () => {
   });
 
   it('should call filterAvailableDays method', () => {
-    let date: Date = new Date();
+    const date: Date = new Date();
     spyOn(component, 'filterAvailableDays').and.callThrough();
     component.filterAvailableDays(date);
     expect(component.filterAvailableDays).toHaveBeenCalled();
@@ -73,14 +73,14 @@ describe('ContactComponent', () => {
   });
 
   it('should call hasError method', () => {
-    let event: any = null;
+    const event: any = null;
     spyOn(component, 'hasError').and.callThrough();
     component.hasError(event);
     expect(component.hasError).toHaveBeenCalled();
   });
 
   it('should call onSubmit method', () => {
-    let form: any = null;
+    const form: any = null;
     spyOn(component, 'onSubmit').and.callThrough();
     component.onSubmit(form);
     expect(component.onSubmit).toHaveBeenCalled();

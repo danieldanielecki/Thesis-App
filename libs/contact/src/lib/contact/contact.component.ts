@@ -9,9 +9,9 @@ import { FormBuilder, Validators, NgForm, FormGroup } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  public acceptedTerms: boolean = false;
+  public acceptedTerms = false;
   public currentDate: Date = new Date();
-  public maxSize: number = 20971520;
+  public maxSize = 20971520;
   public servicesItems: string[] = [
     'Cyber Security',
     'Digital Strategy',

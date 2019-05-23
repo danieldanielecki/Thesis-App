@@ -8,14 +8,14 @@ import {
   Scene,
   WebGLRenderer
 } from 'three'; // TODO: Check why it takes from src, instead of build. It can be reason why unit test fails.
-import { Component, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
-export class NotFoundComponent {
+export class NotFoundComponent implements OnInit {
   public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 
   // Create renderer to display scene.
