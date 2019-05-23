@@ -71,16 +71,12 @@ app-build:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: build
-  tags:
-    - build
 
 # Define and run formatting tests job.
 check-formatting:
   stage: test
   script:
     - npm run format:check $(git rev-parse $CI_COMMIT_SHA^5) $CI_COMMIT_SHA
-  tags:
-    - formatting
 
 # Define and run E2E tests job.
 e2e-tests:
@@ -91,8 +87,6 @@ e2e-tests:
   script:
     - npm run e2e
   stage: test
-  tags:
-    - e2e-tests
 
 # Define and run lint (SAST) tests job.
 lint-tests:
@@ -103,8 +97,6 @@ lint-tests:
   script:
     - npm run lint
   stage: test
-  tags:
-    - linting
 
 # Define and run unit tests job.
 unit-tests:
@@ -115,8 +107,6 @@ unit-tests:
   script:
     - npm run test
   stage: test
-  tags:
-    - unit-tests
 
 # Deployment settings for development environment.
 deploy-development:
@@ -133,8 +123,6 @@ deploy-development:
   script:
     - npm run deploy
   stage: deploy
-  tags:
-    - staging
 
 # Deployment settings for production environment.
 deploy-production:
@@ -147,6 +135,4 @@ deploy-production:
   script:
     - npm run deploy
   stage: deploy
-  tags:
-    - production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
