@@ -8,6 +8,7 @@
     "start": "ng serve --host 0.0.0.0 --poll 1",
     "build:ditectrev": "ng build --prod --project=ditectrev",
     "test": "ng test",
+    "test:ci": "ng test --no-watch --single-run=true --browser=ChromeHeadless",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
     "predeploy": "firebase use --token $FIREBASE_DEPLOY_KEY $CI_ENVIRONMENT_SLUG",

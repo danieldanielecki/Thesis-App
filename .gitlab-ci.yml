@@ -9,6 +9,7 @@ before_script:
 cache:
   paths:
     - node_modules/
+    - /root/.cache/Cypress
   key: '$CI_COMMIT_REF_SLUG' # Enable single cache for all jobs. This one is per-branch caching.
 
 # Define stages.
@@ -71,7 +72,7 @@ app-build:
 check-formatting:
   stage: test
   script:
-    - npm run format:check $(git rev-parse $CI_COMMIT_SHA^5) $CI_COMMIT_SHA
+    - npm run format:check $(git rev-parse $CI_COMMIT_SHA^5)
 
 # Define and run E2E tests job.
 e2e-tests:
@@ -90,7 +91,7 @@ lint-tests:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
-    - npm run lint
+    - npm run lint -s
   stage: test
 
 # Define and run unit tests job.
@@ -101,7 +102,7 @@ unit-tests:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - npm run test
-  stage: test
+  stage: test:ci
 
 # Deployment settings for development environment.
 deploy-development:
