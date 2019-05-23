@@ -20,6 +20,7 @@ stages:
 
 # Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
 app-build:
+  stage: build
   # Keep the dist/apps/ditectrev folder as an artifact after the define job will be done.
   artifacts:
     paths:
@@ -71,7 +72,6 @@ app-build:
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  stage: build
 
 # Define and run formatting tests job.
 check-formatting:
