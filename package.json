@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --poll 1",
-    "build:ditectrev": "ng build --env=$CI_ENVIRONMENT_SLUG --prod --project=ditectrev",
+    "build:ditectrev": "ng build --prod --project=ditectrev",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
