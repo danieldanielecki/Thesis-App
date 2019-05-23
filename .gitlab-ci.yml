@@ -14,9 +14,8 @@ cache:
 # Define stages.
 stages:
   - build
-  - deploy-development
-  - deploy-production
   - test
+  - deploy
 
 # Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
 app-build:
@@ -133,7 +132,7 @@ deploy-development:
     - master # Corresponding only to the master branch (note: should be develop, but the project started in master, so just keep it...).
   script:
     - npm run deploy
-  stage: deploy-development
+  stage: deploy
   tags:
     - staging
 
@@ -147,7 +146,7 @@ deploy-production:
     - master # Corresponding only to the master branch.
   script:
     - npm run deploy
-  stage: deploy-production
+  stage: deploy
   tags:
     - production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
