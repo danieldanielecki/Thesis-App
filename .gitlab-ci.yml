@@ -31,7 +31,6 @@ app-build:
   artifacts:
     paths:
       - dist/apps/ditectrev
-  image: cypress/base:10
   script:
     - echo $CI_BUILD_ID
     - echo $CI_COMMIT_SHORT_SHA
@@ -126,7 +125,6 @@ e2e-tests:
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  image: cypress/base:10
   script:
     - npm run e2e
   stage: test
