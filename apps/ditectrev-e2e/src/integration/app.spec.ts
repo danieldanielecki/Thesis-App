@@ -112,6 +112,7 @@ describe('Page: Terms of Use', () => {
   });
 });
 
+// TODO: It breakes in the CI.
 // describe('Page: Not found', () => {
 //   beforeEach(() => cy.visit('/not-found'));
 
