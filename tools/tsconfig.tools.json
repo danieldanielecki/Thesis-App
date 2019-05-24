@@ -5,9 +5,7 @@
     "outDir": "../dist/out-tsc/tools", // Redirect output structure to the directory.
     "rootDir": ".", // Specifies the root directory of input files. Only use to control the output directory structure with --outDir.
     "target": "es5", // Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNext'. Default: 'ES3'.
-    "types": ["jasmine", "node"]  // List of names of type definitions to include.
+    "types": ["jasmine", "node"] // List of names of type definitions to include.
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["**/*.ts"]
 }

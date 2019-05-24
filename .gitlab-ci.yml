@@ -5,11 +5,19 @@ image: node:latest
 before_script:
   - npm install
 
+# to cache both npm modules and Cypress binary we use environment variables
+# to point at the folders we can list as paths in "cache" job settings
+variables:
+  npm_config_cache: /builds/cypress-io/cypress-example-docker-gitlab/.npm
+  CYPRESS_CACHE_FOLDER: /builds/cypress-io/cypress-example-docker-gitlab/cache/Cypress
+
 # Cache node_modules.
 cache:
   paths:
+    - .npm
+    - cache/Cypress
     - node_modules/
-  key: '$CI_COMMIT_REF_SLUG' # Enable single cache for all jobs. This one is per-branch caching.
+  key: $CI_COMMIT_REF_SLUG # Enable single cache for all jobs. This one is per-branch caching.
 
 # Define stages.
 stages:
@@ -71,19 +79,7 @@ app-build:
 check-formatting:
   stage: test
   script:
-    - npm run format:check $(git rev-parse $CI_COMMIT_SHA)
-
-# Define and run E2E tests job.
-e2e-tests:
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  script:
-    - cypress install
-    - npm install cypress
-    - npm run e2e
-  stage: test
+    - npm run format:check
 
 # Define and run lint (SAST) tests job.
 lint-tests:
@@ -93,8 +89,14 @@ lint-tests:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - echo 'unset cd'>>~/.bash_profile; source ~/.bash_profile
-    - npm run lint -s
+    - npm run lint
   stage: test
+
+# Define and run security (TODO: more should be added) tests job.
+security-tests:
+  stage: test
+  script:
+    - npm audit
 
 # Define and run unit tests job.
 unit-tests:
@@ -102,9 +104,20 @@ unit-tests:
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
+  #image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
   script:
-    - npm run test:ci
+    - npm run test
+  stage: test
+
+# Define and run E2E tests job.
+e2e-tests:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  script:
+    - npm install cypress
+    - npm run e2e
   stage: test
 
 # Deployment settings for development environment.
