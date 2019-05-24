@@ -114,9 +114,6 @@ unit-tests:
 e2e-tests:
   artifacts:
     when: always
-    paths:
-      - cypress/videos/**/*.mp4
-      - cypress/screenshots/**/*.png
     expire_in: 1 day
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
