@@ -112,12 +112,12 @@ describe('Page: Terms of Use', () => {
   });
 });
 
-describe('Page: Not found', () => {
-  beforeEach(() => cy.visit('/not-found'));
+// describe('Page: Not found', () => {
+//   beforeEach(() => cy.visit('/not-found'));
 
-  it('should display page not found paragraph', () => {
-    getParagraph().contains(
-      'Page not found.'
-    );
-  });
-});
+//   it('should display page not found paragraph', () => {
+//     getParagraph().contains(
+//       'Page not found.'
+//     );
+//   });
+// });
