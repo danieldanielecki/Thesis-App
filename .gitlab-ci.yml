@@ -80,7 +80,6 @@ app-build:
 check-formatting:
   stage: test
   script:
-    - npm run format
     - npm run format:check
 
 # Define and run lint (SAST) tests job.
