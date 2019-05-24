@@ -78,6 +78,10 @@ app-build:
 
 # Define and run formatting tests job.
 check-formatting:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: test
   script:
     - npm run format:check
@@ -94,6 +98,10 @@ lint-tests:
 
 # Define and run security (TODO: more should be added) tests job.
 security-tests:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: test
   script:
     - node_modules/audit-ci/./bin/audit-ci
@@ -145,6 +153,10 @@ deploy-production:
     - app-build
   environment:
     name: production # Deployment stage for production environment.
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
   only:
     - master # Corresponding only to the master branch.
   script:
