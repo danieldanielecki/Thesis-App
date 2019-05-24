@@ -3,21 +3,21 @@ image: node:latest
 
 # Make sure to install all packages for each job.
 before_script:
-  - npm install
+  - npm ci
 
 # to cache both npm modules and Cypress binary we use environment variables
 # to point at the folders we can list as paths in "cache" job settings
 variables:
-  npm_config_cache: /builds/cypress-io/cypress-example-docker-gitlab/.npm
-  CYPRESS_CACHE_FOLDER: /builds/cypress-io/cypress-example-docker-gitlab/cache/Cypress
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
 # Cache node_modules.
 cache:
+  key: $CI_COMMIT_REF_SLUG # Enable single cache for all jobs. This one is per-branch caching.
   paths:
     - .npm
     - cache/Cypress
     - node_modules/
-  key: $CI_COMMIT_REF_SLUG # Enable single cache for all jobs. This one is per-branch caching.
 
 # Define stages.
 stages:
@@ -31,6 +31,7 @@ app-build:
   artifacts:
     paths:
       - dist/apps/ditectrev
+  image: cypress/base:10
   script:
     - echo $CI_BUILD_ID
     - echo $CI_COMMIT_SHORT_SHA
@@ -106,17 +107,25 @@ unit-tests:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   #image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
   script:
-    - npm run test
+    - npm run test --threshold 30
   stage: test
 
 # Define and run E2E tests job.
 e2e-tests:
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  image: cypress/base:10
   script:
-    - npm install cypress
+    - $(npm bin)/print-env CI
+    - npm run cy:verify
     - npm run e2e
   stage: test
 
