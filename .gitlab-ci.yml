@@ -1,32 +1,32 @@
-# Get container with "firebase-tools" pre-installed for deployment (CD) to Firebase Hosting.
+# GitLab uses Docker in the background, so it's required to get the image.
 image: node:10.15.3-alpine
 
-# Make sure to install all packages for each job.
-before_script:
-  - npm ci # For CI it's better to have this instead of npm install.
-
-# to cache both npm modules and Cypress binary we use environment variables
-# to point at the folders we can list as paths in "cache" job settings
+# Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
-# Cache node_modules.
+# Cache using branch name.
 cache:
-  key: $CI_COMMIT_REF_SLUG # Enable single cache for all jobs. This one is per-branch caching.
+  key: $CI_COMMIT_REF_SLUG
   paths:
     - .npm
     - cache/Cypress
     - node_modules/
 
-# Define 3 (GitLab CI's defaults) stages.
+# Make sure to install all packages before running anything.
+before_script:
+  - npm ci # For CI it's better to have this instead of npm install.
+
+# Define stages which GitLab will go through, order matters.
 stages:
   - build
   - test
-  - deploy
+  - staging
+  - production
 
 # Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
-app-build:
+Build:
   # Keep the dist/apps/ditectrev folder as an artifact after the app-build job will be done.
   artifacts:
     expire_in: 1 week
@@ -77,8 +77,8 @@ app-build:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: build
 
-# Define and run security (TODO: more should be added) tests job.
-dependencies-scanning:
+# Define and run security  tests job.
+Dependencies Scanning:
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -88,7 +88,7 @@ dependencies-scanning:
     - npx audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities.
 
 # Define and run formatting tests job.
-code-quality:
+Code Quality:
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -98,7 +98,7 @@ code-quality:
     - npm run format:check
 
 # Define and run lint (SAST) tests job.
-sast-tests:
+Static Application Security Testing (SAST):
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -108,7 +108,7 @@ sast-tests:
   stage: test
 
 # Define and run unit tests job.
-unit-tests:
+Unit Tests:
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -119,7 +119,7 @@ unit-tests:
   stage: test
 
 # Define and run E2E tests job.
-e2e-tests:
+E2E Tests:
   artifacts:
     expire_in: 1 week
     paths:
@@ -136,9 +136,9 @@ e2e-tests:
   stage: test
 
 # Deployment settings for development environment.
-deploy-development:
+Deploy to Staging:
   dependencies:
-    - app-build
+    - Build
   environment:
     name: development # Deployment stage for development environment.
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
@@ -149,12 +149,12 @@ deploy-development:
     - master # Corresponding only to the master branch (note: should be develop, but the project started in master, so just keep it...).
   script:
     - npm run deploy
-  stage: deploy
+  stage: staging
 
 # Deployment settings for production environment.
-deploy-production:
+Deploy to Production:
   dependencies:
-    - app-build
+    - Build
   environment:
     name: production # Deployment stage for production environment.
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
@@ -170,5 +170,7 @@ deploy-production:
     - echo $CI_ENVIRONMENT_SLUG
     - echo $CI_JOB_MANUAL
     - echo $CI_JOB_TRIGGERED
-  stage: deploy
+  stage: production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
+
+# TODO: more security tests should be added.
