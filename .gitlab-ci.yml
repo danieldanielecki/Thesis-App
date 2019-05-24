@@ -80,6 +80,7 @@ app-build:
 check-formatting:
   stage: test
   script:
+    - npm run format
     - npm run format:check
 
 # Define and run lint (SAST) tests job.
@@ -89,7 +90,6 @@ lint-tests:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
-    - echo 'unset cd'>>~/.bash_profile; source ~/.bash_profile
     - npm run lint
   stage: test
 
