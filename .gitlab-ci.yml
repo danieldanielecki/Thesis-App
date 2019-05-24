@@ -85,7 +85,7 @@ dependencies-scanning:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: test
   script:
-    - node_modules/audit-ci/./bin/audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities.
+    - npx audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities.
 
 # Define and run formatting tests job.
 code-quality:
@@ -115,7 +115,7 @@ unit-tests:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   #image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
   script:
-    - npx jest --ci
+    - npm run test --coverage
   stage: test
 
 # Define and run E2E tests job.
