@@ -117,7 +117,7 @@ describe('Page: Not found', () => {
 
   it('should display page not found paragraph', () => {
     getParagraph().contains(
-      "Page not found. That's an error – please try again."
+      'Page not found.'
     );
   });
 });
