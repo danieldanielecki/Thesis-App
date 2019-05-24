@@ -3,7 +3,7 @@ import { Mesh, WebGLRenderer } from 'three'; // TODO: Check why it takes from sr
 import { NotFoundComponent } from './not-found.component';
 
 jest.mock('three'); // Mock Three.js module.
-
+// TODO: Fix this test and bring it back by removing "-" from name of the file.
 describe('NotFoundComponent', () => {
   const renderer: WebGLRenderer = new WebGLRenderer();
   let component: NotFoundComponent;

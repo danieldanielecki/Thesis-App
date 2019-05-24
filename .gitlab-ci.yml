@@ -27,11 +27,12 @@ stages:
 
 # Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
 app-build:
-  # Keep the dist/apps/ditectrev folder as an artifact after the define job will be done.
+  # Keep the dist/apps/ditectrev folder as an artifact after the app-build job will be done.
   artifacts:
+    expire_in: 1 week
     paths:
       - dist/apps/ditectrev
-  image: cypress/base:10
+    when: always
   script:
     - echo $CI_BUILD_ID
     - echo $CI_COMMIT_SHORT_SHA
@@ -76,8 +77,18 @@ app-build:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: build
 
+# Define and run security (TODO: more should be added) tests job.
+dependencies-scanning:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  stage: test
+  script:
+    - node_modules/audit-ci/./bin/audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities.
+
 # Define and run formatting tests job.
-check-formatting:
+code-quality:
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -87,7 +98,7 @@ check-formatting:
     - npm run format:check
 
 # Define and run lint (SAST) tests job.
-lint-tests:
+sast-tests:
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -95,16 +106,6 @@ lint-tests:
   script:
     - npm run lint
   stage: test
-
-# Define and run security (TODO: more should be added) tests job.
-security-tests:
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  stage: test
-  script:
-    - node_modules/audit-ci/./bin/audit-ci
 
 # Define and run unit tests job.
 unit-tests:
@@ -120,8 +121,11 @@ unit-tests:
 # Define and run E2E tests job.
 e2e-tests:
   artifacts:
+    expire_in: 1 week
+    paths:
+      - dist/out-tsc/apps/ditectrev-e2e/**/*.mp4
+      - dist/out-tsc/apps/ditectrev-e2e/**/*.png
     when: always
-    expire_in: 1 day
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
