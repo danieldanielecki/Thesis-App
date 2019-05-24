@@ -1,9 +1,6 @@
 # Get container with "firebase-tools" pre-installed for deployment (CD) to Firebase Hosting.
 image: node:latest
 
-include:
-  template: Dependency-Scanning.gitlab-ci.yml
-
 # Make sure to install all packages for each job.
 before_script:
   - npm ci # For CI it's better to have this instead of npm install.
@@ -95,6 +92,12 @@ lint-tests:
     - echo 'unset cd'>>~/.bash_profile; source ~/.bash_profile
     - npm run lint
   stage: test
+
+# Define and run security (TODO: more should be added) tests job.
+security-tests:
+  stage: test
+  script:
+    - audit-ci --moderate
 
 # Define and run unit tests job.
 unit-tests:
