@@ -97,7 +97,7 @@ lint-tests:
 security-tests:
   stage: test
   script:
-    - audit-ci --moderate
+    - node_modules/audit-ci/./bin/audit-ci
 
 # Define and run unit tests job.
 unit-tests:
