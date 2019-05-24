@@ -3,7 +3,7 @@ image: node:latest
 
 # Make sure to install all packages for each job.
 before_script:
-  - npm ci
+  - npm ci # For CI it's better to have this instead of npm install.
 
 # to cache both npm modules and Cypress binary we use environment variables
 # to point at the folders we can list as paths in "cache" job settings
@@ -19,7 +19,7 @@ cache:
     - cache/Cypress
     - node_modules/
 
-# Define stages.
+# Define 3 (GitLab CI's defaults) stages.
 stages:
   - build
   - test

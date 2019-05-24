@@ -6,6 +6,5 @@
   "supportFile": false,
   "video": true,
   "videosFolder": "../../dist/out-tsc/apps/ditectrev-e2e/videos",
-  "screenshotsFolder": "../../dist/out-tsc/apps/ditectrev-e2e/screenshots",
-  "chromeWebSecurity": false
+  "screenshotsFolder": "../../dist/out-tsc/apps/ditectrev-e2e/screenshots"
 }
