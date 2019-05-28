@@ -1,4 +1,4 @@
-import { getTitle, getParagraph } from '../support/app.po';
+import { getCanvas, getParagraph, getTitle } from '../support/app.po';
 
 describe('Page: About us', () => {
   beforeEach(() => cy.visit('/about-us'));
@@ -129,8 +129,8 @@ describe('Page: Terms of Use', () => {
 describe('Page: Not found', () => {
   beforeEach(() => cy.visit('/not-found'));
 
-  it('should display page not found paragraph', () => {
+  it('should display not found animation', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('Page not found.');
+    getCanvas();
   });
 });
