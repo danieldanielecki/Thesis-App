@@ -4,14 +4,14 @@ image: node:10.15.3-alpine
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
 variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
-  #CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
 # Cache using branch name.
 cache:
   key: $CI_COMMIT_REF_SLUG
   paths:
     - .npm
-    #- cache/Cypress
+    - cache/Cypress
     - node_modules/
 
 # Make sure to install all packages before running anything.
