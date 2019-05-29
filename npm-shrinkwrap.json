@@ -1630,9 +1630,9 @@
       "dev": true
     },
     "agastya": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/agastya/-/agastya-2.0.1.tgz",
-      "integrity": "sha512-z0JdgzOyi+CqDNVzYGvwUAvVfumackxDcX+gJDrpWgqkxWkhaXyz/6gsWN6xCUfeYx1M1t27lm23VC+ncSVOqA==",
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/agastya/-/agastya-4.1.0.tgz",
+      "integrity": "sha512-4ZXQ/r6TwvtYsJpBdhkc5+9SdTVyDAIMOm6NrdI6qDUsWyL04T1vCr57VPBsvzVE60TdzvoQhINqP4B0PUqXnw==",
       "requires": {
         "scriptjs": "^2.5.9"
       }
