@@ -10,7 +10,10 @@ declare let particlesJS: any; // Required to be properly interpreted by TypeScri
 })
 export class SliderComponent implements OnInit {
   public ngOnInit(): void {
-    // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    particlesJS('particles-js', ParticlesConfig, function() {}); // TODO: function() is not covered in the unit test, check it.
+    this.invokeParticles();
+  }
+
+  public invokeParticles(): void {
+    particlesJS('particles-js', ParticlesConfig, function() {});
   }
 }

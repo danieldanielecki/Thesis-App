@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SliderComponent } from './slider.component';
 
-// TODO: Fix this test and bring it back by removing "-" from name of the file.
+// TODO: Try to mock the global particlesJS somehow.
 describe('SliderComponent', () => {
   let component: SliderComponent;
   let fixture: ComponentFixture<SliderComponent>;
@@ -27,5 +27,9 @@ describe('SliderComponent', () => {
     expect(compiled.querySelector('div#particles-js')).not.toBeNull();
   });
 
-  // TODO: Add partcilesJS() call.
+  it('should call invokeParticles method', () => {
+    spyOn(component, 'invokeParticles').and.callThrough();
+    component.invokeParticles();
+    expect(component.invokeParticles).toHaveBeenCalled();
+  });
 });
