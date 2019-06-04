@@ -23,6 +23,9 @@
     "copyrights": {
       "tags": ["copyrights"]
     },
+    "core": {
+      "tags": ["core"]
+    },
     "cyber-security": {
       "tags": ["cyber-security"]
     },
@@ -67,9 +70,6 @@
     },
     "utilities": {
       "tags": ["utilities"]
-    },
-    "core": {
-      "tags": ["core"]
     }
   }
 }

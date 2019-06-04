@@ -8,7 +8,11 @@
       "sourceRoot": "apps/ditectrev/src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": { "@nrwl/schematics:component": { "style": "scss" } },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -66,14 +70,20 @@
         },
         "serve": {
           "builder": "@angular-builders/dev-server:generic",
-          "options": { "browserTarget": "ditectrev:build" },
+          "options": {
+            "browserTarget": "ditectrev:build"
+          },
           "configurations": {
-            "production": { "browserTarget": "ditectrev:build:production" }
+            "production": {
+              "browserTarget": "ditectrev:build:production"
+            }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": { "browserTarget": "ditectrev:build" }
+          "options": {
+            "browserTarget": "ditectrev:build"
+          }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -112,7 +122,9 @@
             "devServerTarget": "ditectrev:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "ditectrev:serve:production" }
+            "production": {
+              "devServerTarget": "ditectrev:serve:production"
+            }
           }
         },
         "lint": {
@@ -149,7 +161,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "contact": {
       "root": "libs/contact",
@@ -176,7 +192,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "copyrights": {
       "root": "libs/copyrights",
@@ -203,7 +223,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "cyber-security": {
       "root": "libs/cyber-security",
@@ -230,7 +254,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "digital-strategy": {
       "root": "libs/digital-strategy",
@@ -257,7 +285,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "faq": {
       "root": "libs/faq",
@@ -284,7 +316,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "glossary": {
       "root": "libs/glossary",
@@ -311,7 +347,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "home": {
       "root": "libs/home",
@@ -338,7 +378,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "methodology": {
       "root": "libs/methodology",
@@ -365,7 +409,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "not-found": {
       "root": "libs/not-found",
@@ -392,7 +440,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "partnerships": {
       "root": "libs/partnerships",
@@ -419,7 +471,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "privacy-and-security": {
       "root": "libs/privacy-and-security",
@@ -446,7 +502,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "services": {
       "root": "libs/services",
@@ -473,7 +533,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "shared": {
       "root": "libs/shared",
@@ -500,7 +564,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "sitemap": {
       "root": "libs/sitemap",
@@ -527,7 +595,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "software-development": {
       "root": "libs/software-development",
@@ -554,7 +626,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     },
     "terms-of-use": {
       "root": "libs/terms-of-use",
@@ -581,33 +657,11 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
-    },
-    "utilities": {
-      "root": "libs/utilities",
-      "sourceRoot": "libs/utilities/src",
-      "projectType": "library",
-      "prefix": "app",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/utilities/tsconfig.lib.json",
-              "libs/utilities/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/builders:jest",
-          "options": {
-            "jestConfig": "libs/utilities/jest.config.js",
-            "tsConfig": "libs/utilities/tsconfig.spec.json"
-          }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
         }
-      },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      }
     },
     "core": {
       "root": "libs/core",
@@ -634,17 +688,59 @@
           }
         }
       },
-      "schematics": { "@nrwl/schematics:component": { "styleext": "scss" } }
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "utilities": {
+      "root": "libs/utilities",
+      "sourceRoot": "libs/utilities/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utilities/tsconfig.lib.json",
+              "libs/utilities/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/utilities/jest.config.js",
+            "tsConfig": "libs/utilities/tsconfig.spec.json",
+            "setupFile": "libs/utilities/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
-    "warnings": { "typescriptMismatch": false, "versionMismatch": false },
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
     "defaultCollection": "@nrwl/schematics",
     "packageManager": "npm"
   },
   "schematics": {
-    "@nrwl/schematics:application": { "style": "scss" },
-    "@nrwl/schematics:library": { "style": "scss" }
+    "@nrwl/schematics:application": {
+      "style": "scss"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
   },
   "defaultProject": "ditectrev"
 }
