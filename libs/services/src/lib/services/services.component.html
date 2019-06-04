@@ -1,1 +1,103 @@
-<p>services works!</p>
+<section
+  aria-label="This is a services page to inform your about our services."
+  fxLayout.lt-md="column"
+  fxLayoutAlign="space-evenly center"
+>
+  <!-- TODO: Make this ngFor. -->
+  <!-- TODO: Maybe add image per each service. -->
+  <!-- Card container that binds all software development information. -->
+  <mat-card
+    aria-label="This is cyber security services short description."
+    class="mat-elevation-z24"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" title="Cyber Security" role="heading"
+      >Cyber Security</mat-card-title
+    >
+
+    <!-- Subtitle of the card. -->
+    <mat-card-subtitle aria-level="3" role="heading"
+      >Some dummy description might goes here... Some dummy description might
+      goes here... Some dummy description might goes here... Some dummy
+      description might goes here... Some dummy description might goes here...
+      Some dummy description might goes here...</mat-card-subtitle
+    >
+
+    <!-- Button in order to redirect into specific service. -->
+    <button
+      aria-label="Click here check our cyber security services."
+      color="primary"
+      fxFill
+      mat-raised-button
+      matTooltip="Read more about Cyber Security"
+      routerLink="/cyber-security"
+    >
+      Read more
+    </button>
+  </mat-card>
+
+  <!-- Card container that binds all software development information. -->
+  <mat-card
+    aria-label="This is digital strategy services short description."
+    class="mat-elevation-z24"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" title="Digital Strategy" role="heading"
+      >Digital Strategy</mat-card-title
+    >
+
+    <!-- Subtitle of the card. -->
+    <mat-card-subtitle aria-level="3" role="heading"
+      >Some dummy description might goes here... Some dummy description might
+      goes here... Some dummy description might goes here... Some dummy
+      description might goes here... Some dummy description might goes here...
+      Some dummy description might goes here...</mat-card-subtitle
+    >
+
+    <!-- Button in order to redirect into specific service. -->
+    <button
+      aria-label="Click here check our digital strategy services."
+      color="primary"
+      fxFill
+      mat-flat-button
+      matTooltip="Read more about Digital Strategy"
+      routerLink="/digital-strategy"
+    >
+      Read more
+    </button>
+  </mat-card>
+
+  <!-- Card container that binds all software development information. -->
+  <mat-card
+    aria-label="This is software development services short description."
+    class="mat-elevation-z24"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" title="Software Development" role="heading"
+      >Software Development</mat-card-title
+    >
+
+    <!-- Subtitle of the card. -->
+    <mat-card-subtitle aria-level="3" role="heading"
+      >Some dummy description might goes here... Some dummy description might
+      goes here... Some dummy description might goes here... Some dummy
+      description might goes here... Some dummy description might goes here...
+      Some dummy description might goes here...</mat-card-subtitle
+    >
+
+    <!-- Button in order to redirect into specific service. -->
+    <button
+      aria-label="Click here check our software development services."
+      color="primary"
+      fxFill
+      mat-flat-button
+      matTooltip="Read more about Software Development"
+      routerLink="/software-development"
+    >
+      Read more
+    </button>
+  </mat-card>
+</section>
