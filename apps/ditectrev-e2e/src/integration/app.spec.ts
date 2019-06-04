@@ -1,4 +1,4 @@
-import { getCanvas, getParagraph, getTitle } from '../support/app.po';
+import { getParagraph, getTitle } from '../support/app.po';
 
 // TODO: Add more E2E tests at the end of this project.
 describe('Page: About us', () => {
@@ -31,9 +31,14 @@ describe('Page: Copyrights', () => {
 describe('Page: Cyber Security', () => {
   beforeEach(() => cy.visit('/cyber-security'));
 
-  it('should display cyber security paragraph', () => {
+  it('should display services titles', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('cyber-security works!');
+    getTitle().contains('Service 1');
+    getTitle().contains('Service 2');
+    getTitle().contains('Service 3');
+    getTitle().contains('Service 4');
+    getTitle().contains('Service 5');
+    getTitle().contains('Service 6');
   });
 });
 
@@ -94,9 +99,11 @@ describe('Page: Privacy & Security', () => {
 describe('Page: Services', () => {
   beforeEach(() => cy.visit('/services'));
 
-  it('should display services paragraph', () => {
+  it('should display services titles', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('services works!');
+    getTitle().contains('Cyber Security');
+    getTitle().contains('Digital Strategy');
+    getTitle().contains('Software Development');
   });
 });
 
