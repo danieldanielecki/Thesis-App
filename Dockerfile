@@ -1,3 +1,4 @@
+# TODO: production mode has to be tested.
 # Get Node image from Docker Hub. Alpine is the lightweights distribution of Linux with only very basic functionalities, thus it's the most secure one.
 FROM node:10.15.3-alpine
 

@@ -1,5 +1,6 @@
 {
   "projects": {
+    "default": "thesisapp-dev",
     "development": "thesisapp-dev",
     "production": "thesisapp-16048"
   }

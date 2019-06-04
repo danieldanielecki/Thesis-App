@@ -1,10 +1,11 @@
 # GitLab uses Docker in the background, so it's required to get the image.
+# TODO: Define functions & modify echo the logs.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
 variables:
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
-  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+  npm_config_cache: '$CI_PROJECT_DIR/.npm'
+  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
 
 # Cache using branch name.
 cache:

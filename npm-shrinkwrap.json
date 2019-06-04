@@ -10715,9 +10715,9 @@
       "dev": true
     },
     "ng-circle-progress": {
-      "version": "1.4.0",
-      "resolved": "https://registry.npmjs.org/ng-circle-progress/-/ng-circle-progress-1.4.0.tgz",
-      "integrity": "sha512-iNmCjGR9aJcszXS2wZTXtvfCBkOuQ0QptLw1LTsgaUodbCxFk+0FsnKTf56kDC+QLwpJZPJFlVLjHi5zKFDDUQ=="
+      "version": "1.4.1",
+      "resolved": "https://registry.npmjs.org/ng-circle-progress/-/ng-circle-progress-1.4.1.tgz",
+      "integrity": "sha512-c665TYcbLmdPj6rLDJc88FzE0us+DhteYtM7xJNRRdKoMX3PRF9/YgGiADXpVKrU8DIKbRTXpkcVKW+buxA8zg=="
     },
     "ng-recaptcha": {
       "version": "4.2.1",

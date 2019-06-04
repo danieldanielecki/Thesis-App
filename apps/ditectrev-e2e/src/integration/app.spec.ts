@@ -1,5 +1,6 @@
 import { getCanvas, getParagraph, getTitle } from '../support/app.po';
 
+// TODO: Add more E2E tests at the end of this project.
 describe('Page: About us', () => {
   beforeEach(() => cy.visit('/about-us'));
 
