@@ -124,9 +124,14 @@ describe('Page: Sitemap', () => {
 describe('Page: Software Development', () => {
   beforeEach(() => cy.visit('/software-development'));
 
-  it('should display software development works paragraph', () => {
+  it('should display software development services titles', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('software development works!');
+    getTitle().contains('Service 1');
+    getTitle().contains('Service 2');
+    getTitle().contains('Service 3');
+    getTitle().contains('Service 4');
+    getTitle().contains('Service 5');
+    getTitle().contains('Service 6');
   });
 });
 
