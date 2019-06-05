@@ -7,8 +7,14 @@ import {
   PerspectiveCamera,
   Scene,
   WebGLRenderer
-} from 'three'; // TODO: Check why it takes from src, instead of build. It can be reason why unit test fails.
-import { Component, OnInit, Renderer2 } from '@angular/core';
+} from 'three';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
@@ -16,6 +22,10 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent implements OnInit {
+  @ViewChild('renderIcosahedron') private renderIcosahedron!: ElementRef<
+    HTMLElement
+  >; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
+
   public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 
   // Create renderer to display scene.
@@ -37,10 +47,12 @@ export class NotFoundComponent implements OnInit {
    * @returns {void}
    */
   public ngOnInit(): void {
-    const icosahedron = document.getElementById('renderIcosahedron'); // Get reference of div element from HTML element to render Three.js.
     const icosphere = this.createScene(this.renderer); // Return the icosahedron geometry object from after creating scene.
 
-    this.renderer2.appendChild(icosahedron, this.renderer.domElement); // Append object to be rendered to the DOM.
+    this.renderer2.appendChild(
+      this.renderIcosahedron.nativeElement,
+      this.renderer.domElement
+    ); // Append object to be rendered to the DOM.
     this.renderScene(icosphere, this.renderer); // Render the scene.
   }
 

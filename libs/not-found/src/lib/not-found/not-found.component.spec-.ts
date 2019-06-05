@@ -1,11 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Mesh, WebGLRenderer, PerspectiveCamera, HemisphereLight } from 'three'; // TODO: Check why it takes from src, instead of build. It can be reason why unit test fails.
+import { Mesh, WebGLRenderer, PerspectiveCamera, HemisphereLight } from 'three';
 import { NotFoundComponent } from './not-found.component';
-import { Renderer2, Type } from '@angular/core';
 
-// TODO: Make passing the last statement and clean it.
+// TODO: Make passing the last statement.
 
-jest.mock('three'); // Mock Three.js module.
+// Mock Three.js objects, required to be manually (unfortunately).
 jest.mock('three', () => ({
   Color: class Color {
     public constructor() {
@@ -45,16 +44,9 @@ jest.mock('three', () => ({
       return;
     }
     public position() {
-      return {
-        set: jest.fn()
-      };
-    }
-    public set() {
       return;
     }
-  },
-  Renderer2: class Renderer2 {
-    public appendChild() {
+    public set() {
       return;
     }
   },
@@ -67,27 +59,30 @@ jest.mock('three', () => ({
     }
   },
   WebGLRenderer: class WebGLRenderer {
+    public render(): void {
+      return;
+    }
     public setSize(): void {
       return;
     }
   }
 }));
-// TODO: Fix this test and bring it back by removing "-" from name of the file.
+
+// TODO: Improve code coverage.
 describe('NotFoundComponent', () => {
   const camera: PerspectiveCamera = new PerspectiveCamera();
-  const icosahedron = document.getElementById('renderIcosahedron');
   const light: HemisphereLight = new HemisphereLight();
   const renderer: WebGLRenderer = new WebGLRenderer();
-  light.position.set = jest.fn();
-  camera.position.set = jest.fn();
   let component: NotFoundComponent;
   let fixture: ComponentFixture<NotFoundComponent>;
-  let renderer2: Renderer2;
+
+  // Mock 2 methods.
+  camera.position.set = jest.fn();
+  light.position.set = jest.fn();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NotFoundComponent],
-      providers: [Renderer2]
+      declarations: [NotFoundComponent]
     }).compileComponents();
   }));
 
@@ -95,11 +90,6 @@ describe('NotFoundComponent', () => {
     fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
-    renderer2 = fixture.componentRef.injector.get<Renderer2>(Renderer2 as Type<
-      Renderer2
-    >); // Grab renderer.
-    spyOn(renderer2, 'appendChild').and.callThrough();
   });
 
   it('should create not found component', () => {
@@ -112,14 +102,10 @@ describe('NotFoundComponent', () => {
       .and.returnValue(Mesh);
     component.createScene(renderer);
     expect(component.createScene).toHaveBeenCalled();
-
-    renderer.setSize = jest.fn();
   });
 
   it('should call renderScene method', () => {
     const icosphere: Mesh = new Mesh();
-
-    renderer.render = jest.fn();
 
     spyOn(component, 'renderScene').and.callThrough();
     component.renderScene(icosphere, renderer);
@@ -128,16 +114,9 @@ describe('NotFoundComponent', () => {
 
   it('should call updateScene method', () => {
     const icosphere: Mesh = new Mesh();
-    camera.position.set = jest.fn();
-
-    icosphere.rotation = jest.fn();
 
     spyOn(component, 'updateScene').and.callThrough();
     component.updateScene(icosphere);
     expect(component.updateScene).toHaveBeenCalled();
-  });
-
-  it('should call renderer', () => {
-    expect(renderer2.appendChild).toHaveBeenCalledWith(expect.anything());
   });
 });
