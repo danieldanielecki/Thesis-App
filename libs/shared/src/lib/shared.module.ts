@@ -27,6 +27,7 @@ import {
   MatSidenavModule,
   MatSlideToggleModule,
   MatStepperModule,
+  MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule
@@ -62,6 +63,7 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     MatSlideToggleModule,
     MatStepperModule,
+    MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
@@ -92,6 +94,7 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     MatSlideToggleModule,
     MatStepperModule,
+    MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,

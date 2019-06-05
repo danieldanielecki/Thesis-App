@@ -47,8 +47,26 @@ a {
   position: fixed !important;
 }
 
+// Required to put it here in order to overwrite Angular Material's styles used in a contact.
+mat-card {
+  .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+  }
+  .mat-datepicker-toggle-default-icon {
+    font-size: 2rem;
+  }
+  z-index: 0;
+}
+
 // Required to put it here in order to overwrite Angular Material's styles used in a footer.
 footer {
+  input,
+  mat-hint,
+  .placeholder,
+  .mat-form-field-label {
+    color: white !important;
+  }
+
   mat-hint {
     color: white !important;
   }
@@ -60,23 +78,10 @@ footer {
   }
 }
 
-// Required to put it here in order to overwrite Angular Material's styles used in a contact.
-// TODO: Fix displaying .selected-flag on mobile devices. It should be behind sidenav, not upfront.
-mat-card {
-  .mat-form-field-subscript-wrapper {
-    padding: 0 !important;
-  }
-  .mat-datepicker-toggle-default-icon {
-    font-size: 2rem;
-  }
+// Required to put it here in order to overwrite Angular Material's styles used in partnerships.
+.mat-tab-body-content {
+  text-align: center;
 }
-
-// Required to put it here in order to overwrite Angular Material's styles used in a footer.
-footer {
-  input,
-  mat-hint,
-  .placeholder,
-  .mat-form-field-label {
-    color: white !important;
-  }
+mat-tab-body {
+  margin-top: 20px;
 }

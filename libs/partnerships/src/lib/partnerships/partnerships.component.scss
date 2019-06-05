@@ -1,0 +1,22 @@
+mat-card {
+  margin: 2rem;
+
+  .example-large-box {
+    height: 440px;
+    padding: 20px;
+    margin: 40px auto 80px;
+    text-align: justify;
+    width: 300px;
+  }
+
+  mat-icon {
+    margin-right: 10px;
+  }
+  mat-card-subtitle,
+  mat-card-title {
+    text-align: center;
+  }
+  mat-card-subtitle {
+    margin-top: 30px;
+  }
+}

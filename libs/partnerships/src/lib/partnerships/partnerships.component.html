@@ -1,1 +1,80 @@
-<p>partnerships works!</p>
+<section
+  aria-label="This is a partnerships page to inform you about possible ways of cooperation."
+>
+  <mat-card
+    aria-label="These are partnerships details."
+    class="mat-elevation-z24"
+    fxFlex="50"
+    fxFlex.md="80"
+    fxFlex.lt-md="90"
+    fxFlexOffset="25"
+    fxFlexOffset.md="10"
+    fxFlexOffset.lt-md="5"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" title="Terms of Use" role="heading"
+      >Partnerships</mat-card-title
+    >
+
+    <!-- Subtitle of the card. -->
+    <mat-card-subtitle aria-level="3" role="heading"
+      >We can partner with many entities.</mat-card-subtitle
+    >
+
+    <!-- TODO: Make this ngFor. -->
+    <!-- Group of tab.s -->
+    <mat-tab-group mat-align-tabs="center">
+      <!-- First tab. -->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon aria-hidden="true">grade</mat-icon>
+          Creative Agencies
+        </ng-template>
+        <ng-template matTabContent>
+          <p
+            class="example-large-box mat-elevation-z24"
+            fxLayoutAlign="center center"
+          >
+            Sample content goes here... Sample content goes here... Sample
+            content goes here... Sample content goes here...
+          </p>
+        </ng-template>
+      </mat-tab>
+
+      <!-- Second tab. -->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon aria-hidden="true">perm_identity</mat-icon>
+          Freelancers
+        </ng-template>
+        <ng-template matTabContent>
+          <p
+            class="example-large-box mat-elevation-z24"
+            fxLayoutAlign="center center"
+          >
+            Sample content goes here... Sample content goes here... Sample
+            content goes here... Sample content goes here...
+          </p>
+        </ng-template>
+      </mat-tab>
+
+      <!-- Third tab. -->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon aria-hidden="true">code</mat-icon>
+          Software Houses
+        </ng-template>
+        <ng-template matTabContent>
+          <p
+            class="example-large-box mat-elevation-z24"
+            fxLayoutAlign="center center"
+          >
+            Sample content goes here... Sample content goes here... Sample
+            content goes here... Sample content goes here...
+          </p>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</section>

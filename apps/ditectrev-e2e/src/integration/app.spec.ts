@@ -86,9 +86,9 @@ describe('Page: Methodology', () => {
 describe('Page: Partnerships', () => {
   beforeEach(() => cy.visit('/partnerships'));
 
-  it('should display partnerships paragraph', () => {
+  it('should display partnerships title', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('partnerships works!');
+    getTitle().contains('Partnerships');
   });
 });
 
