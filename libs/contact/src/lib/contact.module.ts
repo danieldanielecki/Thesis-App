@@ -1,4 +1,4 @@
-declare const RECAPTCHA_API_KEY: string;
+// declare const RECAPTCHA_API_KEY: string; // TODO: This doesn't work.
 
 import { ContactComponent } from './contact/contact.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
@@ -33,7 +33,7 @@ import { SharedModule } from '@libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: RECAPTCHA_API_KEY
+        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA' // TODO: Change this to take from secrets.
       } as RecaptchaSettings
     }
   ]

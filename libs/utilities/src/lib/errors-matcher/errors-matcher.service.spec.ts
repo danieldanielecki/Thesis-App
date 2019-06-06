@@ -4,7 +4,9 @@ import { ErrorsMatcherService } from './errors-matcher.service';
 // TODO: Improve code coverage.
 describe('ErrorMatcherService', () => {
   beforeEach(async(() => {
-    TestBed.configureTestingModule({}).compileComponents();
+    TestBed.configureTestingModule({
+      providers: [ErrorsMatcherService]
+    }).compileComponents();
   }));
 
   it('should be created errors matcher service', () => {

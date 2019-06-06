@@ -61,6 +61,7 @@
     "ng2-tel-input": "^2.0.1",
     "ngx-material-file-input": "^1.1.1",
     "ngx-moment": "^3.4.0",
+    "ngx-spinner": "^7.0.0",
     "particles.js": "^2.0.0",
     "rxjs": "~6.4.0",
     "three": "^0.102.1",

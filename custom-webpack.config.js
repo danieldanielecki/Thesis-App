@@ -17,6 +17,9 @@ if (isCiBuild) {
 } else {
   const config = require('./.config/secrets');
   agastyaApiKey = config.AGASTYA_API_KEY;
+  firebaseApiKeyDevelopment = config.FIREBASE_API_KEY_DEVELOPMENT;
+  firebaseApiKeyProduction = config.FIREBASE_API_KEY_PRODUCTION;
+  recaptchaApiKey = config.RECAPTCHA_API_KEY;
 }
 
 // Export the secrets as ready to inject global variables across the application (declare const SECRET_NAME: string; is still required in the module where it's supposed to be injected).
