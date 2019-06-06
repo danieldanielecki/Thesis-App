@@ -1,3 +1,5 @@
+declare const RECAPTCHA_API_KEY: string;
+
 import { ContactComponent } from './contact/contact.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
@@ -26,12 +28,12 @@ import { SharedModule } from '@libs/shared/src/index';
   providers: [
     {
       provide: RECAPTCHA_NONCE,
-      useValue: '<YOUR_NONCE_VALUE>' // TODO: Add nonce for CSP here (as env variable).
+      useValue: '<YOUR_NONCE_VALUE>' // TODO: Add nonce for CSP here (as env variable). Maybe also recaptcha v3, check it as well invisible recaptcha to susbcribe.
     },
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+        siteKey: RECAPTCHA_API_KEY
       } as RecaptchaSettings
     }
   ]

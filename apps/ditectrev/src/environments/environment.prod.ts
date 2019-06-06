@@ -1,7 +1,9 @@
+declare const FIREBASE_API_KEY_PRODUCTION: string;
+
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyA2QYkZcdY6nN4NUCNbdNy-huO-mrscUdE',
+    apiKey: FIREBASE_API_KEY_PRODUCTION,
     authDomain: 'thesisapp-16048.firebaseapp.com',
     databaseURL: 'https://thesisapp-16048.firebaseio.com',
     projectId: 'thesisapp-16048',
