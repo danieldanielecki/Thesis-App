@@ -34,6 +34,7 @@ import {
 } from '@angular/material';
 import { MomentModule } from 'ngx-moment';
 import { NgModule } from '@angular/core';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RouterModule } from '@angular/router';
 
@@ -69,6 +70,7 @@ import { RouterModule } from '@angular/router';
     MatTooltipModule,
     MatTreeModule,
     MomentModule,
+    NgxGalleryModule,
     NgxSpinnerModule,
     ReactiveFormsModule,
     RouterModule
@@ -101,6 +103,7 @@ import { RouterModule } from '@angular/router';
     MatTooltipModule,
     MatTreeModule,
     MomentModule,
+    NgxGalleryModule,
     NgxSpinnerModule,
     ReactiveFormsModule,
     RouterModule

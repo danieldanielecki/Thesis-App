@@ -59,6 +59,7 @@
     "ng-circle-progress": "^1.4.1",
     "ng-recaptcha": "^4.2.1",
     "ng2-tel-input": "^2.0.1",
+    "ngx-gallery": "^5.10.0",
     "ngx-material-file-input": "^1.1.1",
     "ngx-moment": "^3.4.0",
     "ngx-spinner": "^7.0.0",
