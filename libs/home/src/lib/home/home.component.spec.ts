@@ -1,9 +1,13 @@
 import 'hammerjs';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { GalleryComponent } from './../gallery/gallery.component';
 import { HomeComponent } from './home.component';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SliderComponent } from './../slider/slider.component';
+import { TestimonialsComponent } from './../testimonials/testimonials.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,8 +15,18 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [GalleryComponent, HomeComponent, SliderComponent],
-      imports: [NgxGalleryModule]
+      declarations: [
+        GalleryComponent,
+        HomeComponent,
+        SliderComponent,
+        TestimonialsComponent
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        CarouselModule,
+        NgxGalleryModule,
+        RouterTestingModule
+      ]
     }).compileComponents();
   }));
 
@@ -34,5 +48,10 @@ describe('HomeComponent', () => {
   it('should have gallery component', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-gallery')).not.toBeNull();
+  });
+
+  it('should have testimonials component', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-testimonials')).not.toBeNull();
   });
 });

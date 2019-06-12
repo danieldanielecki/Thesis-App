@@ -1,3 +1,4 @@
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CommonModule } from '@angular/common';
 import {
   ErrorStateMatcher,
@@ -41,6 +42,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [FooterComponent, HeaderComponent],
   exports: [
+    CarouselModule,
     CommonModule,
     FlexLayoutModule,
     FontAwesomeModule,
@@ -76,6 +78,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   imports: [
+    CarouselModule,
     CommonModule,
     FlexLayoutModule,
     FontAwesomeModule,

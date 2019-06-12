@@ -2,6 +2,7 @@ import {
   getCanvas,
   getGallery,
   getParagraph,
+  getTestimonials,
   getTitle
 } from '../support/app.po';
 
@@ -90,6 +91,11 @@ describe('Page: Home', () => {
   it('should display gallery', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
     getGallery();
+  });
+
+  it('should display testimonials', () => {
+    cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
+    getTestimonials();
   });
 });
 

@@ -48,6 +48,7 @@ export class GalleryComponent implements OnInit {
     ];
 
     // TODO: Change href on routerLink, issue #87.
+    // TODO: Optimize the images to be more efficient/modern format of images.
     this.galleryImages = [
       {
         big: './assets/cyber-security.jpg',

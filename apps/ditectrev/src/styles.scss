@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 // TODO: Name all colors.
 html,
 body {
@@ -94,4 +93,16 @@ app-gallery {
       transition: 1s;
     }
   }
+}
+
+.owl-dots .owl-dot.active span,
+.owl-dot:hover span {
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.owl-dots .owl-dot span {
+  background: #3190e7;
+  transform: scale(0.8);
+  transition: 1s;
 }
