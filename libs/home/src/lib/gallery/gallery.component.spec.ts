@@ -23,4 +23,9 @@ describe('GalleryComponent', () => {
   it('should create gallery component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have ngx-gallery component', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ngx-gallery')).not.toBeNull();
+  });
 });

@@ -38,37 +38,37 @@ export class GalleryComponent implements OnInit {
       },
       {
         breakpoint: 991,
-        height: '800px',
+        height: '500px',
         thumbnails: false
       },
       {
         breakpoint: 767,
-        height: '600px'
+        height: '400px'
       }
     ];
 
     // TODO: Change href on routerLink, issue #87.
     this.galleryImages = [
       {
-        small: './assets/cyber-security.jpg',
-        medium: './assets/cyber-security.jpg',
         big: './assets/cyber-security.jpg',
         description:
-          'Some kind of description goes here... <a href="/cyber-security">Cyber Security</a>'
+          'Some kind of description goes here... Some kind of description goes here...<br><br><a href="/cyber-security">Cyber Security</a>',
+        medium: './assets/cyber-security.jpg',
+        small: './assets/cyber-security.jpg'
       },
       {
-        small: 'assets/digital-strategy.jpg',
-        medium: 'assets/digital-strategy.jpg',
         big: 'assets/digital-strategy.jpg',
         description:
-          'Some kind of description goes here... <a href="/digital-strategy">Digital Strategy</a>'
+          'Some kind of description goes here... Some kind of description goes here...<br><br><a href="/digital-strategy">Digital Strategy</a>',
+        medium: 'assets/digital-strategy.jpg',
+        small: 'assets/digital-strategy.jpg'
       },
       {
-        small: 'assets/software-development.jpg',
-        medium: 'assets/software-development.jpg',
         big: 'assets/software-development.jpg',
         description:
-          'Some kind of description goes here... <a href="/software-development">Software Development</a>'
+          'Some kind of description goes here... Some kind of description goes here...<br><br><a href="/software-development">Software Development</a>',
+        medium: 'assets/software-development.jpg',
+        small: 'assets/software-development.jpg'
       }
     ];
   }

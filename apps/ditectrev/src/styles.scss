@@ -85,3 +85,13 @@ footer {
 mat-tab-body {
   margin-top: 20px;
 }
+
+app-gallery {
+  a {
+    color: #039be5;
+    &:hover {
+      color: #7afffb;
+      transition: 1s;
+    }
+  }
+}

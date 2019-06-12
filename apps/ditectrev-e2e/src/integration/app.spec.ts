@@ -1,4 +1,9 @@
-import { getParagraph, getTitle } from '../support/app.po';
+import {
+  getCanvas,
+  getGallery,
+  getParagraph,
+  getTitle
+} from '../support/app.po';
 
 // TODO: Add more E2E tests at the end of this project.
 describe('Page: About us', () => {
@@ -71,6 +76,20 @@ describe('Page: Glossary', () => {
   it('should display glossary paragraph', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
     getParagraph().contains('glossary works!');
+  });
+});
+
+describe('Page: Home', () => {
+  beforeEach(() => cy.visit('/'));
+
+  it('should display particles animation', () => {
+    cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
+    getCanvas();
+  });
+
+  it('should display gallery', () => {
+    cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
+    getGallery();
   });
 });
 
