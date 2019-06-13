@@ -27,52 +27,40 @@ export class TestimonialsComponent {
   };
 
   public slidesItems: {
-    alt: string;
     id: string;
     name: string;
     position: string;
-    title: string;
     src: string;
   }[] = [
     {
-      alt: 'Cyber Security',
       id: '1',
       name: 'John Boe',
       position: 'CEO of XYZ',
-      src: 'assets/man.png',
-      title: 'Cyber Security'
+      src: 'assets/man.png'
     },
     {
-      alt: 'Digital Strategy',
       id: '2',
       name: 'Kate Jackson',
       position: 'Manager of ABC',
-      src: 'assets/woman.png',
-      title: 'Digital Strategy'
+      src: 'assets/woman.png'
     },
     {
-      alt: 'Software Development',
       id: '3',
       name: 'John Boe',
       position: 'CEO of XYZ',
-      src: 'assets/man.png',
-      title: 'Software Development'
+      src: 'assets/man.png'
     },
     {
-      alt: 'Cyber Security',
       id: '4',
       name: 'Kate Jackson',
       position: 'Manager of ABC',
-      src: 'assets/woman.png',
-      title: 'Cyber Security'
+      src: 'assets/woman.png'
     },
     {
-      alt: 'Digital Strategy',
       id: '5',
       name: 'John Doe',
       position: 'CEO of XYZ',
-      src: 'assets/man.png',
-      title: 'Digital Strategy'
+      src: 'assets/man.png'
     }
   ];
 }

@@ -1,0 +1,26 @@
+#particles-js {
+  height: 100vh;
+}
+
+#heading {
+  margin-top: 30vh;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  p {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  #heading {
+    margin-top: 20vh;
+  }
+}
+
+@media (max-width: 767px) {
+  #heading {
+    margin-top: 10vh;
+  }
+}

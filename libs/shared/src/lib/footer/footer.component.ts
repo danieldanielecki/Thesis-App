@@ -14,6 +14,7 @@ import {
 import { FormControl, Validators } from '@angular/forms';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+// TODO: Social icons only LinkedIn, Medium and Twitter.
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
