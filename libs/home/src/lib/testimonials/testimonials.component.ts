@@ -8,60 +8,71 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class TestimonialsComponent {
   public customOptions: OwlOptions = {
-    animateIn: true,
+    animateIn: 'bounceInRight',
+    animateOut: 'bounceOutLeft',
     autoHeight: false,
+    autoplay: true,
+    autoplayTimeout: 4000,
     autoWidth: false,
+    center: true,
+    dots: true,
+    dotsSpeed: 1000,
     items: 1,
     loop: true,
     mouseDrag: true,
-    touchDrag: true,
+    nav: false,
     pullDrag: true,
-    dots: true,
-    nav: false
+    smartSpeed: 500,
+    touchDrag: true
   };
 
-  // TODO: Optimize the images to be more efficient/modern format of images.
   public slidesItems: {
     alt: string;
     id: string;
+    name: string;
+    position: string;
     title: string;
     src: string;
   }[] = [
     {
       alt: 'Cyber Security',
       id: '1',
-      src: 'assets/cyber-security.jpg',
+      name: 'John Boe',
+      position: 'CEO of XYZ',
+      src: 'assets/man.png',
       title: 'Cyber Security'
     },
     {
       alt: 'Digital Strategy',
       id: '2',
-      src: 'assets/digital-strategy.jpg',
+      name: 'Kate Jackson',
+      position: 'Manager of ABC',
+      src: 'assets/woman.png',
       title: 'Digital Strategy'
     },
     {
       alt: 'Software Development',
       id: '3',
-      src: 'assets/software-development.jpg',
+      name: 'John Boe',
+      position: 'CEO of XYZ',
+      src: 'assets/man.png',
       title: 'Software Development'
     },
     {
       alt: 'Cyber Security',
       id: '4',
-      src: 'assets/cyber-security.jpg',
+      name: 'Kate Jackson',
+      position: 'Manager of ABC',
+      src: 'assets/woman.png',
       title: 'Cyber Security'
     },
     {
       alt: 'Digital Strategy',
       id: '5',
-      src: 'assets/digital-strategy.jpg',
+      name: 'John Doe',
+      position: 'CEO of XYZ',
+      src: 'assets/man.png',
       title: 'Digital Strategy'
-    },
-    {
-      alt: 'Software Development',
-      id: '6',
-      src: 'assets/software-development.jpg',
-      title: 'Software Development'
     }
   ];
 }

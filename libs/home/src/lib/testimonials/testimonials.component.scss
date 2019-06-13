@@ -1,6 +1,11 @@
-// TODO: Work on this.
-.shadow-effect {
-  background: #fff;
+img {
+  margin: auto;
+  max-width: 100px;
+}
+
+.block-item {
+  background: white;
+  padding: 30px 0 10px;
   text-align: center;
 }
 
@@ -8,14 +13,7 @@
   background: #007bff;
   border-radius: 20px;
   color: white;
-  margin: 0 auto;
+  margin: 10px auto 20px;
   padding: 10px 30px;
-  text-align: center;
   width: 170px;
-}
-
-img {
-  margin: auto;
-  border-radius: 50%;
-  max-width: 100px;
 }

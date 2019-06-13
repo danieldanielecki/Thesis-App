@@ -1,19 +1,19 @@
 <owl-carousel-o [options]="customOptions">
   <ng-container *ngFor="let slidesItem of slidesItems">
     <ng-template carouselSlide [id]="slidesItem.id">
-      <div class="shadow-effect">
-        <a [owlRouterLink]="['/cyber-security']">
-          <img
-            [src]="slidesItem.src"
-            [alt]="slidesItem.alt"
-            [title]="slidesItem.title"
-        /></a>
+      <div class="block-item">
+        <img
+          [src]="slidesItem.src"
+          [alt]="slidesItem.alt"
+          [title]="slidesItem.title"
+        />
         <p>
           Some opinion goes here... Some opinion goes here... Some opinion goes
           here... Some opinion goes here...
         </p>
+        <div class="testimonial-name">{{ slidesItem.name }}</div>
+        <strong>{{ slidesItem.position }}</strong>
       </div>
-      <div class="testimonial-name">NAME SURNAME</div>
     </ng-template>
   </ng-container>
 </owl-carousel-o>
