@@ -3,7 +3,7 @@ declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@libs/core/src/index';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { HomeModule } from '@libs/home/src/index';
 import { NgModule } from '@angular/core';
 import { NxModule } from '@nrwl/nx';
