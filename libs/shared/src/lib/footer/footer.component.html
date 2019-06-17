@@ -64,6 +64,16 @@
             type="email"
           />
           <mat-hint>Email for a newsletter.</mat-hint>
+          <mat-error
+            *ngIf="
+              formControlEmail.hasError('email') &&
+              !formControlEmail.hasError('required')
+            "
+            >This is an <strong>invalid</strong> email address.</mat-error
+          >
+          <mat-error *ngIf="formControlEmail.hasError('required')"
+            >Email is <strong>required</strong>.</mat-error
+          >
         </mat-form-field>
       </form>
       <button

@@ -107,7 +107,7 @@ export class FooterComponent {
     }
   ];
 
-  // TODO: Add hidden captcha on submit and reactive form (live errors aren't working).
+  // TODO: Add hidden captcha on submit.
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)
