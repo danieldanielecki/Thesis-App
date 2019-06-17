@@ -1,3 +1,4 @@
+// TODO: Move all UI modules here.
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CommonModule } from '@angular/common';
 import {
@@ -38,10 +39,13 @@ import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent],
   exports: [
+    HttpClientModule,
+    HttpClientJsonpModule,
     CarouselModule,
     CommonModule,
     FlexLayoutModule,
@@ -78,6 +82,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   imports: [
+    HttpClientModule,
+    HttpClientJsonpModule,
     CarouselModule,
     CommonModule,
     FlexLayoutModule,

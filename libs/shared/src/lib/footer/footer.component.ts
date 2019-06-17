@@ -12,7 +12,13 @@ import {
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { FormControl, Validators } from '@angular/forms';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
+
+interface ResponseMailChimp {
+  result: string;
+  msg: string;
+}
 
 // TODO: Social icons only LinkedIn, Medium and Twitter.
 @Component({
@@ -21,7 +27,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  public constructor() {
+  public constructor(private httpClient: HttpClient) {
     library.add(faAt);
     library.add(faFacebookF);
     library.add(faHome);
@@ -32,11 +38,18 @@ export class FooterComponent {
     library.add(faTwitter);
   }
 
-  public currentDate: Date = new Date();
   public formControlEmail: FormControl = new FormControl(null, [
     Validators.email,
+    Validators.maxLength(512),
+    Validators.minLength(6),
     Validators.required
-  ]); // TODO: Check if not unify it to reactive forms like in contact, but only if it'll be doable to implement error state matcher into reactive forms.
+  ]);
+
+  public currentDate: Date = new Date();
+  public endpointMailChimp =
+    'https://ditectrev.us15.list-manage.com/subscribe/post-json?u=f47a9bf63c687219a336b35ed&amp;id=d68066abca&';
+  public error = '';
+  public submitted = false;
 
   public bottomMenuItems: { name: string; path: string }[] = [
     { name: 'Copyrights', path: 'copyrights' },
@@ -93,4 +106,30 @@ export class FooterComponent {
       url: 'https://twitter.com/'
     }
   ];
+
+  // TODO: Add hidden captcha on submit and reactive form (live errors aren't working).
+  public onSubmit(): void {
+    const params = new HttpParams()
+      .set('EMAIL', this.formControlEmail.value)
+      .set('b_f47a9bf63c687219a336b35ed_d68066abca', ''); // Hidden input.
+    const urlMailChimp = this.endpointMailChimp + params.toString();
+
+    this.httpClient.jsonp<ResponseMailChimp>(urlMailChimp, 'c').subscribe(
+      response => {
+        if (response.result && response.result !== 'error') {
+          this.submitted = true;
+          alert('Thank you for subscribing into our list.'); // TODO: Make this a SweetAlert (as any other user interaction).
+        } else {
+          this.error = response.msg;
+          console.error(this.error);
+          alert('An error with response occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
+        }
+      },
+      error => {
+        console.error(error);
+        alert('An error occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
+      }
+    );
+    this.formControlEmail.reset(); // Reset the mail input.
+  }
 }
