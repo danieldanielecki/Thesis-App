@@ -9,6 +9,12 @@ if (environment.production) {
   enableProdMode();
 }
 
+// Workaround for service worker, issue #13351.
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
+  .then(() => {
+    if ('serviceWorker' in navigator && environment.production) {
+      navigator.serviceWorker.register('./ngsw-worker.js');
+    }
+  })
   .catch(err => console.error(err));
