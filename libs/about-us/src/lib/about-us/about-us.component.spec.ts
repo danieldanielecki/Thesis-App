@@ -1,7 +1,7 @@
 import { AboutUsComponent } from './about-us.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 describe('AboutUsComponent', () => {
   let component: AboutUsComponent;

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DigitalStrategyComponent } from './digital-strategy.component';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 describe('DigitalStrategyComponent', () => {
   let component: DigitalStrategyComponent;

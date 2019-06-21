@@ -6,7 +6,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 // TODO: Make unit tests of methods, currently it's problematic.
 describe('ContactComponent', () => {

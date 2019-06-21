@@ -1,7 +1,7 @@
 import { DigitalStrategyComponent } from './digital-strategy/digital-strategy.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 @NgModule({
   declarations: [DigitalStrategyComponent],

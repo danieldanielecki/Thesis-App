@@ -2,9 +2,9 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeModule } from '@libs/home/src/index';
+import { HomeModule } from 'libs/home/src/lib/home.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 describe('AppComponent', () => {
   let app: AppComponent;

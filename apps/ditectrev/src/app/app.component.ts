@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeAnimation } from '@libs/utilities/src/lib/fade-animation/fade.animation';
+import { fadeAnimation } from './../../../../libs/utilities/src/lib/fade-animation/fade.animation';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RouterOutlet } from '@angular/router';
 

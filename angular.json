@@ -111,6 +111,24 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/ditectrev-server",
+            "main": "apps/ditectrev/src/main.server.ts",
+            "tsConfig": "apps/ditectrev/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ditectrev/src/environments/environment.ts",
+                  "with": "apps/ditectrev/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
         }
       }
     },

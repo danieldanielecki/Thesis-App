@@ -48,7 +48,7 @@
 
     // List of path mapping entries for module names to locations relative to the baseUrl.
     "paths": {
-      "@libs/*": ["libs/*"]
+      "libs/*": ["libs/*"]
     },
     "traceResolution": false, // Report module resolution log messages.
     "typeRoots": ["node_modules/@types"], // List of folders to include type definitions from.

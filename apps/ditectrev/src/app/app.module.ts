@@ -2,13 +2,14 @@ declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
-import { CoreModule } from '@libs/core/src/index';
-import { HomeModule } from '@libs/home/src/index';
+import { BrowserModule } from '@angular/platform-browser';
+import { CoreModule } from './../../../../libs/core/src/lib/core.module';
+import { HomeModule } from './../../../../libs/home/src/lib/home.module';
 import { NgModule } from '@angular/core';
 import { NxModule } from '@nrwl/nx';
 import { RoutingModule } from './routing/app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 new Agastya(AGASTYA_API_KEY); // TODO: Check the documentation to make it proper.
 
@@ -16,6 +17,7 @@ new Agastya(AGASTYA_API_KEY); // TODO: Check the documentation to make it proper
   bootstrap: [AppComponent],
   declarations: [AppComponent],
   imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
     HomeModule,
     NxModule.forRoot(),

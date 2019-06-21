@@ -1,5 +1,5 @@
 # GitLab uses Docker in the background, so it's required to get the image.
-# TODO: Define functions & modify echo the logs.
+# TODO: Define functions.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
@@ -28,49 +28,13 @@ stages:
 
 # Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
 Build:
-  # Keep the dist/apps/ditectrev folder as an artifact after the app-build job will be done.
+  # Keep the dist folder as an artifact after the app-build job will be done.
   artifacts:
-    expire_in: 1 week
+    expire_in: 1 day
     paths:
-      - dist/apps/ditectrev
+      - dist
     when: always
   script:
-    - echo $CI_BUILD_ID
-    - echo $CI_COMMIT_SHORT_SHA
-    - echo $CI_COMMIT_REF_NAME
-    - echo $CI_COMMIT_REF_SLUG
-    - echo $CI_COMMIT_TAG
-    - echo $CI_JOB_ID
-    - echo $CI_JOB_NAME
-    - echo $CI_JOB_STAGE
-    - echo $CI_JOB_TOKEN
-    - echo $CI_PIPELINE_ID
-    - echo $CI_PIPELINE_IID
-    - echo $CI_PAGES_DOMAIN
-    - echo $CI_PAGES_URL
-    - echo $CI_PROJECT_ID
-    - echo $CI_PROJECT_DIR
-    - echo $CI_PROJECT_NAME
-    - echo $CI_PROJECT_NAMESPACE
-    - echo $CI_PROJECT_PATH
-    - echo $CI_PROJECT_URL
-    - echo $CI_REGISTRY
-    - echo $CI_REGISTRY_IMAGE
-    - echo $CI_REPOSITORY_URL
-    - echo $CI_RUNNER_ID
-    - echo $CI_RUNNER_DESCRIPTION
-    - echo $CI_RUNNER_TAGS
-    - echo $CI_SERVER
-    - echo $CI_SERVER_NAME
-    - echo $CI_SERVER_REVISION
-    - echo $CI_SERVER_VERSION
-    - echo $CI_SERVER_VERSION_MAJOR
-    - echo $CI_SERVER_VERSION_MINOR
-    - echo $CI_SERVER_VERSION_PATCH
-    - echo $GITLAB_USER_ID
-    - echo $GITLAB_USER_EMAIL
-    - echo $CI_REGISTRY_USER
-    - echo $CI_REGISTRY_PASSWORD
     - npm run build:ditectrev
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
@@ -166,11 +130,6 @@ Deploy to Production:
     - master # Corresponding only to the master branch.
   script:
     - npm run deploy
-    - echo $CI_BUILD_REPO
-    - echo $CI_ENVIRONMENT_NAME
-    - echo $CI_ENVIRONMENT_SLUG
-    - echo $CI_JOB_MANUAL
-    - echo $CI_JOB_TRIGGERED
   stage: production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
 

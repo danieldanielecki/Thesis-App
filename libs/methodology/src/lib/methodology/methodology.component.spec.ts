@@ -2,7 +2,7 @@ import 'hammerjs';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MethodologyComponent } from './methodology.component';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 describe('MethodologyComponent', () => {
   let component: MethodologyComponent;

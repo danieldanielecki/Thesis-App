@@ -1,4 +1,4 @@
-import { HomeComponent } from '@libs/home/src/index';
+import { HomeComponent } from './../../../../../libs/home/src/index';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -21,80 +21,85 @@ const routes: Routes = [
   },
   {
     data: { animation: 'about-us' },
-    loadChildren: '@libs/about-us/src/index#AboutUsModule',
+    loadChildren: './../../../../../libs/about-us/src/index#AboutUsModule',
     path: 'about-us'
   },
   {
     data: { animation: 'contact' },
-    loadChildren: '@libs/contact/src/index#ContactModule',
+    loadChildren: './../../../../../libs/contact/src/index#ContactModule',
     path: 'contact'
   },
   {
     data: { animation: 'copyrights' },
-    loadChildren: '@libs/copyrights/src/index#CopyrightsModule',
+    loadChildren: './../../../../../libs/copyrights/src/index#CopyrightsModule',
     path: 'copyrights'
   },
   // TODO: Define subservices in services component.
   {
     data: { animation: 'cyber-security' },
-    loadChildren: '@libs/cyber-security/src/index#CyberSecurityModule',
+    loadChildren:
+      './../../../../../libs/cyber-security/src/index#CyberSecurityModule',
     path: 'cyber-security'
   },
   {
     data: { animation: 'digital-strategy' },
-    loadChildren: '@libs/digital-strategy/src/index#DigitalStrategyModule',
+    loadChildren:
+      './../../../../../libs/digital-strategy/src/index#DigitalStrategyModule',
     path: 'digital-strategy'
   },
   {
     data: { animation: 'faq' },
-    loadChildren: '@libs/faq/src/index#FaqModule',
+    loadChildren: './../../../../../libs/faq/src/index#FaqModule',
     path: 'faq'
   },
   {
     data: { animation: 'glossary' },
-    loadChildren: '@libs/glossary/src/index#GlossaryModule',
+    loadChildren: './../../../../../libs/glossary/src/index#GlossaryModule',
     path: 'glossary'
   },
   {
     data: { animation: 'methodology' },
-    loadChildren: '@libs/methodology/src/index#MethodologyModule',
+    loadChildren:
+      './../../../../../libs/methodology/src/index#MethodologyModule',
     path: 'methodology'
   },
   {
     data: { animation: 'partnerships' },
-    loadChildren: '@libs/partnerships/src/index#PartnershipsModule',
+    loadChildren:
+      './../../../../../libs/partnerships/src/index#PartnershipsModule',
     path: 'partnerships'
   },
   {
     data: { animation: 'privacy-and-security' },
     loadChildren:
-      '@libs/privacy-and-security/src/index#PrivacyAndSecurityModule',
+      './../../../../../libs/privacy-and-security/src/index#PrivacyAndSecurityModule',
     path: 'privacy-and-security'
   },
   {
     data: { animation: 'services' },
-    loadChildren: '@libs/services/src/index#ServicesModule',
+    loadChildren: './../../../../../libs/services/src/index#ServicesModule',
     path: 'services'
   },
   {
     data: { animation: 'sitemap' },
-    loadChildren: '@libs/sitemap/src/index#SitemapModule',
+    loadChildren: './../../../../../libs/sitemap/src/index#SitemapModule',
     path: 'sitemap'
   },
   {
     data: { animation: 'software-development' },
     loadChildren:
-      '@libs/software-development/src/index#SoftwareDevelopmentModule',
+      './../../../../../libs/software-development/src/index#SoftwareDevelopmentModule',
     path: 'software-development'
   },
   {
     data: { animation: 'terms-of-use' },
-    loadChildren: '@libs/terms-of-use/src/index#TermsOfUseModule',
+    loadChildren:
+      './../../../../../libs/terms-of-use/src/index#TermsOfUseModule',
     path: 'terms-of-use'
   },
   {
     data: { animation: 'not-found' },
-    loadChildren: '@libs/not-found/src/index#NotFoundModule',
+    loadChildren: './../../../../../libs/not-found/src/index#NotFoundModule',
     path: 'not-found'
   },
   // It's important that wildcard route has to be the last element in array of routes, because routes parses from top to bottom.

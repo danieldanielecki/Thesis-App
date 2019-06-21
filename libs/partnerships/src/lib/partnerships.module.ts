@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PartnershipsComponent } from './partnerships/partnerships.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '@libs/shared/src/index';
+import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
 
 @NgModule({
   declarations: [PartnershipsComponent],
