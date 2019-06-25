@@ -25,23 +25,29 @@ if (isCiBuild) {
   recaptchaApiKey = secrets.RECAPTCHA_API_KEY;
 }
 
+// Nest server for SSR.
 const config = WebpackConfigFactory.create(webpack, {
-  server: './server/main.ts' // Nest server for SSR.
+  server: './server/main.ts'
 });
+
+// Set up output folder.
 config.output = {
-  // Puts the output at the root of the dist folder
-  path: path.join(__dirname, 'dist/apps/ditectrev-server'),
-  filename: '[name].js'
+  filename: '[name].js',
+  library: 'ditectrev',
+  libraryTarget: 'umd',
+  path: path.join(__dirname, 'dist/apps/ditectrev-server')
 };
+
+// Define plugins.
 config.plugins = [
+  // Fix WARNING Critical dependency: the request of a dependency is an expression.
   new webpack.ContextReplacementPlugin(
-    // Fix WARNING Critical dependency: the request of a dependency is an expression.
     /(.+)?angular(\\|\/)core(.+)?/,
     path.join(__dirname, 'apps/ditectrev/src'), // location of your src
     {} // a map of your routes
   ),
+  // Fix WARNING Critical dependency: the request of a dependency is an expression.
   new webpack.ContextReplacementPlugin(
-    // Fix WARNING Critical dependency: the request of a dependency is an expression.
     /(.+)?express(\\|\/)(.+)?/,
     path.join(__dirname, 'apps/ditectrev/src'),
     {}

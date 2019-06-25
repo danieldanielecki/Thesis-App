@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:nx-enforce-module-boundaries
 import { fadeAnimation } from './../../../../libs/utilities/src/lib/fade-animation/fade.animation';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RouterOutlet } from '@angular/router';

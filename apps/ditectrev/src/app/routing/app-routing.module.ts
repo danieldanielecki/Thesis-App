@@ -1,3 +1,4 @@
+// tslint:disable-next-line:nx-enforce-module-boundaries
 import { HomeComponent } from './../../../../../libs/home/src/index';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

@@ -1,7 +1,8 @@
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
-import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
+// tslint:disable-next-line:nx-enforce-module-boundaries
+import { SharedModule } from './../../../../libs/shared/src/index';
 import { SliderComponent } from './slider/slider.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 

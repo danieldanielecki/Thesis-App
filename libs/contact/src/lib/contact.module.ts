@@ -12,7 +12,8 @@ import {
 } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
+// tslint:disable-next-line:nx-enforce-module-boundaries
+import { SharedModule } from './../../../../libs/shared/src/index';
 
 @NgModule({
   declarations: [ContactComponent],

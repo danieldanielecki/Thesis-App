@@ -7,6 +7,10 @@
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --poll 1",
     "build:ditectrev": "ng build --prod --project=ditectrev",
+    "build:ditectrev:ssr": "npm run build:client-and-server-bundles:ditectrev:ssr && npm run compile:ditectrev:server --project=ditectrev",
+    "build:client-and-server-bundles:ditectrev:ssr": "npm run build:ditectrev && ng run ditectrev:server:production",
+    "build-and-serve:ditectrev:ssr": "npm run build:ditectrev:ssr && npm run serve:ditectrev:ssr",
+    "compile:ditectrev:server": "webpack --config webpack.server.config.js --progress --colors",
     "lint": "./node_modules/.bin/nx lint && ng lint --type-check",
     "test": "ng test || exit 0",
     "e2e": "ng e2e",
@@ -29,11 +33,7 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
     "serve": "node serve-script",
-    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/apps/ditectrev-server/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "npm run build:ditectrev && ng run ditectrev:server:production",
-    "go": "npm run build:ssr && npm run serve:ssr"
+    "serve:ditectrev:ssr": "node dist/apps/ditectrev-server/server"
   },
   "private": true,
   "dependencies": {

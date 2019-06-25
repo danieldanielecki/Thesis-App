@@ -2,7 +2,7 @@ import 'hammerjs';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ServicesComponent } from './services.component';
-import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
+import { SharedModule } from '@libs/shared/src/index';
 
 describe('ServicesComponent', () => {
   let component: ServicesComponent;

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
+// tslint:disable-next-line:nx-enforce-module-boundaries
+import { SharedModule } from './../../../../libs/shared/src/index';
 import { SoftwareDevelopmentComponent } from './software-development/software-development.component';
 
 @NgModule({

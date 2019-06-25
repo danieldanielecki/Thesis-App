@@ -5,14 +5,14 @@ import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader'
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 
-// TODO: Flexbox isn't working on SSR.
+// TODO: Relative paths aren't working on SSR, issue #164.
 @NgModule({
+  bootstrap: [AppComponent],
   imports: [
     AppModule,
     FlexLayoutServerModule,
     ModuleMapLoaderModule,
     ServerModule
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppServerModule {}

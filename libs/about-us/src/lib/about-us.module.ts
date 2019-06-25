@@ -2,7 +2,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './../../../../libs/shared/src/lib/shared.module';
+// tslint:disable-next-line:nx-enforce-module-boundaries
+import { SharedModule } from './../../../../libs/shared/src/index';
 
 @NgModule({
   declarations: [AboutUsComponent],

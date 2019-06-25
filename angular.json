@@ -20,7 +20,7 @@
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js"
             },
-            "outputPath": "dist/apps/ditectrev",
+            "outputPath": "dist/apps/ditectrev-browser",
             "index": "apps/ditectrev/src/index.html",
             "main": "apps/ditectrev/src/main.ts",
             "polyfills": "apps/ditectrev/src/polyfills.ts",

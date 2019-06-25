@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 // TODO: providers from UtilitiesModules doesn't work, fix it.
-// import { UtilitiesModule } from 'libs/utilities/src/lib/utilities.module';
+// import { UtilitiesModule } from 'libs/utilities/src/index';
 
 @NgModule({
   exports: [
