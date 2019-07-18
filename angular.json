@@ -20,9 +20,9 @@
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js"
             },
-            "outputPath": "dist/apps/ditectrev-browser",
+            "outputPath": "functions/dist/apps/ditectrev-browser",
             "index": "apps/ditectrev/src/index.html",
-            "main": "apps/ditectrev/src/main.ts",
+            "main": "apps/ditectrev/src/main.browser.ts",
             "polyfills": "apps/ditectrev/src/polyfills.ts",
             "tsConfig": "apps/ditectrev/tsconfig.app.json",
             "assets": [
@@ -115,8 +115,8 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/apps/ditectrev-server",
             "main": "apps/ditectrev/src/main.server.ts",
+            "outputPath": "functions/dist/apps/ditectrev-server",
             "tsConfig": "apps/ditectrev/tsconfig.server.json"
           },
           "configurations": {

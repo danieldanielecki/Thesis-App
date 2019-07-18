@@ -1,3 +1,5 @@
+// TODO: Remove this once figuring out how to make 1 webpack on SSR, i.e. all should be from webpack.config.json.
+
 const webpack = require('webpack');
 
 const isCiBuild = !!process.env.CI; // Indicate that this is a CI environment.

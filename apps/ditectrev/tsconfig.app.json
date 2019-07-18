@@ -5,6 +5,7 @@
     "types": ["node"] // List of names of type definitions to include.
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
+  // IMPORTANT: in order to enable lazy loading in Nx these paths must be absolute in this file.
   "include": [
     "**/*.ts",
     "./../../libs/about-us/src/index.ts",

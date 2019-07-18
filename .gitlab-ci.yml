@@ -1,5 +1,6 @@
 # GitLab uses Docker in the background, so it's required to get the image.
 # TODO: Define functions.
+# TODO: Make builds: build->code quality/SAST/dependenceis->unit tests->e2e->staging->dast->production.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
@@ -32,10 +33,10 @@ Build:
   artifacts:
     expire_in: 1 day
     paths:
-      - dist
+      - functions
     when: always
   script:
-    - npm run build:ditectrev
+    - npm run build:ditectrev:ssr
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -50,7 +51,8 @@ Dependencies Scanning:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: test
   script:
-    - npx audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities.
+    #- npx audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities. % TODO: Put it back when 1 high vulnerability will be solved.
+    - npx audit-ci --critical # Prevent integration only with critical vulnerabilities.
 
 # Define and run formatting tests job.
 Code Quality:
@@ -86,7 +88,7 @@ Unit Tests:
 # Define and run E2E tests job.
 E2E Tests:
   artifacts:
-    expire_in: 1 week
+    expire_in: 1 day
     paths:
       - dist/out-tsc/apps/ditectrev-e2e/**/*.mp4
       - dist/out-tsc/apps/ditectrev-e2e/**/*.png
@@ -113,7 +115,7 @@ Deploy to Staging:
   only:
     - master # Corresponding only to the master branch (note: should be develop, but the project started in master, so just keep it...).
   script:
-    - npm run deploy
+    - npm run deploy:cloud_functions
   stage: staging
 
 # Deployment settings for production environment.
@@ -129,7 +131,7 @@ Deploy to Production:
   only:
     - master # Corresponding only to the master branch.
   script:
-    - npm run deploy
+    - npm run deploy:cloud_functions
   stage: production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
 

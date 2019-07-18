@@ -20,7 +20,7 @@ interface ResponseMailChimp {
   msg: string;
 }
 
-// TODO: Social icons only LinkedIn, Medium and Twitter.
+// TODO: Social icons Facebook, Instagram, LinkedIn, Medium, Twitter and YouTube [with education included, when courses will be done then CodeSandbox, GitHub, Slack too].
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

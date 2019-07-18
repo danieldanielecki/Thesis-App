@@ -1,4 +1,11 @@
-declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
+// TODO: Check all config files like with tsconfig's.
+// TODO: Make everything alphabetically.
+// TODO: Check in terms of AOT is the methods really must be public (almost) everywhere in components.
+// TODO: Add Animate on Scroll in many places.
+// TODO: Check TSLint options.
+// TODO: Check compiler options.
+// TODO: Unify all imports, remove "./".
+// TODO: Check angular.json and all compiling options.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
@@ -14,13 +21,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 // tslint:disable-next-line:nx-enforce-module-boundaries
 import { SharedModule } from './../../../../libs/shared/src/index';
 
+declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
 new Agastya(AGASTYA_API_KEY); // TODO: Check the documentation to make it proper.
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'ditectrevSSR' }), // Unique name across the application. However, some names (e.g. ditectrev.com) causes loosing of defined in component styles.
     CoreModule,
     HomeModule,
     NxModule.forRoot(),

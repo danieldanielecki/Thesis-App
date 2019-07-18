@@ -39,13 +39,10 @@ import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent],
   exports: [
-    HttpClientModule,
-    HttpClientJsonpModule,
     CarouselModule,
     CommonModule,
     FlexLayoutModule,
@@ -82,8 +79,6 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     RouterModule
   ],
   imports: [
-    HttpClientModule,
-    HttpClientJsonpModule,
     CarouselModule,
     CommonModule,
     FlexLayoutModule,

@@ -8,8 +8,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class TestimonialsComponent {
   public customOptions: OwlOptions = {
-    animateIn: 'bounceInRight',
-    animateOut: 'bounceOutLeft',
+    animateIn: 'fadeInRight',
+    animateOut: 'fadeOutLeft',
     autoHeight: false,
     autoplay: true,
     autoplayTimeout: 4000,

@@ -1,3 +1,7 @@
+/* Custom webpack properties. */
+// TODO: Check others webpack options.
+
+const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const webpack = require('webpack');
 const WebpackConfigFactory = require('@nestjs/ng-universal')
@@ -25,17 +29,22 @@ if (isCiBuild) {
   recaptchaApiKey = secrets.RECAPTCHA_API_KEY;
 }
 
-// Nest server for SSR.
+// Nest server's bundle for SSR.
 const config = WebpackConfigFactory.create(webpack, {
-  server: './server/main.ts'
+  server: './server/main.nest.ts'
+});
+
+// Ignore all "node_modules" when making bundle on the server.
+config.externals = nodeExternals({
+  // The whitelisted ones will be included in the bundle.
+  whitelist: [/^ng-circle-progress/, /^ng2-tel-input/]
 });
 
 // Set up output folder.
 config.output = {
-  filename: '[name].js',
-  library: 'ditectrev',
-  libraryTarget: 'umd',
-  path: path.join(__dirname, 'dist/apps/ditectrev-server')
+  filename: 'index.js', // Important in terms of Firebase Cloud Functions, because this is the default starting file to execute Cloud Functions.
+  libraryTarget: 'umd', // Important in terms of Firebase Cloud Functions, because otherwise function can't be triggered in functions directory.
+  path: path.join(__dirname, 'functions') // Output path.
 };
 
 // Define plugins.
@@ -43,13 +52,13 @@ config.plugins = [
   // Fix WARNING Critical dependency: the request of a dependency is an expression.
   new webpack.ContextReplacementPlugin(
     /(.+)?angular(\\|\/)core(.+)?/,
-    path.join(__dirname, 'apps/ditectrev/src'), // location of your src
-    {} // a map of your routes
+    path.join(__dirname, 'apps/ditectrev/src'), // Location of source files.
+    {} // Map of routes.
   ),
   // Fix WARNING Critical dependency: the request of a dependency is an expression.
   new webpack.ContextReplacementPlugin(
     /(.+)?express(\\|\/)(.+)?/,
-    path.join(__dirname, 'apps/ditectrev/src'),
+    path.join(__dirname, 'apps/ditectrev/src'), // Location of source files.
     {}
   ),
   // Export the secrets as ready to inject global variables across the application (declare const SECRET_NAME: string; is still required in the module where it's supposed to be injected).
@@ -60,5 +69,7 @@ config.plugins = [
     RECAPTCHA_API_KEY: JSON.stringify(recaptchaApiKey)
   })
 ];
+
+config.target = 'node'; // It makes sure not to bundle built-in modules like "fs", "path", etc.
 
 module.exports = config; // Export all custom configs.

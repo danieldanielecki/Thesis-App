@@ -16,3 +16,5 @@ import { ServerModule } from '@angular/platform-server';
   ]
 })
 export class AppServerModule {}
+
+// TODO: Check particles.js and other libraries accessing DOM Firebase hosting as a SSR.

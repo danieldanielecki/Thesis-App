@@ -1,0 +1,104 @@
+{
+  "configVersion": 1,
+  "timestamp": 1563454940051,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/10.3019b06bb7eacc05df00.js",
+        "/11.339d84b3c4a57a0c2efe.js",
+        "/12.bfecf20bea85c15e60fb.js",
+        "/13.c00342990feea555d204.js",
+        "/14.1eaab73905eb5b2a7f7f.js",
+        "/15.8b28356cdcfbb2cde9b3.js",
+        "/16.7f67c533cc497c6f8689.js",
+        "/17.20b8fecbdf8ccdb91715.js",
+        "/18.f5d7db81316923392e5d.js",
+        "/19.0d37a5111d7b27118a8b.js",
+        "/5.2cc23abfc4d603071575.js",
+        "/6.2d05d60df488bd18cecf.js",
+        "/7.26fa4f68c129b7f2c09e.js",
+        "/8.f90ff9c88a3e1f4fd255.js",
+        "/9.5af3b46e6cca0364a134.js",
+        "/common.b74e4c88965b8b116a9d.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.9e9819a7b2b040d7d404.js",
+        "/polyfills.323fc7dca70f25a7a4bc.js",
+        "/runtime.83b8c693fb88173b1b58.js",
+        "/scripts.6bcc61e3eb28a929851a.js",
+        "/styles.51d5b93dfe6f985fe0b8.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/cyber-security.jpg",
+        "/assets/digital-strategy.jpg",
+        "/assets/man.png",
+        "/assets/software-development.jpg",
+        "/assets/woman.png",
+        "/flags.416250f60d785a2e02f1.png",
+        "/flags@2x.d429a5777afaf2fc3496.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/10.3019b06bb7eacc05df00.js": "06c8393742f714e4399890e5a6c24dafa7151971",
+    "/11.339d84b3c4a57a0c2efe.js": "0c88b1645829bad1785592f7fbff3f8abb9c0aa1",
+    "/12.bfecf20bea85c15e60fb.js": "84e7030507927dca4d4f81db3c5a8a14a2042850",
+    "/13.c00342990feea555d204.js": "9b8f543436e62b190a42da5cabd87cfa857b2ee9",
+    "/14.1eaab73905eb5b2a7f7f.js": "dadb67caedc8b3da7a00ee1b1e3d183c330a8cba",
+    "/15.8b28356cdcfbb2cde9b3.js": "8c8e2ae1b7f73613f0ddfcde6f64b5435df6e6d8",
+    "/16.7f67c533cc497c6f8689.js": "4bf3a51f7b48131895929761dbe9c7c471ab8f7e",
+    "/17.20b8fecbdf8ccdb91715.js": "87805b2c03141c8f003c7bf6861aba5e417c054e",
+    "/18.f5d7db81316923392e5d.js": "dca290fbbbd6ab63b4175229fc151868bca11da9",
+    "/19.0d37a5111d7b27118a8b.js": "f5cabca2e8b5327497bec36a56371e2b7cc2c166",
+    "/5.2cc23abfc4d603071575.js": "522babc1ee2a163fc9249fe16df732f90717c434",
+    "/6.2d05d60df488bd18cecf.js": "e8c2e6c77dd39dc3f4e8b5814b39eb587ee519e2",
+    "/7.26fa4f68c129b7f2c09e.js": "f08de64f8605ef302ed9603788c200074847121d",
+    "/8.f90ff9c88a3e1f4fd255.js": "21c30b7264fa327bdf7599f3fe42d3190c882fea",
+    "/9.5af3b46e6cca0364a134.js": "8cb4dd102262ac8c7b29606786a39da8aef63457",
+    "/assets/cyber-security.jpg": "e2b645dbb0d5a4cf3f7ebf8842928c9bf0c976c0",
+    "/assets/digital-strategy.jpg": "9d45b8f9aaa9d233fff1ba06a00c5db7cd745c4f",
+    "/assets/man.png": "d0dd3ed7ce8738f7546339d25327f9e74b1b0234",
+    "/assets/software-development.jpg": "2ff5fdbc362ca5b16d7ef8e0e0a24df9e7704778",
+    "/assets/woman.png": "994e23b2333823a5f8c03650c6088f52e1ca45bf",
+    "/common.b74e4c88965b8b116a9d.js": "de8fc50697eb4e3b3ceef3772bf9bf74bc3034be",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/flags.416250f60d785a2e02f1.png": "21572c9751e5a3dc20395befa0fcb349c32c4811",
+    "/flags@2x.d429a5777afaf2fc3496.png": "d6f843711c3cfe6d9a037e4c61d293f563e55802",
+    "/index.html": "3b19b9a8ce935e1e018624a2a8e69db4c14878bd",
+    "/main.9e9819a7b2b040d7d404.js": "044f81c0792d04c53fbeb966eb6e18e9e7a333b1",
+    "/polyfills.323fc7dca70f25a7a4bc.js": "88062f5f2668aa169fecdd36e7e66a44ad140060",
+    "/runtime.83b8c693fb88173b1b58.js": "52569852fd8a931c61ec6258d45e8788c3bb5871",
+    "/scripts.6bcc61e3eb28a929851a.js": "5d2c7f63a1ec78239c7ef53ca853e3ac1873badb",
+    "/styles.51d5b93dfe6f985fe0b8.css": "10bf5a1c6288a581b7c36cdcd3f968535ef125fa"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

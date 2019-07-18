@@ -1,12 +1,15 @@
 {
   "hosting": {
-    "public": "dist/apps/ditectrev-browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "public": "functions/dist/apps/ditectrev-browser",
     "rewrites": [
       {
         "function": "angularUniversalFunction",
         "source": "**"
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
   }
 }

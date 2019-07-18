@@ -14,7 +14,6 @@ interface FaqQuestions {
   questions?: FaqQuestions[];
 }
 
-// TODO: Make constants folder and put it there. Make all constants in the same format.
 export const FAQ_QUESTIONS: FaqQuestions[] = [
   {
     category: 'Basics',

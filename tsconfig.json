@@ -62,5 +62,5 @@
     "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.
     "stripInternal": false // Do not emit declarations for code that has an /** @internal */ JSDoc annotation.
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["dist", "node_modules", "tmp"]
 }
