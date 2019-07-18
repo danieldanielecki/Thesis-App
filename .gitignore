@@ -46,3 +46,5 @@ Thumbs.db
 .ash_history
 .firebase
 firebase-debug.log
+functions/dist
+functions/index.js
