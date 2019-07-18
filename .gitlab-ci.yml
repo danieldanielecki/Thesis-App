@@ -115,6 +115,7 @@ Deploy to Staging:
   only:
     - master # Corresponding only to the master branch (note: should be develop, but the project started in master, so just keep it...).
   script:
+    - npm run predeploy
     - npm run deploy:cloud_functions
   stage: staging
 
@@ -131,6 +132,7 @@ Deploy to Production:
   only:
     - master # Corresponding only to the master branch.
   script:
+    - npm run predeploy
     - npm run deploy:cloud_functions
   stage: production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
