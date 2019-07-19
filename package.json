@@ -2,7 +2,7 @@
   "author": "Daniel Danielecki",
   "description": "Master's thesis application about security in Angular",
   "name": "app",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "license": "ISC",
   "scripts": {
     "ng": "ng",

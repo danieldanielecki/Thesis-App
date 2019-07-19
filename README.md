@@ -27,11 +27,23 @@ Focus is to achieve high quality source code by using programming best practices
 - `ng generate component component-name --project=myapp` - generate new component, can be used as `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 - `ng build --project=myapp` - build project.
 - `ng serve` - build, and serve project.
+- `ng update` - check which packages are ready to update.
+- `ng update --all` - update all packages.
+- `ng update PACKAGE_NAME` - update certain package.
 - `ng e2e` - run end-to-end tests.
 - `ng test` - run unit tests.
 - `ng version` - show version of Angular with its core dependencies.
 - `ng lint` - perform static code analysis.
 - `ng help` - show all available commands of the CLI.
+- `npm audit` - display known vulnerabilities in dependencies.
+- `npm audit fix` - fix known vulnerabilities in dependencies.
+- `npm cache clean` - clean cache of npm.
+- `npm info PACKAGE_NAME version` - show the newest version of certain package.
+- `npm list` - show versions of installed packages in project.
+- `npm list | grep PACKAGE_NAME` - show package details with its own depndencies.
+- `npm list -g` - show versions of installed packages globally.
+- `npm list --depth=0` - show versions of installed packages in project without its own dependencies.
+- `npm list --depth=0 -g` - show versions of installed packages globallyn without its own dependencies.
 - `npm outdated` - show outdated dependencies.
 - `npm run dep-graph` - run dependency graph.
 - `npm test -t "test-name"` - run only single test.
@@ -43,9 +55,14 @@ Focus is to achieve high quality source code by using programming best practices
 - `git status` - display differences between the index file, and the current HEAD commit.
 - `git status -sb` - same as `git status`, but in shorter version, and showing current branch.
 - `git add .` - add all changed files in the repository to the index.
+- `git branch` - check project branches and highlight active branch.
 - `git commit -m "commit message"` - create commit with a message.
 - `git commit --amend` - edit unpushed commit.
+- `git checkout BRANCH_NAME` - switch to a certain branch.
+- `git merge --no-ff --no-commit BRANCH_NAME` - safe merging branch from certain branch to "master". Done after `git checkout BRANCH_NAME`, `git pull`, `git checkout master`, `git pull`.
 - `git push` - push commit to the repository.
+- `git push origin master:BRANCH_NAME` - push local Git branch to "master" branch in remote.
+- `git pull` - update local version of a project's repository from remote.
 - `git tag` - show tags from the repository.
 - `git tag -a v0.0.0 -m "tag message"` - create tag on current commit with specific version, and message.
 - `git push --tags` - push tags to the repository.
