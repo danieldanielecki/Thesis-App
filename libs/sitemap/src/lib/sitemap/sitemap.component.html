@@ -1,1 +1,110 @@
-<p>sitemap works!</p>
+<section
+  aria-label="This is a sitemap page for quicker navigation across our website."
+>
+  <!-- Card container that binds all together. -->
+  <mat-card
+    aria-label="These are sitemap details."
+    class="mat-elevation-z24"
+    fxFlex="50"
+    fxFlex.md="80"
+    fxFlex.lt-md="90"
+    fxFlexOffset="25"
+    fxFlexOffset.md="10"
+    fxFlexOffset.lt-md="5"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" role="heading" title="Sitemap"
+      >Sitemap</mat-card-title
+    >
+    <mat-card-subtitle aria-level="3" role="heading"
+      >This is a dedicated website for our clients. This site allows you to see
+      all resources available across our website.</mat-card-subtitle
+    >
+    <!-- Actual content starts from here. -->
+    <mat-card-content
+      gdAreas="company services information resources"
+      gdAreas.lt-md="company | services | information | resources "
+    >
+      <!-- Company links. -->
+      <div
+        gdArea="company"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="20px"
+        role="region"
+      >
+        <strong>Company</strong>
+        <ng-container *ngFor="let companyItem of companyItems">
+          <a
+            routerLink="{{ companyItem.path }}"
+            attr.aria-label="{{ companyItem.name }}. Click here to read more about {{ companyItem.name }}."
+            role="menuitem"
+            title="{{ companyItem.name }}"
+            >{{ companyItem.name }}</a
+          ><br />
+        </ng-container>
+      </div>
+
+      <!-- Services links. -->
+      <div
+        gdArea="services"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="20px"
+        role="region"
+      >
+        <strong>Services</strong>
+        <ng-container *ngFor="let servicesItem of servicesItems">
+          <a
+            routerLink="{{ servicesItem.path }}"
+            attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
+            role="menuitem"
+            title="{{ servicesItem.name }}"
+            >{{ servicesItem.name }}</a
+          ><br />
+        </ng-container>
+      </div>
+
+      <!-- Information links. -->
+      <div
+        gdArea="information"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="20px"
+        role="region"
+      >
+        <strong>Information</strong>
+        <ng-container *ngFor="let informationItem of informationItems">
+          <a
+            routerLink="{{ informationItem.path }}"
+            attr.aria-label="{{ informationItem.name }}. Click here to read more about {{ informationItem.name }}."
+            role="menuitem"
+            title="{{ informationItem.name }}"
+            >{{ informationItem.name }}</a
+          ><br />
+        </ng-container>
+      </div>
+
+      <!-- Resources links. -->
+      <div
+        gdArea="resources"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="20px"
+        role="region"
+      >
+        <strong>Resources</strong>
+        <ng-container *ngFor="let resourcesItem of resourcesItems">
+          <a
+            routerLink="{{ resourcesItem.path }}"
+            attr.aria-label="{{ resourcesItem.name }}. Click here to read more about {{ resourcesItem.name }}."
+            role="menuitem"
+            title="{{ resourcesItem.name }}"
+            >{{ resourcesItem.name }}</a
+          ><br />
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

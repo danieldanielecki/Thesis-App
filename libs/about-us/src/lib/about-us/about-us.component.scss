@@ -1,11 +1,11 @@
 mat-card {
   margin: 2rem auto;
 
-  mat-card-title {
-    text-align: center;
-  }
   mat-card-subtitle {
     margin-top: 30px;
+  }
+  mat-card-title,
+  mat-card-subtitle {
     text-align: center;
   }
 }

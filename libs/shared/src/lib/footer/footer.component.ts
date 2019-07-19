@@ -52,10 +52,10 @@ export class FooterComponent {
   public submitted = false;
 
   public bottomMenuItems: { name: string; path: string }[] = [
-    { name: 'Copyrights', path: 'copyrights' },
-    { name: 'Privacy & Security', path: 'privacy-and-security' },
-    { name: 'Sitemap', path: 'sitemap' },
-    { name: 'Terms of Use', path: 'terms-of-use' }
+    { name: 'Copyrights', path: '/copyrights' },
+    { name: 'Privacy & Security', path: '/privacy-and-security' },
+    { name: 'Sitemap', path: '/sitemap' },
+    { name: 'Terms of Use', path: '/terms-of-use' }
   ];
 
   // TODO: Add content to display.
@@ -74,9 +74,9 @@ export class FooterComponent {
     }
   ];
   public rightMenuItems: { name: string; path: string }[] = [
-    { name: 'Faq', path: 'faq' },
-    { name: 'Glossary', path: 'glossary' },
-    { name: 'Partnerships', path: 'partnerships' }
+    { name: 'Faq', path: '/faq' },
+    { name: 'Glossary', path: '/glossary' },
+    { name: 'Partnerships', path: '/partnerships' }
   ];
 
   // TODO: Add links to social profiles.

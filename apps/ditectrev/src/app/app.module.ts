@@ -6,6 +6,7 @@
 // TODO: Check compiler options.
 // TODO: Unify all imports, remove "./".
 // TODO: Check angular.json and all compiling options.
+// TODO: Fix unit tests from pipeline.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
