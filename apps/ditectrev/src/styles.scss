@@ -1,14 +1,5 @@
 // TODO: Name all colors.
 // TODO: Make mat-card styling here.
-html,
-body {
-  height: 100%;
-}
-// TODO: Change the font.
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
 
 a {
   text-decoration: none;
@@ -42,20 +33,20 @@ a {
   }
 }
 
-// Required to put it here in order overwrite Angular Material's styles for global behaviours.
-.mat-drawer-backdrop {
-  position: fixed !important;
+app-gallery {
+  a {
+    color: #039be5;
+    &:hover {
+      color: #7afffb;
+      transition: 1s;
+    }
+  }
 }
 
-// Required to put it here in order to overwrite Angular Material's styles used in a contact.
-mat-card {
-  .mat-form-field-subscript-wrapper {
-    padding: 0 !important;
-  }
-  .mat-datepicker-toggle-default-icon {
-    font-size: 2rem;
-  }
-  z-index: 0;
+// TODO: Change the font.
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 // Required to put it here in order to overwrite Angular Material's styles used in a footer.
@@ -78,20 +69,46 @@ footer {
   }
 }
 
-// Required to put it here in order to overwrite Angular Material's styles used in partnerships.
-.mat-tab-body-content {
-  text-align: center;
+html,
+body {
+  height: 100%;
 }
+
+main {
+  margin-bottom: 50px;
+}
+
+// Required to put it here in order to overwrite Angular Material's styles used in a contact.
+mat-card {
+  .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+  }
+  .mat-datepicker-toggle-default-icon {
+    font-size: 2rem;
+  }
+  z-index: 0;
+}
+
 mat-tab-body {
   margin-top: 20px;
 }
 
-app-gallery {
-  a {
-    color: #039be5;
-    &:hover {
-      color: #7afffb;
-      transition: 1s;
+// Required to put it here in order overwrite Angular Material's styles for global behaviours.
+.mat-drawer-backdrop {
+  position: fixed !important;
+}
+
+// Required to put it here in order to overwrite Angular Material's styles used in partnerships.
+.mat-tab-body-content {
+  text-align: center;
+}
+
+// Remove unecessary default padding for first and last cell enforced by Angular Material on small and medium devices.
+@media (max-width: 960px) {
+  mat-cell {
+    &:first-of-type,
+    &:last-of-type {
+      padding: 0px !important;
     }
   }
 }

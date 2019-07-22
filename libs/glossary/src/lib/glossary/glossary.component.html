@@ -1,1 +1,110 @@
-<p>glossary works!</p>
+<!-- TODO: Improve RWD for long descriptions. -->
+<section
+  aria-label="This is a glossary page to explain you specific to our services terms."
+>
+  <!-- Card container that binds all together. -->
+  <mat-card
+    aria-label="These are glossary details."
+    class="mat-elevation-z24"
+    fxFlex="50"
+    fxFlex.md="80"
+    fxFlex.lt-md="90"
+    fxFlexOffset="25"
+    fxFlexOffset.md="10"
+    fxFlexOffset.lt-md="5"
+    role="region"
+  >
+    <!-- Title of the card. -->
+    <mat-card-title aria-level="2" role="heading" title="Glossary"
+      >Glossary</mat-card-title
+    >
+    <mat-card-subtitle aria-level="3" role="heading"
+      >Please use the tables of terms with sorting and filtration in order to
+      find what is unclear for you.</mat-card-subtitle
+    >
+
+    <!-- Actual content starts from here. -->
+    <mat-card-content>
+      <!-- Filtering input. -->
+      <mat-form-field>
+        <input
+          (keyup)="applyFilter($event.target.value)"
+          matInput
+          type="text"
+          placeholder="Search"
+        />
+      </mat-form-field>
+
+      <!-- Glossary terms with filtering, pagination and sorting. -->
+      <mat-table [dataSource]="dataSource" matSort>
+        <!-- Term position (no.) column. -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Position (no.)</mat-header-cell
+          >
+          <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
+            ><span fxHide.gt-sm><strong>Position (no.):</strong></span
+            >&nbsp;<span
+              attr.aria-label="The term is at position: {{
+                  term.position
+                }}."
+              >{{ term.position }}</span
+            >
+          </mat-cell>
+        </ng-container>
+
+        <!-- Term name column. -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Name</mat-header-cell
+          >
+          <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
+            ><span fxHide.gt-sm><strong>Name:</strong></span
+            >&nbsp;<span
+              attr.aria-label="The term name is: {{
+                  term.name
+                }}."
+              >{{ term.name }}</span
+            ></mat-cell
+          >
+        </ng-container>
+
+        <!-- Term description column. -->
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Description</mat-header-cell
+          >
+          <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
+            ><span fxHide.gt-sm><strong>Description:</strong></span
+            >&nbsp;<span
+              attr.aria-label="The term description is: {{
+                  term.description
+                }}."
+              >{{ term.description }}</span
+            >
+          </mat-cell>
+        </ng-container>
+
+        <!-- Header of glossary terms. -->
+        <mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+          fxHide.lt-md
+        ></mat-header-row>
+
+        <!-- Glossary terms rows. -->
+        <mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          fxLayout.lt-md="column"
+          fxLayoutAlign="start"
+        ></mat-row>
+      </mat-table>
+
+      <!-- Pagination. -->
+      <mat-paginator
+        #paginator
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      ></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</section>

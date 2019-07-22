@@ -1,0 +1,28 @@
+mat-card {
+  margin: 2rem auto;
+
+  mat-card-subtitle,
+  mat-card-title {
+    text-align: center;
+  }
+  mat-card-subtitle {
+    margin-top: 30px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-list {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  mat-cell {
+    &:first-child {
+      margin-top: 2em;
+    }
+  }
+  mat-row {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  }
+}

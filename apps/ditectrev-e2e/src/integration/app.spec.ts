@@ -1,7 +1,6 @@
 import {
   getCanvas,
   getGallery,
-  getParagraph,
   getTestimonials,
   getTitle
 } from '../support/app.po';
@@ -76,7 +75,7 @@ describe('Page: Glossary', () => {
 
   it('should display glossary paragraph', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('glossary works!');
+    getTitle().contains('Glossary');
   });
 });
 
@@ -142,7 +141,7 @@ describe('Page: Sitemap', () => {
 
   it('should display sitemap paragraph', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
-    getParagraph().contains('sitemap works!');
+    getTitle().contains('Sitemap');
   });
 });
 
