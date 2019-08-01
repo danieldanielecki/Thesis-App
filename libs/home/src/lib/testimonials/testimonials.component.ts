@@ -7,6 +7,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./testimonials.component.scss']
 })
 export class TestimonialsComponent {
+  // TODO: When changing screen size it has problems with RWD.
   public customOptions: OwlOptions = {
     animateIn: 'fadeInRight',
     animateOut: 'fadeOutLeft',

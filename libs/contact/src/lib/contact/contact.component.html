@@ -138,7 +138,7 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <!-- TODO: Add front-end validation for the specific files. -->
+        <!-- Accept only files in the following format: .doc, .docx, .jpg, .jpeg, .pdf, .png, .xls, .xlsx. However, this is easy to bypass, Cloud Storage rules has been set up on the back-end side. -->
         <ngx-mat-file-input
           [accept]="[
             '.doc',
@@ -150,6 +150,7 @@
             '.xls',
             '.xlsx'
           ]"
+          (change)="uploadFile($event)"
           formControlName="fileUploader"
           multiple
           aria-label="Here you can add additional files about your project, which can be helpeful for us."
@@ -168,7 +169,7 @@
         >
           This size is too large,
           <strong
-            >maximum acceptable upload is
+            >maximum acceptable upload size is
             {{
               contactForm.get('fileUploader')?.getError('maxContentSize')
                 .maxSize | byteFormat
@@ -188,12 +189,12 @@
       >
         Choose preferred form of contact
       </h4>
-      <!-- TODO: Change color to default. -->
       <mat-radio-group
         formControlName="formControlContactPreference"
         fxFlexAlign="center"
         multiple
         aria-label="You can choose between email or phone as a preferred form of contact with you."
+        color="primary"
       >
         <mat-radio-button
           aria-label="Email is your preferred form of contact."
@@ -219,6 +220,7 @@
         formControlName="formControlService"
         multiple
         aria-label="Here choose in which services are you interested in."
+        color="primary"
       >
         <ng-container *ngFor="let servicesItem of servicesItems">
           <mat-list-option
@@ -245,6 +247,7 @@
       ></re-captcha>
       <mat-slide-toggle
         (change)="handleTerms()"
+        color="primary"
         formControlName="acceptedTerms"
         fxFlexAlign="center"
         aria-label="You have to agree on terms if you want to send a message to us. Please click here in order to agree on terms."

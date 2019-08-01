@@ -2,6 +2,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 
 /* Throw error instantly when invalid control is dirty, touched, or submitted. */
+// TODO: Maybe because of lack of "providedIn: root" it doesn't work.
 export class ErrorsMatcherService implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,

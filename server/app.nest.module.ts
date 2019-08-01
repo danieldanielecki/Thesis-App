@@ -1,3 +1,5 @@
+// TODO: Make a Nx Angular-Nest workspace structure when Nx CLI will generate Angular-Next project properly.
+
 import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
 import { join } from 'path';
 import { Module } from '@nestjs/common';

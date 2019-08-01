@@ -1,5 +1,5 @@
 module.exports = {
+  coverageDirectory: '../../coverage/libs/core',
   name: 'core',
-  preset: '../../jest.config.js',
-  coverageDirectory: '../../coverage/libs/core'
+  preset: '../../jest.config.js'
 };

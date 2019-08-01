@@ -11,13 +11,15 @@ Focus is to achieve high quality source code by using programming best practices
 - Angular
 - Cypress
 - Docker
+- Firebase
 - Jest
 - Node.js
 - npm
 - Nx
+- RxJS
 - Three.js
 - TypeScript
-- Webpack
+- webpack
 
 ## Commands
 
@@ -37,7 +39,7 @@ Focus is to achieve high quality source code by using programming best practices
 - `ng help` - show all available commands of the CLI.
 - `npm audit` - display known vulnerabilities in dependencies.
 - `npm audit fix` - fix known vulnerabilities in dependencies.
-- `npm cache clean` - clean cache of npm.
+- `npm cache clean --force` - clean cache of npm.
 - `npm info PACKAGE_NAME version` - show the newest version of certain package.
 - `npm list` - show versions of installed packages in project.
 - `npm list | grep PACKAGE_NAME` - show package details with its own depndencies.

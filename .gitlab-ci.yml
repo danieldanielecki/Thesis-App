@@ -51,8 +51,7 @@ Dependencies Scanning:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: test
   script:
-    #- npx audit-ci --moderate # Prevent integration with moderate or higher vulnerabilities. % TODO: Put it back when 1 high vulnerability will be solved.
-    - npx audit-ci --critical # Prevent integration only with critical vulnerabilities.
+    - npx audit-ci --low # Prevent integration with low or higher vulnerabilities, i.e. prevent all vulnerabilities.
 
 # Define and run formatting tests job.
 Code Quality:

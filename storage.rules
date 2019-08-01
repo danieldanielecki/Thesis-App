@@ -1,0 +1,20 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+    	allow read; // Required in order to send this as attachment.
+      // Allow write files Firebase Storage, only if:
+      // 1) File is no more than 20MB
+      // 2) Content type is in one of the following formats: .doc, .docx, .jpg, .jpeg, .pdf, .png, .xls, .xlsx.
+      allow write: if request.resource.size <= 20 * 1024 * 1024
+        && (request.resource.contentType.matches('application/msword')
+        || request.resource.contentType.matches('application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+        || request.resource.contentType.matches('image/jpg')
+        || request.resource.contentType.matches('image/jpeg')
+        || request.resource.contentType.matches('application/pdf')
+				|| request.resource.contentType.matches('image/png')
+        || request.resource.contentType.matches('application/vnd.ms-excel')
+        || request.resource.contentType.matches('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'))
+    }
+  }
+}

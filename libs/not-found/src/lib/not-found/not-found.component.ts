@@ -22,9 +22,9 @@ import {
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent implements OnInit {
-  @ViewChild('renderIcosahedron') private renderIcosahedron!: ElementRef<
-    HTMLElement
-  >; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
+  @ViewChild('renderIcosahedron', { static: false })
+  // TODO: Change this for something which doesn't access DOM directly.
+  private renderIcosahedron!: ElementRef<HTMLElement>; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
 
   public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 

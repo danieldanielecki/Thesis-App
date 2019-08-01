@@ -15,6 +15,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+// TODO: Make this a separated file.
 interface ResponseMailChimp {
   result: string;
   msg: string;
@@ -108,6 +109,7 @@ export class FooterComponent {
   ];
 
   // TODO: Add hidden captcha on submit.
+  // TODO: Make this a separated service.
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)

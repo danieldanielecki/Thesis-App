@@ -1,18 +1,16 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
   "projects": {
     "ditectrev": {
-      "root": "apps/ditectrev/",
-      "sourceRoot": "apps/ditectrev/src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "style": "scss"
         }
       },
+      "root": "apps/ditectrev/",
+      "sourceRoot": "apps/ditectrev/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -74,7 +72,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/dev-server:generic",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "ditectrev:build"
           },
@@ -97,11 +95,11 @@
               "apps/ditectrev/tsconfig.app.json",
               "apps/ditectrev/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/ditectrev/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/ditectrev/jest.config.js",
             "tsConfig": "apps/ditectrev/tsconfig.spec.json",
@@ -134,11 +132,11 @@
     },
     "ditectrev-e2e": {
       "root": "apps/ditectrev-e2e",
+      "sourceRoot": "apps/ditectrev-e2e/src",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/builders:cypress",
+          "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/ditectrev-e2e/cypress.json",
             "tsConfig": "apps/ditectrev-e2e/tsconfig.e2e.json",
@@ -151,10 +149,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:lint",
           "options": {
+            "linter": "tslint",
             "tsConfig": "apps/ditectrev-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/ditectrev-e2e/**"]
           }
         }
       }
@@ -172,11 +171,11 @@
               "libs/about-us/tsconfig.lib.json",
               "libs/about-us/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/about-us/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/about-us/jest.config.js",
             "tsConfig": "libs/about-us/tsconfig.spec.json",
@@ -185,7 +184,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -203,11 +202,11 @@
               "libs/contact/tsconfig.lib.json",
               "libs/contact/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/contact/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/contact/jest.config.js",
             "tsConfig": "libs/contact/tsconfig.spec.json",
@@ -216,7 +215,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -234,11 +233,11 @@
               "libs/copyrights/tsconfig.lib.json",
               "libs/copyrights/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/copyrights/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/copyrights/jest.config.js",
             "tsConfig": "libs/copyrights/tsconfig.spec.json",
@@ -247,7 +246,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -265,11 +264,11 @@
               "libs/core/tsconfig.lib.json",
               "libs/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/core/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/core/jest.config.js",
             "tsConfig": "libs/core/tsconfig.spec.json",
@@ -278,7 +277,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -296,11 +295,11 @@
               "libs/cyber-security/tsconfig.lib.json",
               "libs/cyber-security/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/cyber-security/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/cyber-security/jest.config.js",
             "tsConfig": "libs/cyber-security/tsconfig.spec.json",
@@ -309,7 +308,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -327,11 +326,11 @@
               "libs/digital-strategy/tsconfig.lib.json",
               "libs/digital-strategy/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/digital-strategy/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/digital-strategy/jest.config.js",
             "tsConfig": "libs/digital-strategy/tsconfig.spec.json",
@@ -340,7 +339,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -358,11 +357,11 @@
               "libs/faq/tsconfig.lib.json",
               "libs/faq/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/faq/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/faq/jest.config.js",
             "tsConfig": "libs/faq/tsconfig.spec.json",
@@ -371,7 +370,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -389,11 +388,11 @@
               "libs/glossary/tsconfig.lib.json",
               "libs/glossary/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/glossary/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/glossary/jest.config.js",
             "tsConfig": "libs/glossary/tsconfig.spec.json",
@@ -402,7 +401,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -420,11 +419,11 @@
               "libs/home/tsconfig.lib.json",
               "libs/home/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/home/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/home/jest.config.js",
             "tsConfig": "libs/home/tsconfig.spec.json",
@@ -433,7 +432,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -451,11 +450,11 @@
               "libs/methodology/tsconfig.lib.json",
               "libs/methodology/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/methodology/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/methodology/jest.config.js",
             "tsConfig": "libs/methodology/tsconfig.spec.json",
@@ -464,7 +463,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -482,11 +481,11 @@
               "libs/not-found/tsconfig.lib.json",
               "libs/not-found/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/not-found/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/not-found/jest.config.js",
             "tsConfig": "libs/not-found/tsconfig.spec.json",
@@ -495,7 +494,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -513,11 +512,11 @@
               "libs/partnerships/tsconfig.lib.json",
               "libs/partnerships/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/partnerships/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/partnerships/jest.config.js",
             "tsConfig": "libs/partnerships/tsconfig.spec.json",
@@ -526,7 +525,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -544,11 +543,11 @@
               "libs/privacy-and-security/tsconfig.lib.json",
               "libs/privacy-and-security/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/privacy-and-security/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/privacy-and-security/jest.config.js",
             "tsConfig": "libs/privacy-and-security/tsconfig.spec.json",
@@ -557,7 +556,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -575,11 +574,11 @@
               "libs/services/tsconfig.lib.json",
               "libs/services/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/services/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/services/jest.config.js",
             "tsConfig": "libs/services/tsconfig.spec.json",
@@ -588,7 +587,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -606,11 +605,11 @@
               "libs/shared/tsconfig.lib.json",
               "libs/shared/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
             "tsConfig": "libs/shared/tsconfig.spec.json",
@@ -619,7 +618,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -637,11 +636,11 @@
               "libs/sitemap/tsconfig.lib.json",
               "libs/sitemap/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/sitemap/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/sitemap/jest.config.js",
             "tsConfig": "libs/sitemap/tsconfig.spec.json",
@@ -650,7 +649,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -668,11 +667,11 @@
               "libs/software-development/tsconfig.lib.json",
               "libs/software-development/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/software-development/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/software-development/jest.config.js",
             "tsConfig": "libs/software-development/tsconfig.spec.json",
@@ -681,7 +680,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -699,11 +698,11 @@
               "libs/terms-of-use/tsconfig.lib.json",
               "libs/terms-of-use/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/terms-of-use/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/terms-of-use/jest.config.js",
             "tsConfig": "libs/terms-of-use/tsconfig.spec.json",
@@ -712,7 +711,7 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
@@ -730,11 +729,11 @@
               "libs/utilities/tsconfig.lib.json",
               "libs/utilities/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/utilities/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utilities/jest.config.js",
             "tsConfig": "libs/utilities/tsconfig.spec.json",
@@ -743,26 +742,22 @@
         }
       },
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }
     }
   },
   "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/schematics",
-    "packageManager": "npm"
+    "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
-    "@nrwl/schematics:application": {
-      "style": "scss"
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "@nrwl/schematics:library": {
-      "style": "scss"
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   },
   "defaultProject": "ditectrev"

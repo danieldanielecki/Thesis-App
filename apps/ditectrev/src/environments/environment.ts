@@ -1,12 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-declare const FIREBASE_API_KEY_DEVELOPMENT: string;
+
+// declare const FIREBASE_API_KEY_DEVELOPMENT: string;
 
 export const environment = {
   production: false,
+  // TODO: Make all these secrets? Issue #14323.
   firebaseConfig: {
-    apiKey: FIREBASE_API_KEY_DEVELOPMENT,
+    apiKey: 'AIzaSyCopskzCaX23bjwtZDzNbe0OQ6loi2JDMs',
     authDomain: 'thesisapp-dev.firebaseapp.com',
     databaseURL: 'https://thesisapp-dev.firebaseio.com',
     projectId: 'thesisapp-dev',

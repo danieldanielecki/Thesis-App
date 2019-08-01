@@ -4,7 +4,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Subject } from 'rxjs';
 import { Term } from './term.model';
 
-// TODO: Move this to 'constants' folder/file.
+// TODO: Move this to 'constants' folder/file. All constants as 'export declare const CAPITOL_LETTERS'.
 const GLOSSARY_DATA: Term[] = [
   { position: 1, name: 'Term 1', description: 'Some description goes here...' },
   { position: 2, name: 'Term 2', description: 'Some description goes here...' },
@@ -128,8 +128,8 @@ export class GlossaryComponent implements AfterViewInit {
   );
   public displayedColumns: string[] = ['position', 'name', 'description'];
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort = new MatSort();
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator; // Non-null assertion operator is required in .ts to compile into AOT.
+  @ViewChild(MatSort, { static: false }) sort: MatSort = new MatSort();
 
   public ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;

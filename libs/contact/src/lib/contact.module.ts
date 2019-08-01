@@ -1,6 +1,10 @@
-// declare const RECAPTCHA_API_KEY: string; // TODO: This doesn't work.
+// declare const RECAPTCHA_API_KEY: string; // TODO: This doesn't work, issue #14323.
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ContactComponent } from './contact/contact.component';
+import { environment } from '@apps/ditectrev/src/environments/environment';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { NgModule } from '@angular/core';
@@ -18,6 +22,9 @@ import { SharedModule } from './../../../../libs/shared/src/index';
 @NgModule({
   declarations: [ContactComponent],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     MaterialFileInputModule,
     Ng2TelInputModule,
     RecaptchaModule,
@@ -25,7 +32,6 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     RouterModule.forChild([{ path: '', component: ContactComponent }]),
     SharedModule
   ],
-  // TODO: Change the sample API key to a real one (as env variable).
   providers: [
     {
       provide: RECAPTCHA_NONCE,
@@ -34,7 +40,7 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA' // TODO: Change this to take from secrets.
+        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA' // TODO: Change this to take from secrets, issue #14323.
       } as RecaptchaSettings
     }
   ]

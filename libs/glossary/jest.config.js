@@ -1,5 +1,5 @@
 module.exports = {
+  coverageDirectory: '../../coverage/libs/glossary',
   name: 'glossary',
-  preset: '../../jest.config.js',
-  coverageDirectory: '../../coverage/libs/glossary'
+  preset: '../../jest.config.js'
 };

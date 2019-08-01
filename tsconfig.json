@@ -48,6 +48,7 @@
 
     // List of path mapping entries for module names to locations relative to the baseUrl.
     "paths": {
+      "@apps/*": ["apps/*"],
       "@libs/*": ["libs/*"]
     },
     "traceResolution": false, // Report module resolution log messages.
