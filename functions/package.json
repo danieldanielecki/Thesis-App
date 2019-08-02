@@ -64,7 +64,6 @@
     "ngx-spinner": "^8.0.3",
     "nodemailer": "^6.3.0",
     "particles.js": "^2.0.0",
-    "protobufjs": "file:./protobufjs",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
     "three": "^0.102.1",

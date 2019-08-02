@@ -11,7 +11,7 @@ Focus is to achieve high quality source code by using programming best practices
 - Angular
 - Cypress
 - Docker
-- Firebase
+- Firebase (Cloud Firestore, Cloud Functions for Firebase, Cloud Storage for Firebase, Firebase Hosting, Firebase Security Rules)
 - Jest
 - Node.js
 - npm
@@ -19,6 +19,7 @@ Focus is to achieve high quality source code by using programming best practices
 - RxJS
 - Three.js
 - TypeScript
+- UI dependencies: Angular Material, ...
 - webpack
 
 ## Commands
