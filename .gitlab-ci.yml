@@ -29,7 +29,7 @@ stages:
 
 # Define staging build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
 Build Staging:
-  # Keep the functions folder as an artifact after the app-build job will be done.
+  # Keep the functions folder as an artifact after the app build job will be done.
   artifacts:
     expire_in: 1 day
     paths:
@@ -45,7 +45,7 @@ Build Staging:
 
 # Define production build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
 Build Production:
-  # Keep the functions folder as an artifact after the app-build job will be done.
+  # Keep the functions folder as an artifact after the app build job will be done.
   artifacts:
     expire_in: 1 day
     paths:

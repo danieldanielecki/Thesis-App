@@ -7,6 +7,7 @@
 
 # dependencies
 /node_modules
+!node_modules/protobusjs/src/util/minimal.js
 
 # IDEs and editors
 /.idea
