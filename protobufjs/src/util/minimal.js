@@ -57,6 +57,7 @@ util.emptyObject = Object.freeze
  * @type {boolean}
  * @const
  */
+// Commented out, otherwise Firebase Cloud Functions fails.
 // util.isNode = Boolean(util.global.process && util.global.process.versions && util.global.process.versions.node);
 util.isNode = true;
 
