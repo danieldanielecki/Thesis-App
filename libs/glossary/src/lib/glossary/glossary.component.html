@@ -45,9 +45,7 @@
           <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
             ><span fxHide.gt-sm><strong>Position (no.):</strong></span
             >&nbsp;<span
-              attr.aria-label="The term is at position: {{
-                  term.position
-                }}."
+              attr.aria-label="The term is at position: {{ term.position }}."
               >{{ term.position }}</span
             >
           </mat-cell>
@@ -60,12 +58,9 @@
           >
           <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
             ><span fxHide.gt-sm><strong>Name:</strong></span
-            >&nbsp;<span
-              attr.aria-label="The term name is: {{
-                  term.name
-                }}."
-              >{{ term.name }}</span
-            ></mat-cell
+            >&nbsp;<span attr.aria-label="The term name is: {{ term.name }}.">{{
+              term.name
+            }}</span></mat-cell
           >
         </ng-container>
 
@@ -77,9 +72,7 @@
           <mat-cell *matCellDef="let term" fxLayoutAlign.lt-md="center center"
             ><span fxHide.gt-sm><strong>Description:</strong></span
             >&nbsp;<span
-              attr.aria-label="The term description is: {{
-                  term.description
-                }}."
+              attr.aria-label="The term description is: {{ term.description }}."
               >{{ term.description }}</span
             >
           </mat-cell>

@@ -38,7 +38,9 @@
         <ng-container *ngFor="let companyItem of companyItems">
           <a
             routerLink="{{ companyItem.path }}"
-            attr.aria-label="{{ companyItem.name }}. Click here to read more about {{ companyItem.name }}."
+            attr.aria-label="{{
+              companyItem.name
+            }}. Click here to read more about {{ companyItem.name }}."
             role="menuitem"
             title="{{ companyItem.name }}"
             >{{ companyItem.name }}</a
@@ -58,7 +60,9 @@
         <ng-container *ngFor="let servicesItem of servicesItems">
           <a
             routerLink="{{ servicesItem.path }}"
-            attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
+            attr.aria-label="{{
+              servicesItem.name
+            }}. Click here to read more about {{ servicesItem.name }}."
             role="menuitem"
             title="{{ servicesItem.name }}"
             >{{ servicesItem.name }}</a
@@ -78,7 +82,9 @@
         <ng-container *ngFor="let informationItem of informationItems">
           <a
             routerLink="{{ informationItem.path }}"
-            attr.aria-label="{{ informationItem.name }}. Click here to read more about {{ informationItem.name }}."
+            attr.aria-label="{{
+              informationItem.name
+            }}. Click here to read more about {{ informationItem.name }}."
             role="menuitem"
             title="{{ informationItem.name }}"
             >{{ informationItem.name }}</a
@@ -98,7 +104,9 @@
         <ng-container *ngFor="let resourcesItem of resourcesItems">
           <a
             routerLink="{{ resourcesItem.path }}"
-            attr.aria-label="{{ resourcesItem.name }}. Click here to read more about {{ resourcesItem.name }}."
+            attr.aria-label="{{
+              resourcesItem.name
+            }}. Click here to read more about {{ resourcesItem.name }}."
             role="menuitem"
             title="{{ resourcesItem.name }}"
             >{{ resourcesItem.name }}</a

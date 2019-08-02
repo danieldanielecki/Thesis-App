@@ -27,16 +27,32 @@ stages:
   - staging
   - production
 
-# Define build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed. Plus it prints some useful environmental variables of the GitLab CI's system.
-Build:
-  # Keep the dist folder as an artifact after the app-build job will be done.
+# Define staging build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
+Build Staging:
+  # Keep the functions folder as an artifact after the app-build job will be done.
   artifacts:
     expire_in: 1 day
     paths:
       - functions
     when: always
   script:
-    - npm run build:ditectrev:ssr
+    - npm run build:ditectrev:ssr:staging
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  stage: build
+
+# Define production build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
+Build Production:
+  # Keep the functions folder as an artifact after the app-build job will be done.
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - functions
+    when: always
+  script:
+    - npm run build:ditectrev:ssr:production
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -104,7 +120,7 @@ E2E Tests:
 # Deployment settings for development environment.
 Deploy to Staging:
   dependencies:
-    - Build
+    - Build Staging
   environment:
     name: development # Deployment stage for development environment.
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
@@ -121,7 +137,7 @@ Deploy to Staging:
 # Deployment settings for production environment.
 Deploy to Production:
   dependencies:
-    - Build
+    - Build Production
   environment:
     name: production # Deployment stage for production environment.
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.

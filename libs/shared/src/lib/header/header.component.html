@@ -43,7 +43,9 @@
             mat-button
             *ngIf="!lastItem"
             routerLink="{{ menuItem.path }}"
-            attr.aria-label="{{ menuItem.name }}. Click here to read more about {{ menuItem.name }}."
+            attr.aria-label="{{
+              menuItem.name
+            }}. Click here to read more about {{ menuItem.name }}."
             role="menuitem"
             title="{{ menuItem.name }}"
             >{{ menuItem.name }}
@@ -77,7 +79,9 @@
                 <a
                   mat-menu-item
                   routerLink="{{ servicesItem.path }}"
-                  attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
+                  attr.aria-label="{{
+                    servicesItem.name
+                  }}. Click here to read more about {{ servicesItem.name }}."
                   role="menuitem"
                   title="{{ servicesItem.name }}"
                   >{{ servicesItem.name }}</a
@@ -108,9 +112,11 @@
           <!-- Mobile main menu elements. -->
           <a
             mat-list-item
-            *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
+            *ngIf="i !== 1 && !lastItem; else servicesTemplate"
             routerLink="{{ menuItem.path }}"
-            attr.aria-label="{{ menuItem.name }}. Click here to read more about {{ menuItem.name }}."
+            attr.aria-label="{{
+              menuItem.name
+            }}. Click here to read more about {{ menuItem.name }}."
             role="menuitem"
             title="{{ menuItem.name }}"
           >
@@ -125,10 +131,12 @@
             -->
             <a
               mat-list-item
-              *ngIf="!lastItem; else: closeTemplate"
+              *ngIf="!lastItem; else closeTemplate"
               [matMenuTriggerFor]="menuMobile"
               routerLink="{{ menuItem.path }}"
-              attr.aria-label="{{ menuItem.name }}. Click to read more about {{ menuItem.name }}."
+              attr.aria-label="{{ menuItem.name }}. Click to read more about {{
+                menuItem.name
+              }}."
               role="menuitem"
               title="{{ menuItem.name }}"
             >
@@ -147,7 +155,9 @@
                 mat-list-item
                 (click)="sidenav.close()"
                 routerLink="{{ menuItem.path }}"
-                attr.aria-label="{{ menuItem.name }}. Click here to close the sidenav."
+                attr.aria-label="{{
+                  menuItem.name
+                }}. Click here to close the sidenav."
                 role="menuitem"
                 title="{{ menuItem.name }}"
               >
@@ -166,7 +176,9 @@
                 <a
                   mat-menu-item
                   routerLink="{{ servicesItem.path }}"
-                  attr.aria-label="{{ servicesItem.name }}. Click here to read more about {{ servicesItem.name }}."
+                  attr.aria-label="{{
+                    servicesItem.name
+                  }}. Click here to read more about {{ servicesItem.name }}."
                   role="menuitem"
                   title="{{ servicesItem.name }}"
                 >

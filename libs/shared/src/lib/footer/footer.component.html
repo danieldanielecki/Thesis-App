@@ -26,7 +26,9 @@
       <!-- Footer's menu items located on the left side. -->
       <ng-container *ngFor="let informationItem of informationItems">
         <p
-          attr.aria-label="This is our {{ informationItem.name }}. {{ informationItem.content }}."
+          attr.aria-label="This is our {{ informationItem.name }}. {{
+            informationItem.content
+          }}."
           title="{{ informationItem.content }}"
         >
           <fa-icon [icon]="informationItem.icon" aria-hidden="true"></fa-icon
@@ -102,7 +104,9 @@
       <ng-container *ngFor="let rightMenuItem of rightMenuItems">
         <a
           routerLink="{{ rightMenuItem.path }}"
-          attr.aria-label="{{ rightMenuItem.name }}. Click here to read more about {{ rightMenuItem.name }}."
+          attr.aria-label="{{
+            rightMenuItem.name
+          }}. Click here to read more about {{ rightMenuItem.name }}."
           role="menuitem"
           title="{{ rightMenuItem.name }}"
           >{{ rightMenuItem.name }}</a
@@ -126,7 +130,9 @@
       <ng-container *ngFor="let bottomMenuItem of bottomMenuItems">
         <a
           routerLink="{{ bottomMenuItem.path }}"
-          attr.aria-label="{{ bottomMenuItem.name }}. Click here to read more about {{ bottomMenuItem.name }}."
+          attr.aria-label="{{
+            bottomMenuItem.name
+          }}. Click here to read more about {{ bottomMenuItem.name }}."
           role="menuitem"
           title="{{ bottomMenuItem.name }}"
           >{{ bottomMenuItem.name }}</a
@@ -147,7 +153,9 @@
         <a
           href="{{ socialItem.url }}"
           target="_blank"
-          attr.aria-label="{{ socialItem.name }}. Click here to check our {{ socialItem.name }}."
+          attr.aria-label="{{ socialItem.name }}. Click here to check our {{
+            socialItem.name
+          }}."
           role="menuitem"
           title="{{ socialItem.name }}"
         >
