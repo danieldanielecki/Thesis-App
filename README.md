@@ -95,3 +95,5 @@ Focus is to achieve high quality source code by using programming best practices
 
 - [Canvas problems in Jest](https://github.com/hustcc/jest-canvas-mock/issues/2#issuecomment-468600415)
 - [JSDOM mocking canvas](https://github.com/jsdom/jsdom/issues/1782#issuecomment-468602403)
+
+<!-- TODO: Add README.md's to each lib/app. -->

@@ -1,6 +1,7 @@
 import * as admin from 'firebase-admin';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
+import * as helmet from 'helmet';
 import * as nodemailer from 'nodemailer';
 import { AppNestModule } from './app.nest.module';
 import { Express } from 'express';
@@ -33,6 +34,20 @@ const createNestServer = async (expressInstance: Express) => {
   );
   app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
   // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
+
+  // Protection with some well-known web vulnerabilities.
+  app.use(helmet());
+  app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+  app.use(helmet.noCache());
+  app.use(
+    helmet.featurePolicy({
+      features: {
+        fullscreen: ["'self'"],
+        payment: ["'none'"],
+        syncXhr: ["'none'"]
+      }
+    })
+  );
 };
 
 createNestServer(server);

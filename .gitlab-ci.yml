@@ -118,6 +118,7 @@ E2E Tests:
   stage: test
 
 # Deployment settings for development environment.
+# TODO: Test staging & production locally, sending mail & upload files doesn't seems to work on pipeline.
 Deploy to Staging:
   dependencies:
     - Build Staging
