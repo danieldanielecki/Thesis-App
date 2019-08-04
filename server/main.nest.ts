@@ -32,8 +32,6 @@ const createNestServer = async (expressInstance: Express) => {
     AppNestModule,
     new ExpressAdapter(expressInstance)
   );
-  app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
-  // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
 
   // Protection with some well-known web vulnerabilities.
   app.use(helmet());
@@ -48,6 +46,9 @@ const createNestServer = async (expressInstance: Express) => {
       }
     })
   );
+
+  app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
+  // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
 };
 
 createNestServer(server);

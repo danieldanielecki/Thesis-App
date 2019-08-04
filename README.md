@@ -11,9 +11,13 @@ Focus is to achieve high quality source code by using programming best practices
 - Angular
 - Cypress
 - Docker
-- Firebase (Cloud Firestore, Cloud Functions for Firebase, Cloud Storage for Firebase, Firebase Hosting, Firebase Security Rules)
+- Cloud Firestore
+- Cloud Functions for Firebase
+- Cloud Storage for Firebase
+- Firebase Hosting
+- Firebase Security Rules
 - Jest
-- Node.js
+- NestJS
 - npm
 - Nx
 - RxJS
