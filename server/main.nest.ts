@@ -26,25 +26,25 @@ const mailTransport = nodemailer.createTransport({
   }
 });
 
+// Protection with some well-known web vulnerabilities.
+server.use(helmet());
+server.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+server.use(helmet.noCache());
+server.use(
+  helmet.featurePolicy({
+    features: {
+      fullscreen: ["'self'"],
+      payment: ["'none'"],
+      syncXhr: ["'none'"]
+    }
+  })
+);
+
 // Create and init Nest server based on Express instance.
 const createNestServer = async (expressInstance: Express) => {
   const app = await NestFactory.create(
     AppNestModule,
     new ExpressAdapter(expressInstance)
-  );
-
-  // Protection with some well-known web vulnerabilities.
-  app.use(helmet());
-  app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
-  app.use(helmet.noCache());
-  app.use(
-    helmet.featurePolicy({
-      features: {
-        fullscreen: ["'self'"],
-        payment: ["'none'"],
-        syncXhr: ["'none'"]
-      }
-    })
   );
 
   app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
