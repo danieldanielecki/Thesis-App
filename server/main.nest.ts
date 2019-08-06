@@ -79,7 +79,7 @@ server.set('trust proxy', 1); // Enable because the application is behind revers
 server.use(
   rateLimit({
     windowMs: 15 * 60 * 1000, // In milliseconds, keep records of requests in memory for 15 minutes.
-    max: 100 // Max 100 connecitons can be done before sending HTTP 429 (Too Many Requests) response code.
+    max: 100 // Max 100 connections can be done before sending HTTP 429 (Too Many Requests) response code.
   })
 );
 
@@ -100,14 +100,14 @@ const createNestServer = async (expressInstance: Express) => {
     new ExpressAdapter(expressInstance)
   );
 
-  app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
-  // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
-
   // Enable CORS.
   app.enableCors({
     origin: true,
     methods: 'POST'
   });
+
+  app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
+  // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
 };
 
 createNestServer(server);
