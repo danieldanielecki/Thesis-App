@@ -135,6 +135,17 @@ Deploy to Staging:
     - npm run deploy:cloud_functions
   stage: staging
 
+# Mozilla Observatory staging security test.
+Security Headers Staging:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  script:
+    - npm install -g observatory-cli
+    - observatory www.thesisapp-dev.firebaseapp.com --zero --format=report
+  stage: staging
+
 # Deployment settings for production environment.
 Deploy to Production:
   dependencies:
@@ -153,4 +164,13 @@ Deploy to Production:
   stage: production
   when: manual # Deployment to production has to be explicitly started by a user, thus this job is not exectued automatically.
 
-# TODO: more security tests should be added.
+# Mozilla Observatory production security test.
+Security Headers Production:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  script:
+    - npm install -g observatory-cli
+    - observatory www.thesisapp-16048.firebaseapp.com --zero --format=report
+  stage: production

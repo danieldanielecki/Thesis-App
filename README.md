@@ -46,6 +46,7 @@ Focus is to achieve high quality source code by using programming best practices
 - `npm audit fix` - fix known vulnerabilities in dependencies.
 - `npm cache clean --force` - clean cache of npm.
 - `npm info PACKAGE_NAME version` - show the newest version of certain package.
+- `npm install PACKAGE_NAME@VERSION --save-exact` - install exact package version without "~" and "^", i.e. don't update automatically.
 - `npm list` - show versions of installed packages in project.
 - `npm list | grep PACKAGE_NAME` - show package details with its own depndencies.
 - `npm list -g` - show versions of installed packages globally.

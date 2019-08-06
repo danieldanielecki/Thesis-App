@@ -1,35 +1,65 @@
+// TODO: Check handling reporting violations (helmet) & bugs (sentry).
+// TODO: Improve typing (cors, helmet, nodemailer, etc.), i.e. all imported by *.
+
 import * as admin from 'firebase-admin';
+import * as csurf from 'csurf';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
 import * as helmet from 'helmet';
 import * as nodemailer from 'nodemailer';
+import * as rateLimit from 'express-rate-limit';
 import { AppNestModule } from './app.nest.module';
 import { Express } from 'express';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { NestFactory } from '@nestjs/core';
 
 declare const MAIL_ACCOUNT: string; // Declare mail account secret.
-declare const MAIL_HOST: string; // Declare mail account secret.
+declare const MAIL_HOST: string; // Declare mail host secret.
 declare const MAIL_PASSWORD: string; // Declare mail password secret.
-declare const MAIL_PORT: number; // Declare mail password secret.
+declare const MAIL_PORT: number; // Declare mail port secret.
 
 admin.initializeApp(); // Initialize Firebase SDK.
 
-// TODO: Check other Nodemailer options like bcc and others.
 const server: Express = express();
-const mailTransport = nodemailer.createTransport({
-  host: MAIL_HOST,
-  port: MAIL_PORT,
-  auth: {
-    user: MAIL_ACCOUNT,
-    pass: MAIL_PASSWORD
-  }
-});
 
-// Protection with some well-known web vulnerabilities.
-server.use(helmet());
-server.use(helmet.referrerPolicy({ policy: 'same-origin' }));
-server.use(helmet.noCache());
+server.use(helmet()); // Enable Helmet's 7 default middleware protections, i.e. dnsPrefetchControl, frameguard, hidePoweredBy, hsts, ieNoOpen, noSniff and xssFilter.
+
+// Content-Security Policy (CSP) rules.
+server.use(
+  helmet.contentSecurityPolicy({
+    browserSniff: false,
+    directives: {
+      defaultSrc: [
+        "'self'",
+        'https://agastya-version.oswaldlabs.com',
+        'https://fonts.googleapis.com',
+        'https://platform.oswaldlabs.com',
+        'https://script.hotjar.com',
+        'https://static.hotjar.com',
+        'https://www.google-analytics.com',
+        'https://www.googletagmanager.com'
+      ],
+      styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+      scriptSrc: [
+        "'self'",
+        'https://www.google-analytics.com',
+        'https://www.googletagmanager.com'
+      ]
+    }
+  })
+);
+
+server.use(helmet.permittedCrossDomainPolicies()); // Prevent Adobe Flash and Adobe Actobar from loading content.
+
+// Enforce to expect Certificate Transparency (CT) for 24 hours.
+server.use(
+  helmet.expectCt({
+    enforce: true,
+    maxAge: 24 * 60 * 60 // In seconds, regard it for max 24 hours.
+  })
+);
+
+// Limit website features.
 server.use(
   helmet.featurePolicy({
     features: {
@@ -40,6 +70,29 @@ server.use(
   })
 );
 
+server.use(helmet.noCache()); // Disable client-side caching.
+server.use(helmet.referrerPolicy({ policy: 'same-origin' })); // Send Referer header only for pages on the same origin.
+
+server.use(csurf()); // Enable CSRF protection.
+
+server.set('trust proxy', 1); // Enable because the application is behind reverse proxy (Firebase).
+server.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000, // In milliseconds, keep records of requests in memory for 15 minutes.
+    max: 100 // Max 100 connecitons can be done before sending HTTP 429 (Too Many Requests) response code.
+  })
+);
+
+// TODO: Check other Nodemailer options like bcc and others.
+const mailTransport = nodemailer.createTransport({
+  host: MAIL_HOST,
+  port: MAIL_PORT,
+  auth: {
+    user: MAIL_ACCOUNT,
+    pass: MAIL_PASSWORD
+  }
+});
+
 // Create and init Nest server based on Express instance.
 const createNestServer = async (expressInstance: Express) => {
   const app = await NestFactory.create(
@@ -49,6 +102,12 @@ const createNestServer = async (expressInstance: Express) => {
 
   app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
   // await app.listen(4300); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
+
+  // Enable CORS.
+  app.enableCors({
+    origin: true,
+    methods: 'POST'
+  });
 };
 
 createNestServer(server);
@@ -58,7 +117,7 @@ createNestServer(server);
 exports.angularUniversalFunction = functions.https.onRequest(server); // Export Firebase Cloud Functions to work on
 
 // Firebase Cloud Function for sending e-mail from a contact form.
-exports.sendMessage = functions.firestore
+exports.contactFormFunction = functions.firestore
   .document('messages/{formControlEmail}')
   .onCreate(async (snap, context) => {
     if (snap.data() === null) return null;
