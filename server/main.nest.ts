@@ -75,11 +75,13 @@ server.use(helmet.referrerPolicy({ policy: 'same-origin' })); // Send Referer he
 
 server.use(csurf()); // Enable CSRF protection.
 
-server.set('trust proxy', 1); // Enable because the application is behind reverse proxy (Firebase).
+server.set('trust proxy', 1); // Trust first proxy. Enable because the application is behind reverse proxy (Firebase). For Node.js applications behind proxy it is required to enable it.
 server.use(
   rateLimit({
-    windowMs: 15 * 60 * 1000, // In milliseconds, keep records of requests in memory for 15 minutes.
-    max: 100 // Max 100 connections can be done before sending HTTP 429 (Too Many Requests) response code.
+    max: 100, // Max 100 connections per windowMs can be done before sending HTTP 429 (Too Many Requests) response code. After 100 requests within 15 minutes block the IP.
+    message:
+      'This IP has been temporarily blocked due to too many requests, please try again later.',
+    windowMs: 15 * 60 * 1000 // In milliseconds, keep records of requests in memory for 15 minutes.
   })
 );
 

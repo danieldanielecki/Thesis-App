@@ -22,8 +22,8 @@ before_script:
 
 # Define stages which GitLab will go through, order matters.
 stages:
-  - build
   - test
+  - build
   - staging
   - security staging
   - production

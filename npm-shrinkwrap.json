@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -12860,14 +12860,6 @@
       "version": "1.1.5",
       "resolved": "https://registry.npmjs.org/ngx-owl-carousel-o/-/ngx-owl-carousel-o-1.1.5.tgz",
       "integrity": "sha512-E9W/hWQFvRqweQoPDBlkZfa6eARpbVZbK8VlrUA+7RssCGM6FmcAftq+aBey/tXuKsKM9EJPH3UG+6HSkNHhuw==",
-      "requires": {
-        "tslib": "^1.9.0"
-      }
-    },
-    "ngx-spinner": {
-      "version": "8.0.3",
-      "resolved": "https://registry.npmjs.org/ngx-spinner/-/ngx-spinner-8.0.3.tgz",
-      "integrity": "sha512-2yiNDqY8jMSjRgYZEb6ubeOpvE2vzRndoPXj0FRINVjfuBioy501t+VwA99SKNbSHwVDa2plEuY7X3o4dbG1cQ==",
       "requires": {
         "tslib": "^1.9.0"
       }
