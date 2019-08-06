@@ -143,7 +143,7 @@ Security Headers Staging:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - npm install -g observatory-cli
-    - observatory www.thesisapp-dev.firebaseapp.com --zero --format=report
+    - observatory thesisapp-dev.firebaseapp.com --zero --format=report
   stage: staging
 
 # Deployment settings for production environment.
@@ -172,5 +172,5 @@ Security Headers Production:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - npm install -g observatory-cli
-    - observatory www.thesisapp-16048.firebaseapp.com --zero --format=report
+    - observatory thesisapp-16048.firebaseapp.com --zero --format=report
   stage: production
