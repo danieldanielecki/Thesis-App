@@ -25,7 +25,9 @@ stages:
   - build
   - test
   - staging
+  - security staging
   - production
+  - security production
 
 # Define staging build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
 Build Staging:
@@ -118,7 +120,6 @@ E2E Tests:
   stage: test
 
 # Deployment settings for development environment.
-# TODO: Test staging & production locally, sending mail & upload files doesn't seems to work on pipeline.
 Deploy to Staging:
   dependencies:
     - Build Staging
@@ -144,7 +145,7 @@ Security Headers Staging:
   script:
     - npm install -g observatory-cli
     - observatory thesisapp-dev.firebaseapp.com --zero --format=report
-  stage: staging
+  stage: security staging
 
 # Deployment settings for production environment.
 Deploy to Production:
@@ -173,4 +174,4 @@ Security Headers Production:
   script:
     - npm install -g observatory-cli
     - observatory thesisapp-16048.firebaseapp.com --zero --format=report
-  stage: production
+  stage: security production
