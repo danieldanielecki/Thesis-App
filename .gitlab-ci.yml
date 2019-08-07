@@ -1,6 +1,5 @@
 # GitLab uses Docker in the background, so it's required to get the image.
 # TODO: Define functions.
-# TODO: Make builds: build->code quality/SAST/dependenceis->unit tests->e2e->staging->dast->production.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
@@ -22,12 +21,72 @@ before_script:
 
 # Define stages which GitLab will go through, order matters.
 stages:
+  - security
+  - quality
   - test
   - build
   - staging
   - security staging
   - production
   - security production
+
+# Define and run known vulnerabilities security job.
+Dependencies Scanning:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  stage: security
+  script:
+    - npx audit-ci --low # Prevent integration with low or higher vulnerabilities, i.e. prevent all vulnerabilities.
+
+# Define and run lint (SAST) security job.
+Static Application Security Testing (SAST):
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  script:
+    - npm run lint
+  stage: security
+
+# Define and run formatting code quality job.
+Code Quality:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  stage: quality
+  script:
+    - npm run format:check
+
+# Define and run unit tests job.
+Unit Tests:
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  #image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
+  script:
+    - npm run test --coverage
+  stage: test
+
+# Define and run E2E tests job.
+E2E Tests:
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist/out-tsc/apps/ditectrev-e2e/**/*.mp4
+      - dist/out-tsc/apps/ditectrev-e2e/**/*.png
+    when: always
+  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-ci/
+  image: cypress/base:10
+  script:
+    - npm run e2e
+  stage: test
 
 # Define staging build job. It installs all required modules which are described in package.json and build the arficats which are supposed to be deployed.
 Build Staging:
@@ -61,64 +120,6 @@ Build Production:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   stage: build
 
-# Define and run security  tests job.
-Dependencies Scanning:
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  stage: test
-  script:
-    - npx audit-ci --low # Prevent integration with low or higher vulnerabilities, i.e. prevent all vulnerabilities.
-
-# Define and run formatting tests job.
-Code Quality:
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  stage: test
-  script:
-    - npm run format:check
-
-# Define and run lint (SAST) tests job.
-Static Application Security Testing (SAST):
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  script:
-    - npm run lint
-  stage: test
-
-# Define and run unit tests job.
-Unit Tests:
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  #image: juristr/angular-ci-build:1.0.0 # Install Angular CLI.
-  script:
-    - npm run test --coverage
-  stage: test
-
-# Define and run E2E tests job.
-E2E Tests:
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - dist/out-tsc/apps/ditectrev-e2e/**/*.mp4
-      - dist/out-tsc/apps/ditectrev-e2e/**/*.png
-    when: always
-  # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-ci/
-  image: cypress/base:10
-  script:
-    - npm run e2e
-  stage: test
-
 # Deployment settings for development environment.
 Deploy to Staging:
   dependencies:
@@ -138,6 +139,8 @@ Deploy to Staging:
 
 # Mozilla Observatory staging security test.
 Security Headers Staging:
+  dependencies:
+    - Deploy to Staging
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
@@ -167,6 +170,8 @@ Deploy to Production:
 
 # Mozilla Observatory production security test.
 Security Headers Production:
+  dependencies:
+    - Deploy to Production
   # When the commit message will have the keyword 'skip-ci' then don't execute pipelines. Useful for little changes such as README.md, when it's not required to run the whole pipeline on file change.
   except:
     variables:
