@@ -12,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
 // TODO: Add unit tests for these methods.
 export class AppComponent {
   public getRouterOutletState(routerOutlet: RouterOutlet): RouterOutlet {
-    const routeData = routerOutlet.activatedRouteData['animation'];
+    const routeData = routerOutlet.activatedRouteData.animation;
     return routeData ? routeData : 'rootPage';
   }
 }

@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HttpClientJsonpModule,
+  HttpClientXsrfModule
+} from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 // TODO: providers from UtilitiesModules doesn't work, fix it.
 // import { UtilitiesModule } from 'libs/utilities/src/index';
@@ -16,7 +20,11 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'XSRF-TOKEN',
+      headerName: 'X-XSRF-TOKEN'
+    })
   ]
 })
 export class CoreModule {

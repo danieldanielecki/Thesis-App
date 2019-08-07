@@ -13,6 +13,7 @@ let mailHost = '';
 let mailPassword = '';
 let mailPort = '';
 let recaptchaApiKey = '';
+let sessionSecret = '';
 
 // Depending by if this is a CI environment or if this is a local development take the secrets from the appropriate location.
 if (isCiBuild) {
@@ -24,6 +25,7 @@ if (isCiBuild) {
   mailPassword = process.env.MAIL_PASSWORD;
   mailPort = process.env.MAIL_PORT;
   recaptchaApiKey = process.env.RECAPTCHA_API_KEY;
+  sessionSecret = process.env.SESSION_SECRET;
 } else {
   const secrets = require('./.config/secrets');
   agastyaApiKey = secrets.AGASTYA_API_KEY;
@@ -34,6 +36,7 @@ if (isCiBuild) {
   mailPassword = secrets.MAIL_PASSWORD;
   mailPort = secrets.MAIL_PORT;
   recaptchaApiKey = secrets.RECAPTCHA_API_KEY;
+  sessionSecret = secrets.SESSION_SECRET;
 }
 
 // Export the secrets as ready to inject global variables across the application (declare const SECRET_NAME: string; is still required in the module where it's supposed to be injected).
@@ -47,7 +50,8 @@ module.exports = {
       MAIL_HOST: JSON.stringify(mailHost),
       MAIL_PASSWORD: JSON.stringify(mailPassword),
       MAIL_PORT: JSON.stringify(mailPort),
-      RECAPTCHA_API_KEY: JSON.stringify(recaptchaApiKey)
+      RECAPTCHA_API_KEY: JSON.stringify(recaptchaApiKey),
+      SESSION_SECRET: JSON.stringify(sessionSecret)
     })
   ]
 };
