@@ -3507,10 +3507,13 @@
       "dev": true
     },
     "@types/three": {
-      "version": "0.93.31",
-      "resolved": "https://registry.npmjs.org/@types/three/-/three-0.93.31.tgz",
-      "integrity": "sha512-lR9eLY3gnrUDAdW4ujITgVTPEv1Oy2yoL3LlfKAnjQuzyjGSR+PvQuXuWmaDCD1IyWhkqbnol1nJwaW0MGe35A==",
-      "dev": true
+      "version": "0.103.2",
+      "resolved": "https://registry.npmjs.org/@types/three/-/three-0.103.2.tgz",
+      "integrity": "sha512-zhtf0Qs5wLJpIn1+VWCpzSgpKayj/GSWZ6woiuz09FW59KEDeLpnBkYz6lbblVpRmGdlnG8nd0unaASshOvcXw==",
+      "dev": true,
+      "requires": {
+        "three": "*"
+      }
     },
     "@types/tough-cookie": {
       "version": "2.3.5",
@@ -16296,9 +16299,9 @@
       }
     },
     "three": {
-      "version": "0.102.1",
-      "resolved": "https://registry.npmjs.org/three/-/three-0.102.1.tgz",
-      "integrity": "sha512-btHBdww/Es4vdBkB2GjTE9mpj0vy8tgtxkX7ne7uxySXV8zoGxWJv1N88BydxnCqvAfmD4ZUTqPeESO7oDgeOQ=="
+      "version": "0.107.0",
+      "resolved": "https://registry.npmjs.org/three/-/three-0.107.0.tgz",
+      "integrity": "sha512-vqbKJRLBEviPVa7poEzXocobicwxzsctr5mnymA7n8fEzcVS49rYP0RrwqZ98JqujRoruK+/YzcchNpRP+kXsQ=="
     },
     "throat": {
       "version": "4.1.0",

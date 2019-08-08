@@ -1,10 +1,11 @@
 // TODO: Check handling reporting violations (helmet) & bugs (sentry).
 // TODO: Improve typings (cors, helmet, nodemailer, etc.), i.e. all imported by *.
 
+// These are important and needed before anything else
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
+
 import * as admin from 'firebase-admin';
-import * as bodyParser from 'body-parser';
 import * as csurf from 'csurf';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
@@ -19,7 +20,7 @@ import { Express } from 'express';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { NestFactory } from '@nestjs/core';
 
-enableProdMode();
+enableProdMode(); // Faster server renders in production mode (development doesn't need it).
 
 declare const MAIL_ACCOUNT: string; // Declare mail account secret.
 declare const MAIL_HOST: string; // Declare mail host secret.
@@ -52,6 +53,7 @@ server.use(
         'https://platform-beta.oswaldlabs.com',
         'https://vars.hotjar.com/',
         'wss://ws4.hotjar.com',
+        'wss://ws7.hotjar.com',
         'https://www.google-analytics.com',
         'https://www.googletagmanager.com'
       ],
@@ -71,6 +73,8 @@ server.use(
         'https://platform.oswaldlabs.com',
         'https://platform-beta.oswaldlabs.com',
         'https://vars.hotjar.com/',
+        'wss://ws4.hotjar.com',
+        'wss://ws7.hotjar.com',
         'https://www.googletagmanager.com',
         'https://www.google-analytics.com'
       ]
@@ -102,7 +106,9 @@ server.use(
 server.use(helmet.noCache()); // Disable client-side caching.
 server.use(helmet.referrerPolicy({ policy: 'same-origin' })); // Send Referer header only for pages on the same origin.
 
-server.use(bodyParser.json()); // Load POST data parser. Form sent should be in JSON format.
+// Handle HTTP POST request and expose it on "req.body".
+server.use(express.json());
+server.use(express.urlencoded({ extended: true })); // Accept any type, "false" would mean accept only array or string.
 
 // Improve sessions and cookies security.
 server.use(

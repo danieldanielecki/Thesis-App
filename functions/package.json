@@ -44,7 +44,6 @@
     "@nrwl/angular": "^8.4.1",
     "agastya": "^4.2.0",
     "animate.css": "^3.7.2",
-    "body-parser": "^1.19.0",
     "core-js": "^2.6.5",
     "csurf": "^1.10.0",
     "express": "^4.17.1",
@@ -72,7 +71,7 @@
     "protobufjs": "file:./protobufjs",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
-    "three": "^0.102.1",
+    "three": "^0.107.0",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {

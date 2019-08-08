@@ -1,3 +1,5 @@
+// TODO: This is the only one page which doesn't work on SSR, fix it.
+
 import {
   Color,
   HemisphereLight,
@@ -9,9 +11,9 @@ import {
   WebGLRenderer
 } from 'three';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  OnInit,
   Renderer2,
   ViewChild
 } from '@angular/core';
@@ -21,10 +23,9 @@ import {
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
-export class NotFoundComponent implements OnInit {
+export class NotFoundComponent implements AfterViewInit {
   @ViewChild('renderIcosahedron', { static: false })
-  // TODO: Change this for something which doesn't access DOM directly.
-  private renderIcosahedron!: ElementRef<HTMLElement>; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
+  public renderIcosahedron!: ElementRef<HTMLElement>; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
 
   public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 
@@ -46,13 +47,14 @@ export class NotFoundComponent implements OnInit {
    * @description Initialize the component - lifecycle hook.
    * @returns {void}
    */
-  public ngOnInit(): void {
+  public ngAfterViewInit(): void {
     const icosphere = this.createScene(this.renderer); // Return the icosahedron geometry object from after creating scene.
 
+    // Append object to be rendered to the DOM, thus append this using Renderer2.
     this.renderer2.appendChild(
-      this.renderIcosahedron.nativeElement,
-      this.renderer.domElement
-    ); // Append object to be rendered to the DOM.
+      this.renderIcosahedron.nativeElement, // Specify where on DOM render an element.
+      this.renderer.domElement // Manipulate DOM using Renderer2, thus avoid manipulating it directly.
+    );
     this.renderScene(icosphere, this.renderer); // Render the scene.
   }
 
