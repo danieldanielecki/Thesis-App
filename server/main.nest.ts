@@ -1,7 +1,7 @@
 // TODO: Check handling reporting violations (helmet) & bugs (sentry).
 // TODO: Improve typings (cors, helmet, nodemailer, etc.), i.e. all imported by *.
 
-// These are important and needed before anything else
+// These are important and needed before anything else.
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
@@ -30,7 +30,7 @@ declare const SESSION_SECRET: string; // Declare session secret.
 
 admin.initializeApp(); // Initialize Firebase SDK.
 
-const server: Express = express();
+const server: Express = express(); // Create Express instance.
 
 server.use(logger('dev')); // Use logging.
 server.use(helmet()); // Enable Helmet's 7 default middleware protections, i.e. dnsPrefetchControl, frameguard, hidePoweredBy, hsts, ieNoOpen, noSniff and xssFilter.
@@ -82,7 +82,7 @@ server.use(
   })
 );
 
-server.use(helmet.permittedCrossDomainPolicies()); // Prevent Adobe Flash and Adobe Actobar from loading content.
+server.use(helmet.permittedCrossDomainPolicies()); // Prevent Adobe Flash and Adobe Acrobat from loading content.
 
 // Enforce to expect Certificate Transparency (CT) for 24 hours.
 server.use(
@@ -148,7 +148,7 @@ const mailTransport = nodemailer.createTransport({
   }
 });
 
-// Create and init Nest server based on Express instance.
+// Create and init NestJS server based on Express instance.
 const createNestServer = async (expressInstance: Express) => {
   const app = await NestFactory.create(
     AppNestModule,
@@ -157,19 +157,21 @@ const createNestServer = async (expressInstance: Express) => {
 
   // Enable Cross Origin Resource Sharing (CORS) to serve external resources.
   app.enableCors({
-    origin: true,
-    methods: 'POST'
+    maxAge: 3600, // In seconds, regard it for max 1 hour.
+    methods: 'POST',
+    origin: true
   });
 
   app.init(); // Use when deploying to & testing with Firebase Cloud Functions.
   // await app.listen(4305); // Use when testing locally without Firebase Cloud Functions solely on NestJS.
 };
 
-createNestServer(server);
+// Create NestJS server and handle errors.
+createNestServer(server).catch(err => console.error(err));
 
 // TODO: Add ".region('europe-west1')" all Firebase Cloud Functions, issue #842.
 // Firebase Cloud Function for Server Side Rendering (SSR).
-exports.angularUniversalFunction = functions.https.onRequest(server); // Export Firebase Cloud Functions to work on
+exports.angularUniversalFunction = functions.https.onRequest(server);
 
 // Firebase Cloud Function for sending e-mail from a contact form.
 exports.contactFormFunction = functions.firestore

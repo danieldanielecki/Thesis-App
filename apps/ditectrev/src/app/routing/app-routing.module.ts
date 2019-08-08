@@ -16,6 +16,11 @@ const routes: Routes = [
   // }
   // TODO: SSR doesn't work on root path, fix it.
   {
+    path: '',
+    redirectTo: 'app',
+    pathMatch: 'full'
+  },
+  {
     path: 'app',
     component: HomeComponent,
     data: { animation: 'home' },

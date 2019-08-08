@@ -1,7 +1,7 @@
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { FlexLayoutServerModule } from '@angular/flex-layout/server';
-import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader'; // For lazy loading on SSR.
+import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 
@@ -11,10 +11,9 @@ import { ServerModule } from '@angular/platform-server';
   imports: [
     AppModule,
     FlexLayoutServerModule,
-    ModuleMapLoaderModule,
+    ModuleMapLoaderModule, // For lazy loading on SSR.
     ServerModule
   ]
 })
 export class AppServerModule {}
 
-// TODO: Check particles.js and other libraries accessing DOM Firebase hosting as a SSR.
