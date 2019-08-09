@@ -16,4 +16,3 @@ import { ServerModule } from '@angular/platform-server';
   ]
 })
 export class AppServerModule {}
-
