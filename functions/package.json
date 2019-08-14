@@ -68,6 +68,7 @@
     "ngx-owl-carousel-o": "^1.1.5",
     "nodemailer": "^6.3.0",
     "particles.js": "^2.0.0",
+    "path": "^0.12.7",
     "protobufjs": "file:./protobufjs",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",

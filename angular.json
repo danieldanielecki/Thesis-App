@@ -19,7 +19,7 @@
               "path": "./custom-webpack.config.js"
             },
             "outputPath": "functions/dist/apps/ditectrev-browser",
-            "index": "apps/ditectrev/src/index.html",
+            "index": "apps/ditectrev/src/index2.html",
             "main": "apps/ditectrev/src/main.browser.ts",
             "polyfills": "apps/ditectrev/src/polyfills.ts",
             "tsConfig": "apps/ditectrev/tsconfig.app.json",
@@ -126,7 +126,8 @@
                 }
               ]
             }
-          }
+          },
+          "index": "functions/dist/apps/ditectrev-browser/index2.html"
         }
       }
     },

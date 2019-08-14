@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   public menuItems: { icon: string; name: string; path: string }[] = [
-    { icon: 'home', name: 'Home', path: '/app' }, // TODO: SSR doesn't work on root path, fix it.
+    { icon: 'home', name: 'Home', path: '/' },
     { icon: 'playlist_add_check', name: 'Services', path: '/services' },
     { icon: 'fingerprint', name: 'Methodology', path: '/methodology' },
     { icon: 'sentiment_satisfied_alt', name: 'About us', path: '/about-us' },

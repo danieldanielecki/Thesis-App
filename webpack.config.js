@@ -46,7 +46,7 @@ if (isCiBuild) {
 
 // Nest server's bundle for SSR.
 const config = WebpackConfigFactory.create(webpack, {
-  server: './server/main.nest.ts'
+  server: './server/main.ts'
 });
 
 // Ignore all "node_modules" when making bundle on the server.
@@ -58,6 +58,7 @@ config.externals = nodeExternals({
 // Set up output folder.
 config.output = {
   filename: 'index.js', // Important in terms of Firebase Cloud Functions, because this is the default starting file to execute Cloud Functions.
+  library: 'ditectrev',
   libraryTarget: 'umd', // Important in terms of Firebase Cloud Functions, because otherwise function can't be triggered in functions directory.
   path: path.join(__dirname, 'functions') // Output path.
 };

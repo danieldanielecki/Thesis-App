@@ -2,11 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-// declare const FIREBASE_API_KEY_DEVELOPMENT: string;
-
 export const environment = {
   production: false,
-  // TODO: Make all these secrets? Issue #14323.
   firebaseConfig: {
     apiKey: 'AIzaSyCopskzCaX23bjwtZDzNbe0OQ6loi2JDMs',
     authDomain: 'thesisapp-dev.firebaseapp.com',
