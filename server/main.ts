@@ -5,7 +5,7 @@ import * as admin from 'firebase-admin';
 import * as csurf from 'csurf';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
-import * as helmet from 'helmet';
+// import * as helmet from 'helmet'; // TODO: featurePolicy type doesn't exists, issue: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37627.
 import * as logger from 'morgan';
 import * as nodemailer from 'nodemailer';
 import * as rateLimit from 'express-rate-limit';
@@ -19,6 +19,8 @@ import {
 } from '@nestjs/platform-express';
 import { join } from 'path';
 import { NestFactory } from '@nestjs/core';
+
+const helmet = require('helmet'); // TODO: featurePolicy type doesn't exists, issue: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37627.
 
 enableProdMode(); // Faster server renders in production mode (development doesn't need it).
 
@@ -147,7 +149,7 @@ const mailTransport = nodemailer.createTransport({
   expressApp.set('trust proxy', 1); // Trust first proxy. Enable because the application is behind reverse proxy (Firebase). For Node.js applications behind proxy it is required to enable it.
 
   expressApp.use(
-    rateLimit({
+    new rateLimit({
       max: 100, // Max 100 connections per windowMs can be done before sending HTTP 429 (Too Many Requests) response code. After 100 requests within 15 minutes block the IP.
       message:
         'This IP has been temporarily blocked due to too many requests, please try again later.',

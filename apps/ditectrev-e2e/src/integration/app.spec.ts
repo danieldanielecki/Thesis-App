@@ -79,9 +79,8 @@ describe('Page: Glossary', () => {
   });
 });
 
-// TODO: Get back to "/" when SSR will work properly.
 describe('Page: Home', () => {
-  beforeEach(() => cy.visit('/app'));
+  beforeEach(() => cy.visit('/'));
 
   it('should display particles animation', () => {
     cy.wait(2000); // Required in order to pass the test due to the Agastya XHR request.
