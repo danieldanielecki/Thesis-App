@@ -25,9 +25,9 @@
     // "strict": true, // Enable all strict type checking options. Enabling --strict enables: '--alwaysStrict', '--noImplicitAny', '--noImplicitThis', '--strictBindCallApply', '--strictFunctionTypes', '--strictNullChecks', and '--strictPropertyInitialization'.
     // Even though most of these rules below are enabled by setting strict to true, it's a good informational source what exactly it does.
     "alwaysStrict": true, // Parse in strict mode and emit 'use strict' for each source file.
-    // "noImplicitAny": true, // Raise error on expressions and declarations with an implied any type.
-    "noImplicitThis": true, // Raise error on this expressions with an implied any type.
-    "skipLibCheck": false, // Skip type checking of all declaration files (*.d.ts).
+    // "noImplicitAny": true, // Raise error on expressions and declarations with an implied "any" type.
+    "noImplicitThis": true, // Raise error on "this" expressions with an implied "any" type.
+    "skipLibCheck": false, // Don't skip type checking of all declaration files (*.d.ts).
     "strictBindCallApply": true, // Enable stricter checking of of the bind, call, and apply methods on functions.
     "strictFunctionTypes": true, // Disable bivariant parameter checking for function types.
     "strictNullChecks": true, // In strict null checking mode, the null and undefined values are not in the domain of every type and are only assignable to themselves and any (the one exception being that undefined is also assignable to void).
@@ -42,7 +42,7 @@
     "noUnusedParameters": true, // Report errors on unused parameters.
 
     /* Module resolution options. */
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export. This does not affect code emit, just type checking.
     "baseUrl": ".", // Base directory to resolve non-relative module names.
     "moduleResolution": "node", // Determine how modules get resolved. Either "Node" for Node.js/io.js style resolution, or "Classic".
 

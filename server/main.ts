@@ -225,10 +225,10 @@ exports.contactFormFunction = functions.firestore
 
     return mailTransport
       .sendMail(mailOptions)
-      .then(info => {
+      .then((info: string) => {
         console.log('Info: ', info);
       })
-      .catch(error => {
+      .catch((error: string) => {
         return console.log('Error: ', error); // This log will be shown in Firebase Functions logs.
       });
   });
