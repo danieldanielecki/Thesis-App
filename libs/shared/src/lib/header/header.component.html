@@ -112,7 +112,7 @@
           <!-- Mobile main menu elements. -->
           <a
             mat-list-item
-            *ngIf="i !== 1 && !lastItem; else: servicesTemplate"
+            *ngIf="i !== 1 && !lastItem; else servicesTemplate"
             routerLink="{{ menuItem.path }}"
             attr.aria-label="{{
               menuItem.name
@@ -131,7 +131,7 @@
             -->
             <a
               mat-list-item
-              *ngIf="!lastItem; else: closeTemplate"
+              *ngIf="!lastItem; else closeTemplate"
               [matMenuTriggerFor]="menuMobile"
               routerLink="{{ menuItem.path }}"
               attr.aria-label="{{ menuItem.name }}. Click to read more about {{
