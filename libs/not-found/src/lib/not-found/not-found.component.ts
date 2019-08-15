@@ -25,7 +25,7 @@ import {
 })
 export class NotFoundComponent implements AfterViewInit {
   @ViewChild('renderIcosahedron', { static: false })
-  public renderIcosahedron!: ElementRef<HTMLElement>; // Get reference of div element from HTML element to render Three.js. Need to add non-null assertion in order to inform compiler it's not gonna to be initialized and silent the error.
+  public renderIcosahedron!: ElementRef<HTMLElement>; // Get reference of div element from HTML element to render Three.js. Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
 
   public camera: PerspectiveCamera = new PerspectiveCamera(90, 1, 0.01, 20000); // Create the camera.
 

@@ -124,13 +124,12 @@ export class ContactComponent {
   public hasError(event: any): void {
     if (!event && this.contactForm.value.formControlPhone !== '') {
       this.contactForm
-        .get('formControlPhone')! // Non-null assertion operator is required in .ts as well as .html file to compile into AOT.
+        .get('formControlPhone')! // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         .setErrors(['invalid_cell_phone', true]);
     }
   }
 
   // TODO: Shall it be a separated service?
-  // TODO: Not working on deployment, fix it.
   /**
    * @description Perform certain behaviours on button submit of the contact form.
    * @param {form} - object of submitted contact form.
@@ -140,7 +139,7 @@ export class ContactComponent {
     form.fileUploader = this.downloadURL;
 
     this.angularFirestore
-      .collection('messages')
+      .collection(process.env.FIRESTORE_COLLECTION_MESSAGES!) // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
       .add(form)
       .then(() => {
         this.contactForm.reset(); // Reset form once user will click "Send Message".
@@ -186,7 +185,7 @@ export class ContactComponent {
           finalize(() => {
             fileRef.getDownloadURL().subscribe(downloadURL => {
               this.angularFirestore
-                .collection('files')
+                .collection(process.env.FIRESTORE_COLLECTION_FILES!) // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
                 .add({ downloadURL: downloadURL });
               this.downloadURL.push(downloadURL);
             });

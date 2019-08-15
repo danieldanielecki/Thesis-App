@@ -1,4 +1,4 @@
-// TODO: Check all config files like with tsconfig's.
+// TODO: Check all config files like with tsconfig's. Also others options excluding security for Angular/TypeScript compilers.
 // TODO: Make everything alphabetically.
 // TODO: Check in terms of AOT is the methods really must be public (almost) everywhere in components.
 // TODO: Add Animate on Scroll in many places.
@@ -25,8 +25,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 // tslint:disable-next-line:nx-enforce-module-boundaries
 import { SharedModule } from './../../../../libs/shared/src/index';
 
-declare const AGASTYA_API_KEY: string; // Declare Agastya API key secret.
-new Agastya(AGASTYA_API_KEY); // TODO: Check the documentation to make it proper.
+new Agastya(process.env.AGASTYA_API_KEY!); // TODO: Check the documentation to make it proper. Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
 
 @NgModule({
   bootstrap: [AppComponent],

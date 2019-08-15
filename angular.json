@@ -16,7 +16,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./custom-webpack.config.js"
+              "path": "./webpack.browser.config.js"
             },
             "outputPath": "functions/dist/apps/ditectrev-browser",
             "index": "apps/ditectrev/src/index2.html",

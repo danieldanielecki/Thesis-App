@@ -39,7 +39,7 @@ testem.log
 Thumbs.db
 
 # Others
-.config
+.env
 .npm
 .npm-global
 .vscode

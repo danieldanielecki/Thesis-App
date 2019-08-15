@@ -47,8 +47,7 @@ export class FooterComponent {
   ]);
 
   public currentDate: Date = new Date();
-  public endpointMailChimp =
-    'https://ditectrev.us15.list-manage.com/subscribe/post-json?u=f47a9bf63c687219a336b35ed&amp;id=d68066abca&';
+  public endpointMailChimp = process.env.MAILCHIMP_ENDPOINT;
   public error = '';
   public submitted = false;
 
@@ -113,7 +112,7 @@ export class FooterComponent {
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)
-      .set('b_f47a9bf63c687219a336b35ed_d68066abca', ''); // Hidden input.
+      .set(process.env.MAILCHIMP_HIDDEN_INPUT!, ''); // Hidden input. Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
     const urlMailChimp = this.endpointMailChimp + params.toString();
 
     this.httpClient.jsonp<ResponseMailChimp>(urlMailChimp, 'c').subscribe(

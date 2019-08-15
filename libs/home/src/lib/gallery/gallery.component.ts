@@ -11,7 +11,7 @@ import {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  // Non-null assertion operators are required in order to prevent compiler from throwing an error.
+  // Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
   public galleryOptions!: NgxGalleryOptions[];
   public galleryImages!: NgxGalleryImage[];
 

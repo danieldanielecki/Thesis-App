@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./../../tsconfig.lib.json",
   "compilerOptions": {
     "module": "commonjs", // Specify module code generation: 'AMD', 'CommonJS', 'ES3', 'ES5', 'ES2015', 'ESNext', 'None', 'System', or 'UMD'. Default: 'ES3', or 'ES5' ? 'CommonJS' : 'ES2015'. Required in Jest environment, without this Jest tests won't pass.
     "outDir": "../../dist/out-tsc/libs/not-found", // Redirect output structure to the directory.

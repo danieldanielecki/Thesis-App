@@ -1,5 +1,3 @@
-// declare const RECAPTCHA_API_KEY: string; // TODO: This doesn't work, issue #14323.
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -40,7 +38,7 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA' // TODO: Change this to take from secrets, issue #14323.
+        siteKey: process.env.RECAPTCHA_API_KEY
       } as RecaptchaSettings
     }
   ]

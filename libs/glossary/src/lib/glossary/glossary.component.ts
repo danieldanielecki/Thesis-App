@@ -128,7 +128,7 @@ export class GlossaryComponent implements AfterViewInit {
   );
   public displayedColumns: string[] = ['position', 'name', 'description'];
 
-  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator; // Non-null assertion operator is required in .ts to compile into AOT.
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator; // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
   @ViewChild(MatSort, { static: false }) sort: MatSort = new MatSort();
 
   public ngAfterViewInit(): void {

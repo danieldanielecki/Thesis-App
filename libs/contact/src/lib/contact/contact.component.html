@@ -38,6 +38,9 @@
           type="text"
         />
         <mat-hint>Write your name.</mat-hint>
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error *ngIf="!contactForm.get('formControlName')!.valid"
           >This is an <strong>invalid</strong> a full name.
         </mat-error>
@@ -53,6 +56,9 @@
           type="email"
         />
         <mat-hint>Provide valid email address.</mat-hint>
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error *ngIf="!contactForm.get('formControlEmail')!.valid"
           >This is an <strong>invalid</strong> email address.
         </mat-error>
@@ -87,6 +93,9 @@
         />
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Your phone number with country prefix.</mat-hint>
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error *ngIf="!contactForm.get('formControlPhone')!.valid"
           >This is an <strong>invalid</strong> phone number.
         </mat-error>
@@ -110,6 +119,9 @@
           >Specify when at latest you would like to have the project
           done.</mat-hint
         >
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error *ngIf="!contactForm.get('formControlDeadline')!.valid"
           >This date is an <strong>invalid</strong> project deadline date.
         </mat-error>
@@ -132,13 +144,18 @@
           title="Project description"
         ></textarea>
         <mat-hint>Description for your project.</mat-hint>
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error *ngIf="!contactForm.get('formControlDescription')!.valid"
           >Description of the project is expected to have
           <strong>between 30 and 5000 characters.</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <!-- Accept only files in the following format: .doc, .docx, .jpg, .jpeg, .pdf, .png, .xls, .xlsx. However, this is easy to bypass, Cloud Storage rules has been set up on the back-end side. -->
+        <!--
+          Accept only files in the following format: .doc, .docx, .jpg, .jpeg, .pdf, .png, .xls, .xlsx. However, this is easy to bypass, Cloud Storage rules has been set up on the back-end side.
+        -->
         <ngx-mat-file-input
           [accept]="[
             '.doc',
@@ -164,6 +181,9 @@
           >Accepted formats: DOC, DOCX, JPG, JPEG, PDF, PNG, XLS and XLSX,
           maximum files upload size: 20 MB.
         </mat-hint>
+        <!--
+          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        -->
         <mat-error
           *ngIf="contactForm.get('fileUploader')!.hasError('maxContentSize')"
         >
@@ -232,6 +252,9 @@
           >
         </ng-container>
       </mat-selection-list>
+      <!--
+        Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+      -->
       <mat-error
         *ngIf="
           !contactForm.get('formControlService')!.valid &&
@@ -254,6 +277,9 @@
         title="Agree on terms"
         >Agree on terms
       </mat-slide-toggle>
+      <!--
+        Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+      -->
       <button
         mat-raised-button
         matTooltip="Send message"
