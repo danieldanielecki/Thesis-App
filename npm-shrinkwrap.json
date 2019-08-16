@@ -2350,12 +2350,38 @@
         "jasmine-marbles": "~0.6.0"
       },
       "dependencies": {
+        "@nrwl/cypress": {
+          "version": "8.4.2",
+          "resolved": "https://registry.npmjs.org/@nrwl/cypress/-/cypress-8.4.2.tgz",
+          "integrity": "sha512-0rRxIlyhL1n0AKx/c3fNia2HXVzoOlhXbQFBwo6rDiNTdrGT09ZHVGXPrLHxmXhpyuihgeC9jZ5Jm7iLHCqydA==",
+          "requires": {
+            "@angular-devkit/architect": "0.801.1",
+            "@angular-devkit/core": "8.1.1",
+            "@cypress/webpack-preprocessor": "~4.1.0",
+            "tree-kill": "1.2.1",
+            "ts-loader": "5.3.1",
+            "tsconfig-paths-webpack-plugin": "3.2.0",
+            "webpack-node-externals": "1.7.2"
+          }
+        },
         "jasmine-marbles": {
           "version": "0.6.0",
           "resolved": "https://registry.npmjs.org/jasmine-marbles/-/jasmine-marbles-0.6.0.tgz",
           "integrity": "sha512-1uzgjEesEeCb+r+v46qn5x326TiGqk5SUZa+A3O+XnMCjG/pGcUOhL9Xsg5L7gLC6RFHyWGTkB5fei4rcvIOiQ==",
           "requires": {
             "lodash": "^4.5.0"
+          }
+        },
+        "ts-loader": {
+          "version": "5.3.1",
+          "resolved": "https://registry.npmjs.org/ts-loader/-/ts-loader-5.3.1.tgz",
+          "integrity": "sha512-fDDgpBH3SR8xlt2MasLdz3Yy611PQ/UY/KGyo7TgXhTRU/6sS8uGG0nJYnU1OdFBNKcoYbId1UTNaAOUn+i41g==",
+          "requires": {
+            "chalk": "^2.3.0",
+            "enhanced-resolve": "^4.0.0",
+            "loader-utils": "^1.0.2",
+            "micromatch": "^3.1.4",
+            "semver": "^5.0.1"
           }
         }
       }
@@ -2559,9 +2585,10 @@
       }
     },
     "@nrwl/cypress": {
-      "version": "8.4.2",
-      "resolved": "https://registry.npmjs.org/@nrwl/cypress/-/cypress-8.4.2.tgz",
-      "integrity": "sha512-0rRxIlyhL1n0AKx/c3fNia2HXVzoOlhXbQFBwo6rDiNTdrGT09ZHVGXPrLHxmXhpyuihgeC9jZ5Jm7iLHCqydA==",
+      "version": "8.4.10",
+      "resolved": "https://registry.npmjs.org/@nrwl/cypress/-/cypress-8.4.10.tgz",
+      "integrity": "sha512-kR7N0mKGHY391AI0R1vgoGFE93MZRiZJ+ag8qKErfSP13dCFG1qTiVVpCAVm6AEzfvBDhmu3yRsoTXm2DjuqfQ==",
+      "dev": true,
       "requires": {
         "@angular-devkit/architect": "0.801.1",
         "@angular-devkit/core": "8.1.1",
@@ -2576,6 +2603,7 @@
           "version": "5.3.1",
           "resolved": "https://registry.npmjs.org/ts-loader/-/ts-loader-5.3.1.tgz",
           "integrity": "sha512-fDDgpBH3SR8xlt2MasLdz3Yy611PQ/UY/KGyo7TgXhTRU/6sS8uGG0nJYnU1OdFBNKcoYbId1UTNaAOUn+i41g==",
+          "dev": true,
           "requires": {
             "chalk": "^2.3.0",
             "enhanced-resolve": "^4.0.0",
@@ -5905,14 +5933,13 @@
       "integrity": "sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A=="
     },
     "core-js-compat": {
-      "version": "3.1.4",
-      "resolved": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.4.tgz",
-      "integrity": "sha512-Z5zbO9f1d0YrJdoaQhphVAnKPimX92D6z8lCGphH89MNRxlL1prI9ExJPqVwP0/kgkQCv8c4GJGT8X16yUncOg==",
+      "version": "3.2.1",
+      "resolved": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.2.1.tgz",
+      "integrity": "sha512-MwPZle5CF9dEaMYdDeWm73ao/IflDH+FjeJCWEADcEgFSE9TLimFKwJsfmkwzI8eC0Aj0mgvMDjeQjrElkz4/A==",
       "optional": true,
       "requires": {
-        "browserslist": "^4.6.2",
-        "core-js-pure": "3.1.4",
-        "semver": "^6.1.1"
+        "browserslist": "^4.6.6",
+        "semver": "^6.3.0"
       },
       "dependencies": {
         "semver": {
@@ -5922,12 +5949,6 @@
           "optional": true
         }
       }
-    },
-    "core-js-pure": {
-      "version": "3.1.4",
-      "resolved": "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.1.4.tgz",
-      "integrity": "sha512-uJ4Z7iPNwiu1foygbcZYJsJs1jiXrTTCvxfLDXNhI/I+NHbSIEyr548y4fcsCEyWY0XgfAG/qqaunJ1SThHenA==",
-      "optional": true
     },
     "core-util-is": {
       "version": "1.0.2",
@@ -14588,13 +14609,13 @@
       "optional": true
     },
     "regexpu-core": {
-      "version": "4.5.4",
-      "resolved": "https://registry.npmjs.org/regexpu-core/-/regexpu-core-4.5.4.tgz",
-      "integrity": "sha512-BtizvGtFQKGPUcTy56o3nk1bGRp4SZOTYrDtGNlqCQufptV5IkkLN6Emw+yunAJjzf+C9FQFtvq7IoA3+oMYHQ==",
+      "version": "4.5.5",
+      "resolved": "https://registry.npmjs.org/regexpu-core/-/regexpu-core-4.5.5.tgz",
+      "integrity": "sha512-FpI67+ky9J+cDizQUJlIlNZFKual/lUkFr1AG6zOCpwZ9cLrg8UUVakyUQJD7fCDIe9Z2nwTQJNPyonatNmDFQ==",
       "optional": true,
       "requires": {
         "regenerate": "^1.4.0",
-        "regenerate-unicode-properties": "^8.0.2",
+        "regenerate-unicode-properties": "^8.1.0",
         "regjsgen": "^0.5.0",
         "regjsparser": "^0.6.0",
         "unicode-match-property-ecmascript": "^1.0.4",
