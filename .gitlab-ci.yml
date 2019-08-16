@@ -18,6 +18,7 @@ cache:
 # Make sure to install all packages before running anything.
 before_script:
   - npm ci # For CI it's better to have this instead of npm install.
+  - npm install --save https://github.com/danieldanielecki/protobufjs-angularfire#master
 
 # Define stages which GitLab will go through, order matters.
 stages:
