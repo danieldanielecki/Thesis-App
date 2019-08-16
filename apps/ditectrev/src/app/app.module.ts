@@ -7,10 +7,7 @@
 // TODO: Unify all imports, remove "./".
 // TODO: Check angular.json and all compiling options.
 // TODO: Fix unit tests from pipeline.
-
-// When new installation (problem with @angular/fire, issue #1455):
-// 1. Open `node_modules/protobufjs/src/util/minimal.js` (it's NOT inside the @grpc package).
-// 2. Change the following line `util.isNode = Boolean(util.global.process && util.global.process.versions && util.global.process.versions.node);` to `util.isNode = true;`
+// TODO: Check VSCode options.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
