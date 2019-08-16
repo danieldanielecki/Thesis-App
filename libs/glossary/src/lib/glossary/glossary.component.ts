@@ -1,3 +1,5 @@
+// TODO: Add "Not found" when from search there's nothing to give back.
+
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';

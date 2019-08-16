@@ -20,7 +20,6 @@ applyDomino(global, join(BROWSER_DIR, 'index2.html')); // Mock document, window 
   imports: [
     AngularUniversalModule.forRoot({
       bundle: require('./../functions/dist/apps/ditectrev-server/main'), // Bundle is created dynamically during build process.
-      liveReload: true,
       templatePath: join(BROWSER_DIR, 'index2.html'),
       viewsPath: BROWSER_DIR
     })
