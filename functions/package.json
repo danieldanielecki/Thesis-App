@@ -69,7 +69,7 @@
     "nodemailer": "^6.3.0",
     "particles.js": "^2.0.0",
     "path": "^0.12.7",
-    "protobufjs": "https://github.com/danieldanielecki/protobufjs-angularfire",
+    "protobufjs": "https://github.com/danieldanielecki/protobufjs-angularfire.git",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
     "three": "^0.107.0",
