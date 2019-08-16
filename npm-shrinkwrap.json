@@ -14194,9 +14194,8 @@
       }
     },
     "protobufjs": {
-      "version": "6.8.8",
-      "resolved": "https://registry.npmjs.org/protobufjs/-/protobufjs-6.8.8.tgz",
-      "integrity": "sha512-AAmHtD5pXgZfi7GMpllpO3q1Xw1OYldr+dMUlAnffGTAhqkg72WdmSY71uKBF/JuyiKs8psYbtKrhi0ASCD8qw==",
+      "version": "git+https://github.com/danieldanielecki/protobufjs-angularfire.git#dba46e0ab87e10aa3c94f99521daa5c8a22ae533",
+      "from": "git+https://github.com/danieldanielecki/protobufjs-angularfire.git#master",
       "requires": {
         "@protobufjs/aspromise": "^1.1.2",
         "@protobufjs/base64": "^1.1.2",
@@ -14214,9 +14213,9 @@
       },
       "dependencies": {
         "@types/node": {
-          "version": "10.14.14",
-          "resolved": "https://registry.npmjs.org/@types/node/-/node-10.14.14.tgz",
-          "integrity": "sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ=="
+          "version": "10.14.15",
+          "resolved": "https://registry.npmjs.org/@types/node/-/node-10.14.15.tgz",
+          "integrity": "sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g=="
         }
       }
     },
