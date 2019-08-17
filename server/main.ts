@@ -98,7 +98,7 @@ const mailTransport = nodemailer.createTransport({
           'https://www.google.com', // reCAPTCHA.
           'https://www.gstatic.com' // reCAPTCHA.
         ],
-        upgradeInsecureRequests: true // TODO: Check if it helps with blocking loading of active/passive content over insecure FTP/HTTP.
+        upgradeInsecureRequests: true // Block loading of active/passive content over insecure FTP/HTTP.
       }
     })
   );
