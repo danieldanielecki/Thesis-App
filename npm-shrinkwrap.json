@@ -14194,8 +14194,8 @@
       }
     },
     "protobufjs": {
-      "version": "git+https://github.com/danieldanielecki/protobufjs-angularfire.git#dba46e0ab87e10aa3c94f99521daa5c8a22ae533",
-      "from": "git+https://github.com/danieldanielecki/protobufjs-angularfire.git#master",
+      "version": "github:danieldanielecki/protobufjs-angularfire#dba46e0ab87e10aa3c94f99521daa5c8a22ae533",
+      "from": "github:danieldanielecki/protobufjs-angularfire",
       "requires": {
         "@protobufjs/aspromise": "^1.1.2",
         "@protobufjs/base64": "^1.1.2",
