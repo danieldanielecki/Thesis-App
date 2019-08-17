@@ -1,5 +1,5 @@
 # GitLab uses Docker in the background, so it's required to get the image.
-# TODO: Define functions.
+# TODO: Define and invoke functions.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.
@@ -17,9 +17,7 @@ cache:
 
 # Make sure to install all packages before running anything.
 before_script:
-  #- npm ci # For CI it's better to have this instead of npm install.
-  - npm install
-  - npm install --save https://github.com/danieldanielecki/protobufjs-angularfire#master
+  - npm ci # For CI it's better to have this instead of npm install.
 
 # Define stages which GitLab will go through, order matters.
 stages:
