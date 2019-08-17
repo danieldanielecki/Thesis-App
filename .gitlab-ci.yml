@@ -19,7 +19,6 @@ cache:
 before_script:
   - apk update && apk add git
   - npm ci # For CI it's better to have this instead of npm install.
-  - npm install --save https://github.com/danieldanielecki/protobufjs-angularfire#master
 
 # Define stages which GitLab will go through, order matters.
 stages:
