@@ -88,7 +88,7 @@
     "intl-tel-input": "^15.0.2",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
-    "ng-circle-progress": "^1.4.1",
+    "ng-circle-progress": "1.4.1",
     "ng-recaptcha": "^4.2.1",
     "ng2-tel-input": "^2.0.1",
     "ngx-gallery": "^5.10.0",
