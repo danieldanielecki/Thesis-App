@@ -140,7 +140,7 @@ const mailTransport = nodemailer.createTransport({
         sameSite: true, // Mitigate risk of cross-origin information leakage. Robust refence against CSRF, mitigate XSSI too.
         signed: true // Sign a cookie to prevent from cookie forging.
       },
-      name: 'SESSION_ID', // Change default name of session cookie which reveals application's internal technology. For Express apps this is "connect.sid".
+      name: '__SESSION_ID', // Change default name of session cookie which reveals application's internal technology. For Express apps this is "connect.sid".
       resave: false, // Disable forcing session to be saved back to the sessions store, even if the session was never modified during the request. Enabling it could potentially create race conditions where client makes 2 parallels requests to the server.
       saveUninitialized: true, // Save uninitialized session to the store.
       secret: process.env.SESSION_SECRET! // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
