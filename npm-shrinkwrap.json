@@ -13313,12 +13313,9 @@
       "integrity": "sha1-yobR/ogoFpsBICCOPchCS524NCw="
     },
     "ng-circle-progress": {
-      "version": "1.5.0",
-      "resolved": "https://registry.npmjs.org/ng-circle-progress/-/ng-circle-progress-1.5.0.tgz",
-      "integrity": "sha512-WRy6UneVz6HIIjvxOY6ogY85RnatGX8P03I0aSWqjUdC6ZYY/Z389QC/JGDjQrWPdO4hIN9td1TgcdGdnc0/Jw==",
-      "requires": {
-        "tslib": "^1.9.0"
-      }
+      "version": "1.4.1",
+      "resolved": "https://registry.npmjs.org/ng-circle-progress/-/ng-circle-progress-1.4.1.tgz",
+      "integrity": "sha512-c665TYcbLmdPj6rLDJc88FzE0us+DhteYtM7xJNRRdKoMX3PRF9/YgGiADXpVKrU8DIKbRTXpkcVKW+buxA8zg=="
     },
     "ng-recaptcha": {
       "version": "4.3.0",
