@@ -17,7 +17,7 @@ cache:
 
 # Make sure to install all packages before running anything.
 before_script:
-  - apk update && apk add git
+  - apk update && apk add git # Install Git in the container.
   - npm ci # For CI it's better to have this instead of npm install.
 
 # Define stages which GitLab will go through, order matters.

@@ -1,7 +1,8 @@
 /* Custom webpack server properties. */
 // TODO: Check others webpack options.
+// TODO: Merge webpack into 1 file, i.e. webpack.config.js
 
-const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv-webpack');
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const webpack = require('webpack');
@@ -22,14 +23,13 @@ webpackConfig.externals = nodeExternals({
 // Set up output folder.
 webpackConfig.output = {
   filename: 'index.js', // Important in terms of Firebase Cloud Functions, because this is the default starting file to execute Cloud Functions.
-  library: 'ditectrev',
   libraryTarget: 'umd', // Important in terms of Firebase Cloud Functions, because otherwise function can't be triggered in functions directory.
   path: path.join(__dirname, 'functions') // Output path.
 };
 
 // Define plugins.
 webpackConfig.plugins = [
-  new Dotenv(), // Handle environemntal variables on localhost.
+  new dotenv(), // Handle environemntal variables on localhost.
   // Fix WARNING "Critical dependency: the request of a dependency is an expression".
   new webpack.ContextReplacementPlugin(
     /(.+)?angular(\\|\/)core(.+)?/,

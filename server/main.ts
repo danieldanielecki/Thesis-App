@@ -185,7 +185,7 @@ exports.angularUniversalFunction = functions.https.onRequest(expressApp);
 // Firebase Cloud Function for sending e-mail from a contact form.
 exports.contactFormFunction = functions.firestore
   .document(process.env.FIRESTORE_COLLECTION + '/{formControlEmail}')
-  .onCreate(async (snap, context) => {
+  .onCreate(async (snap: any, context: any) => {
     if (snap.data() === null) return null;
 
     const contactFormData = snap.data();

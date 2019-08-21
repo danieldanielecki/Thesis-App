@@ -1,12 +1,12 @@
 {
   "extends": "tsconfig.json",
   "angularCompilerOptions": {
-    "allowEmptyCodegenFiles": false, // Generate all the possible generated files even if they are empty.
+    "allowEmptyCodegenFiles": false, // Disable generating all the possible generated files even if they are empty.
     "annotationsAs": "static fields", // Replace decorators with a static field in the class. Allows advanced tree-shakers like Closure compiler to remove unused classes.
     "annotateForClosureCompiler": true, // Use Tsickle to annotate the emitted JavaScript with JSDoc comments needed by the Closure Compiler.
     "disableExpressionLowering": false, // Disable metadata rewriting, requiring the rewriting to be done manually.
     "disableTypeScriptVersionCheck": false, // Disable not to check TypeScript version, if would be set to true then unsupported versions wouldn't throw an error.
-    "enableLegacyTemplate": false, // Enable using deprecated <template>, it can be required by some third-party Angular libraries.
+    "enableLegacyTemplate": false, // Disable using deprecated <template>, it can be required by some third-party Angular libraries.
     "enableResourceInlining": true, // Replace all templateUrl and styleUrls properties in @Component with template/styles. Better debug error messaging with NgIf when it uses non-template elements.
     "fullTemplateTypeCheck": true, // Enable the binding expression validation phase of the template compiler which uses TypeScript to validate binding expressions.
     "generateCodeForLibraries": true, // Generate factory files (.ngfactory.js and .ngstyle.js) for .d.ts files with a corresponding .metadata.json file.
@@ -16,6 +16,5 @@
     "strictInjectionParameters": true, // Report an error for a parameter supplied whose injection type cannot be determined.
     "strictMetadataEmit": true, // Emit errors for metadata that would never produce an error when used by the template compiler. This should only be used when "skipMetadataEmit" is false and "skipTemplateCodeGen" is true.
     "trace": true // Print extra information while compiling templates.
-  },
-  "exclude": ["dist", "node_modules", "tmp"]
+  }
 }

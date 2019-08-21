@@ -183,7 +183,7 @@ export class ContactComponent {
         .snapshotChanges()
         .pipe(
           finalize(() => {
-            fileRef.getDownloadURL().subscribe(downloadURL => {
+            fileRef.getDownloadURL().subscribe((downloadURL: string) => {
               this.angularFirestore
                 .collection(process.env.FIRESTORE_COLLECTION_FILES!) // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
                 .add({ downloadURL: downloadURL });

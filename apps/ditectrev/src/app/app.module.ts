@@ -8,7 +8,7 @@
 // TODO: Check angular.json and all compiling options.
 // TODO: Fix unit tests from pipeline.
 // TODO: Check VSCode options.
-// TODO: Remove generating source maps and minify JS.
+// TODO: Remove generating source maps.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
