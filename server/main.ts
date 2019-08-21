@@ -125,7 +125,7 @@ const mailTransport = nodemailer.createTransport({
   );
 
   expressApp.use(helmet.noCache()); // Disable client-side caching.
-  expressApp.use(helmet.referrerPolicy({ policy: 'same-origin' })); // Send Referer header only for pages on the same origin.
+  expressApp.use(helmet.referrerPolicy({ policy: 'origin-when-cross-origin' })); // Send Referer header only for pages on the same origin.
 
   // Handle HTTP POST request and expose it on "req.body".
   expressApp.use(express.json());
