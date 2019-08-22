@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyCopskzCaX23bjwtZDzNbe0OQ6loi2JDMs',
-    authDomain: 'thesisapp-dev.firebaseapp.com',
-    databaseURL: 'https://thesisapp-dev.firebaseio.com',
-    projectId: 'thesisapp-dev',
-    storageBucket: 'thesisapp-dev.appspot.com',
-    messagingSenderId: '777252727052',
-    appId: '1:777252727052:web:ad824ac0cb2fa178'
+    apiKey: process.env.FIREBASE_API_KEY_DEVELOPMENT,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN_DEVELOPMENT,
+    databaseURL: process.env.FIREBASE_DATABASE_URL_DEVELOPMENT,
+    projectId: process.env.FIREBASE_PROJECT_ID_DEVELOPMENT,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET_DEVELOPMENT,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID_DEVELOPMENT,
+    appId: process.env.FIREBASE_APP_ID_DEVELOPMENT
   }
 };
 
