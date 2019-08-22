@@ -31,9 +31,10 @@ const expressApp: Express = express(); // Create Express instance.
 // TODO: Check other Nodemailer options like bcc and others.
 const mailTransport = nodemailer.createTransport({
   // Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
-  host: process.env.MAIL_HOST!,
+  // host: process.env.MAIL_HOST,
+  host: 'smtp.gmail.com',
   // tslint:disable-next-line:radix
-  port: parseInt(process.env.MAIL_PORT!),
+  port: 465,
   auth: {
     user: process.env.MAIL_ACCOUNT,
     pass: process.env.MAIL_PASSWORD
@@ -143,7 +144,8 @@ const mailTransport = nodemailer.createTransport({
       name: '__SESSION_ID', // Change default name of session cookie which reveals application's internal technology. For Express apps this is "connect.sid".
       resave: false, // Disable forcing session to be saved back to the sessions store, even if the session was never modified during the request. Enabling it could potentially create race conditions where client makes 2 parallels requests to the server.
       saveUninitialized: true, // Save uninitialized session to the store.
-      secret: process.env.SESSION_SECRET! // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
+      secret: 'dasdasda' // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
+      // secret: process.env.SESSION_SECRET! // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
     })
   );
 
