@@ -9,6 +9,9 @@
 // TODO: Fix unit tests from pipeline.
 // TODO: Check VSCode options.
 // TODO: Remove generating source maps.
+// TODO: Add mutation testing.
+// TODO: Add ngrev.
+// TODO: Add Docker Bench Security.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';

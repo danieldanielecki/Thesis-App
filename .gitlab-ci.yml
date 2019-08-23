@@ -146,7 +146,7 @@ Security Headers Staging:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - npm install -g observatory-cli
-    - observatory thesisapp-dev.firebaseapp.com --format=report  --min-score 85 --zero
+    - observatory thesisapp-dev.firebaseapp.com --format report  --min-score 100 --zero
   stage: security staging
 
 # Deployment settings for production environment.
@@ -175,6 +175,6 @@ Security Headers Production:
       - $CI_COMMIT_MESSAGE =~ /skip-ci/
   script:
     - npm install -g observatory-cli
-    - observatory thesisapp-16048.firebaseapp.com --format=report  --min-score 85 --zero
+    - observatory thesisapp-16048.firebaseapp.com --format report  --min-score 100 --zero
   stage: security production
   when: manual # Security Headers can be check once again manually once deployment to production will be done.
