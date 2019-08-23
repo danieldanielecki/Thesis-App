@@ -12,6 +12,7 @@
 // TODO: Add mutation testing.
 // TODO: Add ngrev.
 // TODO: Add Docker Bench Security.
+// TODO: Move protobufjs to GitLab.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
