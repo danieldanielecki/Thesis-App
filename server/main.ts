@@ -30,14 +30,12 @@ const expressApp: Express = express(); // Create Express instance.
 
 // TODO: Check other Nodemailer options like bcc and others.
 const mailTransport = nodemailer.createTransport({
-  // Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
-  // host: process.env.MAIL_HOST,
-  host: 'smtp.gmail.com',
-  // tslint:disable-next-line:radix
-  port: 465,
+  // Make sure the environmental variables have proper typings.
+  host: String(process.env.MAIL_HOST),
+  port: Number(process.env.MAIL_PORT),
   auth: {
-    user: process.env.MAIL_ACCOUNT,
-    pass: process.env.MAIL_PASSWORD
+    user: String(process.env.MAIL_ACCOUNT),
+    pass: String(process.env.MAIL_PASSWORD)
   }
 });
 
@@ -153,8 +151,7 @@ const mailTransport = nodemailer.createTransport({
       name: 'SESSION_ID', // Change default name of session cookie which reveals application's internal technology. For Express apps this is "connect.sid".
       resave: false, // Disable forcing session to be saved back to the sessions store, even if the session was never modified during the request. Enabling it could potentially create race conditions where client makes 2 parallels requests to the server.
       saveUninitialized: true, // Save uninitialized session to the store.
-      secret: '__dasdasda' // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
-      // secret: process.env.SESSION_SECRET! // Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
+      secret: String(process.env.SESSION_SECRET) // Make sure the environmental variable is a string.
     })
   );
 
@@ -195,7 +192,7 @@ exports.angularUniversalFunction = functions.https.onRequest(expressApp);
 
 // Firebase Cloud Function for sending e-mail from a contact form.
 exports.contactFormFunction = functions.firestore
-  .document(process.env.FIRESTORE_COLLECTION + '/{formControlEmail}')
+  .document(String(process.env.FIRESTORE_COLLECTION) + '/{formControlEmail}') // Make sure the environmental variable is a string.
   .onCreate(async (snap: any, context: any) => {
     if (snap.data() === null) return null;
 
@@ -209,7 +206,6 @@ exports.contactFormFunction = functions.firestore
       }>`,
       to: 'ditectrev@gmail.com',
       subject: `Contact Form: Thesis App`,
-      // Non-null assertion operators are required in .ts as well as .html file to compile into AOT.
       // TODO: Get dial code prefix and transform project deadline date properly.
       // TODO: Show only the filled fields.
       // TODO: Make local time.
@@ -219,21 +215,21 @@ exports.contactFormFunction = functions.firestore
         <p>Message from a contact form has been send.</p>
         <h3>Message content:</h3>
         <ul>
-          <li>Name: ${contactFormData!.formControlName}</li>
-          <li>E-mail: ${contactFormData!.formControlEmail}</li>
-          <li>Phone: ${contactFormData!.formControlPhone}</li>
+          <li>Name: ${contactFormData.formControlName}</li>
+          <li>E-mail: ${contactFormData.formControlEmail}</li>
+          <li>Phone: ${contactFormData.formControlPhone}</li>
           <li>Project deadline: ${new Date(
             contactFormData!.formControlDeadline._seconds * 1000
           )}</li>
           <li>Project description: ${
-            contactFormData!.formControlDescription
+            contactFormData.formControlDescription
           }</li>
-          <li>Additional files: ${contactFormData!.fileUploader}</li>
+          <li>Additional files: ${contactFormData.fileUploader}</li>
           <li>Preferred form of contact: ${
-            contactFormData!.formControlContactPreference
+            contactFormData.formControlContactPreference
           }</li>
           <li>Interested in the following services: ${
-            contactFormData!.formControlService
+            contactFormData.formControlService
           }</li>
         </ul>
       `

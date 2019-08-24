@@ -27,7 +27,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 // tslint:disable-next-line:nx-enforce-module-boundaries
 import { SharedModule } from './../../../../libs/shared/src/index';
 
-new Agastya(process.env.AGASTYA_API_KEY!); // TODO: Check the documentation to make it proper. Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
+// TODO: Check the documentation to make it proper.
+new Agastya(String(process.env.AGASTYA_API_KEY)); // Make sure the environmental variable is a string.
 
 @NgModule({
   bootstrap: [AppComponent],

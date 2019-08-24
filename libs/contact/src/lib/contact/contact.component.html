@@ -39,7 +39,7 @@
         />
         <mat-hint>Write your name.</mat-hint>
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error *ngIf="!contactForm.get('formControlName')!.valid"
           >This is an <strong>invalid</strong> a full name.
@@ -57,7 +57,7 @@
         />
         <mat-hint>Provide valid email address.</mat-hint>
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error *ngIf="!contactForm.get('formControlEmail')!.valid"
           >This is an <strong>invalid</strong> email address.
@@ -94,7 +94,7 @@
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Your phone number with country prefix.</mat-hint>
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error *ngIf="!contactForm.get('formControlPhone')!.valid"
           >This is an <strong>invalid</strong> phone number.
@@ -120,7 +120,7 @@
           done.</mat-hint
         >
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error *ngIf="!contactForm.get('formControlDeadline')!.valid"
           >This date is an <strong>invalid</strong> project deadline date.
@@ -145,7 +145,7 @@
         ></textarea>
         <mat-hint>Description for your project.</mat-hint>
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error *ngIf="!contactForm.get('formControlDescription')!.valid"
           >Description of the project is expected to have
@@ -182,7 +182,7 @@
           maximum files upload size: 20 MB.
         </mat-hint>
         <!--
-          Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+          Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
         -->
         <mat-error
           *ngIf="contactForm.get('fileUploader')!.hasError('maxContentSize')"
@@ -253,7 +253,7 @@
         </ng-container>
       </mat-selection-list>
       <!--
-        Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
       -->
       <mat-error
         *ngIf="
@@ -278,7 +278,7 @@
         >Agree on terms
       </mat-slide-toggle>
       <!--
-        Non-null assertion operators are required to let know the compiler that this value is not empty and exists.
+        Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
       -->
       <button
         mat-raised-button

@@ -47,7 +47,7 @@ export class FooterComponent {
   ]);
 
   public currentDate: Date = new Date();
-  public endpointMailChimp = process.env.MAILCHIMP_ENDPOINT;
+  public endpointMailChimp = String(process.env.MAILCHIMP_ENDPOINT); // Make sure the environmental variable is a string.
   public error = '';
   public submitted = false;
 
@@ -112,7 +112,7 @@ export class FooterComponent {
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)
-      .set(process.env.MAILCHIMP_HIDDEN_INPUT!, ''); // Hidden input. Non-null assertion operator is required to let know the compiler that this value is not empty and exists.
+      .set(String(process.env.MAILCHIMP_HIDDEN_INPUT), ''); // Hidden input. Make sure the environmental variable is a string.
     const urlMailChimp = this.endpointMailChimp + params.toString();
 
     this.httpClient.jsonp<ResponseMailChimp>(urlMailChimp, 'c').subscribe(
