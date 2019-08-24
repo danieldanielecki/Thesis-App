@@ -38,7 +38,7 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: process.env.RECAPTCHA_API_KEY
+        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA'
       } as RecaptchaSettings
     }
   ]
