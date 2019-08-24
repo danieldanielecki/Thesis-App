@@ -49,6 +49,8 @@ const mailTransport = nodemailer.createTransport({
   // Preload HTTP Strict Transport Security (HSTS).
   expressApp.use(
     helmet.hsts({
+      includeSubDomains: true, // Must be enabled, so "preload" will work.
+      maxAge: 31536000, // In seconds, one year.
       preload: true
     })
   );
