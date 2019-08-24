@@ -46,6 +46,13 @@ const mailTransport = nodemailer.createTransport({
   expressApp.use(logger('dev')); // Use logging.
   expressApp.use(helmet()); // Enable Helmet's 7 default middleware protections, i.e. dnsPrefetchControl, frameguard, hidePoweredBy, hsts, ieNoOpen, noSniff and xssFilter.
 
+  // Preload HTTP Strict Transport Security (HSTS).
+  expressApp.use(
+    helmet.hsts({
+      preload: true
+    })
+  );
+
   // Content-Security Policy (CSP) rules. TODO: Finish it by checking which one to defaultSrc which one to scriptSrc.
   expressApp.use(
     helmet.contentSecurityPolicy({
