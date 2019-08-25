@@ -13,6 +13,7 @@
 // TODO: Add ngrev.
 // TODO: Add Docker Bench Security.
 // TODO: Move protobufjs to GitLab.
+// TODO: Make error handling to Sentry.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';

@@ -47,8 +47,7 @@ export class FooterComponent {
   ]);
 
   public currentDate: Date = new Date();
-  public endpointMailChimp =
-    'https://ditectrev.us15.list-manage.com/subscribe/post-json?u=f47a9bf63c687219a336b35ed&amp;id=d68066abca&';
+  public endpointMailChimp = String(process.env.MAILCHIMP_ENDPOINT);
   public error = '';
   public submitted = false;
 
@@ -113,7 +112,7 @@ export class FooterComponent {
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)
-      .set('b_f47a9bf63c687219a336b35ed_d68066abca', ''); // Hidden input. Make sure the environmental variable is a string.
+      .set(String(process.env.MAILCHIMP_HIDDEN_INPUT), ''); // Hidden input. Make sure the environmental variable is a string.
     const urlMailChimp = this.endpointMailChimp + params.toString();
 
     this.httpClient.jsonp<ResponseMailChimp>(urlMailChimp, 'c').subscribe(
@@ -122,13 +121,11 @@ export class FooterComponent {
           this.submitted = true;
           alert('Thank you for subscribing into our list.'); // TODO: Make this a SweetAlert (as any other user interaction).
         } else {
-          this.error = response.msg;
-          console.error(this.error);
-          alert('An error with response occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
+          alert('An error occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
         }
       },
       error => {
-        console.error(error);
+        console.error(error); // TODO: Remove this or make this as Sentry.
         alert('An error occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
       }
     );
