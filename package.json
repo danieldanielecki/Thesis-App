@@ -73,6 +73,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^8.1.1",
     "@nrwl/angular": "^8.4.1",
     "agastya": "^4.2.0",
+    "angular-google-tag-manager": "0.0.1",
     "animate.css": "^3.7.2",
     "core-js": "^2.6.5",
     "csurf": "^1.10.0",

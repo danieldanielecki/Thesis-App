@@ -14,6 +14,8 @@
 // TODO: Add Docker Bench Security.
 // TODO: Move protobufjs to GitLab.
 // TODO: Make error handling to Sentry.
+// TODO: Think about dynamically changing index.html to index2.html
+// TODO: Change links to policies in Agastya.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
@@ -39,8 +41,9 @@ new Agastya(String(process.env.AGASTYA_API_KEY)); // Make sure the environmental
     CoreModule,
     HomeModule,
     RoutingModule,
-    SharedModule, // TODO: Check if shared modules shouldn't be loaded only in feature modules. Problem is how to fix footer/header to be available - put it to core?
+    SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js')
-  ]
+  ],
+  providers: [{ provide: 'googleTagManagerId', useValue: 'GTM-WVLBQKK' }] // TODO: Add other integrations.
 })
 export class AppModule {}

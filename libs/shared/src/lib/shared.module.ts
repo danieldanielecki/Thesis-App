@@ -118,7 +118,6 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  // TODO: SharedModule shouldn't have providers? If UtilitiesModule will work then it should be fine.
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
   ]

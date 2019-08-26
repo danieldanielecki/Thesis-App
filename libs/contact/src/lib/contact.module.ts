@@ -9,7 +9,6 @@ import { NgModule } from '@angular/core';
 import {
   RecaptchaModule,
   RECAPTCHA_SETTINGS,
-  RECAPTCHA_NONCE,
   RecaptchaSettings
 } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
@@ -32,13 +31,9 @@ import { SharedModule } from './../../../../libs/shared/src/index';
   ],
   providers: [
     {
-      provide: RECAPTCHA_NONCE,
-      useValue: '<YOUR_NONCE_VALUE>' // TODO: Add nonce for CSP here (as env variable). Maybe also recaptcha v3, check it as well invisible recaptcha to susbcribe.
-    },
-    {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LeHfacUAAAAACw9nhLeat5AGcMjxiUNVj7oUzCA'
+        siteKey: String(process.env.RECAPTCHA_API_KEY)
       } as RecaptchaSettings
     }
   ]

@@ -6,8 +6,6 @@ import {
   HttpClientXsrfModule
 } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-// TODO: providers from UtilitiesModules doesn't work, fix it.
-// import { UtilitiesModule } from 'libs/utilities/src/index';
 
 @NgModule({
   exports: [

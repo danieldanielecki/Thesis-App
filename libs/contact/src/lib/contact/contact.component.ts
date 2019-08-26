@@ -139,7 +139,7 @@ export class ContactComponent {
     form.fileUploader = this.downloadURL;
 
     this.angularFirestore
-      .collection('messages') // Make sure the environmental variable is a string.
+      .collection(String(process.env.FIRESTORE_COLLECTION_MESSAGES)) // Make sure the environmental variable is a string.
       .add(form)
       .then(() => {
         this.contactForm.reset(); // Reset form once user will click "Send Message".
@@ -185,7 +185,7 @@ export class ContactComponent {
           finalize(() => {
             fileRef.getDownloadURL().subscribe((downloadURL: string) => {
               this.angularFirestore
-                .collection('files') // Make sure the environmental variable is a string.
+                .collection(String(process.env.FIRESTORE_COLLECTION_FILES)) // Make sure the environmental variable is a string.
                 .add({ downloadURL: downloadURL });
               this.downloadURL.push(downloadURL);
             });
