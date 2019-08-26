@@ -80,7 +80,6 @@ const mailTransport = nodemailer.createTransport({
         fontSrc: [
           "'self'", // Default policy for specifiying valid sources for fonts loaded using "@font-face": allow all content coming from origin (without subdomains).
           'https://fonts.gstatic.com', // Google Fonts.
-          'http://script.hotjar.com', // Hotjar.
           'https://script.hotjar.com' // Hotjar.
         ],
         formAction: ["'self'"], // Default policy for restricting the URLs which can be used as the target of a form submissions from a given context: allow all content coming from origin (without subdomains). This directive doesn't use "default-src" as fallback, thus by default it allows anything.
@@ -96,8 +95,7 @@ const mailTransport = nodemailer.createTransport({
           'https://www.google-analytics.com', // Universal Analytics (Google Analytics).
           'https://www.googletagmanager.com', // Google Tag Manager.
           'https://www.google.com', // reCAPTCHA.
-          'https://script.hotjar.com', // Hotjar.
-          'http://script.hotjar.com' // Hotjar.
+          'https://script.hotjar.com' // Hotjar.
         ],
         manifestSrc: ["'self'"], // Default policy for specyfing which manifest can be applied to the resource: allow all content coming from origin (without subdomains).
         pluginTypes: ["'none'"], // Default policy for set of plugins that can be embedded into a document: disallow everything. This directive doesn't use "default-src" as fallback, thus by default it allows anything.
@@ -209,7 +207,7 @@ exports.angularUniversalFunction = functions.https.onRequest(expressApp);
 // Firebase Cloud Function for sending e-mail from a contact form.
 exports.contactFormFunction = functions.firestore
   .document(
-    String(process.env.FIRESTORE_COLLECTION_FILES) + '/{formControlEmail}'
+    String(process.env.FIRESTORE_COLLECTION_FILES) + '/{formControlEmail}' // TODO: Problem on CI.
   ) // Make sure the environmental variable is a string.
   .onCreate(async (snap: any, context: any) => {
     if (snap.data() === null) return null;
