@@ -6,7 +6,7 @@ import { NestedTreeControl } from '@angular/cdk/tree';
  * List of FAQ items.
  * Each FAQ item has category and optional list of questions.
  */
-// TODO: Move this interface to utilities. Is this solution ok with all optional parameters and there shouldn't be extend another interface?
+// TODO: Move this interface out.
 interface FaqQuestions {
   answer?: string;
   category?: string;
