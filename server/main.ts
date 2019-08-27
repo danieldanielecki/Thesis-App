@@ -98,7 +98,7 @@ const mailTransport = nodemailer.createTransport({
           'https://script.hotjar.com' // Hotjar.
         ],
         manifestSrc: ["'self'"], // Default policy for specyfing which manifest can be applied to the resource: allow all content coming from origin (without subdomains).
-        pluginTypes: ["'none'"], // Default policy for set of plugins that can be embedded into a document: disallow everything. This directive doesn't use "default-src" as fallback, thus by default it allows anything.
+        objectSrc: ["'none'"], // Default policy for specyfing valid sources for the "<object>", "<embed>", and "<applet>" elements. It also influences "pluginType" by disallowing all of them. The "pluginType" directive doesn't use "default-src" as fallback, thus by default it allows anything.
         scriptSrc: [
           "'self'", // Default policy for valid sources for JavaScript: allow all content coming from origin (without subdomains).
           "'unsafe-eval'", // Unsecure, but required due to Angular's SSR.
@@ -207,8 +207,8 @@ exports.angularUniversalFunction = functions.https.onRequest(expressApp);
 // Firebase Cloud Function for sending e-mail from a contact form.
 exports.contactFormFunction = functions.firestore
   .document(
-    String(process.env.FIRESTORE_COLLECTION_FILES) + '/{formControlEmail}' // TODO: Problem on CI.
-  ) // Make sure the environmental variable is a string.
+    String(process.env.FIRESTORE_COLLECTION_MESSAGES) + '/{formControlEmail}' // Make sure the environmental variable is a string.
+  )
   .onCreate(async (snap: any, context: any) => {
     if (snap.data() === null) return null;
 
