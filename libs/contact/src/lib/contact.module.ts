@@ -33,7 +33,7 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: String(process.env.RECAPTCHA_API_KEY)
+        siteKey: process.env.RECAPTCHA_API_KEY
       } as RecaptchaSettings
     }
   ]
