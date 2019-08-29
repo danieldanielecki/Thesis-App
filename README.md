@@ -65,7 +65,8 @@ Focus is to achieve high quality source code by using programming best practices
 - `git add .` - add all changed files in the repository to the index.
 - `git branch` - check project branches and highlight active branch.
 - `git commit -m "commit message"` - create commit with a message.
-- `git commit --amend` - edit unpushed commit.
+- `git commit --amend` - edit unpushed commit with opening a default text editor.
+- `git commit --amend -m "COMMIT MESSAGE"` - edit unpushed commit directly from command line.
 - `git checkout BRANCH_NAME` - switch to a certain branch.
 - `git merge --no-ff --no-commit BRANCH_NAME` - safe merging branch from certain branch to "master". Done after `git checkout BRANCH_NAME`, `git pull`, `git checkout master`, `git pull`.
 - `git push` - push commit to the repository.
