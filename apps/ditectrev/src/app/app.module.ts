@@ -1,7 +1,6 @@
 // TODO: Check all config files like with tsconfig's. Also others options excluding security for Angular/TypeScript compilers.
 // TODO: Make everything alphabetically.
 // TODO: Check in terms of AOT is the methods really must be public (almost) everywhere in components.
-// TODO: Add Animate on Scroll in many places.
 // TODO: Check TSLint options.
 // TODO: Check compiler options.
 // TODO: Unify all imports, remove "./".
@@ -16,10 +15,18 @@
 // TODO: Make error handling to Sentry.
 // TODO: Think about dynamically changing index.html to index2.html
 // TODO: Change links to policies in Agastya.
+// TODO: Add in many sections Animate on Scroll (AOS) and/or WOW.js
+// TODO: Check many interesting things from Angular 8 Example App.
+// TODO: Add Normalize.css and maybe a bit of Reset.css
+// TODO: Add push notifications (something simple, e.g. sign up for a newsletter) and check offline worker after adding CSP.
+// TODO: Check Google Analytics and Hotjar if works after implementing CSP.
+// TODO: Remove 404 error related with manifest.
+// TODO: Add metadata related with og:title etc (The Open Graph Protocol).
+// TODO: Add sitemap.xml and robots.txt.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser'; // TODO: Is it required here? BrowserModule is imported in CoreModule already.
 // tslint:disable-next-line:nx-enforce-module-boundaries
 import { CoreModule } from './../../../../libs/core/src/index';
 // tslint:disable-next-line:nx-enforce-module-boundaries

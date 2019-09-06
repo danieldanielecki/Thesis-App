@@ -1,5 +1,6 @@
 // TODO: Add SweetAlerts with a progressbar on form reset, control behaviour of the form with errors.
-// TODO: After moving ErrorsStateMatcher try to resetForm of contactForm in order to clear validators after submit.
+// TODO: Try to resetForm of contactForm in order to clear validators after submit.
+// TODO: Add Google Maps component.
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import {
@@ -129,7 +130,6 @@ export class ContactComponent {
     }
   }
 
-  // TODO: Shall it be a separated service?
   /**
    * @description Perform certain behaviours on button submit of the contact form.
    * @param {form} - object of submitted contact form.
@@ -150,9 +150,6 @@ export class ContactComponent {
       });
   }
 
-  // TODO: Add progressbar and controlling upload button (cancel, pause, running).
-  // TODO: Shall it be a separated service?
-  // TODO: Not working on deployment, fix it.
   /**
    * @description Upload additional files to Cloud Firestore and get URL to the files.
    * @param {event} - object of sent files.

@@ -1,4 +1,3 @@
-// TODO: Move all UI modules here.
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CommonModule } from '@angular/common';
 import {

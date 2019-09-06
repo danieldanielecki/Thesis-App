@@ -1,5 +1,3 @@
-// TODO: This is the only one page which doesn't work on SSR, fix it.
-
 import {
   Color,
   HemisphereLight,

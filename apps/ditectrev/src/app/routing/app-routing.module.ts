@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 // TODO: Up - but what if user clicks servies, what should happen? The menu should stay open with sidebar open only for that case, or always sidenav should be open/closed? Think about it.
 const routes: Routes = [
   // TODO: Change blog to external URL.
+  // TODO: Add 'Vlog' to YouTube channel once classes will be published there.
   // {
   //   path: 'blog',
   //   component: HomeComponent,

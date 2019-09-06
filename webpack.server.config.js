@@ -1,6 +1,4 @@
 /* Custom webpack server properties. */
-// TODO: Check others webpack options.
-// TODO: Merge webpack into 1 file, i.e. webpack.config.js
 
 const dotenv = require('dotenv-webpack');
 const nodeExternals = require('webpack-node-externals');

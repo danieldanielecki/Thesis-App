@@ -25,6 +25,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
     })
   ]
 })
+// TODO: Make unit test for this.
 export class CoreModule {
   // Throw an error once CoreModule will be imported somewhere else in order to prevent from importing it more than once in the whole application.
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

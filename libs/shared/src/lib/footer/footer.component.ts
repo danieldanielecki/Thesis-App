@@ -47,7 +47,7 @@ export class FooterComponent {
   ]);
 
   public currentDate: Date = new Date();
-  public endpointMailChimp = String(process.env.MAILCHIMP_ENDPOINT); // Make sure the environmental variable is a string.
+  public endpointMailChimp = String(process.env.MAILCHIMP_ENDPOINT); // Make sure the environmental variable is a string. // TODO: It's problematic when goes from GitLab CI.
   public error = '';
   public submitted = false;
 
@@ -107,12 +107,10 @@ export class FooterComponent {
     }
   ];
 
-  // TODO: Add hidden captcha on submit.
-  // TODO: Make this a separated service.
   public onSubmit(): void {
     const params = new HttpParams()
       .set('EMAIL', this.formControlEmail.value)
-      .set(String(process.env.MAILCHIMP_HIDDEN_INPUT), ''); // Hidden input. Make sure the environmental variable is a string.
+      .set(String(process.env.MAILCHIMP_HIDDEN_INPUT), ''); // Hidden input. Make sure the environmental variable is a string. // TODO: It's problematic when goes from GitLab CI.
     const urlMailChimp = this.endpointMailChimp + params.toString();
 
     this.httpClient.jsonp<ResponseMailChimp>(urlMailChimp, 'c').subscribe(
@@ -125,7 +123,7 @@ export class FooterComponent {
         }
       },
       error => {
-        console.error(error); // TODO: Remove this or make this as Sentry.
+        console.error(error); // TODO: Remove this or make this as Sentry (as well as add contact error handling to Sentry).
         alert('An error occured, our apologizes.'); // TODO: Make this a SweetAlert (as any other user interaction).
       }
     );

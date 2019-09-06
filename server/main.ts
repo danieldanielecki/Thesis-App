@@ -1,11 +1,9 @@
 // TODO: Check handling reporting violations (helmet) & bugs (sentry).
-// TODO: Improve typings (helmet, nodemailer, etc.), i.e. all imported by *.
 
 import * as admin from 'firebase-admin';
 import * as csurf from 'csurf';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
-// import * as helmet from 'helmet'; // TODO: featurePolicy type doesn't exists, issue: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37627.
 import * as logger from 'morgan';
 import * as nodemailer from 'nodemailer';
 import * as rateLimit from 'express-rate-limit';
@@ -20,7 +18,7 @@ import {
 import { join } from 'path';
 import { NestFactory } from '@nestjs/core';
 
-const helmet = require('helmet'); // TODO: featurePolicy type doesn't exists, issue: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37627.
+const helmet = require('helmet');
 
 enableProdMode(); // Faster server renders in production mode (development doesn't need it).
 
@@ -28,7 +26,6 @@ admin.initializeApp(); // Initialize Firebase SDK.
 
 const expressApp: Express = express(); // Create Express instance.
 
-// TODO: Check other Nodemailer options like attachments, bcc and others.
 const mailTransport = nodemailer.createTransport({
   // Make sure the environmental variables have proper typings.
   host: String(process.env.MAIL_HOST),
@@ -42,7 +39,7 @@ const mailTransport = nodemailer.createTransport({
 // Create and init NestJS application based on Express instance.
 (async () => {
   expressApp.use(logger('dev')); // Use logging.
-  expressApp.use(helmet()); // Enable Helmet's 7 default middleware protections, i.e. dnsPrefetchControl, frameguard, hidePoweredBy, hsts, ieNoOpen, noSniff and xssFilter.
+  expressApp.use(helmet()); // Enable Helmet's 7 default middleware protections, i.e. dnsPrefetchControl, frameguard, hidePoweredBy, hsts, ieNoOpen, noSniff and xssFilter. // TODO: Check each of Helmet's options.
 
   // Preload HTTP Strict Transport Security (HSTS).
   expressApp.use(
@@ -155,7 +152,6 @@ const mailTransport = nodemailer.createTransport({
   // Improve sessions and cookies security.
   expressApp.use(
     session({
-      // TODO: Add cookies prefix.
       cookie: {
         maxAge: 3600000, // In milliseconds, keep the session for maximum 1 hour and later expire it. Cookie by default (in the csrf package) has the same expiration date.
         secure: true, // Enforce cookies has to be transmitted only through HTTPS. It prevents cookie from being transmitted through insecure HTTP.
@@ -226,7 +222,9 @@ exports.contactFormFunction = functions.firestore
       // TODO: Show only the filled fields.
       // TODO: Make local time.
       // TODO: Add attachments.
+      // TODO: Add bcc for the sender.
       // TODO: Format "Additional files" when receiving a mail.
+      // TODO: Remove the token from attachment.
       html: `
         <p>Message from a contact form has been send.</p>
         <h3>Message content:</h3>

@@ -1,6 +1,5 @@
 # GitLab uses Docker in the background, so it's required to get the image.
-# TODO: Define and invoke functions.
-# TODO: Run Mozilla Observatory from single command, issue: https://github.com/mozilla/observatory-cli/issues/42.
+# TODO: Try GitLab Gold (security parts) for 1 month, especially DAST report.
 image: node:10.15.3-alpine
 
 # Cache npm modules and Cypress binary. To point at the folders the paths can be lsited in the "cache" job settings.

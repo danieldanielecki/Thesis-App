@@ -33,7 +33,7 @@ import { SharedModule } from './../../../../libs/shared/src/index';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: String(process.env.RECAPTCHA_API_KEY)
+        siteKey: String(process.env.RECAPTCHA_API_KEY) // TODO: It causes problem when it goes from GitLab CI.
       } as RecaptchaSettings
     }
   ]
