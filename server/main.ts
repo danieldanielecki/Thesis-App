@@ -1,4 +1,6 @@
 // TODO: Check handling reporting violations (helmet) & bugs (sentry).
+// TODO: Add subresourceIntegrity (from Angular CLI).
+// TODO: Add nonce-based CSP.
 
 import * as admin from 'firebase-admin';
 import * as csurf from 'csurf';

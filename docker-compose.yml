@@ -1,5 +1,6 @@
 # This file is used for orchestrating and running Docker environment defined in the Dockerfile. It's an alternative to Kubernetus. Simply use it to make more than 1 container, i.e. development and production environment.
 # TODO: production mode has to be tested.
+# TODO: Check if Docker works.
 version: '3.7'
 
 services:
