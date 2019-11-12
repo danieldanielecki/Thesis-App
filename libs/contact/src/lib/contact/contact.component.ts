@@ -1,6 +1,8 @@
 // TODO: Add SweetAlerts with a progressbar on form reset, control behaviour of the form with errors.
 // TODO: Try to resetForm of contactForm in order to clear validators after submit.
 // TODO: Add Google Maps component.
+// TODO: Change collections names.
+// TODO: Add keeping state for contact form.
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import {

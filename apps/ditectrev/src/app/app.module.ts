@@ -23,6 +23,7 @@
 // TODO: Remove 404 error related with manifest.
 // TODO: Add metadata related with og:title etc (The Open Graph Protocol).
 // TODO: Add sitemap.xml and robots.txt.
+// TODO: Add JSDoc like in contact.component.ts.
 
 import Agastya from 'agastya';
 import { AppComponent } from './app.component';
